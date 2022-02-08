@@ -68,7 +68,7 @@ const cat2: CatWithModifiedKeys = {
   nameProperty: "Bus",
 }
 
-/* Example 2 */
+/* Example 3. Pick. */
 type Book = {
   author: string
   isEBook: boolean
