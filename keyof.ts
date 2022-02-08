@@ -42,4 +42,4 @@ const car1 = {
 }
 
 // The second argument should be either "model" or "year".
-logObjectValueByKey(car1, "model")
+getObjectValueByKey(car1, "model")
