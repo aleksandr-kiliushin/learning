@@ -33,4 +33,37 @@ const user: MappedUser = {
   name: "John",
 }
 
+/* Example 1 */
+type Car = {
+  model: string
+  year: number
+}
+
+type CarWithAllowedStringValues = {
+  [P in keyof Car]: Car[P] | string // Creates a type union between `string` and the property's original type.
+}
+
+const car1: CarWithAllowedStringValues = {
+  model: "Ford",
+  year: "1960", // `number` | `string` are allowed.
+}
+
+/* Example 2 */
+type Cat = {
+  isWild: boolean
+  name: string
+}
+type CatWithModifiedKeys = {
+  [P in keyof Cat as `${P}Property`]: Cat[P]
+}
+
+const cat1: Cat = {
+  isWild: false,
+  name: "Charly",
+}
+const cat2: CatWithModifiedKeys = {
+  isWildProperty: false,
+  nameProperty: "Bus",
+}
+
 export default {}

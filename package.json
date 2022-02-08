@@ -17,6 +17,9 @@
     "url": "https://github.com/alexander-kilyushin/typescript-examples/issues"
   },
   "homepage": "https://github.com/alexander-kilyushin/typescript-examples#readme",
+  "dependencies": {
+    "lodash": "4.17.21"
+  },
   "devDependencies": {
     "typescript": "4.5.5"
   }
