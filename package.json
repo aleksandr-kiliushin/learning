@@ -1,0 +1,23 @@
+{
+  "name": "typescript-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexander-kilyushin/typescript-examples.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexander-kilyushin/typescript-examples/issues"
+  },
+  "homepage": "https://github.com/alexander-kilyushin/typescript-examples#readme",
+  "devDependencies": {
+    "typescript": "4.5.5"
+  }
+}
