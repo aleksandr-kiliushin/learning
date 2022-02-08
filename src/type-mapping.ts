@@ -1,3 +1,5 @@
+import camelCase from "lodash/camelCase"
+
 /**
  * Mapped types are created by applying a transofrmation to the properties of an existing type.
  * The best way to understand how mapped types work is to create one that processes a type
@@ -64,6 +66,24 @@ const cat1: Cat = {
 const cat2: CatWithModifiedKeys = {
   isWildProperty: false,
   nameProperty: "Bus",
+}
+
+/* Example 2 */
+type Book = {
+  author: string
+  isEBook: boolean
+  title: string
+}
+
+type SelectProperties<T, K extends keyof T> = {
+  [P in K]: T[P]
+}
+
+type BookWithoutTitleProperty = SelectProperties<Book, "author" | "isEBook">
+
+const bookWithoutTitleProperty: BookWithoutTitleProperty = {
+  author: "Bob Martin",
+  isEBook: true,
 }
 
 export default {}
