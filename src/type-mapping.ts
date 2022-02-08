@@ -32,3 +32,5 @@ const user: MappedUser = {
   age: 25,
   name: "John",
 }
+
+export default {}
