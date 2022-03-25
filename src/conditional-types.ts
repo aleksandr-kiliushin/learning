@@ -2,6 +2,22 @@ type ResultType<T extends boolean> = T extends true ? string : number
 const name: ResultType<true> = "Jozeph"
 const age: ResultType<false> = 25
 
+/* Example of function argument type calculation based on the passed generic argument. */
+type Abc = { a: number; b: string; c: boolean; }
+type Ab = { a: number; b: string; }
+type A = { a: number; }
+type AbcAbATuple<T> = T extends Abc ? [number, string, boolean]
+    : T extends Ab ? [number, string]
+    : T extends A ? [number]
+    : never
+const AbArray: AbcAbATuple<{ a: number; }> = [1]
+function getConcatenatedElements<T> (elements: AbcAbATuple<T>) {
+  return "|" + elements.join("|") + "|"
+}
+const concatenatedElementsA = getConcatenatedElements<{ a: number; }>([1])
+const concatenatedElementsAb = getConcatenatedElements<{ a: number; b: string; }>([1, "hehe"])
+const concatenatedElementsAbc = getConcatenatedElements<{ a: number; b: string; c: boolean}>([1, "hehe", true])
+
 /* Calculation type based on another type. */
 type DateOrNumberOrString<T> = T extends Date ? Date
   : T extends number ? Date | number
