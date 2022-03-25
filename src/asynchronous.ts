@@ -9,6 +9,7 @@ const promiseReturningString = (): Promise<string> => {
 }
 
 promiseReturningString()
+  // The resolved value is of type string.
   .then((resolvedValue) => {
     console.log(resolvedValue)
   })
