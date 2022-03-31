@@ -8,6 +8,9 @@ Testing:
 - learning-react-modern-patterns-developing-2020-en.pdf / Chapter 10: React testing;
 - Testing JavaScript applications by Lucas da Costa;
 
+Server-side rendering:
+- learning-react-modern-patterns-developing-2020-en.pdf / Chapter 12: React and the server;
+
 Typescript:
 Learn only the docs and only if I ran into a lack of knowledge on complex type constructions.
 - The handbook and the docs here: www.typescriptlang.org;
