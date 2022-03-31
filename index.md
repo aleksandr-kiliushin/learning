@@ -10,4 +10,4 @@ Testing:
 
 Typescript:
 Learn only the docs and only if I ran into a lack of knowledge on complex type constructions.
-- www.typescriptlang.org
+- The handbook and the docs here: www.typescriptlang.org;
