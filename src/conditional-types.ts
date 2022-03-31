@@ -34,4 +34,11 @@ compareDates(123, 123)
 compareDates("January", 123)
 // compareDates(true, 123) // Argument of type 'number' is not assignable to parameter of type 'never'.
 
+// Infer type from inside of an object property.
+type InferFromPropertyType<T> = T extends { id: infer U } ? U : never
+const getIdPropertyValue = <T extends { id: any }>(input: T): T extends { id: infer U } ? U : never => {
+  return input.id
+}
+const aVariableOfTypeNumber = getIdPropertyValue({ id: 123123 })
+
 export {}
