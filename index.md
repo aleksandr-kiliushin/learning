@@ -14,3 +14,6 @@ Server-side rendering:
 Typescript:
 Learn only the docs and only if I ran into a lack of knowledge on complex type constructions.
 - The handbook and the docs here: www.typescriptlang.org;
+
+Useful things:
+- Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html
