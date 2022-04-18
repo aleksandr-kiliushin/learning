@@ -19,3 +19,12 @@ Learn only the docs and only if I ran into a lack of knowledge on complex type c
 Refactoring:
 - Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html.
 - Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
+- YAGNI - https://martinfowler.com/bliki/Yagni.html.
+- Extreme programming - https://martinfowler.com/bliki/ExtremeProgramming.html.
+
+Books to find:
+- Erick evans domain driven desing — предметно ориентированное проектирование
+- Securing web applicarions книга есть в телеграм в чате Джс букс
+- Kent Beck – Extreme Programming
+- software architecture the hard parts
+- Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
