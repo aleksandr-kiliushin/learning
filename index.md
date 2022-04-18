@@ -7,6 +7,7 @@ Testing:
 - mastering-typescript-enterprise-ready-4th-2021-en.pdf / Chapter 10: TDD;
 - learning-react-modern-patterns-developing-2020-en.pdf / Chapter 10: React testing;
 - Testing JavaScript applications by Lucas da Costa;
+- Martin Fowler: Self-testing code. https://martinfowler.com/bliki/SelfTestingCode.html.
 
 Server-side rendering:
 - learning-react-modern-patterns-developing-2020-en.pdf / Chapter 12: React and the server;
@@ -15,5 +16,5 @@ Typescript:
 Learn only the docs and only if I ran into a lack of knowledge on complex type constructions.
 - The handbook and the docs here: www.typescriptlang.org;
 
-Useful things:
-- Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html
+Refactoring:
+- Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html.
