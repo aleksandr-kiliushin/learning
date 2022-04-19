@@ -22,6 +22,7 @@ Refactoring:
 - Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
 - YAGNI - https://martinfowler.com/bliki/Yagni.html.
 - Extreme programming - https://martinfowler.com/bliki/ExtremeProgramming.html.
+- https://martinfowler.com/articles/preparatory-refactoring-example.html
 
 Books to find:
 - Erick evans domain driven desing — предметно ориентированное проектирование
