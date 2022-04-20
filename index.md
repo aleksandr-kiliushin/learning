@@ -2,6 +2,7 @@ Microfrontends:
 - mastering-typescript-enterprise-ready-4th-2021-eng / Chapter 16: Micro front-ends;
 
 Testing:
+- Bibliography from Martin Fowler: Refactoring book, page 427 / 445.
 - https://martinfowler.com/testing/;
 - A brief introduction to unit testing: https://martinfowler.com/bliki/UnitTest.html;
 - refactoring-improving-the-design-of-existing-code-2019-en.pdf, page 107 / 445: Building tests by Kent Beck.
