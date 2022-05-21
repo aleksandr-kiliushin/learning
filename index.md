@@ -25,9 +25,9 @@ Refactoring:
 - Extreme programming - https://martinfowler.com/bliki/ExtremeProgramming.html.
 - https://martinfowler.com/articles/preparatory-refactoring-example.html
 
+Architecture:
+- Erick evans - Domain driven desing: https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false
+
 Books to find:
-- Erick evans domain driven desing — предметно ориентированное проектирование
-- Securing web applicarions книга есть в телеграм в чате Джс букс
-- Kent Beck – Extreme Programming
-- software architecture the hard parts
+- Software architecture the hard parts
 - Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
