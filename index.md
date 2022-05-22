@@ -29,6 +29,7 @@ Architecture:
 
 Best practices:
 - https://martinfowler.com/bliki/CommandQuerySeparation.html
+- https://martinfowler.com/articles/refactoring-pipelines.html
 
 Books to find:
 - Software architecture the hard parts
