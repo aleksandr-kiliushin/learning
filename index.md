@@ -27,6 +27,7 @@ Refactoring:
 
 Architecture:
 - Erick evans - Domain driven desing: https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false
+- https://www.martinfowler.com/articles/micro-frontends.html
 
 Books to find:
 - Software architecture the hard parts
