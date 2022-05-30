@@ -20,7 +20,7 @@ Refactoring:
 - Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
 - YAGNI - https://martinfowler.com/bliki/Yagni.html.
 - Extreme programming - https://martinfowler.com/bliki/ExtremeProgramming.html.
-- https://martinfowler.com/articles/preparatory-refactoring
+- https://martinfowler.com/articles/preparatory-refactoring-example.html
 
 Architecture:
 - Erick evans - Domain driven desing: https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false
