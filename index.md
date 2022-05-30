@@ -20,12 +20,13 @@ Refactoring:
 - Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
 - YAGNI - https://martinfowler.com/bliki/Yagni.html.
 - Extreme programming - https://martinfowler.com/bliki/ExtremeProgramming.html.
-- https://martinfowler.com/articles/preparatory-refactoring-example.html
+- https://martinfowler.com/articles/preparatory-refactoring
 
 Architecture:
 - Erick evans - Domain driven desing: https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false
 - https://www.martinfowler.com/articles/micro-frontends.html
 - mastering-typescript-enterprise-ready-4th-2021-eng / Chapter 16: Micro front-ends;
+- https://betterprogramming.pub/javascript-design-patterns-25f0faaaa15
 
 Best practices:
 - https://martinfowler.com/bliki/CommandQuerySeparation.html
