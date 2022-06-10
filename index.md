@@ -24,15 +24,14 @@ Refactoring:
 
 Architecture:
 - Erick evans - Domain driven desing: https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false
+- https://github.com/rajasegar/awesome-micro-frontends
 - https://www.martinfowler.com/articles/micro-frontends.html
 - mastering-typescript-enterprise-ready-4th-2021-eng / Chapter 16: Micro front-ends;
 - Hexagonal architecture
 - [Backend for frontend by Sam Newman](https://samnewman.io/patterns/architectural/bff/)
-
-Best practices:
-- https://martinfowler.com/bliki/CommandQuerySeparation.html
-- https://martinfowler.com/articles/refactoring-pipelines.html
-- https://martinfowler.com/eaaCatalog/repository.html
+- https://gustafnk.github.io/microservice-websites/
+- https://medium.com/@FlorianRappl
+- https://medium.com/@lucamezzalira
 
 Books to find:
 - Software architecture the hard parts
