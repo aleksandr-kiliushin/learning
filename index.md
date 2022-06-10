@@ -28,6 +28,7 @@ Architecture:
 - mastering-typescript-enterprise-ready-4th-2021-eng / Chapter 16: Micro front-ends;
 - https://betterprogramming.pub/javascript-design-patterns-25f0faaaa15
 - Hexagonal architecture
+- Backend for frontend
 
 Best practices:
 - https://martinfowler.com/bliki/CommandQuerySeparation.html
