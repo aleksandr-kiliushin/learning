@@ -6,7 +6,6 @@ Testing:
 - mastering-typescript-enterprise-ready-4th-2021-en.pdf / Chapter 10: TDD;
 - learning-react-modern-patterns-developing-2020-en.pdf / Chapter 10: React testing;
 - Testing JavaScript applications by Lucas da Costa;
-- https://martinfowler.com/articles/mocksArentStubs.html
 - https://martinfowler.com/articles/testing-culture.html
 - https://martinfowler.com/articles/nonDeterminism.html
 - https://martinfowler.com/articles/rise-test-impact-analysis.html
@@ -40,5 +39,5 @@ Books to find:
 - Software architecture the hard parts
 - Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
 
-Useful and interesting
+Patterns
 - https://martinfowler.com/bliki/TellDontAsk.html
