@@ -39,3 +39,6 @@ Architecture:
 Books to find:
 - Software architecture the hard parts
 - Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
+
+Useful and interesting
+- https://martinfowler.com/bliki/TellDontAsk.html
