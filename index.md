@@ -9,6 +9,9 @@ Testing:
 - https://martinfowler.com/articles/testing-culture.html
 - https://martinfowler.com/articles/nonDeterminism.html
 - https://martinfowler.com/articles/rise-test-impact-analysis.html
+- https://redux.js.org/usage/writing-tests
+- https://blog.isquaredsoftware.com/2021/06/the-evolution-of-redux-testing-approaches/
+- https://kentcdodds.com/blog/testing-implementation-details
 
 Server-side rendering:
 - learning-react-modern-patterns-developing-2020-en.pdf / Chapter 12: React and the server;
