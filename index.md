@@ -1,13 +1,13 @@
 Testing:
 - ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf, page 107 / 445: Building tests by Kent Beck.
-- Bibliography from Martin Fowler: Refactoring book, page 427 / 445.
-- https://martinfowler.com/testing/;
-- learning-react-modern-patterns-developing-2020-en.pdf / Chapter 10: React testing;
-- Testing JavaScript applications by Lucas da Costa;
-- https://redux.js.org/usage/writing-tests
-- https://blog.isquaredsoftware.com/2021/06/the-evolution-of-redux-testing-approaches/
-- https://kentcdodds.com/blog/testing-implementation-details
-- https://github.com/cypress-io/cypress-realworld-app
+- 🕒 Bibliography from Martin Fowler: Refactoring book, page 427 / 445.
+- 🕒 https://martinfowler.com/testing/;
+- 🕒 learning-react-modern-patterns-developing-2020-en.pdf / Chapter 10: React testing;
+- 🕒 Testing JavaScript applications by Lucas da Costa;
+- 🕒 https://redux.js.org/usage/writing-tests
+- 🕒 https://blog.isquaredsoftware.com/2021/06/the-evolution-of-redux-testing-approaches/
+- 🕒 https://kentcdodds.com/blog/testing-implementation-details
+- 🕒 https://github.com/cypress-io/cypress-realworld-app
 
 Server-side rendering:
 - learning-react-modern-patterns-developing-2020-en.pdf / Chapter 12: React and the server;
