@@ -9,28 +9,26 @@
 - ⏱ https://kentcdodds.com/blog/testing-implementation-details
 - ⏱ https://github.com/cypress-io/cypress-realworld-app
 
-Frontend
-- ✅ learning-react-modern-patterns-developing-2020-eng.pdf
+## Frontend
+- ✅ learning-react-modern-patterns-developing-2020-en.pdf
+- ⏱ learning-react-modern-patterns-developing-2020-en.pdf / Chapter 12: React and the server;
 
-Server-side rendering:
-- learning-react-modern-patterns-developing-2020-en.pdf / Chapter 12: React and the server;
-
-JavaScript and TypeScript
-- ✅ js-the-definitive-guide-7th-2020-eng.pdf
-- ✅ essential-typescript-4-2021-eng.pdf
-- ✅ mastering-typescript-enterprise-ready-4th-2021-eng.pdf
-- ✅ typescript-4-design-patterns-and-best-practic-2021-eng.pdf
+## JavaScript and TypeScript
+- ✅ js-the-definitive-guide-7th-2020-en.pdf
+- ✅ essential-typescript-4-2021-en.pdf
+- ✅ mastering-typescript-enterprise-ready-4th-2021-en.pdf
+- ✅ typescript-4-design-patterns-and-best-practic-2021-en.pdf
 - ⏱ The handbook and the docs here: www.typescriptlang.org;
 
-Refactoring:
-- ✅ refactoring-improving-the-design-of-existing-code-2019-eng.pdf
+## Refactoring:
+- ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf
 - Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html.
 - Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
 - YAGNI - https://martinfowler.com/bliki/Yagni.html.
 - Extreme programming - https://martinfowler.com/bliki/ExtremeProgramming.html.
 - https://martinfowler.com/articles/preparatory-refactoring-example.html
 
-Architecture:
+## Architecture:
 - Erick evans - Domain driven desing: https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false
 - https://github.com/rajasegar/awesome-micro-frontends
 - https://www.martinfowler.com/articles/micro-frontends.html
@@ -41,9 +39,9 @@ Architecture:
 - https://medium.com/@FlorianRappl
 - https://medium.com/@lucamezzalira
 
-Other
-- ✅ the-pragmatic-programmer-2020-eng.pdf
+## Other
+- ✅ the-pragmatic-programmer-2020-en.pdf
 
-Books to find:
+## Books to find:
 - Software architecture the hard parts
 - Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
