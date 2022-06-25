@@ -28,6 +28,9 @@
 - Extreme programming - https://martinfowler.com/bliki/ExtremeProgramming.html.
 - https://martinfowler.com/articles/preparatory-refactoring-example.html
 
+## Algorithms:
+- ⏱ grokking-algorithms-2016-en.pdf
+
 ## Architecture:
 - Erick evans - Domain driven desing: https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false
 - https://github.com/rajasegar/awesome-micro-frontends
