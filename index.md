@@ -1,6 +1,5 @@
 ## Testing
 - ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf, page 107 / 445: Building tests by Kent Beck.
-- ⏱ Bibliography from Martin Fowler: Refactoring book, page 427 / 445.
 - ⏱ https://martinfowler.com/testing/;
 - ⏱ Testing JavaScript applications by Lucas da Costa;
 - ⏱ https://redux.js.org/usage/writing-tests
@@ -22,29 +21,24 @@
 
 ## Refactoring:
 - ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf
-- Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html.
-- Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
-- YAGNI - https://martinfowler.com/bliki/Yagni.html.
-- https://martinfowler.com/bliki/ExtremeProgramming.html.
-- https://martinfowler.com/articles/preparatory-refactoring.html.
-- https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746
+- ⏱ Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html.
+- ⏱ Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
+- ⏱ https://martinfowler.com/bliki/Yagni.html.
+- ⏱ https://martinfowler.com/bliki/ExtremeProgramming.html.
+- ⏱ https://martinfowler.com/articles/preparatory-refactoring.html.
+- ⏱ [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
 
 ## Algorithms:
 - ⏱ grokking-algorithms-2016-en.pdf
 
 ## Architecture:
-- Erick evans - Domain driven desing: https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false
-- https://github.com/rajasegar/awesome-micro-frontends
-- https://www.martinfowler.com/articles/micro-frontends.html
-- mastering-typescript-enterprise-ready-4th-2021-eng / Chapter 16: Micro front-ends;
+- [Erick evans - Domain driven desing](https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false)
 - Hexagonal architecture
 - [Backend for frontend by Sam Newman](https://samnewman.io/patterns/architectural/bff/)
-- https://gustafnk.github.io/microservice-websites/
-- https://medium.com/@FlorianRappl
-- https://medium.com/@lucamezzalira
 
 ## Other
 - ✅ the-pragmatic-programmer-2020-en.pdf
+- ⏱ Bibliography from Martin Fowler: Refactoring book, page 427 / 445.
 
 ## Books to find:
 - Software architecture the hard parts
