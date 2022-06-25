@@ -1,4 +1,4 @@
-## Testing
+## 🧪 Testing
 - ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf, page 107 / 445: Building tests by Kent Beck.
 - ⏱ https://martinfowler.com/testing/;
 - ⏱ Testing JavaScript applications by Lucas da Costa;
@@ -19,7 +19,7 @@
 - ✅ typescript-4-design-patterns-and-best-practic-2021-en.pdf
 - ⏱ The handbook and the docs here: www.typescriptlang.org;
 
-## Refactoring:
+## Refactoring
 - ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf
 - ⏱ Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html.
 - ⏱ Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
@@ -28,10 +28,10 @@
 - ⏱ https://martinfowler.com/articles/preparatory-refactoring.html.
 - ⏱ [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
 
-## Algorithms:
+## Algorithms
 - ⏱ grokking-algorithms-2016-en.pdf
 
-## Architecture:
+## Architecture
 - [Erick evans - Domain driven desing](https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false)
 - Hexagonal architecture
 - [Backend for frontend by Sam Newman](https://samnewman.io/patterns/architectural/bff/)
