@@ -17,6 +17,7 @@ Learn only the docs and only if I ran into a lack of knowledge on complex type c
 - The handbook and the docs here: www.typescriptlang.org;
 
 Refactoring:
+- ✅ refactoring-improving-the-design-of-existing-code-2019-eng.pdf
 - Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html.
 - Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
 - YAGNI - https://martinfowler.com/bliki/Yagni.html.
@@ -34,9 +35,9 @@ Architecture:
 - https://medium.com/@FlorianRappl
 - https://medium.com/@lucamezzalira
 
+Other
+- ✅ the-pragmatic-programmer-2020-eng.pdf
+
 Books to find:
 - Software architecture the hard parts
 - Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
-
-Patterns
-- https://martinfowler.com/bliki/TellDontAsk.html
