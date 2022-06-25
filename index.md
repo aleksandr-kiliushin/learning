@@ -40,6 +40,6 @@
 - ✅ the-pragmatic-programmer-2020-en.pdf
 - ⏱ Bibliography from Martin Fowler: Refactoring book, page 427 / 445.
 
-## Books to find:
+## 🕵 Resources to find
 - Software architecture the hard parts
 - Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
