@@ -25,8 +25,9 @@
 - Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html.
 - Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
 - YAGNI - https://martinfowler.com/bliki/Yagni.html.
-- Extreme programming - https://martinfowler.com/bliki/ExtremeProgramming.html.
-- https://martinfowler.com/articles/preparatory-refactoring-example.html
+- https://martinfowler.com/bliki/ExtremeProgramming.html.
+- https://martinfowler.com/articles/preparatory-refactoring.html.
+- https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746
 
 ## Algorithms:
 - ⏱ grokking-algorithms-2016-en.pdf
