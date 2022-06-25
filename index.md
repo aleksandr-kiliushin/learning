@@ -7,7 +7,7 @@
 - ⏱ https://kentcdodds.com/blog/testing-implementation-details
 - ⏱ https://github.com/cypress-io/cypress-realworld-app
 
-## Frontend
+## 🍹 Frontend
 - ✅ learning-react-modern-patterns-developing-2020-en.pdf
 - ⏱ learning-react-modern-patterns-developing-2020-en.pdf / Chapter 12: React and the server;
 - ⏱ https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
@@ -28,7 +28,7 @@
 - ⏱ https://martinfowler.com/articles/preparatory-refactoring.html.
 - ⏱ [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
 
-## Algorithms
+## Algorithms and data structures
 - ⏱ grokking-algorithms-2016-en.pdf
 
 ## Architecture
