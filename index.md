@@ -1,4 +1,4 @@
-Testing:
+#Testing
 - ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf, page 107 / 445: Building tests by Kent Beck.
 - ⏱ Bibliography from Martin Fowler: Refactoring book, page 427 / 445.
 - ⏱ https://martinfowler.com/testing/;
@@ -9,12 +9,18 @@ Testing:
 - ⏱ https://kentcdodds.com/blog/testing-implementation-details
 - ⏱ https://github.com/cypress-io/cypress-realworld-app
 
+Frontend
+- ✅ learning-react-modern-patterns-developing-2020-eng.pdf
+
 Server-side rendering:
 - learning-react-modern-patterns-developing-2020-en.pdf / Chapter 12: React and the server;
 
-Typescript:
-Learn only the docs and only if I ran into a lack of knowledge on complex type constructions.
-- The handbook and the docs here: www.typescriptlang.org;
+JavaScript and TypeScript
+- ✅ js-the-definitive-guide-7th-2020-eng.pdf
+- ✅ essential-typescript-4-2021-eng.pdf
+- ✅ mastering-typescript-enterprise-ready-4th-2021-eng.pdf
+- ✅ typescript-4-design-patterns-and-best-practic-2021-eng.pdf
+- ⏱ The handbook and the docs here: www.typescriptlang.org;
 
 Refactoring:
 - ✅ refactoring-improving-the-design-of-existing-code-2019-eng.pdf
