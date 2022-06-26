@@ -20,7 +20,7 @@
 - ✅ typescript-4-design-patterns-and-best-practic-2021-en.pdf
 - 📦 The handbook and the docs here: www.typescriptlang.org;
 
-## Code quality and refactoring
+## 💧 Code quality and refactoring
 - ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf
 - 📦 Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html.
 - 📦 Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
