@@ -32,7 +32,7 @@
 ## Algorithms and data structures
 - ⏱ grokking-algorithms-2016-en.pdf
 
-## Architecture
+## 🌆 Architecture
 - 🎁 [Erick evans - Domain driven desing](https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false)
 - 🎁 Hexagonal architecture
 - 🎁 [Backend for frontend by Sam Newman](https://samnewman.io/patterns/architectural/bff/)
