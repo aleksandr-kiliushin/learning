@@ -29,7 +29,7 @@
 - 🎁 https://martinfowler.com/articles/preparatory-refactoring.html.
 - 🎁 [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
 
-## :wow-pika: Algorithms and data structures
+## Algorithms and data structures
 - ⏱ grokking-algorithms-2016-en.pdf
 
 ## Architecture
