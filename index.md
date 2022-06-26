@@ -37,6 +37,10 @@
 - 🎁 Hexagonal architecture
 - 🎁 [Backend for frontend by Sam Newman](https://samnewman.io/patterns/architectural/bff/)
 
+## 🎨 CSS
+- TODO: Fill in, CSS the definitive guide
+- TODO: Fill in, another css book
+
 ## Other
 - ✅ the-pragmatic-programmer-2020-en.pdf
 - 🎁 Bibliography from Martin Fowler: Refactoring book, page 427 / 445.
