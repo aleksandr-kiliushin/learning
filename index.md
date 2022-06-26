@@ -22,12 +22,14 @@
 
 ## 💧 Code quality and refactoring
 - ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf
+- ✅ the-pragmatic-programmer-2020-en.pdf
 - 📦 Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html.
 - 📦 Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
 - 📦 https://martinfowler.com/bliki/Yagni.html.
 - 📦 https://martinfowler.com/bliki/ExtremeProgramming.html.
 - 📦 https://martinfowler.com/articles/preparatory-refactoring.html.
 - 📦 [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
+- 🔍 Bibliography from Martin Fowler: Refactoring book, page 427 / 445.
 
 ## 🧩 Algorithms and data structures
 - ⏱ grokking-algorithms-2016-en.pdf
@@ -42,7 +44,3 @@
 ## 🎨 CSS
 - TODO: Fill in, CSS the definitive guide
 - TODO: Fill in, another css book
-
-## Other
-- ✅ the-pragmatic-programmer-2020-en.pdf
-- 📦 Bibliography from Martin Fowler: Refactoring book, page 427 / 445.
