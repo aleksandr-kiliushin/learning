@@ -31,7 +31,7 @@
 - 🔍 Bibliography from Martin Fowler: Refactoring book, page 427 / 445.
 
 ## 🧩 Algorithms and data structures
-- ⏱ grokking-algorithms-2016-en.pdf
+- 📦 grokking-algorithms-2016-en.pdf
 
 ## 🏙 Architecture
 - 📦 [Erick evans - Domain driven desing](https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false)
