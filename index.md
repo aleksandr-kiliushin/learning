@@ -1,9 +1,8 @@
 ## 🧪 Testing
-- ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf, page 107 / 445: Building tests by Kent Beck.
-- ⏱ mastering-react-test-driven-development-2019-eng
+- ⏱ https://redux.js.org/usage/writing-tests
+- ⏹ mastering-react-test-driven-development-2019-eng
+- 📦 testing-javascript-applications-2021-en.pdf
 - 📦 https://martinfowler.com/testing/;
-- 📦 Testing JavaScript applications by Lucas da Costa;
-- 📦 https://redux.js.org/usage/writing-tests
 - 📦 https://blog.isquaredsoftware.com/2021/06/the-evolution-of-redux-testing-approaches/
 - 📦 https://kentcdodds.com/blog/testing-implementation-details
 - 📦 https://github.com/cypress-io/cypress-realworld-app
