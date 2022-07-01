@@ -9,7 +9,6 @@
 
 ## 🍹 Frontend
 - ✅ learning-react-modern-patterns-developing-2020-en.pdf
-- 📦 learning-react-modern-patterns-developing-2020-en.pdf / Chapter 12: React and the server;
 - 📦 https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
 
 ## JavaScript and TypeScript
