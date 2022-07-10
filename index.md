@@ -1,9 +1,9 @@
-⏱ - In progress
-📦 - Waiting on the shelf
-🔍 - Needs to be found
-⏹ - Stopped for an indefinite period
-✅ - Done
-✅✅ - Done two times
+⏱ - In progress 
+📦 - Waiting on the shelf 
+🔍 - Needs to be found 
+⏹ - Stopped for an indefinite period 
+✅ - Done 
+✅✅ - Done two times 
 
 ## 🧪 Testing
 - ⏱ https://redux.js.org/usage/writing-tests
