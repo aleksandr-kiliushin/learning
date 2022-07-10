@@ -12,6 +12,7 @@
 - 📦 https://martinfowler.com/testing/;
 - 📦 https://kentcdodds.com/blog/why-i-never-use-shallow-rendering
 - 📦 https://github.com/cypress-io/cypress-realworld-app
+- 📦 https://testingjavascript.com/
 - ⏹ mastering-react-test-driven-development-2019-eng (335 / 485 done)
 - ✅✅ https://blog.isquaredsoftware.com/2021/06/the-evolution-of-redux-testing-approaches/
 
