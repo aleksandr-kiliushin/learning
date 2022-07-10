@@ -1,11 +1,18 @@
+⏱ - In progress
+📦 - Waiting on the shelf
+🔍 - Needs to be found
+⏹ - Stopped for an indefinite period
+✅ - Done
+✅✅ - Done two times
+
 ## 🧪 Testing
 - ⏱ https://redux.js.org/usage/writing-tests
 - 📦 testing-javascript-applications-2021-en.pdf
 - 📦 https://martinfowler.com/testing/;
-- 📦 https://blog.isquaredsoftware.com/2021/06/the-evolution-of-redux-testing-approaches/
-- 📦 https://kentcdodds.com/blog/testing-implementation-details
+- ⏱ https://kentcdodds.com/blog/testing-implementation-details
 - 📦 https://github.com/cypress-io/cypress-realworld-app
 - ⏹ mastering-react-test-driven-development-2019-eng (335 / 485 done)
+- ✅✅ https://blog.isquaredsoftware.com/2021/06/the-evolution-of-redux-testing-approaches/
 
 ## 🍹 Frontend
 - ✅ learning-react-modern-patterns-developing-2020-en.pdf
