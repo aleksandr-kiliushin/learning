@@ -6,14 +6,14 @@
 ✅✅ - Done two times  
 
 ## 🧪 Testing
-- 📦 testing-javascript-applications-2021-en.pdf
-- 📦 https://martinfowler.com/testing/;
+- ⏱ testing-javascript-applications-2021-en.pdf
 - 📦 https://kentcdodds.com/blog/why-i-never-use-shallow-rendering
 - 📦 https://github.com/cypress-io/cypress-realworld-app
 - 📦 https://testingjavascript.com/
 - ⏹ mastering-react-test-driven-development-2019-eng (335 / 485 done)
 - ✅ https://redux.js.org/usage/writing-tests
 - ✅ https://kentcdodds.com/blog/testing-implementation-details
+- ✅ https://martinfowler.com/testing/;
 - ✅✅ https://blog.isquaredsoftware.com/2021/06/the-evolution-of-redux-testing-approaches/
 
 ## 🍹 Frontend
