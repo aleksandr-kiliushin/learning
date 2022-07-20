@@ -6,7 +6,7 @@
 ✅✅ - Done two times  
 
 ## 🧪 Testing
-- ⏱ testing-javascript-applications-2021-en.pdf (55 / 514)
+- ⏱ testing-javascript-applications-2021-en.pdf (61 / 514)
 - 📦 https://kentcdodds.com/blog/why-i-never-use-shallow-rendering
 - 📦 https://github.com/cypress-io/cypress-realworld-app
 - 📦 https://testingjavascript.com/
@@ -25,18 +25,18 @@
 - ✅ essential-typescript-4-2021-en.pdf
 - ✅ mastering-typescript-enterprise-ready-4th-2021-en.pdf
 - ✅ typescript-4-design-patterns-and-best-practic-2021-en.pdf
-- 📦 The handbook and the docs here: www.typescriptlang.org;
+- 📦 The handbook and the docs here: www.typescriptlang.org
 
-## 💧 Code quality and refactoring
+## 💧 Refactoring and code quality
 - ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf
 - ✅ the-pragmatic-programmer-2020-en.pdf
-- 📦 Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html.
-- 📦 Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html.
-- 📦 https://martinfowler.com/bliki/Yagni.html.
-- 📦 https://martinfowler.com/bliki/ExtremeProgramming.html.
-- 📦 https://martinfowler.com/articles/preparatory-refactoring.html.
+- 📦 Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html
+- 📦 Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html
+- 📦 https://martinfowler.com/bliki/Yagni.html
+- 📦 https://martinfowler.com/bliki/ExtremeProgramming.html
+- 📦 https://martinfowler.com/articles/preparatory-refactoring.html
 - 📦 [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
-- 🔍 Bibliography from Martin Fowler: Refactoring book, page 427 / 445.
+- 🔍 Bibliography from Martin Fowler: Refactoring book, page 427 / 445
 
 ## 🧩 Algorithms and data structures
 - 📦 grokking-algorithms-2016-en.pdf
