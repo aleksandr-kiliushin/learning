@@ -51,3 +51,6 @@
 ## 🎨 CSS
 - TODO: Fill in, CSS the definitive guide
 - TODO: Fill in, another css book
+
+## 🌵 GIT
+- 📦 https://learngitbranching.js.org/?locale=en_US
