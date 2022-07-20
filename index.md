@@ -6,7 +6,7 @@
 ✅✅ - Done two times  
 
 ## 🧪 Testing
-- ⏱ testing-javascript-applications-2021-en.pdf (33 / 514)
+- ⏱ testing-javascript-applications-2021-en.pdf (43 / 514)
 - 📦 https://kentcdodds.com/blog/why-i-never-use-shallow-rendering
 - 📦 https://github.com/cypress-io/cypress-realworld-app
 - 📦 https://testingjavascript.com/
