@@ -44,6 +44,7 @@
 ## 🏙 Architecture
 - 📦 [Erick evans - Domain driven desing](https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false)
 - 📦 [Backend for frontend by Sam Newman](https://samnewman.io/patterns/architectural/bff/)
+- 📦 https://feature-sliced.design/en/
 - 🔍 Hexagonal architecture
 - 🔍 Software architecture the hard parts
 - 🔍 Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
