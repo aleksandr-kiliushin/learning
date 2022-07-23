@@ -19,6 +19,7 @@
 ## 🍹 Frontend
 - ✅ learning-react-modern-patterns-developing-2020-en.pdf
 - 📦 https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
+- Frontend first: Does route-based code splitting make UX worse?
 
 ## JavaScript and TypeScript
 - ✅ js-the-definitive-guide-7th-2020-en.pdf
