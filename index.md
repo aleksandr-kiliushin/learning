@@ -17,9 +17,9 @@
 - ✅✅ https://blog.isquaredsoftware.com/2021/06/the-evolution-of-redux-testing-approaches/
 
 ## 🍹 Frontend
-- ✅ learning-react-modern-patterns-developing-2020-en.pdf
+- ⏱ Frontend first: Does route-based code splitting make UX worse?
 - 📦 https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
-- Frontend first: Does route-based code splitting make UX worse?
+- ✅ learning-react-modern-patterns-developing-2020-en.pdf
 
 ## JavaScript and TypeScript
 - ✅ js-the-definitive-guide-7th-2020-en.pdf
