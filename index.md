@@ -61,4 +61,5 @@
 - 📦 https://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/
 
 ## Infrastructure
+- 📦 https://medium.com/storyblocks-engineering/web-architecture-101-a3224e126947
 - 📦 https://levelup.gitconnected.com/basics-of-ci-cd-a98340c60b04
