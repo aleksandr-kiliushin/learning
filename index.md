@@ -59,3 +59,6 @@
 
 ## From a business prospective
 - 📦 https://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/
+
+## Infrastructure
+- 📦 https://levelup.gitconnected.com/basics-of-ci-cd-a98340c60b04
