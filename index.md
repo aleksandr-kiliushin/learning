@@ -34,7 +34,6 @@
 - 📦 Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html
 - 📦 Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html
 - 📦 https://martinfowler.com/bliki/Yagni.html
-- 📦 https://martinfowler.com/bliki/ExtremeProgramming.html
 - 📦 https://martinfowler.com/articles/preparatory-refactoring.html
 - 📦 [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
 - 🔍 Bibliography from Martin Fowler: Refactoring book, page 427 / 445
