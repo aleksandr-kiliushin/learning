@@ -19,6 +19,7 @@
 ## 🍹 Frontend
 - ⏱ Frontend first: Does route-based code splitting make UX worse?
 - 📦 https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
+- [Архитектура React - приложения – Егор Блинов](https://www.youtube.com/watch?v=Zy-Oj6qs8vo&ab_channel=%D0%A4%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4)
 - ✅ learning-react-modern-patterns-developing-2020-en.pdf
 
 ## JavaScript and TypeScript
