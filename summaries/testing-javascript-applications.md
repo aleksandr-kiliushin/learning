@@ -14,6 +14,8 @@
 
 #### 4.1 Structuring a testing environment
 
+Software should be designed with testing in mind.
+
 ##### 4.1.1 End-to-end testing
 
 ##### 4.1.2 Integration testing
