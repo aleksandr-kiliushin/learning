@@ -134,6 +134,9 @@ If you provide direct access to the app storage (database / in-memory storage) y
     linkStyle 3,4 stroke:red;
 ```
 
+- Access to the router allows to exercise the app.
+- Access to the DB allows to set up an initial state and test whether the new state is valid.
+
 ##### 4.1.2 Integration testing
 
 ##### 4.1.3 Unit testing
