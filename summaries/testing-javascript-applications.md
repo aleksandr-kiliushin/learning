@@ -50,8 +50,7 @@ Software should be designed with testing in mind.
 
 Picture: What tests can access if an application is not designed with testing in mind.
 
-In this situation the best you can do is send an HTTP request and check it response.
-
+In this situation the best you can do is send an HTTP request and check it response.  
 Testable software is broken down in smaller accessible pieces, which you can test separately.
 
 ##### 4.1.1 End-to-end testing
