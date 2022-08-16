@@ -16,6 +16,41 @@
 
 Software should be designed with testing in mind.
 
+```mermaid
+  flowchart TB
+    classDef red fill:#ff6666;
+    classDef orange fill:orange;
+    linkStyle default color:green;
+
+    db[(Database)]
+    router(Router)
+    e2e-tests(e2e tests)
+    logger(Logger)
+    InventoryController(InventoryController)
+    CartController(CartController)
+    file-system(File system)
+
+    subgraph Node.js API
+      router-->InventoryController
+      InventoryController:::red-->CartController
+      db:::red<-->InventoryController
+      db<-->CartController
+      CartController:::red-->logger:::red
+    end
+
+    subgraph Tests
+      e2e-tests:::orange
+    end
+
+    logger-->file-system:::red
+    e2e-tests--HTTP request-->router
+    logger--HTTP response-->e2e-tests
+```
+
+What tests can access if an application is not designed with testing in mind.
+
+- Testable software is broken down in smaller accessible pieces, which you can test separately.
+
 ##### 4.1.1 End-to-end testing
 
 ##### 4.1.2 Integration testing
