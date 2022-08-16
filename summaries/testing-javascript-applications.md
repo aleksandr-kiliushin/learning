@@ -18,27 +18,27 @@ Software should be designed with testing in mind.
 
 ```mermaid
   flowchart TB
-    db[(Database)]
+    db[(Database)]:::red
     router(Router)
-    e2e-tests(e2e tests)
-    logger(Logger)
-    InventoryController(InventoryController)
-    CartController(CartController)
-    file-system(File system)
+    e2e-tests(e2e tests):::orange
+    logger(Logger):::red
+    InventoryController(InventoryController):::red
+    CartController(CartController):::red
+    file-system(File system):::red
 
     subgraph Node.js API
       router-->InventoryController
-      InventoryController:::red-->CartController
-      db:::red<-->InventoryController
+      InventoryController-->CartController
+      db<-->InventoryController
       db<-->CartController
-      CartController:::red-->logger:::red
+      CartController-->logger
     end
 
     subgraph Tests
-      e2e-tests:::orange
+      e2e-tests
     end
 
-    logger-->file-system:::red
+    logger-->file-system
     e2e-tests--HTTP request-->router
     logger--HTTP response-->e2e-tests
 
@@ -66,7 +66,7 @@ You can't set up elaborate scenarios.
     router(Router)
     e2e-tests(e2e tests):::orange
 
-    subgraph fa-brands:fa-node-js Node.js API
+    subgraph Node.js API
       router
     end
 
