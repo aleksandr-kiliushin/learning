@@ -27,25 +27,30 @@ Software should be designed with testing in mind.
     file-system(File system):::red
 
     subgraph Node.js API
-      router-->InventoryController
-      InventoryController-->CartController
-      db<-->InventoryController
-      db<-->CartController
-      CartController-->logger
+      router
+      CartController
+      InventoryController
+      db
+      logger
     end
 
     subgraph Tests
       e2e-tests
     end
 
-    logger-->file-system
     e2e-tests--HTTP request-->router
+    router-->InventoryController
+    InventoryController-->CartController
+    db<-->InventoryController
+    db<-->CartController
+    CartController-->logger
+    logger-->file-system
     logger--HTTP response-->e2e-tests
 
     classDef red fill:#ff9999;
     classDef orange fill:orange;
-    linkStyle 0,1,2,3,4,5 stroke:red  ;
-    linkStyle 6,7         stroke:green;
+    linkStyle 1,2,3,4,5,6 stroke:red  ;
+    linkStyle 0,7         stroke:green;
 ```
 
 Picture: What tests can access if an application is not designed with testing in mind.
