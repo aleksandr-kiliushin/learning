@@ -1,6 +1,6 @@
 # Summary: Testing JavaScript applications by Lucas da Costa
 
-## Part 1: Writing tests
+## Part 1: Testing JavaScriptApplications
 
 ### Section 1. An introduction to automated testing
 
