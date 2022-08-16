@@ -55,6 +55,12 @@ Testable software is broken down in smaller accessible pieces, which you can tes
 
 ##### 4.1.1 End-to-end testing
 
+Imagine an application that does not expose anything but its routes.  
+You can interact with it only by sending HTTP requests.  
+In other words, you can write only end-to-end tests.  
+Such an app is an impenetrable black box of code.  
+You can't set up elaborate scenarios.
+
 ##### 4.1.2 Integration testing
 
 ##### 4.1.3 Unit testing
