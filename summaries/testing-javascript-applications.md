@@ -50,7 +50,7 @@ Software should be designed with testing in mind.
     classDef red fill:#ff9999;
     classDef orange fill:orange;
     linkStyle 1,2,3,4,5,6 stroke:red  ;
-    linkStyle 0,7         stroke:green;
+    linkStyle 0,7         stroke:green,color:green;
 ```
 
 Picture: What tests can access if an application is not designed with testing in mind.
@@ -83,7 +83,54 @@ You can't set up elaborate scenarios.
     router--HTTP response-->e2e-tests
 
     classDef orange fill:orange;
-    linkStyle 0,1 stroke:green;
+    linkStyle 0,1 stroke:green,color:green;
+```
+
+Lets add a test:
+
+```js
+describe('add items to a cart', () => {
+  test('adding available items', async () => {
+    const response = await fetch(`http://localhost:3000/carts/test_user/items/cheesecake`, {
+      method: 'POST',
+    })
+    expect(response.status).toEqual(200)
+  })
+})
+```
+
+For this test to pass we should make some preparations:
+
+- Before all tests launch the app.
+- Before each test set storage (database / in-memory storage) to initial state.
+- After all tests stop the app.
+
+If you have direct access to the app storage (database / in-memory storage) you are able to make corresponding assertions:
+
+```mermaid
+  flowchart TB
+    e2e-tests(e2e tests):::orange
+    router(Router):::green
+    database[(Database)]:::green
+
+    subgraph Node.js API
+      router
+      database
+    end
+
+    subgraph Tests
+      e2e-tests
+    end
+
+    e2e-tests--HTTP request-->router
+    router--HTTP response-->e2e-tests
+    e2e-tests--SQL query-->database
+    router<-->database
+    router<-->database
+
+    classDef green fill:#79d279;
+    classDef orange fill:orange;
+    linkStyle 0,1,2 stroke:green,color:green,background:none;
 ```
 
 ##### 4.1.2 Integration testing
