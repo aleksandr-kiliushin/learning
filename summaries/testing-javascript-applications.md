@@ -102,10 +102,10 @@ describe('add items to a cart', () => {
 For this test to pass we should make some preparations:
 
 - Before all tests launch the app.
-- Before each test set storage (database / in-memory storage) to initial state.
+- Before each test set DB to initial state.
 - After all tests stop the app.
 
-If you provide direct access to the app storage (database / in-memory storage) you are able to make assertions against it:
+If you provide direct access to the app DB you are able to make assertions against it:
 
 ```mermaid
   flowchart TB
