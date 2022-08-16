@@ -49,7 +49,7 @@ Software should be designed with testing in mind.
 
     classDef red fill:#ff9999;
     classDef orange fill:orange;
-    linkStyle 1,2,3,4,5,6 stroke:red  ;
+    linkStyle 1,2,3,4,5,6 stroke:red;
     linkStyle 0,7         stroke:green,color:green;
 ```
 
@@ -105,7 +105,7 @@ For this test to pass we should make some preparations:
 - Before each test set storage (database / in-memory storage) to initial state.
 - After all tests stop the app.
 
-If you have direct access to the app storage (database / in-memory storage) you are able to make corresponding assertions:
+If you provide direct access to the app storage (database / in-memory storage) you are able to make assertions against it:
 
 ```mermaid
   flowchart TB
@@ -130,7 +130,8 @@ If you have direct access to the app storage (database / in-memory storage) you 
 
     classDef green fill:#79d279;
     classDef orange fill:orange;
-    linkStyle 0,1,2 stroke:green,color:green,background:none;
+    linkStyle 0,1,2 stroke:green,color:green;
+    linkStyle 3,4 stroke:red;
 ```
 
 ##### 4.1.2 Integration testing
