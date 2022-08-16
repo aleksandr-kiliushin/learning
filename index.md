@@ -37,6 +37,8 @@
 - 📦 https://martinfowler.com/bliki/Yagni.html
 - 📦 https://martinfowler.com/articles/preparatory-refactoring.html
 - 📦 [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
+- [Управление техническим долгом
+](https://tlroadmap.io/roles/technical-lead/tech-quality/technical-debt.html)
 - 🔍 Bibliography from Martin Fowler: Refactoring book, page 427 / 445
 
 ## 🧩 Algorithms and data structures
@@ -46,6 +48,9 @@
 - 📦 [Erick evans - Domain driven desing](https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false)
 - 📦 [Backend for frontend by Sam Newman](https://samnewman.io/patterns/architectural/bff/)
 - 📦 https://feature-sliced.design/en/
+- [Школа программистов. Архитектура фронтенда: основы архитектуры масштабируемых JavaScript приложений.
+](https://www.youtube.com/watch?v=fXVVpooY0ek&ab_channel=hh_ru)
+- [Школа программистов: Сергей Подунов, Архитектура, REST, HTTP](https://www.youtube.com/watch?v=Lf1s9DE04Jw&ab_channel=hh_ru)
 - 🔍 Hexagonal architecture
 - 🔍 Software architecture the hard parts
 - 🔍 Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
@@ -56,6 +61,7 @@
 
 ## 🌵 GIT
 - 📦 https://learngitbranching.js.org/?locale=en_US
+- 📦 https://githowto.com/
 
 ## From a business prospective
 - 📦 https://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/
