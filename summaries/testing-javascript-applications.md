@@ -42,7 +42,7 @@ Software should be designed with testing in mind.
     e2e-tests--HTTP request-->router
     logger--HTTP response-->e2e-tests
 
-    classDef red fill:#ff6666;
+    classDef red fill:#ff9999;
     classDef orange fill:orange;
     linkStyle 0,1,2,3,4,5 stroke:red  ;
     linkStyle 6,7         stroke:green;
@@ -60,6 +60,26 @@ You can interact with it only by sending HTTP requests.
 In other words, you can write only end-to-end tests.  
 Such an app is an impenetrable black box of code.  
 You can't set up elaborate scenarios.
+
+```mermaid
+  flowchart TB
+    router(Router)
+    e2e-tests(e2e tests):::orange
+
+    subgraph fa-brands:fa-node-js Node.js API
+      router
+    end
+
+    subgraph Tests
+      e2e-tests
+    end
+
+    e2e-tests--HTTP request-->router
+    router--HTTP response-->e2e-tests
+
+    classDef orange fill:orange;
+    linkStyle 0,1 stroke:green;
+```
 
 ##### 4.1.2 Integration testing
 
