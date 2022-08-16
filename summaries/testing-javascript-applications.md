@@ -18,10 +18,6 @@ Software should be designed with testing in mind.
 
 ```mermaid
   flowchart TB
-    classDef red fill:#ff6666;
-    classDef orange fill:orange;
-    linkStyle default color:green;
-
     db[(Database)]
     router(Router)
     e2e-tests(e2e tests)
@@ -45,11 +41,18 @@ Software should be designed with testing in mind.
     logger-->file-system:::red
     e2e-tests--HTTP request-->router
     logger--HTTP response-->e2e-tests
+
+    classDef red fill:#ff6666;
+    classDef orange fill:orange;
+    linkStyle 0,1,2,3,4,5 stroke:red  ;
+    linkStyle 6,7         stroke:green;
 ```
 
-What tests can access if an application is not designed with testing in mind.
+Picture: What tests can access if an application is not designed with testing in mind.
 
-- Testable software is broken down in smaller accessible pieces, which you can test separately.
+In this situation the best you can do is send an HTTP request and check it response.
+
+Testable software is broken down in smaller accessible pieces, which you can test separately.
 
 ##### 4.1.1 End-to-end testing
 
