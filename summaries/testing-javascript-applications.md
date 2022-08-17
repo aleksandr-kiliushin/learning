@@ -22,14 +22,14 @@ Software should be designed with testing in mind.
     router(Router)
     e2e-tests:::orange
     logger(Logger):::red
-    InventoryController(InventoryController):::red
-    CartController(CartController):::red
+    inventory-controller(InventoryController):::red
+    cart-controller(CartController):::red
     file-system(File system):::red
 
     subgraph Node.js API
       router
-      CartController
-      InventoryController
+      cart-controller
+      inventory-controller
       db
       logger
     end
@@ -44,11 +44,11 @@ Software should be designed with testing in mind.
     e2e-tests(Can add items to the cart)
 
     e2e-tests--HTTP request-->router
-    router-->InventoryController
-    InventoryController-->CartController
-    db<-->InventoryController
-    db<-->CartController
-    CartController-->logger
+    router-->inventory-controller
+    inventory-controller-->cart-controller
+    db<-->inventory-controller
+    db<-->cart-controller
+    cart-controller-->logger
     logger-->file-system
     logger--HTTP response-->e2e-tests
 
@@ -59,7 +59,7 @@ Software should be designed with testing in mind.
     linkStyle 0,7         stroke:green,color:green;
 ```
 
-Picture: What tests can access if an application is not designed with testing in mind.
+Figure: What tests can access if an application is not designed with testing in mind.
 
 In this situation the best you can do is send an HTTP request and check it response.  
 Testable software is broken down in smaller accessible pieces, which you can test separately.
@@ -193,6 +193,53 @@ describe('addItemToCart', () => {
 A test like this does not depend on the route to which to send requests. The router even might not exist at the moment of writing such a test.  
 It also doen't rely on authentication, headers, URL parameters or a specific kind of body.  
 It provides more granular feedback for every scenario.
+
+```mermaid
+  flowchart TB
+    e2e-tests(Test: Can add items to the cart):::orange
+    router(Router):::green
+    inventory-controller(InventoryController):::green
+    cart-controller(CartController):::green
+    database[(Database)]:::green
+    inventory-controller-integration-tests(Test: Removing items from the inventory):::blue
+    cart-controller-integration-tests(Test: Adding unavailable items to the cart):::blue
+
+    subgraph Node.js API
+      router
+      inventory-controller
+      cart-controller
+      database
+    end
+
+    e2e-tests
+
+    subgraph Legend
+      direction LR
+      legend-e2e-tests(e2e tests):::orange
+      legend-integration-tests(Integration tests):::blue
+      legend-can-be-accessed-by-tests(Can be accessed by tests):::green
+      legend-cant-be-accessed-by-tests(Can not be accessed by tests):::red
+    end
+
+    e2e-tests--HTTP request-->router
+    router--HTTP response-->e2e-tests
+    router-->inventory-controller
+    inventory-controller-->cart-controller
+    inventory-controller<-->database
+    cart-controller<-->database
+    inventory-controller-integration-tests-->inventory-controller
+    cart-controller-integration-tests-->cart-controller
+    inventory-controller-integration-tests---cart-controller-integration-tests
+
+    classDef green fill:#79d279;
+    classDef orange fill:orange;
+    classDef red fill:#ff9999;
+    classDef blue fill:#99b3ff;
+    linkStyle 0,1,6,7 stroke:green,color:green;
+    linkStyle 2,3,4,5 stroke:red;
+```
+
+Figure: Which parts of the app e2e and integration tests have access to.
 
 ##### 4.1.3 Unit testing
 
