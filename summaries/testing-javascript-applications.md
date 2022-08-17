@@ -590,9 +590,66 @@ But if we don't mock DB, there are also cons:
 
 ##### 4.3.2 Integrations with outer APIs
 
-#### Summary
-
 ### Section 5. Advanced backend testing techniques
+
+Our goals, in order of priority:
+
+- Make test **reliable**.
+- Make test **easy to maintain**.
+- Make test **fast**.
+
+Also, if you can't trust your tests, it doesn't matter how quickly they run or how easy it is to update them.
+
+#### 5.1 Eliminating nondeterminism
+
+**Deterministic tests** are the ones that, given the same input, always produce the same results.
+
+If our tests are *non*deterministic, it will be hard for us to say whether there is a problem in your tests or in your app.  
+Nondeterministic tests are useless.
+
+Why it is important to have our test deterministic:
+
+- They fall only when the app doesn't work.
+- They increase our confidence.
+- They make our progress faster, because they enable us to change bigger chunks of code at a time.
+- Nondetermenistic tests are useless.
+
+For example, a test gets nondeterministic, when it depends directly with third-party API.  
+To provide consistent results, tests should not depend on internet connection or someone else's service being available.  
+We must have full control over such dependencies in tests.
+
+Common sources of nondeterminism:
+
+- each time a test runs, it is given a different initial app state (DB, FS, etc);
+- using third-party API;
+- depending on internet connection;
+- running tests in parallel;
+- dealing with shared resources;
+- running tests in different environments;
+- random values generating;
+- dealing with time-dependant code;
+- tests interfere in each other's state;
+
+Some situations:
+
+- Your test depends on an IoT device being available?  
+  Use a tests double to simulate a response those device would yield.
+- Your unit-under-test uses a random number generator like `Math.random`?  
+  Mock it so that you eliminate randomness.
+
+  As a rule of thumb, we should **mock everything we can't control**.
+
+##### 5.1.1 Parallelism and shared resources
+
+##### 5.1.2 Dealing with time
+
+#### 5.2 Reducing costs while preserving quality
+
+##### 5.2.1 Reducing overlap between tests
+
+##### 5.2.2 Creating transitive guarantees
+
+##### 5.2.3 Turning assertions into preconditions
 
 ### Section 6. Testing frontend applications
 
