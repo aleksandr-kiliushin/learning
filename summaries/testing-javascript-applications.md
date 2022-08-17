@@ -477,6 +477,45 @@ describe('get cart items', () => {
 
 ##### 4.2.1 Testing middleware
 
+```mermaid
+  flowchart TB
+    e2e-tests(Test: Can add items to the cart):::orange
+    router(Router):::green
+    password-crypting(Password crypting):::green
+    password-crypting-unit-tests(Test: Password crypting):::pink
+    are-creadentials-valid{areCredentialsValid}:::green
+
+    subgraph Node.js API
+      router
+      subgraph Middleware
+        password-crypting
+        are-creadentials-valid
+      end
+    end
+
+    e2e-tests
+    password-crypting-unit-tests
+
+    subgraph Legend
+      direction LR
+      legend-e2e-tests(e2e tests):::orange
+      legend-unit-tests(Unit tests):::pink
+      legend-can-be-accessed-by-tests(Can be accessed by tests):::green
+    end
+
+    e2e-tests--HTTP request-->Middleware
+    password-crypting-->are-creadentials-valid
+    are-creadentials-valid-->router
+    password-crypting-unit-tests-->password-crypting
+    router--HTTP response-->e2e-tests
+
+    classDef green fill:#79d279;
+    classDef orange fill:orange;
+    classDef blue fill:#99b3ff;
+    classDef pink fill:#e699ff;
+    classDef herb fill:#e6ff99;
+```
+
 #### 4.3 Dealing with external dependencies
 
 ##### 4.3.1 Integrations with databases
