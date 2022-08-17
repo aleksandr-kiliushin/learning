@@ -17,10 +17,10 @@
 Software should be designed with testing in mind.
 
 ```mermaid
-  flowchart TB
+  flowchart BT
     db[(Database)]:::red
     router(Router)
-    e2e-tests(e2e tests):::orange
+    e2e-tests:::orange
     logger(Logger):::red
     InventoryController(InventoryController):::red
     CartController(CartController):::red
@@ -34,9 +34,14 @@ Software should be designed with testing in mind.
       logger
     end
 
-    subgraph Tests
-      e2e-tests
+    subgraph Legend
+      direction LR
+      legend-e2e-tests(e2e tests):::orange
+      legend-can-be-accessed-by-tests(Can be accessed by tests):::green
+      legend-cant-be-accessed-by-tests(Can not be accessed by tests):::red
     end
+
+    e2e-tests(Can add items to the cart)
 
     e2e-tests--HTTP request-->router
     router-->InventoryController
@@ -49,6 +54,7 @@ Software should be designed with testing in mind.
 
     classDef red fill:#ff9999;
     classDef orange fill:orange;
+    classDef green fill:#79d279;
     linkStyle 1,2,3,4,5,6 stroke:red;
     linkStyle 0,7         stroke:green,color:green;
 ```
@@ -67,22 +73,27 @@ Such an app is an impenetrable black box of code.
 You can't set up elaborate scenarios.
 
 ```mermaid
-  flowchart TB
+  flowchart BT
     router(Router)
-    e2e-tests(e2e tests):::orange
+    e2e-tests(Test):::orange
 
     subgraph Node.js API
       router
     end
 
-    subgraph Tests
-      e2e-tests
+    e2e-tests
+
+    subgraph Legend
+      direction LR
+      legend-e2e-tests(e2e tests):::orange
+      legend-can-be-accessed-by-tests(Can be accessed by tests):::green
     end
 
     e2e-tests--HTTP request-->router
     router--HTTP response-->e2e-tests
 
     classDef orange fill:orange;
+    classDef green fill:#79d279;
     linkStyle 0,1 stroke:green,color:green;
 ```
 
@@ -118,8 +129,13 @@ If you provide direct access to the app DB you are able to make assertions again
       database
     end
 
-    subgraph Tests
-      e2e-tests
+    e2e-tests
+
+    subgraph Legend
+      direction LR
+      legend-e2e-tests(e2e tests):::orange
+      legend-can-be-accessed-by-tests(Can be accessed by tests):::green
+      legend-cant-be-accessed-by-tests(Can not be accessed by tests):::red
     end
 
     e2e-tests--HTTP request-->router
@@ -130,6 +146,7 @@ If you provide direct access to the app DB you are able to make assertions again
 
     classDef green fill:#79d279;
     classDef orange fill:orange;
+    classDef red fill:#ff9999;
     linkStyle 0,1,2 stroke:green,color:green;
     linkStyle 3,4 stroke:red;
 ```
@@ -138,6 +155,44 @@ If you provide direct access to the app DB you are able to make assertions again
 - Access to the DB allows to set up an initial state and test whether the new state is valid.
 
 ##### 4.1.2 Integration testing
+
+We need to make integration testing possible.  
+Code winthin routes should be moved to separate modules.  
+These modules will expose their functions.  
+So we can write tests for these functions individually.
+
+Now can test if these modules interact correctly in more elaborate scenarios.
+
+```javascript
+// routes.js
+import { addItemToCart } from './addItemToCart' // Import the extracted function.
+
+router.post('/carts/:username/items/:item', (ctx) => {
+  const { username, item } = ctx.params
+  const newItems = addItemToCart({ username, item })
+  ctx.body = newItems
+})
+
+// addItemToCart.test.js
+describe('addItemToCart', () => {
+  test('adding unavailable items to cart', () => {
+    carts.set('test_user', [])
+    inventory.set('cheesecake', 0)
+    try {
+      addItemToCart({ username: 'test_user', item: 'cheesecake' })
+    } catch (error) {
+      const expectedError = new Error(`cheesecake is unavailable`)
+      expectedError.code = 400
+      expect(error).toEqual(expectedError)
+    }
+    expect(carts.get('test_user')).toEqual([])
+  })
+})
+```
+
+A test like this does not depend on the route to which to send requests. The router even might not exist at the moment of writing such a test.  
+It also doen't rely on authentication, headers, URL parameters or a specific kind of body.  
+It provides more granular feedback for every scenario.
 
 ##### 4.1.3 Unit testing
 
