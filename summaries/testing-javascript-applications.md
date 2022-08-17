@@ -343,10 +343,112 @@ Figure: Integration tests will have access to all the dependencies with which yo
 We should set up testing environment for integration tests to be able:
 
 - cover interactions between multiple functions;
-- check writing to DB and filesystem;
+- check writing to DB and FS;
 - use test doubles as few as possible;
 
 ##### 4.1.3 Unit testing
+
+Unit tests are ideal for function that don't depend on external deps like a DB or the FS.  
+Unit tests don't require complex environment. It's enough that their target are extracted to a separate function and exported.
+
+A simple example of such function:
+
+```javascript
+const areItemsAmountsWithinTheLimit = (cart) => {
+  return Object.values(cart).every((aCartItem) => aCartItem.quantity <= 3)
+}
+module.exports = { compliesToItemLimit }
+```
+
+The function is isolated.
+
+A test for the function:
+
+```javascript
+const { areItemsAmountsWithinTheLimit } = require('./areItemsAmountsWithinTheLimit')
+describe('areItemsAmountsWithinTheLimit', () => {
+  test('returns true for carts with no more than 3 items of a kind', () => {
+    const cart = [{ cheesecake: 1, 'apple-pie': 3 }]
+    expect(areItemsAmountsWithinTheLimit(cart)).toBe(true)
+  })
+  test('returns false for carts with more than 3 items of a kind', () => {
+    const cart = [{ cheesecake: 5, 'apple-pie': 2 }]
+    expect(areItemsAmountsWithinTheLimit(cart)).toBe(false)
+  })
+})
+```
+
+We can test it:
+
+- as soon as the function written;
+- without having to set up complex scenarios;
+- without having other parts of the module written and working;
+- without having to think about the entire system: HTTP requests, DB, etc;
+
+```mermaid
+  flowchart LR
+    e2e-tests(Test: Can add items to the cart):::orange
+    router(Router):::green
+    inventory-controller(InventoryController):::green
+    cart-controller(CartController):::green
+    database[(Database)]:::green
+    logger(Logger):::green
+    filesystem(Filesystem):::green
+    inventory-controller-integration-tests(Test: Removing items from the inventory):::blue
+    cart-controller-integration-tests(Test: Adding unavailable items to the cart):::blue
+    logger-integration-tests(Test: Writes to the correct file):::blue
+    are-items-amounts-within-the-limit(areItemsAmountsWithinTheLimit):::green
+    are-items-amounts-within-the-limit-unit-tests(Test: areItemsAmountsWithinTheLimit):::pink
+
+    subgraph Node.js API
+      router
+      inventory-controller
+      cart-controller
+      database
+      logger
+      filesystem
+      are-items-amounts-within-the-limit
+    end
+
+    e2e-tests
+
+    inventory-controller-integration-tests
+    cart-controller-integration-tests
+    logger-integration-tests
+
+    subgraph Legend
+      direction LR
+      legend-e2e-tests(e2e tests):::orange
+      legend-integration-tests(Integration tests):::blue
+      legend-unit-tests(Unit tests):::pink
+      legend-can-be-accessed-by-tests(Can be accessed by tests):::green
+      legend-cant-be-accessed-by-tests(Can not be accessed by tests):::red
+    end
+
+    e2e-tests--HTTP request-->router
+    router--HTTP response-->e2e-tests
+    e2e-tests--SQL query-->database
+    router-->inventory-controller
+    inventory-controller-->cart-controller
+    inventory-controller<-->database
+    cart-controller<-->database
+    inventory-controller-->logger
+    logger-->filesystem
+    inventory-controller-integration-tests-->inventory-controller
+    cart-controller-integration-tests-->cart-controller
+    inventory-controller-integration-tests---cart-controller-integration-tests
+    logger-integration-tests-->filesystem
+    logger-integration-tests-->logger
+    cart-controller<-->are-items-amounts-within-the-limit
+    are-items-amounts-within-the-limit-unit-tests-->are-items-amounts-within-the-limit
+
+    classDef green fill:#79d279;
+    classDef orange fill:orange;
+    classDef red fill:#ff9999;
+    classDef blue fill:#99b3ff;
+    classDef pink fill:#e699ff;
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10,12,13,14,15 stroke:green,color:green;
+```
 
 #### 4.2 Testing HTTP endpoints
 
