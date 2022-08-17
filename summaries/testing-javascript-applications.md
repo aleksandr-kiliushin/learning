@@ -533,6 +533,61 @@ But if we don't mock DB, there are also cons:
 - maintenance overhead caused supporting initial DB state;
 - changes in DB schema require updating tests;
 
+```mermaid
+  flowchart TB
+    docker-start-db-container[docker start db-container]:::orange
+    download-db-dump-from-remote-server.sh[Inside DB container: bash ./download-db-dump-from-remote-server.sh]
+    create-dev-db-template.sh[Inside DB container: bash ./create-dev-db-template.sh]
+    create-testing-db-template.sh[Inside DB container: base ./create-testing-db-template.sh]
+    run-migrations[Run migrations]
+
+    npm-run-dev[npm run dev]
+
+    npm-run-test[npm run test]
+
+    subgraph beforeEach
+      restore-db-from-testing-template.sh[Inside DB container: restore-db-from-testing-template.sh]
+    end
+
+    subgraph afterEach
+      reset-auth-header[globalThis.authHeader = '']
+    end
+
+    run-a-test
+
+    subgraph afterAll
+      restore-db-from-dev-template.sh[Inside DB container: restore-db-from-dev-template.sh]:::pink
+    end
+
+
+
+        docker-start-db-container
+    --> download-db-dump-from-remote-server.sh
+    --> create-dev-db-template.sh
+    --> create-testing-db-template.sh
+    --> run-migrations
+    --> npm-run-dev
+    --> npm-run-test
+
+    --> beforeEach
+    --> run-a-test
+    --> afterEach
+    --> beforeEach
+    --> run-a-test
+    --> afterEach
+    --> beforeEach
+    --> run-a-test
+    --> afterEach
+    --> beforeEach
+    --> run-a-test
+
+    --> afterAll
+
+
+    classDef orange fill:orange;
+    classDef pink fill:#e699ff;
+```
+
 ##### 4.3.2 Integrations with outer APIs
 
 #### Summary
