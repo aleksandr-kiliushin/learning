@@ -521,6 +521,18 @@ describe('get cart items', () => {
 
 ##### 4.3.1 Integrations with databases
 
+It is possible to mock interactions with a DB,  
+but this approach has cons:
+
+- mocking DB separates tests from production environment;
+- mocking DB is tricky;
+
+But if we don't mock DB, there are also cons:
+
+- having to config and set up testing DB instance;
+- maintenance overhead caused supporting initial DB state;
+- changes in DB schema require updating tests;
+
 ##### 4.3.2 Integrations with outer APIs
 
 #### Summary
