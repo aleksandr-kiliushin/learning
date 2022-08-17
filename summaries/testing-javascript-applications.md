@@ -452,6 +452,29 @@ We can test it:
 
 #### 4.2 Testing HTTP endpoints
 
+When testing HTTP endpoints, we aren't directly interacting with the unit under test.  
+Instead, we interact with the entire app through HTTP requests.  
+In some sense the unit under test is an endpoint: because we hit a particular endpoint.  
+And in some sense the unit under test is the entire app: because after hitting an endpoint there are a lot of interactions between modules, including authentication, DB queries, middleware, etc.
+
+A simple HTTP endpoint test:
+
+```javascript
+// get-cart-items.test.js
+describe('get cart items', () => {
+  it('responds with all cart items list', async () => {
+    const getCartItemsResponse = await fetch('http://localhost:3080/api/cart', {
+      headers: { Authorization: 'myAuthToken123' },
+    })
+    expect(getCartItemsResponse.status).toEqual(200)
+    expect(await getCartItemsResponse.json()).toEqual([
+      { name: 'apple-pie', quantity: 3 },
+      { name: 'cheesecake', quantity: 5 },
+    ])
+  })
+})
+```
+
 ##### 4.2.1 Testing middleware
 
 #### 4.3 Dealing with external dependencies
