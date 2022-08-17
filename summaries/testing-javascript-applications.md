@@ -507,13 +507,14 @@ describe('get cart items', () => {
     password-crypting-->are-creadentials-valid
     are-creadentials-valid-->router
     password-crypting-unit-tests-->password-crypting
-    router--HTTP response-->e2e-tests
+    router--200 Ok-->e2e-tests
+    are-creadentials-valid--401 Unauthorized-->e2e-tests
 
     classDef green fill:#79d279;
     classDef orange fill:orange;
-    classDef blue fill:#99b3ff;
     classDef pink fill:#e699ff;
-    classDef herb fill:#e6ff99;
+    linkStyle 4 stroke-width:3px,stroke:green,color:green;
+    linkStyle 5 stroke-width:3px,stroke:red,color:red;
 ```
 
 #### 4.3 Dealing with external dependencies
