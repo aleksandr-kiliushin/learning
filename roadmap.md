@@ -7,7 +7,7 @@
 
 ## 🧪 Testing
 
-- ⏱ testing-javascript-applications-2021-en.pdf (148 / 514)
+- ⏱ testing-javascript-applications-2021-en.pdf (185 / 514)
 - 📦 https://kentcdodds.com/blog/why-i-never-use-shallow-rendering
 - 📦 https://github.com/cypress-io/cypress-realworld-app
 - 📦 [Why most unit testing is waste](https://rbcs-us.com/site/assets/files/1187/why-most-unit-testing-is-waste.pdf)
