@@ -241,6 +241,111 @@ It provides more granular feedback for every scenario.
 
 Figure: Which parts of the app e2e and integration tests have access to.
 
+We can continue and add logging stage to out integration tests.  
+With the logger module, `addItemToCart` writes to the `logs.out` file whenever a customer adds and item to the cart.
+
+```javascript
+// logger.js
+const fs = require('fs')
+const logger = {
+  log: (msg) => fs.appendFileSync('/tmp/logs.out', msg + '\n'),
+}
+module.exports = logger
+
+// addItemToCart.js
+const logger = require('./logger')
+const addItemToCart = ({ username, item }) => {
+  removeFromInventory(item)
+  const newItems = (carts.get(username) || []).concat(item)
+  carts.set(username, newItems)
+  logger.log(`${item} added to ${username}'s cart`)
+  return newItems
+}
+```
+
+The corresponding test:
+
+```javascript
+const fs = require('fs')
+describe('addItemToCart', () => {
+  beforeEach(() => fs.writeFileSync('/tmp/logs.out', ''))
+  // ...
+  test('logging added items', () => {
+    carts.set('test_user', [])
+    inventory.set('cheesecake', 1)
+    addItemToCart({ username: 'test_user', item: 'cheesecake' })
+    const logs = fs.readFileSync('/tmp/logs.out', 'utf-8')
+    expect(logs).toContain("cheesecake added to test_user's cart\n")
+  })
+})
+```
+
+```mermaid
+  flowchart LR
+    e2e-tests(Test: Can add items to the cart):::orange
+    router(Router):::green
+    inventory-controller(InventoryController):::green
+    cart-controller(CartController):::green
+    database[(Database)]:::green
+    logger(Logger):::green
+    filesystem(Filesystem):::green
+    inventory-controller-integration-tests(Test: Removing items from the inventory):::blue
+    cart-controller-integration-tests(Test: Adding unavailable items to the cart):::blue
+    logger-integration-tests(Test: Writes to the correct file):::blue
+
+    subgraph Node.js API
+      router
+      inventory-controller
+      cart-controller
+      database
+      logger
+      filesystem
+    end
+
+    e2e-tests
+
+    inventory-controller-integration-tests
+    cart-controller-integration-tests
+    logger-integration-tests
+
+    subgraph Legend
+      direction LR
+      legend-e2e-tests(e2e tests):::orange
+      legend-integration-tests(Integration tests):::blue
+      legend-can-be-accessed-by-tests(Can be accessed by tests):::green
+      legend-cant-be-accessed-by-tests(Can not be accessed by tests):::red
+    end
+
+    e2e-tests--HTTP request-->router
+    router--HTTP response-->e2e-tests
+    e2e-tests--SQL query-->database
+    router-->inventory-controller
+    inventory-controller-->cart-controller
+    inventory-controller<-->database
+    cart-controller<-->database
+    inventory-controller-->logger
+    logger-->filesystem
+    inventory-controller-integration-tests-->inventory-controller
+    cart-controller-integration-tests-->cart-controller
+    inventory-controller-integration-tests---cart-controller-integration-tests
+    logger-integration-tests-->filesystem
+    logger-integration-tests-->logger
+
+    classDef green fill:#79d279;
+    classDef orange fill:orange;
+    classDef red fill:#ff9999;
+    classDef blue fill:#99b3ff;
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10,12,13 stroke:green,color:green;
+```
+
+Figure: Integration tests will have access to all the dependencies with which you app interacts.
+
+We should set up testing environment for integration tests to be able:
+
+- cover interactions between multiple functions;
+- check writing to DB and filesystem;
+- use test doubles as few as possible;
+
 ##### 4.1.3 Unit testing
 
 #### 4.2 Testing HTTP endpoints
