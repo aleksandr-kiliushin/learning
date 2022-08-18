@@ -12,6 +12,8 @@
 
 ### Section 4. Testing backend applications
 
+No content.
+
 #### 4.1 Structuring a testing environment
 
 Software should be designed with testing in mind.
@@ -519,6 +521,8 @@ describe('get cart items', () => {
 
 #### 4.3 Dealing with external dependencies
 
+No content.
+
 ##### 4.3.1 Integrations with databases
 
 It is possible to mock interactions with a DB,  
@@ -590,6 +594,8 @@ But if we don't mock DB, there are also cons:
 
 ##### 4.3.2 Integrations with outer APIs
 
+No content.
+
 ### Section 5. Advanced backend testing techniques
 
 Our goals, in order of priority:
@@ -641,7 +647,11 @@ Some situations:
 
 ##### 5.1.1 Parallelism and shared resources
 
+No content.
+
 ##### 5.1.2 Dealing with time
+
+No content.
 
 #### 5.2 Reducing costs while preserving quality
 
