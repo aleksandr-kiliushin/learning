@@ -655,11 +655,30 @@ No content.
 
 #### 5.2 Reducing costs while preserving quality
 
+No content.
+
 ##### 5.2.1 Reducing overlap between tests
+
+Tests overlap when the run they run the same pieces of code and repeat each other's verifications.  
+By eliminating this overlap you can often reduce the amount of code you have to maintain.
+
+To test some functionality, you can either write 3 different tests (for example, 1 e2e and 2 integration), or you can put all 3 assertions into a single e2e test.  
+Putting all 3 assertions into a single e2e test make it easier to reason about them, and easier to maintain.  
+But this approach has its downsides: with a single e2e tests you can't test some complex scenarios.
 
 ##### 5.2.2 Creating transitive guarantees
 
+Instead of repeating expensive checks when testing each function that requires `myAwesomeFunction`, you can:
+
+- extract `myAwesomeFunction` to a separate module;
+- add robust tests for `myAwesomeFunction` isolated within `myAwesomeFunction.test.js`;
+- just test whether `myAwesomeFunction` is called with the correct arguments;
+
+Doing this, you can say: _I already know that `myAwesomeFunction` works because I've tested it. Now, I just want to make sure it's invoked with the correct arguments._
+
 ##### 5.2.3 Turning assertions into preconditions
+
+You don't always need a separate test to check a specific behaviour. If other tests depend on that behaviour to pass, you can already consider it covered.
 
 ### Section 6. Testing frontend applications
 
