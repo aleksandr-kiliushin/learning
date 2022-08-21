@@ -26,11 +26,12 @@
 
 ## JavaScript and TypeScript
 
+- 📦 https://javascript.info
+- 📦 The handbook and the docs here: www.typescriptlang.org
 - ✅ js-the-definitive-guide-7th-2020-en.pdf
 - ✅ essential-typescript-4-2021-en.pdf
 - ✅ mastering-typescript-enterprise-ready-4th-2021-en.pdf
 - ✅ typescript-4-design-patterns-and-best-practic-2021-en.pdf
-- 📦 The handbook and the docs here: www.typescriptlang.org
 
 ## 💧 Refactoring and code quality
 
