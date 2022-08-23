@@ -682,6 +682,28 @@ You don't always need a separate test to check a specific behaviour. If other te
 
 ### Section 6. Testing frontend applications
 
+#### 6.1 Introducing JSDOM
+
+#### 6.2 Asserting on the DOM
+
+##### 6.2.1 Making it easier to find elements
+
+##### 6.2.2 Writing better assertions
+
+#### 6.3 Handling events
+
+#### 6.4 Testing and browser APIs
+
+##### 6.4.1 Testing a localStorage integration
+
+##### 6.4.2 Testing a History API integration
+
+#### 6.5 Dealing with WebSockets and HTTP requests
+
+##### 6.5.1 Testing involving HTTP requests
+
+##### 6.5.2 Testing involving WebSockets
+
 ### Section 7. The React testing ecosystem
 
 ### Section 8. Testing React applications
