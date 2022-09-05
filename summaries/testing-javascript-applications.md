@@ -102,10 +102,10 @@ You can't set up elaborate scenarios.
 Lets add a test:
 
 ```js
-describe('add items to a cart', () => {
-  test('adding available items', async () => {
+describe("add items to a cart", () => {
+  test("adding available items", async () => {
     const response = await fetch(`http://localhost:3000/carts/test_user/items/cheesecake`, {
-      method: 'POST',
+      method: "POST",
     })
     expect(response.status).toEqual(200)
   })
@@ -167,27 +167,27 @@ Now can test if these modules interact correctly in more elaborate scenarios.
 
 ```javascript
 // routes.js
-import { addItemToCart } from './addItemToCart' // Import the extracted function.
+import { addItemToCart } from "./addItemToCart" // Import the extracted function.
 
-router.post('/carts/:username/items/:item', (ctx) => {
+router.post("/carts/:username/items/:item", (ctx) => {
   const { username, item } = ctx.params
   const newItems = addItemToCart({ username, item })
   ctx.body = newItems
 })
 
 // addItemToCart.test.js
-describe('addItemToCart', () => {
-  test('adding unavailable items to cart', () => {
-    carts.set('test_user', [])
-    inventory.set('cheesecake', 0)
+describe("addItemToCart", () => {
+  test("adding unavailable items to cart", () => {
+    carts.set("test_user", [])
+    inventory.set("cheesecake", 0)
     try {
-      addItemToCart({ username: 'test_user', item: 'cheesecake' })
+      addItemToCart({ username: "test_user", item: "cheesecake" })
     } catch (error) {
       const expectedError = new Error(`cheesecake is unavailable`)
       expectedError.code = 400
       expect(error).toEqual(expectedError)
     }
-    expect(carts.get('test_user')).toEqual([])
+    expect(carts.get("test_user")).toEqual([])
   })
 })
 ```
@@ -248,14 +248,14 @@ With the logger module, `addItemToCart` writes to the `logs.out` file whenever a
 
 ```javascript
 // logger.js
-const fs = require('fs')
+const fs = require("fs")
 const logger = {
-  log: (msg) => fs.appendFileSync('/tmp/logs.out', msg + '\n'),
+  log: (msg) => fs.appendFileSync("/tmp/logs.out", msg + "\n"),
 }
 module.exports = logger
 
 // addItemToCart.js
-const logger = require('./logger')
+const logger = require("./logger")
 const addItemToCart = ({ username, item }) => {
   removeFromInventory(item)
   const newItems = (carts.get(username) || []).concat(item)
@@ -268,15 +268,15 @@ const addItemToCart = ({ username, item }) => {
 The corresponding test:
 
 ```javascript
-const fs = require('fs')
-describe('addItemToCart', () => {
-  beforeEach(() => fs.writeFileSync('/tmp/logs.out', ''))
+const fs = require("fs")
+describe("addItemToCart", () => {
+  beforeEach(() => fs.writeFileSync("/tmp/logs.out", ""))
   // ...
-  test('logging added items', () => {
-    carts.set('test_user', [])
-    inventory.set('cheesecake', 1)
-    addItemToCart({ username: 'test_user', item: 'cheesecake' })
-    const logs = fs.readFileSync('/tmp/logs.out', 'utf-8')
+  test("logging added items", () => {
+    carts.set("test_user", [])
+    inventory.set("cheesecake", 1)
+    addItemToCart({ username: "test_user", item: "cheesecake" })
+    const logs = fs.readFileSync("/tmp/logs.out", "utf-8")
     expect(logs).toContain("cheesecake added to test_user's cart\n")
   })
 })
@@ -367,14 +367,14 @@ The function is isolated.
 A test for the function:
 
 ```javascript
-const { areItemsAmountsWithinTheLimit } = require('./areItemsAmountsWithinTheLimit')
-describe('areItemsAmountsWithinTheLimit', () => {
-  test('returns true for carts with no more than 3 items of a kind', () => {
-    const cart = [{ cheesecake: 1, 'apple-pie': 3 }]
+const { areItemsAmountsWithinTheLimit } = require("./areItemsAmountsWithinTheLimit")
+describe("areItemsAmountsWithinTheLimit", () => {
+  test("returns true for carts with no more than 3 items of a kind", () => {
+    const cart = [{ cheesecake: 1, "apple-pie": 3 }]
     expect(areItemsAmountsWithinTheLimit(cart)).toBe(true)
   })
-  test('returns false for carts with more than 3 items of a kind', () => {
-    const cart = [{ cheesecake: 5, 'apple-pie': 2 }]
+  test("returns false for carts with more than 3 items of a kind", () => {
+    const cart = [{ cheesecake: 5, "apple-pie": 2 }]
     expect(areItemsAmountsWithinTheLimit(cart)).toBe(false)
   })
 })
@@ -463,15 +463,15 @@ A simple HTTP endpoint test:
 
 ```javascript
 // get-cart-items.test.js
-describe('get cart items', () => {
-  it('responds with all cart items list', async () => {
-    const getCartItemsResponse = await fetch('http://localhost:3080/api/cart', {
-      headers: { Authorization: 'myAuthToken123' },
+describe("get cart items", () => {
+  it("responds with all cart items list", async () => {
+    const getCartItemsResponse = await fetch("http://localhost:3080/api/cart", {
+      headers: { Authorization: "myAuthToken123" },
     })
     expect(getCartItemsResponse.status).toEqual(200)
     expect(await getCartItemsResponse.json()).toEqual([
-      { name: 'apple-pie', quantity: 3 },
-      { name: 'cheesecake', quantity: 5 },
+      { name: "apple-pie", quantity: 3 },
+      { name: "cheesecake", quantity: 5 },
     ])
   })
 })
@@ -684,11 +684,110 @@ You don't always need a separate test to check a specific behaviour. If other te
 
 #### 6.1 Introducing JSDOM
 
+Jest can't run in a browser, you should simulate browser environment within Node.js.  
+You make assertions on functions return value and DOM elements interactions and contents.  
+You simulate scrolling, clicking, typing and dragging.  
+You should test if your code interfaces correctly with history and web storage APIs.
+
 #### 6.2 Asserting on the DOM
+
+```javascript
+const data = { count: 0 }
+const incrementCount = () => {
+  data.cheesecakes++
+  window.document.getElementById("count").innerHTML = data.cheesecakes
+}
+const incrementButton = window.document.getElementById("increment-button")
+incrementButton.addEventListener("click", incrementCount)
+```
+
+Because this script runs in a browser, and thus it can manipulate the browser and the elements in the page.
+
+```mermaid
+  flowchart LR
+    global-window[Global window]
+    js-files[JS files]
+    document
+    div-1[div]
+    div-2[div]
+    h1
+    p
+
+    subgraph Browser
+      global-window
+      js-files
+
+      subgraph DOM
+        document
+        div-1
+        div-2
+        h1
+        p
+      end
+    end
+
+
+    global-window <--> js-files
+    js-files <--> document
+
+    document --> div-1
+    document --> div-2 --> h1 --> p
+```
+
+Figure: The JS environment within a browser.
+
+Unlike the browser, Node.js can't run nor that script, neither tests for that script, because the script depends on DOM API.  
+`node ./main.js` causes `ReferenceError` because `window is not defined`.
+
+To be able to run your tests in Jest, instead of running them within the browser, you can bring browser APIs to Node.js by using JSDOM.  
+JSDOM is an implementation of web standards written purely on JS that you can use in Node.js.
+
+By passing the value `"jsdom"` to Jest's `testEnvironment` option, you can make it set up a global instance of JSDOM, which you can use when running your tests.
+
+```mermaid
+  flowchart LR
+    js-files[JS files]
+    global-window[Global window]
+    jest[Jest]
+    document
+    div-1[div]
+    div-2[div]
+    h1
+    p
+
+    subgraph Node.js
+      js-files
+      jest
+
+      subgraph JSDOM
+        global-window
+        document
+        div-1
+        div-2
+        h1
+        p
+      end
+    end
+
+
+    js-files <--> jest <--> global-window <--> document
+
+    document --> div-1
+    document --> div-2 --> h1 --> p
+```
+
+Figure: The JS environment within Node.js.
 
 ##### 6.2.1 Making it easier to find elements
 
+You can find page elements by their ID's or by their position in the page hierarchial chain. But this approach tightly couples the tests to the markup and requires more complex maintenance. Tests may fail after minimal changes to the markup.  
+To avoid maintenance overhead and to make tests more readable, use `dom-testing-library`. So you can find elements by their text, alt text, label, role, etc.
+
 ##### 6.2.2 Writing better assertions
+
+You can assert, for example, that an element is exists, using the `toBeTruthy` assertion.  
+But you can make your assertions more reliable and readable by using `jest-dom`. It extends basic Jest's assertions with new ones, designed specially for testing web pages.  
+`.toHaveStyle()`, `.toBeDisabled()`, `.toBeEnabled`, `.toBeVisible()` and other assertions make it easier to write tests.
 
 #### 6.3 Handling events
 
@@ -705,6 +804,111 @@ You don't always need a separate test to check a specific behaviour. If other te
 ##### 6.5.2 Testing involving WebSockets
 
 ### Section 7. The React testing ecosystem
+
+#### 7.1 Setting up a test environment for React
+
+##### 7.1.1 Setting up a React application
+
+##### 7.1.2 Setting up a testing environment
+
+#### 7.2 An overview of React testing libraries
+
+##### 7.2.1 Rendering components and the DOM
+
+Jest has already set up a JSDOM instance for you.  
+You must wrap each of your interactions with a component into a React testing library called `act`., which is part of the `react-dom` package. The `act` function ensures that the updates associated to your interactions have been proceeded and applied to the DOM, which, in this case, is implemented by JSDOM.
+
+```javascript
+import React from "react"
+import { App } from "./App.jsx"
+import { render } from "react-dom"
+import { act } from "react-dom/test-utils"
+
+const root = document.createElement("div")
+document.body.appendChild(root)
+
+test("renders the appropriate heading", () => {
+  act(() => {
+    render(<App />, root)
+  })
+  const heading = document.querySelector("h1")
+  expect(header.textContent).toEqual("Inventry contents")
+})
+```
+
+In the test you have just written, you are accurately simulating how the `App` component gets rendered by a browser. `act` function ensures that the interactions have been proceeded and the necessary updates have been applied to the DOM.  
+This test uses `react-dom/test-utils` to render `App` to a JSDOM instance. And then it uses web APIs to find and inspect an `h1` element so that you can assert on it.
+
+```mermaid
+  flowchart TD
+    react-library[React library]
+    jsx-files[JSX files]
+    babel-preset-env[babel/preset-env]
+    babel-preset-react[babel/preset-react]
+    pure-js-files[Pure JS files]
+    jest[Jest]
+    document
+
+
+    subgraph babel
+      babel-preset-env
+      babel-preset-react
+    end
+
+    subgraph JSDOM
+      document
+    end
+
+
+    react-library --> babel
+    jsx-files --> babel
+
+        babel
+    --> pure-js-files
+    --> jest
+
+    jest --react-dom/test-utils--> document
+    jest <--Web APIs--> document
+```
+
+##### 7.2.2 React testing library
+
+We can write tests using only `react-dom/test-utils`.  
+Or we can use `react-testing-library`:
+
+```javascript
+import { render } from "@testing-library/react"
+
+test("renders the appropriate heading", () => {
+  const { getByText } = render(<App />, root)
+  expect(getByText("Inventry contents")).toBeInTheDocument()
+})
+```
+
+Using `react-testing-library` we have the following benefits:
+
+- Your tests don't involve plenty of React-specific concerns, such as manyally attaching a `div` to a JSDOM instance and rendering components inside it using `react-dom`.
+- `react-tesing-library` automatically sets up a cleanup hook, which removes the rendered nodes from the DOM.
+- The interactions to your components are automatically wrapped into the `act` function to ensure that updates will be proceeded and applied to the DOM.
+- `react-testing-library`'s `render` function returns an object containing queries, that are bound to run within the rendered component, not within the whole JSDOM instance.
+- `react-testing-library`'s `fireEvent` utility already wraps interactions into `act` calls so that you can using `act` yourself.
+
+To avoid having to use `waitFor` every time you need to wait for an element, you can use `findBy*` instead of `getBy*` queries.  
+A `findBy*` query runs asynchronously. The promise returned by this kind of query either resolves with the found element or rejects after one second if it didn't find anything matching the passed criteria.  
+You can use it, for example, to replace `waitFor`, which causes your tests to wait for the list to have three children.
+
+##### 7.2.3 Enzyme
+
+No content.
+
+##### 7.2.4 The React test renderer
+
+Unlike React testing library or Enzyme, it renders components to plain JS objects instead of rendering them to the DOM.  
+It can be useful, for example, when you are not using JSDOM, or if you can't use it.  
+You don't need any DOM implementation to render components and inspect their contents.  
+I don't see the benefit of using React's test renderer.  
+Setting up JSDOM is quick, and it makes your tests more reliable because it makes your code run just like it would in a browser.  
+The main use case for `react-test-renderer` is when you are not rendering components to a DOM but would still like to inspect their contents. It can be applied in testing `react-native` applications, for example.
 
 ### Section 8. Testing React applications
 
