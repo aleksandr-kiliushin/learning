@@ -912,6 +912,24 @@ The main use case for `react-test-renderer` is when you are not rendering compon
 
 ### Section 8. Testing React applications
 
+#### 8.1 Testing component integration
+
+##### 8.1.1 Stubbing components
+
+#### 8.2 Snapshot testing
+
+##### 8.2.1 Snapshots beyoud components
+
+##### 8.2.2 Serializers
+
+#### 8.3 Testing styles
+
+#### 8.4 Component-level acceptance tests and component stories
+
+##### 8.4.1 Writing stories
+
+##### 8.4.2 Writing documentation
+
 ### Section 9. Test-driven development
 
 ### Section 10. UI-based end-to-end testing
