@@ -912,9 +912,21 @@ The main use case for `react-test-renderer` is when you are not rendering compon
 
 ### Section 8. Testing React applications
 
+No content.
+
 #### 8.1 Testing component integration
 
+Tests should provide reliable guarantees that your components work in integration. If your test covers some top-level component like `<App />` or `<Profile />` it will automatically cover its underlying component.
+
+The only downside of having this test is that you will have one extra test to fix if you have one of the underlying components. It may generate significant overlap between your tests. Changes become more expensive.
+
+`react-testing-library` recommendation is: you should write your test as high up in the component tree as you need to obtain reliable guarantees. Because your test resemble your application's run-time scenario more closely.
+
+When you have too many tests that depend on a single point of failure, centralize that point of failure into a single piece that you will use throughout your tests. Create a transitive guarantee. Modularity can make both your application's code and tests more robust.
+
 ##### 8.1.1 Stubbing components
+
+No content.
 
 #### 8.2 Snapshot testing
 
