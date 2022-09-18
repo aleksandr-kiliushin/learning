@@ -956,9 +956,15 @@ Example: `expect(cheesecakeItem).toHaveStyleRule("color", "red");`
 
 #### 8.4 Component-level acceptance tests and component stories
 
+No content.
+
 ##### 8.4.1 Writing stories
 
+No content.
+
 ##### 8.4.2 Writing documentation
+
+No content.
 
 ### Section 9. Test-driven development
 
