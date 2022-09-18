@@ -930,11 +930,29 @@ No content.
 
 #### 8.2 Snapshot testing
 
+No content.
+
 ##### 8.2.1 Snapshots beyoud components
+
+No content.
 
 ##### 8.2.2 Serializers
 
+No content.
+
 #### 8.3 Testing styles
+
+When testing your styles, if you are using an external css file, you will not be able to check whether the specific style rules within a class are applied. You will be able to check only whether a component's `className` property is correct.
+
+I'd recommend you not assert on classes that don't change. It doesn't give any value.
+
+One alternative to make your styling tests more valuable is to write inline styles within your components. Inline styles provide more reliable guarantees because they enforce component to look a certain way.  
+But inline styles has their downsides: repetitive assertions, specificity, inability to perform animations.
+
+To address this issue, you can use `css-in-js` libs (like `emotion`) that allows you to use CSS syntax within your components files. Besides making it easier to manage styles within your components, many CSS-in-JS libs also enable you to extend linters to make your automated QA process even more reliable.
+
+You `toHaveStyle` assertions passed inline styles. But with `emotion` they will fail, because your components don't use inline styles to highlight your component in red anymore. Instead, because of how emotion works, your app will have automatically generated classes for the rules you created with `emotion` and apply those classes to your elements. To address this issue you can use `jest-emotion` package which allow you to extend Jest with a `toHaveStyleRule` matcher that verifies the style rules applied by emotion.  
+Example: `expect(cheesecakeItem).toHaveStyleRule("color", "red");`
 
 #### 8.4 Component-level acceptance tests and component stories
 
