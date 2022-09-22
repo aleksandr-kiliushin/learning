@@ -972,7 +972,26 @@ No content.
 
 ### Section 10. UI-based end-to-end testing
 
+No content.
+
 #### 10.1. What are UI-based end-to-end tests
+
+End-to-end tests help you ensure that the _entire_ app works as it should. The scope of these tests is large. The reliability guarantees they generate are strong. End-to-end tests are at the very top of the testing pyramid.
+
+End-to-end tests examples:
+
+- Software under tests is backend app, tests cover endpoints interactions.
+- Software under tests is a web browser app, tests cover inputs, buttons and reading page's contents.
+- Software under tests is the entire app, including both frontend and backend.
+
+The first two examples are not exactly end-to-end tests because they don't cover the entire app.
+
+- e2e test: Validates all of the app's layers.
+- UI-based e2e tests: Validates all of the app layers by interacting with it through its UI.
+- UI test: Validates an app through its UI, possibly replacing backend with stubs.
+
+UI tests and e2e tests are not mutually exclusive classifications.  
+A test can be both a UI test and an e2e test, or only one of them.
 
 #### 10.2. When to write each type of test
 
