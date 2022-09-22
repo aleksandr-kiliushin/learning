@@ -972,10 +972,82 @@ No content.
 
 ### Section 10. UI-based end-to-end testing
 
+#### 10.1. What are UI-based end-to-end tests
+
+#### 10.2. When to write each type of test
+
+##### 10.2.1. UI-based end-to-end tests
+
+##### 10.2.2. Pure end-to-end tests
+
+##### 10.2.3. Pure UI tests
+
+##### 10.2.4. A note on acceptance testing and this chapter's name
+
+#### 10.3. An overview of end-to-end testing tools
+
+##### 10.3.1. Selenium
+
+##### 10.3.2. Puppeteer
+
+##### 10.3.3. Cypress
+
+##### 10.3.4. When to choose Cypress
+
 ### Section 11. Writing UI-based end-to-end tests
+
+##### 11.1.1. Setting up a test environment
+
+##### 11.1.2. Writing your first tests
+
+##### 11.1.3. Sending HTTP requests
+
+##### 11.1.4. Sequencing actions
+
+#### 11.2. Best practices end-to-end tests
+
+##### 11.2.1. Page objects
+
+##### 11.2.2. Applications actions
+
+#### 11.3. Dealing with flakiness
+
+##### 11.3.1. Avoiding waiting for fixed amount of time
+
+##### 11.3.2. Stubbing uncontrollable factors
+
+##### 11.3.3. Retrying tests
+
+#### 11.4. Running tests on multiple browsers
+
+##### 11.4.1. Using a testing framework for running tests within a browser
+
+##### 11.4.2. Running UI-based tests in multiple browsers
+
+##### 11.5. Visual regression tests
 
 ## Part 3: Business impact
 
 ### Section 12. Continious integration and continious delivery
 
+#### 12.1. What are continuous integration and continuous delivery
+
+#### 12.1.1. Continuous integration
+
+#### 12.1.2. Continuous delivery
+
+#### 12.2. The role of automated tests in a CI / CD pipeline
+
+#### 12.3. Version-control checks
+
 ### Section 13. A culture of quality
+
+#### 13.1. Using type systems to make invalid states inpresentable
+
+#### 13.2. Reviewing code to catch problems machines can't
+
+#### 13.3. Using linters and formatters to produce consistent code
+
+#### 13.4. Monitoring your systems to understand how they actually behave
+
+#### 13.5. Explaining your software with good documentation
