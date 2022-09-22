@@ -1005,6 +1005,31 @@ Involves the entire software stack upon which your app depends.
 Goes at the very top of the testing pyramid because it has the broadest possible scope and generates the most reliable guarantees.  
 Even within the "e2e tests category", UI tests that cover your entire system go above e2e tests for RESTful APIs.
 
+A single UI-based e2e test covers a large part of your app reliably. Therefore, you need fewer UI-based e2e tests than other kinds of tests.
+
+UI-based e2e tests are more time-consuming to write and to execute.  
+You should not update them multiple times as you develop a feature.  
+It's wise to write these kinds of tests after implementing complete pieces of functionality.
+
+Should you write a UI-based e2e test?  
+Answer the following quesstions:
+
+- How critical the feature under test is?
+- How labor it is to validate this feature manually?
+- How much will it cost to write a test?
+
+Example:  
+You have to test how the Undo button behaves during some continuous UI process.  
+Testing such functionality that has many steps is time-consuming and error-prone.  
+It is a critical feature that you have to test frequently, and, therefore, you would invest a lot of time performing manual labor.
+In this case a UI-based e2e test will be valuable.
+
+On the other hand, if you have a small inessential feature, such as a reset button that clears the form's content. You don't need to invest time to write a UI-base e2e test for it.
+
+Both developers and QA engineers can write UI-based e2e tests.  
+In leaner teams, which take a more agile approach to software development, software engineers will write these tests themselves.  
+When a QA team is available, they can write UI-based e2e tests.
+
 ##### 10.2.2. Pure end-to-end tests
 
 ##### 10.2.3. Pure UI tests
