@@ -68,6 +68,7 @@
 - 🔍 Hexagonal architecture
 - 🔍 Software architecture the hard parts
 - 🔍 Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
+- ✅ [Feature-Sliced Design — Архитектура Frontend проектов / Илья Азин, Яндекс (16.12.2021)](https://www.youtube.com/watch?v=af-PD2yIUiU&ab_channel=Feature-SlicedDesign)
 
 ## 🎨 CSS
 

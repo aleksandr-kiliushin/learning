@@ -995,7 +995,15 @@ A test can be both a UI test and an e2e test, or only one of them.
 
 #### 10.2. When to write each type of test
 
+- Pure e2e tests.
+- Pure UI tests.
+- UI-base e2e tests.
+
 ##### 10.2.1. UI-based end-to-end tests
+
+Involves the entire software stack upon which your app depends.  
+Goes at the very top of the testing pyramid because it has the broadest possible scope and generates the most reliable guarantees.  
+Even within the "e2e tests category", UI tests that cover your entire system go above e2e tests for RESTful APIs.
 
 ##### 10.2.2. Pure end-to-end tests
 
