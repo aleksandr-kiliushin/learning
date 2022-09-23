@@ -1125,6 +1125,20 @@ When you tell Selenium to click an element, it will send a "click" command to th
 Because this webdriver is capable of controlling a real browser, it will make the browser to click the selected element.  
 To communicate with the Webdriver, selenium uses a protocol called JSON Wire. This protocol specifies a set of HTTP routes for handling different actions to be performed within a browser.
 
+###### Using a Webdriver's interfaces without Selenium
+
+Even though Selenium is mostly used to test web apps, it is actually a browser automation library.  
+Therefore, its an NPM package under the name `selenium-webdriver`, ant it doesn't include a test runner or an assertion library.  
+To write tests using Selenium, you will need to pair it with a separate testing framework, such as Jest.
+
+Selenium doesn't ship with any testing tools.  
+It can be cumbersome to set up the necessary environment, to start using it for testing apps.  
+To avoid going through this setup process yourself, use Nightwatch or WebdriverIO.  
+Nightwatch and WebdriverIO, just like Selenium, can interface with multiple Webdrivers, and, therefore, are capable of controlling real browsers.  
+The main difference between these tools and Selenium is that they ship with testing utilities.
+
+###### When to choose Selenium
+
 ##### 10.3.2. Puppeteer
 
 ##### 10.3.3. Cypress
