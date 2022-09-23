@@ -968,8 +968,6 @@ No content.
 
 ### Section 9. Test-driven development
 
-No content.
-
 ### Section 10. UI-based end-to-end testing
 
 No content.
@@ -998,6 +996,11 @@ A test can be both a UI test and an e2e test, or only one of them.
 - Pure e2e tests.
 - Pure UI tests.
 - UI-base e2e tests.
+
+People often use terms like _e2e tests_, _pure UI tests_, and _UI-based e2e tests_ imprecisely.  
+It is common for people to call "e2e tests" any test that interact with an app through a browser.  
+Though that defenition is correct, given that these tests' is the entire app under test.  
+But we will adopt more pricese terminology.
 
 ##### 10.2.1. UI-based end-to-end tests
 
@@ -1086,6 +1089,8 @@ More about pure UI tests:
 - When interactions with other pieces of software are irrelevant to the test, QA engineers can write pure UI tests also.
 
 ##### 10.2.4. A note on acceptance testing and this chapter's name
+
+No content.
 
 #### 10.3. An overview of end-to-end testing tools
 
