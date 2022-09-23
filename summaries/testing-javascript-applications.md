@@ -1094,6 +1094,13 @@ No content.
 
 #### 10.3. An overview of end-to-end testing tools
 
+The tools described in this section interact with your software through its UI, rather than through your code directly.
+
+~~Invoking a function and expecting its output to match a particular value~~.  
+Filling inputs, submitting a form and check whether the browser displays the correct result.
+
+These tools are not coupled to your code and your technology stack.
+
 ##### 10.3.1. Selenium
 
 ##### 10.3.2. Puppeteer
