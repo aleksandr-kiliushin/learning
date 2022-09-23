@@ -1051,6 +1051,40 @@ Because writing pure e2e tests requires direct access to the code, they must be 
 
 ##### 10.2.3. Pure UI tests
 
+Pure UI tests can validate your UI:
+
+- either through a real browser
+- or through a testing framework, such as Jest
+
+You can consider the tests you've written using RTL as UI tests.  
+Thansk to JSDOM, they can interact with your components by dispatchin browserlike events and validate your app by finding elements in the DOM.  
+Nonetheless, RTL tests use JSDOM instead of a real browser run-time environment.  
+RTL tests don't exactly replicate what happens when your app runs within a browser.
+
+In the testing pyramid, UI tests that run in a browser, go above UI tests that run within testing frameworks.  
+Tests that run within a browser can replicate user interactions more accurately and involve fewer test doubles.  
+However, they take more time to run and more complex to write.
+
+About pure UI tests that run within _testing frameworks_:
+
+- They are way quicker to write.
+- The guarantees they generate are almost as reliable as those running within a browser.
+- I'd recommend you to choose them tests most of the time.
+- You can write them as you develop features.
+- They tend to be small.
+- It is straingforward to include them tests into TDD workflow.
+
+About pure UI tests that run within a _browser_:
+
+- I'd recommend to write them only when it's critical to use browser-specific features that you can't accurately simulate with JSDOM.
+- Or when performing visual regression testing.
+
+More about pure UI tests:
+
+- They depend on having access to the code either to interface with the unit under test directly or to write test doubles.
+- Most of the time, pure UI test must be written by developers, not QA engineers.
+- When interactions with other pieces of software are irrelevant to the test, QA engineers can write pure UI tests also.
+
 ##### 10.2.4. A note on acceptance testing and this chapter's name
 
 #### 10.3. An overview of end-to-end testing tools
