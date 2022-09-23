@@ -1101,7 +1101,21 @@ Filling inputs, submitting a form and check whether the browser displays the cor
 
 These tools are not coupled to your code and your technology stack.
 
+In the tests we've written before, we mounted our app to an alternative DOM implementation, JSDOM.  
+We used JSDOM's pure JS implementation to dispatch events and inspect elements.  
+JSDOM is ideal for writing tests during your development process.  
+JSDOM simplifies setting up a testing environment and makes your tests quicker and lighter.  
+The problem with using JSDOM is that it may not always accurately reflect what real browsers do.  
+JSDOM is an excellent and successfull attempt to browser APIs as per specification.  
+But JSDOM is still a replica and of browser environment and can replicate not every case exactly: even browsers themselves don't always follow the API's specifications adequately. Therefore, even if JSOM implements those APIs correctly, browser may not.
+
 ##### 10.3.1. Selenium
+
+Selenium is a browser automation framework frequently used for testing web apps through a real browser.  
+Selenium is the precursor of the browser-based e2e testing tools.
+
+Besides being the most accurate way to replicate your user's actions, Selenium provides you with the full range of browser's capabiliaties.  
+You can freely navigate between pages, trottle the network speed, record videos and take screenshots.
 
 ##### 10.3.2. Puppeteer
 
