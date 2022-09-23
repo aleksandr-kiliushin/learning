@@ -1117,6 +1117,14 @@ Selenium is the precursor of the browser-based e2e testing tools.
 Besides being the most accurate way to replicate your user's actions, Selenium provides you with the full range of browser's capabiliaties.  
 You can freely navigate between pages, trottle the network speed, record videos and take screenshots.
 
+###### How selenium works
+
+Selenium interacts with a browser through programs called _webdrivers_.  
+These webdrivers are responsible for receiving Selenium's commands and performing the necessary actions within a real browser.  
+When you tell Selenium to click an element, it will send a "click" command to the webdriver you have chosen.  
+Because this webdriver is capable of controlling a real browser, it will make the browser to click the selected element.  
+To communicate with the Webdriver, selenium uses a protocol called JSON Wire. This protocol specifies a set of HTTP routes for handling different actions to be performed within a browser.
+
 ##### 10.3.2. Puppeteer
 
 ##### 10.3.3. Cypress
