@@ -1139,6 +1139,15 @@ The main difference between these tools and Selenium is that they ship with test
 
 ###### When to choose Selenium
 
+Selenium, Nightwatch and WebdriverIO support all the major browsers.  
+I'd avoid Selenium itself if I'm using it _exclusively_ to write tests. In that case I'd choose Nightwatch or WebdriverIO.  
+But if you need to perform other browser-automation tasks, select Selenium.
+
+These tools make it too easy for you to write flaky (nondeterministic) tests. With them, you need to create robust testing mechanisms.  
+Also, because they control a browser through HTTP requests they are slower than alternatives like Cypress, which run entirely within a browser.  
+Besides their possible slowness, configuring and debuggin tests can be challenging.  
+Without build-in tools to outline different test cases, run assertions, and monitor your tests' executions, they can take significantly more time to write.
+
 ##### 10.3.2. Puppeteer
 
 ##### 10.3.3. Cypress
