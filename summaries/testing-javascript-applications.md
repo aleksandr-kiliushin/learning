@@ -1032,6 +1032,23 @@ When a QA team is available, they can write UI-based e2e tests.
 
 ##### 10.2.2. Pure end-to-end tests
 
+In the testing pyramid, pure e2e tests go a bit below UI-based e2e tests.  
+Pure e2e tests don't test your software as precisely as users would.  
+But they can be almost as reliable and are much quicker to write.
+
+Unlike UI-based e2e tests can be bundled into your development process and significantly shorten your feedback loop as you write code.  
+Pure e2e tests provide reliable quality guarantees and cover a large part of your code.
+
+Additionally, when testing app with no GUI, such as RESTful APIs or distributable software packages, it's not possible to write UI tests.  
+Therefore pure e2e tests offer the strongest reliability guarantees you can have.
+
+You should write pure e2e tests as you develop code.  
+Pure e2e tests validate your code from a consumer's perspective.  
+When writing e2e tests developers should pay attention to how much their tests overlap.  
+Developers should carefully adopt their test suit to reduce the burden of maintenanece as their software grows, maintaing a balanced testsing pyramid.
+
+Because writing pure e2e tests requires direct access to the code, they must be written by developers, not QA engineers.
+
 ##### 10.2.3. Pure UI tests
 
 ##### 10.2.4. A note on acceptance testing and this chapter's name
