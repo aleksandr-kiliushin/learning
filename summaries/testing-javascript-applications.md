@@ -1179,6 +1179,35 @@ If you need to test other browsers, Puppeteer cannot be used in your case.
 
 ##### 10.3.3. Cypress
 
+Cypress directly interfaces with a browser's remote-control API to find elements and carry out actions.  
+This direct communication to a browser makes tests quicker and simplifies setting up a testing environment because it reduces the amount of software needed to start writing tests.  
+Cypress's architecture allows you to leverage the Node.js process behind Cypress to perform tasks like managing files, sending requests and accesssinga a DB.  
+Because _Cypress is created specifically for testing_ it offers numerous advandages over tools like Webdriver-based tools and Puppeteer, which focus _only_ on automation.
+
+Cypress includes many testing utilities out of the box.  
+You don't have to set up an entire testing environment by yourself.  
+You don't need to pick and install multiple npm packages for organizing your tests, running assertions, or creating test doubles.
+Installing `cypress` is all you need to do to start writing tests.
+
+Cypress's API's are designed with testing in mind.  
+Typical situations you'd encounter when writing tests are already built in Cypress's methods.  
+These APIs make tests simpler, concise and more readable.  
+If you choose Cypress it is very recommended to read its gread docs thoroughly.
+
+Imagine, for example, that you'd like to click a button that appears after a few seconds after accessing your app.  
+Browser-automation tools would require you write a line of code that explicitly tells your test to wait for the button to be visible before trying to click it.  
+Without this explicit line, browser-automation tools will immediately fail if they don't find the element on which they must click.  
+Cypress, in contrast, doesn't require you to write explicit code to write for the button to appear.  
+Cypress will, by default, keep trying to find the button on which it wants to click until it reaches a timeout.  
+Cypress will will try to perform the click only once it finds the button.
+
+Cypress has the ability to "time travel".  
+As Cypress runs tests, it takes snapshots of your app.  
+Imagine that you have a test that fills out a form, submits it, and expects the test to update.  
+You can use the test's action log to see how your app looked at each of these steps.  
+Because you can run Cypress tests within a real browser, you can examine each step in detail using your browser's devtools.  
+When tests detects a bug in your app, you can add break points to your app's code and step through its lines.
+
 ##### 10.3.4. When to choose Cypress
 
 ### Section 11. Writing UI-based end-to-end tests
