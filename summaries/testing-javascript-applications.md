@@ -1150,6 +1150,28 @@ Without build-in tools to outline different test cases, run assertions, and moni
 
 ##### 10.3.2. Puppeteer
 
+Like Selenium, Puppeteer is not _exclusevily_ a testing framework.  
+Instead, Puppeteer is a browser automation tool.
+
+Unlike Selenium, Puppeteer can control _only_ Chrom and Chromium.  
+Puppeteer uses Chrome DevTools protocol which allows other programs to interact with the browser's capabilities.
+
+Because Puppeteer involves fewer pieces of software than Webdriver-based tools, it's leaner.  
+It is easier to set up and debug.
+
+Because Puppeteer is exclusevily a browser-automation tool, it doesn't ship with any testing frameworks to create test suites and perform assertions.  
+If you want to use Puppeteer for testing, you must use separate testing libraries like Jest or Jest Puppeteer.  
+Jest Puppeteer ships with all the necessary support for running tests using Puppeteer itself, including extra assertions.
+
+A further advantage of Puppeteer over Selenium is it's event-driven architecture.  
+This architecture eliminates the need for time-fixed delays or writing your own retry mechanisms.  
+By default, tests written using Puppeteer are much more robust.
+
+Puppeteer's debuggability is much better than Selenium's.  
+With Puppeteer, you can easily use Chrome's devtools to solve bugs and its "slow-motion" mode to replay the test's steps in such a way that you can understand precisely what the browser is doing.
+
+###### When to choose Puppeteer
+
 ##### 10.3.3. Cypress
 
 ##### 10.3.4. When to choose Cypress
