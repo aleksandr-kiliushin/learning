@@ -1210,6 +1210,8 @@ When tests detects a bug in your app, you can add break points to your app's cod
 
 ##### 10.3.4. When to choose Cypress
 
+If you're looking for a tool _exclusively_ to write tests for Chrome and Firefox.
+
 ### Section 11. Writing UI-based end-to-end tests
 
 ##### 11.1.1. Setting up a test environment
