@@ -1172,6 +1172,11 @@ With Puppeteer, you can easily use Chrome's devtools to solve bugs and its "slow
 
 ###### When to choose Puppeteer
 
+When you want to write cheaper tests: robust, less time to write, easier debugging.  
+If you need to support only Chrome and Chromium, Puppeteer is a much better alternative than Webdriver-based tools due to its simplicity and debuggability.  
+Because Puppeteer is focused on supporting Chromium, it can provide you with access to more features and offer more elaborated browser APIs.  
+If you need to test other browsers, Puppeteer cannot be used in your case.
+
 ##### 10.3.3. Cypress
 
 ##### 10.3.4. When to choose Cypress
