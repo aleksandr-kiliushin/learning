@@ -1214,9 +1214,44 @@ If you're looking for a tool _exclusively_ to write tests for Chrome and Firefox
 
 ### Section 11. Writing UI-based end-to-end tests
 
+No content.
+
+#### 11.1. Your first UI-based end-to-end tests
+
+No content.
+
 ##### 11.1.1. Setting up a test environment
 
+No content.
+
 ##### 11.1.2. Writing your first tests
+
+For your tests to be able to run, start your client and server to make them accessible.  
+To access elements within the page, call `get` method, or `contain` method or their combination.  
+Avoid brittle selectors.
+
+Your tests will fail if Cypress can't find an element.  
+You don't necessarily need to explicitly assert that each element exists.  
+By default, the `get` and `contains` asserts that elements exist.
+
+Test that interacts with server and DB will pass only once.  
+After running such tests for the first time, the DB will already have some data (a TODO created) and your assertions on page's content will no logner valid in subsequent runs.  
+To make tests deterministic, you have the following options:
+
+1. Fake server responses for adding and fetching items.
+2. Calculate what should be the expected quantity of the item added according to what's currently in the DB.
+3. Reset the DB before each test.
+
+The 1st approach mocks the server and covers only the frontend functionality.  
+But I like my e2e tests to simulate a user's actions as accurately as possible.  
+I use test double only in tests further down in testing pyramid.  
+Additionally, the 1st approach involves writing and maintenance test doubles that duplicate the server logic instead of what the user does and what the result of their actions should be.
+
+The 2st approach involves conditional logic inside tests, where if-else branches will essentially be different test cases.
+
+The 3rd approach is the recommended one.  
+It guarantees that the app state will be the exact same every time the test runs.  
+It always tests the same functionality and is ways simpler to implement and to debug.
 
 ##### 11.1.3. Sending HTTP requests
 
