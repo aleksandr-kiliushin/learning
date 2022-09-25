@@ -1273,7 +1273,75 @@ To run a single test, add a `.only` to it.
 
 #### 11.2. Best practices end-to-end tests
 
+No content.
+
 ##### 11.2.1. Page objects
+
+The page object pattern: instead of repeating selectors and actions throughout your tests, you'll use a separate object's methods into which those actions are encapsulated.  
+The advantage of encapsulating actions into separate methods is that you'll be quicker to update your tests when your page's structure changes.
+
+Imagine, all of your tests depend on an input with placeholder of `"Please, enter your name."`.  
+If you change that placeholder, all of your tests will fail.  
+To fix them, you'll have to update that field's selector in every test that uses it:
+
+```javascript
+it("Test case 1.", () => {
+  // cy.get(input[placeholder="Please, enter your name."])
+  cy.get(input[(placeholder = "Your name ...")])
+})
+it("Test case 2.", () => {
+  // cy.get(input[placeholder="Please, enter your name."])
+  cy.get(input[(placeholder = "Your name ...")])
+})
+it("Test case 3.", () => {
+  // cy.get(input[placeholder="Please, enter your name."])
+  cy.get(input[(placeholder = "Your name ...")])
+})
+```
+
+Making this is tedious and time-consuming.  
+You can incapsulate the field's selector into a method and reuse that method throughout your tests.  
+In this case, if the field's placeholder changed, you'd have to update only the method's body.
+
+```javascript
+class OrderPage {
+  static getNameField() {
+    // return cy.get(input[placeholder="Please, enter your name."])
+    return cy.get(input[(placeholder = "Your name ...")])
+  }
+}
+it("Test case 1.", () => {
+  OrderPage.getNameField()
+})
+it("Test case 2.", () => {
+  OrderPage.getNameField()
+})
+it("Test case 3.", () => {
+  OrderPage.getNameField()
+})
+```
+
+Now you've written this page object.  
+The tests doesn't directly include any selectors.  
+You should update selectors only once, in the page object's method.  
+Eliminate all repeating direct selectors from the tests. Instead, add methods to the page object.
+
+Treat page object exlusively as a selectors storage.  
+Page objects should be stateless so they perform the same action each time their actions are called.  
+Sharing page objects is a _bad_ idea because it can cause interference between tests.
+
+A single page object doesn't necessarily need to represent an entire page.  
+You can, for example, create a separate page object to encasulate methods to work _exclusively_ with menu.
+
+```javascript
+class MenuPage {
+  static openMenu() { ... }
+  static clickMenuItem() { ... }
+  static closeMenu() { ... }
+}
+```
+
+**By using page objects, you'll write tests in terms of what they do, _not_ in terms of what the page's structure is.**
 
 ##### 11.2.2. Applications actions
 
