@@ -1255,7 +1255,21 @@ It always tests the same functionality and is ways simpler to implement and to d
 
 ##### 11.1.3. Sending HTTP requests
 
+No content.
+
 ##### 11.1.4. Sequencing actions
+
+None of the Cypress commands you've written Cypress is synchronous.  
+You don't need to use `await` or chain these commands to sequence these commands.  
+Cypress commands are _not_ promises.  
+When your test starts, Cypress immediately invokes the functions you've written (executes all lines of code) and adds these functions to the queue.  
+Then Cypress executes these actions in the order they were added.  
+Once an action in the queue fails or all actions in the queue are complete, your tests finishes.  
+To see this behavious, add a `console.log` after the last line of your test. You'll see that Cypress logs the message before carrying out the test's actions.
+
+To run a single test, add a `.only` to it.
+
+![Cypress's queue](./img/cypress-queue.png)
 
 #### 11.2. Best practices end-to-end tests
 
