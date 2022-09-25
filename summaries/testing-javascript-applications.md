@@ -1345,6 +1345,15 @@ class MenuPage {
 
 ##### 11.2.2. Applications actions
 
+Typically, UI-based e2e tests interface only with your app's GUI.  
+App actions allow your tests to interface directly with your app's code.  
+When using an app action in a test, instead of finding an element in the page and interacting with it, you invoke a function from your app's code.  
+App actions should be used to reduce overlap among different tests, not to completely eliminate page objects.
+
+The disadvantage of using app actions is that they couple your tests to your app code instead of coupling to its UI.
+
+Personally, I use app actions only in my test's _arrange_ step. To _act_ and _assert_, I use selectors from a page object.
+
 #### 11.3. Dealing with flakiness
 
 ##### 11.3.1. Avoiding waiting for fixed amount of time
