@@ -7,11 +7,10 @@
 
 ## 🧪 Testing
 
-- ⏱ testing-javascript-applications-2021-en.pdf (404 / 514)
 - 📦 https://kentcdodds.com/blog/why-i-never-use-shallow-rendering
-- 📦 https://github.com/cypress-io/cypress-realworld-app
 - 📦 [Why most unit testing is waste](https://rbcs-us.com/site/assets/files/1187/why-most-unit-testing-is-waste.pdf)
 - ⏹ mastering-react-test-driven-development-2019-eng (335 / 485 done)
+- ✅ testing-javascript-applications-2021-en.pdf (404 / 514)
 - ✅ https://redux.js.org/usage/writing-tests
 - ✅ https://kentcdodds.com/blog/testing-implementation-details
 - ✅ https://martinfowler.com/testing/;
@@ -21,7 +20,6 @@
 
 - ⏱ Frontend first: Does route-based code splitting make UX worse?
 - 📦 https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
-- 📦 [Архитектура React - приложения – Егор Блинов](https://www.youtube.com/watch?v=Zy-Oj6qs8vo&ab_channel=%D0%A4%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4)
 - ✅ learning-react-modern-patterns-developing-2020-en.pdf
 
 ## JavaScript and TypeScript
@@ -62,9 +60,10 @@
 - 📦 [Erick evans - Domain driven desing](https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false)
 - 📦 [Backend for frontend by Sam Newman](https://samnewman.io/patterns/architectural/bff/)
 - 📦 https://feature-sliced.design/en/
-- [Школа программистов. Архитектура фронтенда: основы архитектуры масштабируемых JavaScript приложений.
+- 📦 [Школа программистов. Архитектура фронтенда: основы архитектуры масштабируемых JavaScript приложений.
   ](https://www.youtube.com/watch?v=fXVVpooY0ek&ab_channel=hh_ru)
-- [Школа программистов: Сергей Подунов, Архитектура, REST, HTTP](https://www.youtube.com/watch?v=Lf1s9DE04Jw&ab_channel=hh_ru)
+- 📦 [Школа программистов: Сергей Подунов, Архитектура, REST, HTTP](https://www.youtube.com/watch?v=Lf1s9DE04Jw&ab_channel=hh_ru)
+- 📦 [Архитектура React - приложения – Егор Блинов](https://www.youtube.com/watch?v=Zy-Oj6qs8vo&ab_channel=%D0%A4%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4)
 - 🔍 Hexagonal architecture
 - 🔍 Software architecture the hard parts
 - 🔍 Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
