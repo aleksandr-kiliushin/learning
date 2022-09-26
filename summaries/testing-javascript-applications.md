@@ -1356,11 +1356,32 @@ Personally, I use app actions only in my test's _arrange_ step. To _act_ and _as
 
 #### 11.3. Dealing with flakiness
 
+Flakiness makes you less confident that your tests - your bug-detection mechanisms - can identify mistakes.
+
 ##### 11.3.1. Avoiding waiting for fixed amount of time
+
+As a rule of thumb, whenever using Cypress, you should avoid waiting for a fixed amount of time.  
+Using `cy.wait` is almost always a **bad** idea.  
+It's a bad practice bacause your software may take different a different amount of time to respond every time a test runs.  
+If you're always waiting for a server to respond within 2 seconds, your test will fail if it takes 3.  
+Additionally, by increasing these waiting periods in attempt to make tests deterministic, you'll be making your tests slower.  
+Instead of waiting for a fixed amount of time, you should wait for conditions to be met.  
+Example: if you expect your page to contain a new element once the server responds, don't wait for a few seconds before checking the page's elements. Instead, configure the test to proceed when it detects the new element is there.  
+This practice allows your tests to run more quickly because they'll wait for only minimum necessary amount of time.
 
 ##### 11.3.2. Stubbing uncontrollable factors
 
+To have deterministic tests, you have to stub uncontrollable behaviour when writing tests.  
+When writing UI-based e2e tests, you should use stubs to make tests deterministic, _not_ to isolate different parts of your app.
+
+- Cypress's fake timers allow you to control time-related methods.
+- Stubbing API requests is useful for non-free or temporary-unavailable third-party APIs.
+- Stubbing functions allows when you're using functions which results are non-deterministic: `Math.random`, etc.
+
 ##### 11.3.3. Retrying tests
+
+Imagine, your test has become non-deterministic and you don't have enough time to make it deterministic right now.  
+You can set up restarting your tests.
 
 #### 11.4. Running tests on multiple browsers
 
@@ -1370,9 +1391,29 @@ Personally, I use app actions only in my test's _arrange_ step. To _act_ and _as
 
 ##### 11.5. Visual regression tests
 
+To ensure that your app is correctly displayed, visual regresssion tests compare how your app looks to previously approved snapshots.
+
+Jest's snapshots allow to achieve the same purpose, and the process is similar.  
+The difference between these two ways is that visual regession tests compare images, not strings.  
+Visual regression tests are more reliable.  
+Imagine that you have a component that you've tested with Jest's snapshot, and that component has another component nearby.  
+Now another component become bigger, for example, now it has bigger margins.  
+In this case, our component's Jest's snapshots tests still pass.  
+But in fact our component became ugly because it has less space.  
+Visual regression tests can see the entire scene and will detect such non-trivial bugs such as caused by different components' styles interference.
+
+My favourite tool is Percy, which has integration with Cypress.  
+Check its docs, `npm install --save-dev @percy/cypress` and write your visual regression tests.
+
 ## Part 3: Business impact
 
 ### Section 12. Continious integration and continious delivery
+
+When developers write code in their own branch for a long time without integration their work with others' work, the consequences are bad.  
+The main branch, the code upon which they building their branch might have already changed.  
+This causes a lot of rework and conflicts, which is constly, risky and frustrating.  
+Deliver early and deliver frequently.  
+You'll get customer's feedback sooner and learn more about what to build next.
 
 #### 12.1. What are continuous integration and continuous delivery
 
