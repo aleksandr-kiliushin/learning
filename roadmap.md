@@ -30,8 +30,6 @@
 
 ## 💧 Refactoring and code quality
 
-- ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf
-- ✅ the-pragmatic-programmer-2020-en.pdf
 - 📦 Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html
 - 📦 Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html
 - 📦 https://martinfowler.com/bliki/Yagni.html
@@ -47,6 +45,8 @@
 - 📦 Podlodka #77 - Технический долг
 - 📦 [ArchDays conf 2019 • Как списать технический долг • Максим Смирнов](https://www.youtube.com/watch?v=HRRv82L75wU&ab_channel=%D0%9A%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8FArchDays)
 - 🔍 Bibliography from Martin Fowler: Refactoring book, page 427 / 445
+- ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf
+- ✅ the-pragmatic-programmer-2020-en.pdf
 
 ## 🧩 Algorithms and data structures
 
