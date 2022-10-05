@@ -8,7 +8,7 @@
 ## 🧪 Testing
 
 - 📦 [Why most unit testing is waste](https://rbcs-us.com/site/assets/files/1187/why-most-unit-testing-is-waste.pdf)
-- ⏹ mastering-react-test-driven-development-2019-eng (335 / 485 done)
+- ✅ mastering-react-test-driven-development-2019-eng (335 / 485 done)
 - ✅ testing-javascript-applications-2021-en.pdf (404 / 514)
 - ✅ https://redux.js.org/usage/writing-tests
 - ✅ https://kentcdodds.com/blog/testing-implementation-details
