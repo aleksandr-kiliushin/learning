@@ -88,4 +88,4 @@
 
 ## Pet projects
 
-- 📦 Create Monopoly game
+- 📦 Create DB schema and data visualizer.
