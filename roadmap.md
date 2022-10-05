@@ -36,7 +36,7 @@
 - 📦 [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
 - 📦 [Управление техническим долгом
   ](https://tlroadmap.io/roles/technical-lead/tech-quality/technical-debt.html)
-- 📦 [Технические долги](https://blog.byndyu.ru/2008/12/blog-post.html)
+- 📦 [Блог Александра Бындю - Технический долг](https://blog.byndyu.ru/2008/12/blog-post.html)
 - 📦 https://www.martinfowler.com/bliki/TechnicalDebt.html
 - 📦 https://www.martinfowler.com/bliki/TechnicalDebtQuadrant.html
 - 📦 [Управление техническим долгом - Концепция Continuous Inspection
