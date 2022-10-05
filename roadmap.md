@@ -89,3 +89,4 @@
 ## Pet projects
 
 - 📦 Create DB schema and data visualizer.
+- 📦 Create a mind map app.
