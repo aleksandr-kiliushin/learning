@@ -30,12 +30,12 @@
 
 ## 💧 Refactoring and code quality
 
-- 📦 Branch by abstraction (i. e. to upgrage or migrate to a new library) https://martinfowler.com/bliki/BranchByAbstraction.html
-- 📦 Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html
+- 📦 https://martinfowler.com/bliki/BranchByAbstraction.html
+- 📦 https://martinfowler.com/bliki/ParallelChange.html
 - 📦 https://martinfowler.com/articles/preparatory-refactoring.html
-- 📦 [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
 - 📦 https://www.martinfowler.com/bliki/TechnicalDebt.html
 - 📦 https://www.martinfowler.com/bliki/TechnicalDebtQuadrant.html
+- 📦 [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
 - 📦 [Управление техническим долгом - Концепция Continuous Inspection
   ](https://infostart.ru/1c/articles/622617/)
 - 📦 [ArchDays conf 2019 • Как списать технический долг • Максим Смирнов](https://www.youtube.com/watch?v=HRRv82L75wU&ab_channel=%D0%9A%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8FArchDays)
