@@ -30,11 +30,11 @@
 
 ## 💧 Refactoring and code quality
 
-- 📦 https://martinfowler.com/bliki/BranchByAbstraction.html
-- 📦 https://martinfowler.com/bliki/ParallelChange.html
-- 📦 https://martinfowler.com/articles/preparatory-refactoring.html
+- 📦 https://www.martinfowler.com/bliki/BranchByAbstraction.html
+- 📦 https://www.martinfowler.com/bliki/ParallelChange.html
 - 📦 https://www.martinfowler.com/bliki/TechnicalDebt.html
 - 📦 https://www.martinfowler.com/bliki/TechnicalDebtQuadrant.html
+- 📦 https://www.martinfowler.com/articles/preparatory-refactoring.html
 - 📦 [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
 - 📦 [Управление техническим долгом - Концепция Continuous Inspection
   ](https://infostart.ru/1c/articles/622617/)
