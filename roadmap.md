@@ -38,7 +38,7 @@
 - 📦 [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
 - 📦 [Управление техническим долгом - Концепция Continuous Inspection
   ](https://infostart.ru/1c/articles/622617/)
-- 📦 [ArchDays conf 2019 • Как списать технический долг • Максим Смирнов](https://www.youtube.com/watch?v=HRRv82L75wU&ab_channel=%D0%9A%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8FArchDays)
+- 📦 [Как списать технический долг с помощью микросервисов](https://www.youtube.com/watch?v=HRRv82L75wU&ab_channel=%D0%9A%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8FArchDays)
 - ✅ [Блог Александра Бындю - Технический долг](https://blog.byndyu.ru/2008/12/blog-post.html)
 - ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf
 - ✅ the-pragmatic-programmer-2020-en.pdf
