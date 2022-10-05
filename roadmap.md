@@ -34,7 +34,7 @@
 - 📦 Implement backward-incompatible changes to an interface in a safe manner. https://martinfowler.com/bliki/ParallelChange.html
 - 📦 https://martinfowler.com/articles/preparatory-refactoring.html
 - 📦 [Writing clean JavaScript](https://medium.com/geekculture/writing-clean-javascript-es6-edition-834e83abc746)
-- 📦 [Управление техническим долгом
+- ✅ [Управление техническим долгом
   ](https://tlroadmap.io/roles/technical-lead/tech-quality/technical-debt.html)
 - 📦 [Блог Александра Бындю - Технический долг](https://blog.byndyu.ru/2008/12/blog-post.html)
 - 📦 https://www.martinfowler.com/bliki/TechnicalDebt.html
