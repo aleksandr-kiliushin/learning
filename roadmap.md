@@ -83,6 +83,8 @@
 
 ## Infrastructure
 
+- 📦 Setup CI for personal-app-server.
+- 📦 Setup CI for personal-app-frontend.
 - 📦 https://medium.com/storyblocks-engineering/web-architecture-101-a3224e126947
 - 📦 https://levelup.gitconnected.com/basics-of-ci-cd-a98340c60b04
 
