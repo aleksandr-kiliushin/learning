@@ -28,20 +28,17 @@
 - ✅ mastering-typescript-enterprise-ready-4th-2021-en.pdf
 - ✅ typescript-4-design-patterns-and-best-practic-2021-en.pdf
 
-## 💧 Refactoring and code quality
+## 💧 Technical dept and refactoring
 
-- 📦 https://www.martinfowler.com/bliki/BranchByAbstraction.html
 - 📦 https://www.martinfowler.com/bliki/ParallelChange.html
-- 📦 https://www.martinfowler.com/bliki/TechnicalDebt.html
-- 📦 https://www.martinfowler.com/bliki/TechnicalDebtQuadrant.html
-- 📦 https://www.martinfowler.com/articles/preparatory-refactoring.html
 - 📦 [Управление техническим долгом - Концепция Continuous Inspection
   ](https://infostart.ru/1c/articles/622617/)
+- ✅ https://www.martinfowler.com/bliki/BranchByAbstraction.html
+- ✅ https://www.martinfowler.com/bliki/TechnicalDebt.html
+- ✅ https://www.martinfowler.com/bliki/TechnicalDebtQuadrant.html
 - ✅ [Как микросервисы помогают списать технический долг](https://www.youtube.com/watch?v=HRRv82L75wU&ab_channel=%D0%9A%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8FArchDays)
 - ✅ [Блог Александра Бындю - Технический долг](https://blog.byndyu.ru/2008/12/blog-post.html)
 - ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf
-- ✅ the-pragmatic-programmer-2020-en.pdf
-- ✅ https://martinfowler.com/bliki/Yagni.html
 
 ## 🧩 Algorithms and data structures
 
@@ -62,7 +59,9 @@
 - 🔍 Hexagonal architecture
 - 🔍 Software architecture the hard parts
 - 🔍 Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
+- ✅ https://martinfowler.com/bliki/Yagni.html
 - ✅ [Feature-Sliced Design — Архитектура Frontend проектов / Илья Азин, Яндекс (16.12.2021)](https://www.youtube.com/watch?v=af-PD2yIUiU&ab_channel=Feature-SlicedDesign)
+- ✅ the-pragmatic-programmer-2020-en.pdf
 
 ## 🎨 CSS
 
