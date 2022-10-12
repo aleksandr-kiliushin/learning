@@ -23,6 +23,7 @@
 
 - 📦 https://javascript.info
 - 📦 The handbook and the docs here: www.typescriptlang.org
+- 📦 https://github.com/type-challenges/type-challenges
 - ✅ js-the-definitive-guide-7th-2020-en.pdf
 - ✅ essential-typescript-4-2021-en.pdf
 - ✅ mastering-typescript-enterprise-ready-4th-2021-en.pdf
