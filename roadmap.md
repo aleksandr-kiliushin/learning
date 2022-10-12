@@ -30,8 +30,6 @@
 
 ## 💧 Technical dept and refactoring
 
-- 📦 [Управление техническим долгом - Концепция Continuous Inspection
-  ](https://infostart.ru/1c/articles/622617/)
 - ✅ https://www.martinfowler.com/bliki/ParallelChange.html
 - ✅ https://www.martinfowler.com/bliki/BranchByAbstraction.html
 - ✅ https://www.martinfowler.com/bliki/TechnicalDebt.html
