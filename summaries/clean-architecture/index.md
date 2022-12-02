@@ -19,4 +19,4 @@ To keep our project mainanable and flourishing:
 - we ask questions;
 - we run experiments.
 
-A good architecture is ~~a destination or a frozen artifact~~ an ongoing process like a jorney.
+A good architecture is ~~a destination or a frozen artifact~~ an ongoing process like a jorney or enquiry.
