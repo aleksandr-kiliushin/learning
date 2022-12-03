@@ -13,7 +13,7 @@ System's development changes should be:
 
 There are a lot of paths to build the architecture:
 
-- 🪦 Architecture can be too strong and stable, born from authority and rigidity.  
+- 🗿 Architecture can be too strong and stable, born from authority and rigidity.  
   If change is expensive, change is eliminated, which causes subdued or headed of into a bureacratic ditch.  
   Totalitarism in architecture becomes a dystrophia for developers and a constant source of developers for all.
 - 🤡 Architecture can have a strong smell of speculative generality.  
