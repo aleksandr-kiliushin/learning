@@ -62,4 +62,23 @@ When your software is done right:
 
 ### Chapter 1. What is design and architecture
 
+Design and architecture are the same.  
+The word «architecture» is often used to describe high-level concepts that are divorced from low-level details.  
+The word «design», conversely, more often implies structures and decisions at a low level.  
+But this separation is nonsensical when you look what a real architect does.  
+Low-level details and high-level decision are all part of the same whole. There is no clear dividing line between them.  
+There is simply a continuum of decisions from the highest to the lowest levels.
+
+#### The goal
+
+The goal of software architecure is to minimize the human resources required to build and maintain the required system.
+
+The measure of design quality is the measure of the effort required to meet the customer's needs.  
+The effort is low, and stays low throughout the lifetime of the system? The design is good.  
+The effort grows with each release? The design is bad.
+
+#### Case study
+
+CONTINUE HERE ...
+
 ### Chapter 2. A tale of two values
