@@ -79,6 +79,14 @@ The effort grows with each release? The design is bad.
 
 #### Case study
 
-CONTINUE HERE ...
+You can measure how some interesting measures change during the system lifetime.
+
+- Engineering staff amount.
+- Time per codeline.
+- Codeline cost.
+
+#### The signature of a mess.
+
+CONTINUE HERE.
 
 ### Chapter 2. A tale of two values
