@@ -81,11 +81,18 @@ The effort grows with each release? The design is bad.
 
 You can measure how some interesting measures change during the system lifetime.
 
-- Engineering staff amount.
-- Time per codeline.
-- Codeline cost.
+- engineering staff amount;
+- time per codeline;
+- codeline cost;
+- company's monthly development payroll;
+- other productivity indices.
 
-#### The signature of a mess.
+#### The signature of a mess
+
+When a system is messy, the developers' job becomes «moving the mess from one place to the next, and the next», so that they can add one more inadequately little feature.  
+Company earnings fall down, developers frustrate, managers are in rage.
+
+#### What went wrong
 
 CONTINUE HERE.
 
