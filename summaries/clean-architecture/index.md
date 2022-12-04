@@ -71,7 +71,7 @@ There is simply a continuum of decisions from the highest to the lowest levels.
 
 #### The goal
 
-The goal of software architecure is to minimize the human resources required to build and maintain the required system.
+> The goal of software architecure is to minimize the human resources required to build and maintain the required system.
 
 The measure of design quality is the measure of the effort required to meet the customer's needs.  
 The effort is low, and stays low throughout the lifetime of the system? The design is good.  
@@ -94,6 +94,31 @@ Company earnings fall down, developers frustrate, managers are in rage.
 
 #### What went wrong
 
-CONTINUE HERE.
+The morals of the «Tortoise and the Hare» story:
+
+- Slow and steady wins the race.
+- The race is not to the swift, nor the battle to the strong.
+- The more haste, the less speed.
+
+Most developers work hard, but a part of their brain sleeps -- the part that knows that clean, well-designed code matters.
+
+Another mistake: «We can clean it up later, we just have to get to market first!» -- the Hare's mistake.  
+Why later? Do you think you won't have to get new features done? Or maybe the «Pause the market» button will suddenly appear?  
+These developers are overconfident in their ability to remain productive.  
+Writing messy code makes them go fast in the short term and slows them down in the long term.
+
+> The only way to go fast, is to go well.
+
+Stop be overconfident.  
+Start taking the responsibility for the mess you've made.
+
+The solution is ~~to start over from scratch and redesign the whole system~~. It's just another manifestation of the same overconfidence that led to the mess.  
+Their overconfidence will drive the redesign into the same mess as the original project.
+
+#### Conclusion
+
+- Recognize and avoid you overconfidence.
+- Start taking the quality of your software seriously.
+- You need to know what good software architecture is, what its attributes are.
 
 ### Chapter 2. A tale of two values
