@@ -226,3 +226,15 @@ Each of the paradigms removes capabilities from the programmer.
 None of them adds new capabilities.  
 Each imposes extra discipline.  
 The paradigms tell us what not to do, more than what to do.
+
+#### Conclusion
+
+No content.
+
+### Chapter 4. Structured programming
+
+No content.
+
+#### Proof
+
+CONTINUE HERE.
