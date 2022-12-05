@@ -169,3 +169,21 @@ Many systems reach that point in some of their features or configurations.
 - 🧑‍💼 We need to make changes accordint to this requirements list.
 - 🧑‍💻 Estimated cost of these changes will unaffordably high.
 - 🧑‍💼 How did you let the system get to this point?
+
+#### Eisenhower's matrix
+
+|                      |                          |
+| -------------------- | ------------------------ |
+| Important + urgent   | Important + not urgent   |
+| Unimportant + urgent | Unimportant + not urgent |
+
+The first value of software -- behavior -- is urgent but never particulary important.  
+The second value of software -- architecture -- is important but never particulary urgent.
+
+Of course, some things are both important and urgent, and some -- both unimportant and not urgent.
+
+The dilemma for developers is that managers are not equipped to evaluate the importance of architecture.  
+That's what developers were hired to do.  
+It's the responsibility of the software development team to assert the importance of architecture over the urgency of features.
+
+#### Fight for the architecture
