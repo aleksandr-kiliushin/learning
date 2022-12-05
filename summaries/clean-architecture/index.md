@@ -33,7 +33,7 @@ But they share similar rules of architecture.
 These rules are about ordering and assembling the building blocks of programs.  
 They are universal regardless time and system types.
 
-## Part 1. Introduction
+## Part I. Introduction
 
 Getting software working is easy.  
 Kids produce working code. Students start businesses based on a few lines of PHP code. Juniors make their tasks done.  
@@ -187,3 +187,19 @@ That's what developers were hired to do.
 It's the responsibility of the software development team to assert the importance of architecture over the urgency of features.
 
 #### Fight for the architecture
+
+Fulfilling this responsibility means wading into a fight.  
+The development team has to struggle for what they believe to be best for the company.  
+And so do the management team, and the marketing team, and the sales team.
+
+Effective software developers uabashedly squabble with all the other stakeholders as equals.  
+Remember, as a software developer, you are a stakeholder. You have a stake in the software that you need to safeguard.  
+It's a part of you role, of your duty. It's a big part of why you were hired.
+
+This challenge is doubly important if you're a software architect.  
+Architects are focused on creating an architecture that allows features to be easily developed, modified and extended.
+
+If architecture comes last, then the system will become ever more costly to develop.  
+This means that the software development team did not fight hard enough.
+
+## Part II. Starting with the bricks: programming paradigms
