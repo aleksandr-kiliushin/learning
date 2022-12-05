@@ -122,3 +122,50 @@ Their overconfidence will drive the redesign into the same mess as the original 
 - You need to know what good software architecture is, what its attributes are.
 
 ### Chapter 2. A tale of two values
+
+Every software system provides two different values to the stakeholders: behavior and structure.  
+Developers are responsible for ensuring that both of them remain high.  
+Unfortunetely, developers often focus of one of them, leaving the software system eventually valueless.
+
+#### Behavior
+
+Developers are hired to make machines to behave in a way that makes or saves money for the stakeholders.  
+We do this by helping the stakeholders to develop a functional specification, or requirements document.  
+Many programmers think that is the entirely of their job. They are sadly mistaken.
+
+#### Architecture
+
+The second value of software relates to the softness of software.  
+Software is intended to be a way to easily change the behavior of machines.
+
+To fulfill its purpose, software must be soft.  
+When the stakeholders change their minds about a feature, that change should be simple and easy to make.  
+The difficulty in making such a change should be proportional only to the scope of the change, and not to the shape of the change.
+
+#### The greater value
+
+What is more important for the software system -- to work, or to be easy to change?
+
+Business managers likely say it's more important for the software system to work. Developers, in turn, often go alogn with this attitude. But it's a wrong attitude.  
+Let's examine the extremes:
+
+- Extreme 1:
+  - a program works perfectly;
+  - it's impossible to make changes when the requirements change;
+  - therefore the program will become useless.
+- Extreme 2:
+  - a program doesn't work;
+  - it is easy to make it work;
+  - it is easy to keep it working as requirements change.
+  - therefore the program will remain continually useful.
+
+Yes, these are theoretical extremes and there are no programs that are unable to be changed.  
+But there are changes-unfriendly systems, when the cost of change exceeds the benefit of change.  
+Many systems reach that point in some of their features or configurations.
+
+- 🧑‍💻 Do you want to be able to make changes in the future?
+- 🧑‍💼 Of course, but the current functionality is more important than any later flexibility.
+- ⏱️ A couple of months later ...
+- 🧑‍💼 We need to make changes accordint to this requirements list.
+- 🧑‍💻 Estimated cost of these changes will unaffordably high.
+- 🧑‍💼 How did you let the system get to this point?
