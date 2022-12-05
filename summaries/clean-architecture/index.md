@@ -203,3 +203,26 @@ If architecture comes last, then the system will become ever more costly to deve
 This means that the software development team did not fight hard enough.
 
 ## Part II. Starting with the bricks: programming paradigms
+
+### Chapter 3. Paradigm overview
+
+No content.
+
+#### Structured programming
+
+No content.
+
+#### Object-oriented programming
+
+No content.
+
+#### Functional programming
+
+No content.
+
+#### Food for thought
+
+Each of the paradigms removes capabilities from the programmer.  
+None of them adds new capabilities.  
+Each imposes extra discipline.  
+The paradigms tell us what not to do, more than what to do.
