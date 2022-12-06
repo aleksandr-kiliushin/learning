@@ -257,4 +257,10 @@ Yes, there are some `goto` analogs in modern languages, but they are very strict
 
 #### Functional decomposition
 
+Structured programming allows you to decompose a large-scale problem statement into high-level functions.  
+Each of those functions can then be decomposed into lower-level functions, ad infinitum.  
+Moreover, each of those functions can be represented using the restricted control structures of structured programming.
+
+#### No formal proofs
+
 CONTINUE HERE.
