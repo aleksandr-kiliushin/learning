@@ -210,7 +210,7 @@ No content.
 
 #### Structured programming
 
-No content.
+Imposes discipline on direct transfer of control.
 
 #### Object-oriented programming
 
@@ -233,7 +233,7 @@ No content.
 
 ### Chapter 4. Structured programming
 
-No content.
+It was invented by Edsger Wybe Dijkstra.
 
 #### Proof
 
@@ -249,4 +249,8 @@ No content.
 
 #### A harmful proclamation
 
-CONTINUE HERE.
+As the result of a 10-years discussion, Dijkstra proved harmfulness of the `goto` statement. `goto` is no longer a part of any modern language.
+
+Nowadays, we are all structured programmers, though not by necessary by choice.  
+It's just that our languages don't give us the opinion to use undisciplined direct transfer of control.  
+Yes, there are some `goto` analogs in modern languages, but they are very strict, or at least scoped within the current function.
