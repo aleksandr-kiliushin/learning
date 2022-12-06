@@ -245,7 +245,7 @@ No content.
 - 🧐 programmers can use these proven structures the way mathematicians do;
 - 🙅 certain uses of the `goto` statement prevented code from being decomposed into smaller modules, thereby prevented use of the divide-and-conquer approach necessary for reasonable proofs;
 - 👌 other uses of the `goto` statement are «good» (these have evoleved to `if`, `while`, etc);
-- ✅ the created technique mathematically traced the input of the sequence to the output of the sequence, which has no difference from any normat mathematical proof;
+- ✅ the created technique mathematically traced the input of the sequence to the output of the sequence, which has no difference from any normal mathematical proof;
 
 #### A harmful proclamation
 
