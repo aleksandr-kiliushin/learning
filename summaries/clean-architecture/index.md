@@ -254,3 +254,7 @@ As the result of a 10-years discussion, Dijkstra proved harmfulness of the `goto
 Nowadays, we are all structured programmers, though not by necessary by choice.  
 It's just that our languages don't give us the opinion to use undisciplined direct transfer of control.  
 Yes, there are some `goto` analogs in modern languages, but they are very strict, or at least scoped within the current function.
+
+#### Functional decomposition
+
+CONTINUE HERE.
