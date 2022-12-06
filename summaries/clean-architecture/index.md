@@ -237,4 +237,16 @@ No content.
 
 #### Proof
 
+- 🧩 programming was hard before structured programming was invented;
+- 😓 programmers didn't do it very well because a program contains too many details for a human brain to manage;
+- 👾 a program may seem to work but fails in surprising ways;
+- ∑ the idea behind it is applying the mathematical discipline of proof;
+- ☝️ it turned out that the construction of a Euclidian hierarchy of postulates, theorems and lemmas are useful in programming
+- 🧐 programmers can use these proven structures the way mathematicians do;
+- 🙅 certain uses of the `goto` statement prevented code from being decomposed into smaller modules, thereby prevented use of the divide-and-conquer approach necessary for reasonable proofs;
+- 👌 other uses of the `goto` statement are «good» (these have evoleved to `if`, `while`, etc);
+- ✅ the created technique mathematically traced the input of the sequence to the output of the sequence, which has no difference from any normat mathematical proof;
+
+#### A harmful proclamation
+
 CONTINUE HERE.
