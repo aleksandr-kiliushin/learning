@@ -237,7 +237,7 @@ It was invented by Edsger Wybe Dijkstra.
 
 #### Proof
 
-- 🧩 programming was hard before structured programming was invented;
+- 🧩 programming was hard before SP was invented;
 - 😓 programmers didn't do it very well because a program contains too many details for a human brain to manage;
 - 👾 a program may seem to work but fails in surprising ways;
 - ∑ the idea behind it is applying the mathematical discipline of proof;
@@ -257,10 +257,33 @@ Yes, there are some `goto` analogs in modern languages, but they are very strict
 
 #### Functional decomposition
 
-Structured programming allows you to decompose a large-scale problem statement into high-level functions.  
+SP allows you to decompose a large-scale problem statement into high-level functions.  
 Each of those functions can then be decomposed into lower-level functions, ad infinitum.  
-Moreover, each of those functions can be represented using the restricted control structures of structured programming.
+Moreover, each of those functions can be represented using the restricted control structures of SP.
 
 #### No formal proofs
 
-CONTINUE HERE.
+Mathematics is not applicable to prove correctness of our provable functions.
+
+#### Science to the resque
+
+Science is fundamentally different from mathematics.  
+In the context of proving of functions correctness, programming closer to science, than to mathematics.  
+I can demonstrate my function works, I can show that it's correct in many different cases, but I can't prove it in the sense of a mathematical proof.  
+No matter how many experiments I conduct, or how much empirical evidence I gather, there is always the chance that another experiment will fail with certain conditions.
+
+Science doesn't work by proving statements true, but rather by proving statements false.  
+Those statements that we can't prove false, after much effort, we deem to be true enough for our purposes.
+
+#### Tests
+
+Testing shows the presence, not the absence, of bugs.
+
+SP forces us to recursively decompose a program into a set of small provable functions. We can then use tests to try to prove those small provable functions are incorrect. If such tests fail to prove incorrectness, then we consider the functions to be correct enough for our purposes.
+
+#### Conclusion
+
+SP is valuable for it's ability to create testable units. This is the reason why modern languages don't typically support unrestrained `goto` statements. At the architectural level, this is why we consider functional decomposition to be a best practice.
+
+At every level, software is like a science and, therefore, is driven by testability.  
+Architects strive to define modules, components and services to that are easily testable. To do so, they employ restrictive disciplines similar to structured programming.
