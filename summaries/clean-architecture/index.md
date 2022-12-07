@@ -302,11 +302,29 @@ What is OO?
   - an evasive answer at best;
   - what does «modeling the real world» actually mean?
   - why do we want to model the real world?
-  - is intended to imply that OO makes ;software easier to understand because it has closer relationship to the real world;
+  - is intended to imply that OO makes software easier to understand because it has closer relationship to the real world;
   - the statement is still loosely defined and doesn't tell us what OO is.
 
 OO is the proper admixture of encapsulation, inheritance and polymorphism.
 
 #### Encapsulation
+
+OO languages provide easy and effective encapsulation of data and function. As a result, a line can be drawn around a cohesive set of data and functions. Outline of that line, the data is hidden and only some of the functions are known.
+
+Clients of the code don't have direct access to either the data or the internal implementation. They call methods that return the data in a reasonable format.
+
+- Incapsulation is available in non-OO languages (like C), but OO languages (like C++) are a lot more frendly for it.
+- Some OO languages provide useful keywords like `public`, `private` and `protected`, encouragin encapsulation.
+- Some OO languages like Java and C# abolished the header / implementation split altogether, thereby weaking encapsulation. In these languages it's impossible to separate the declaration and definition of a class.
+
+For these reasons, it's difficult to accept that OO depends on strong encapsulation. Indeed, many OO languages have little or no enforced encapsulation.
+
+#### Inheritance
+
+Technically, inheritance is a redeclaration of a group of variables and functions within an enclosing scope.
+
+In the context of inheritance, OO languages haven't given us anything completely new. Long before OO languages were invented, we had tricks to implement inheritance. OOP introduced a more convenient way to implement inheritance, and multiple inheritance in particular.
+
+#### Polymorphism
 
 CONTINUE HERE.
