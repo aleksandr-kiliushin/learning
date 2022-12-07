@@ -287,3 +287,26 @@ SP is valuable for it's ability to create testable units. This is the reason why
 
 At every level, software is like a science and, therefore, is driven by testability.  
 Architects strive to define modules, components and services to that are easily testable. To do so, they employ restrictive disciplines similar to structured programming.
+
+### Chapter 5. Object-oriented programming
+
+The basis of a good architecture is the understanding and application of OO design.
+
+What is OO?
+
+- The combination of data and function?
+  - is unsatisfying, because it implies that `o.f()` is somehow different from `f(0)`, which is absurd;
+  - programmers were passing data into functions long before 1966, when Dahl and Nygaard moved the function call stack frame to the heap and invented OO.
+- A way to modal the real world?
+
+  - an evasive answer at best;
+  - what does «modeling the real world» actually mean?
+  - why do we want to model the real world?
+  - is intended to imply that OO makes ;software easier to understand because it has closer relationship to the real world;
+  - the statement is still loosely defined and doesn't tell us what OO is.
+
+OO is the proper admixture of encapsulation, inheritance and polymorphism.
+
+#### Encapsulation
+
+CONTINUE HERE.
