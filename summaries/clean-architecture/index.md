@@ -38,7 +38,7 @@ They are universal regardless time and system types.
 Getting software working is easy.  
 Kids produce working code. Students start businesses based on a few lines of PHP code. Juniors make their tasks done.  
 The code they produce may not be pretty; but it works.  
-It works because getting something to work -- once -- is easy.
+It works because getting something to work – once – is easy.
 
 Gettings software right is hard.  
 It requires knowledge, skills that most programmers don't take time to develop.  
@@ -100,9 +100,9 @@ The morals of the «Tortoise and the Hare» story:
 - The race is not to the swift, nor the battle to the strong.
 - The more haste, the less speed.
 
-Most developers work hard, but a part of their brain sleeps -- the part that knows that clean, well-designed code matters.
+Most developers work hard, but a part of their brain sleeps – the part that knows that clean, well-designed code matters.
 
-Another mistake: «We can clean it up later, we just have to get to market first!» -- the Hare's mistake.  
+Another mistake: «We can clean it up later, we just have to get to market first!» – the Hare's mistake.  
 Why later? Do you think you won't have to get new features done? Or maybe the «Pause the market» button will suddenly appear?  
 These developers are overconfident in their ability to remain productive.  
 Writing messy code makes them go fast in the short term and slows them down in the long term.
@@ -144,7 +144,7 @@ The difficulty in making such a change should be proportional only to the scope 
 
 #### The greater value
 
-What is more important for the software system -- to work, or to be easy to change?
+What is more important for the software system – to work, or to be easy to change?
 
 Business managers likely say it's more important for the software system to work. Developers, in turn, often go alogn with this attitude. But it's a wrong attitude.  
 Let's examine the extremes:
@@ -177,10 +177,10 @@ Many systems reach that point in some of their features or configurations.
 | Important + urgent   | Important + not urgent   |
 | Unimportant + urgent | Unimportant + not urgent |
 
-The first value of software -- behavior -- is urgent but never particulary important.  
-The second value of software -- architecture -- is important but never particulary urgent.
+The first value of software – behavior – is urgent but never particulary important.  
+The second value of software – architecture – is important but never particulary urgent.
 
-Of course, some things are both important and urgent, and some -- both unimportant and not urgent.
+Of course, some things are both important and urgent, and some – both unimportant and not urgent.
 
 The dilemma for developers is that managers are not equipped to evaluate the importance of architecture.  
 That's what developers were hired to do.  
@@ -326,5 +326,22 @@ Technically, inheritance is a redeclaration of a group of variables and function
 In the context of inheritance, OO languages haven't given us anything completely new. Long before OO languages were invented, we had tricks to implement inheritance. OOP introduced a more convenient way to implement inheritance, and multiple inheritance in particular.
 
 #### Polymorphism
+
+- is the ability of any data to be processed in more than one form;
+- _poly_ means _many_, _morphism_ means _types_;
+- allows to represent a function in many types and many forms;
+- lets the system choose which function to call based on type and parameter signatures.
+
+Here, OOP still invents nothing completely new, but provides a way to implement polymorphism much safer, convenient and even trivial.
+
+The `+` operator in JS is polymorphic, as it can either sum or concatenate, depending on the data type of its operands.
+
+OO imposes discipline on indirect transfer of control.
+
+##### The power of polymorphism
+
+No content.
+
+##### Dependency inversion
 
 CONTINUE HERE.
