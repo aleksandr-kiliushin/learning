@@ -344,4 +344,44 @@ No content.
 
 ##### Dependency inversion
 
-CONTINUE HERE.
+Imagine what software was like before a safe and convenient mechanism for polymorphism was available.
+
+A typical calling tree:
+
+- main functions call high-level functions;
+- high-level functions call mid-level functions;
+- mid-level functions call low-level functions;
+
+In such trees, source code dependencies inexorably follow the flow of control.
+
+![Cypress's queue](./img/source-code-dependencies-vs-flow-of-control.png)
+
+The flow of control was dictated by the behavior of the system, and the source code dependencies were dicated by that flow of control.
+
+When polymorphism is brought into play, something very different can happen.
+
+![Cypress's queue](./img/dependency-inversion.png)
+
+In the figure, module `HL1` calls the `F` function in module `ML1`. The fact that it calls this functions through an interface is a source code contrivance. At runtime, the interface doesn't exist. `H1` simply calls `F` within `ML1`.
+
+Note, that the source code dependency (the inheritance relationship) between `ML1` and the interface `I` points in the opposite direction compared to the flow of control. This is called dependency inversion.
+
+No matter, which module does the calling, and which module is called, the software architect can point the source code dependency in either direction.
+
+What can you do with that power?  
+As an example, you can rearrange the source code dependencies of your system so that the DB and the UI depend on the business rules, rather than the other way around.
+
+![Cypress's queue](./img/the-db-and-the-ui-depend-on-the-business-rules.png)
+
+This means that the DB and the UI can be plugins to the business rules. It means that the source code of the business rules never mentions the DB or the UI.
+
+As a consequence, the business rules, the UI, and the DB can be compiled into 3 separate components or deployment units that have the same dependencies as the source code. The component containing the business rules will no depend on components containing the UI and the DB.  
+Changes to the DB or the UI don't have any effect on the business rules. Those components can be deployed and developed independently and separately.
+
+In short, when the source code of a component changes, only that component needs to be redeployed.
+
+#### Conclusion
+
+For the architect, OO is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system.  
+It allows the architect to create a plugin architecture in which modules that contain high-level policies are independed of modules that contain low-level details.  
+The low-level details are relegated to plugin modules that can be developed and deployed independently from the modules that contain high-level policies.
