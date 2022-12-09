@@ -344,41 +344,23 @@ No content.
 
 ##### Dependency inversion
 
-Imagine what software was like before a safe and convenient mechanism for polymorphism was available.
+A typical dependencies tree:
 
-A typical calling tree:
+- 😐 _main functions_ call _high-level functions_, that call _mid-level functions_, that call _low-level functions_;
+- 😖 _system behavior_ dictates _control flow_, _control flow_ dictates _source code dependencies_;
 
-- main functions call high-level functions;
-- high-level functions call mid-level functions;
-- mid-level functions call low-level functions;
+Dependencies tree enabled by depency inversion:
 
-In such trees, source code dependencies inexorably follow the flow of control.
+- 😊 decouples modules;
+- 👯 both high- and low-level modules depend on abstractions;
+- 🙅 high-level modules don't import anything from low-level modules;
+- 🙅 abstractions don't depend on concrete implementations;
+- 🤗 concrete implementations depend on abstractions;
 
-![Cypress's queue](./img/source-code-dependencies-vs-flow-of-control.png)
-
-The flow of control was dictated by the behavior of the system, and the source code dependencies were dicated by that flow of control.
-
-When polymorphism is brought into play, something very different can happen.
-
-![Cypress's queue](./img/dependency-inversion.png)
-
-In the figure, module `HL1` calls the `F` function in module `ML1`. The fact that it calls this functions through an interface is a source code contrivance. At runtime, the interface doesn't exist. `H1` simply calls `F` within `ML1`.
-
-Note, that the source code dependency (the inheritance relationship) between `ML1` and the interface `I` points in the opposite direction compared to the flow of control. This is called dependency inversion.
-
-No matter, which module does the calling, and which module is called, the software architect can point the source code dependency in either direction.
-
-What can you do with that power?  
-As an example, you can rearrange the source code dependencies of your system so that the DB and the UI depend on the business rules, rather than the other way around.
-
-![Cypress's queue](./img/the-db-and-the-ui-depend-on-the-business-rules.png)
-
-This means that the DB and the UI can be plugins to the business rules. It means that the source code of the business rules never mentions the DB or the UI.
-
-As a consequence, the business rules, the UI, and the DB can be compiled into 3 separate components or deployment units that have the same dependencies as the source code. The component containing the business rules will no depend on components containing the UI and the DB.  
-Changes to the DB or the UI don't have any effect on the business rules. Those components can be deployed and developed independently and separately.
-
-In short, when the source code of a component changes, only that component needs to be redeployed.
+- 😎 Which module does the calling? Which module is called? No matter. The software architect can point the source code dependency in either direction.
+- 💪 With dependency inversion, the DB and the UI will depend on the BLL, rather than the other way around.
+- 👍 The DB and UI can be plugins to the BLL. It means that the source code of the BLL never mentions the DB or UI.
+- 🪚 BLL, UI and DB are developed and deployed separately. Changes to the UI or DB don't have any effect to the BLL. Changes to the DB or the UI don't have any effect on the business rules. Those components can be deployed and developed independently and separately.
 
 #### Conclusion
 
