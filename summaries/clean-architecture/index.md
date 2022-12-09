@@ -378,3 +378,12 @@ No content.
 - 🐚 disciplined state;
 - 𝑓 first-class functions and higher-order functions;
 - 👥 referential transparency (we can replace a function call with its invocation result and the final result will be the same);
+
+#### Immutability and architecture
+
+Mutable variables is the source of problems for concurrent programs. They cause race conditions, deadlock conditions and concurrent update problems.
+
+Immutability solves these problems.  
+But it's not really to make everything immutable, because immutability requires a lot of storage and processor speed.
+
+#### Segregation of immutability
