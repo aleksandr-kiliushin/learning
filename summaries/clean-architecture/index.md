@@ -357,13 +357,13 @@ Dependencies tree enabled by depency inversion:
 - 🙅 abstractions don't depend on concrete implementations;
 - 🤗 concrete implementations depend on abstractions;
 
+What power does it provide?
+
 - 😎 Which module does the calling? Which module is called? No matter. The software architect can point the source code dependency in either direction.
-- 💪 With dependency inversion, the DB and the UI will depend on the BLL, rather than the other way around.
+- 💪 The DB and the UI will depend on the BLL, rather than the other way around.
 - 👍 The DB and UI can be plugins to the BLL. It means that the source code of the BLL never mentions the DB or UI.
 - 🪚 BLL, UI and DB are developed and deployed separately. Changes to the UI or DB don't have any effect to the BLL. Changes to the DB or the UI don't have any effect on the business rules. Those components can be deployed and developed independently and separately.
 
 #### Conclusion
 
-For the architect, OO is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system.  
-It allows the architect to create a plugin architecture in which modules that contain high-level policies are independed of modules that contain low-level details.  
-The low-level details are relegated to plugin modules that can be developed and deployed independently from the modules that contain high-level policies.
+OO is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system.
