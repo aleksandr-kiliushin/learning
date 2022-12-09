@@ -352,10 +352,9 @@ A typical dependencies tree:
 Dependencies tree enabled by depency inversion:
 
 - 😊 decouples modules;
-- 👯 both high- and low-level modules depend on abstractions;
-- 🙅 high-level modules don't import anything from low-level modules;
-- 🙅 abstractions don't depend on concrete implementations;
-- 🤗 concrete implementations depend on abstractions;
+- 👯 high level modules should not depend on low level modules – both should depend on abstractions;
+- 🙅 abstractions shouldn't depend on concrete implementation;
+- 🤗 concrete implementations should depend upon abstractions;
 
 What power does it provide?
 
@@ -367,3 +366,15 @@ What power does it provide?
 #### Conclusion
 
 OO is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system.
+
+### Chapter 6. Functional programming
+
+No content.
+
+#### Squares of integers
+
+- 🧼 purity;
+- 🐢 immutability;
+- 🐚 disciplined state;
+- 𝑓 first-class functions and higher-order functions;
+- 👥 referential transparency (we can replace a function call with its invocation result and the final result will be the same);
