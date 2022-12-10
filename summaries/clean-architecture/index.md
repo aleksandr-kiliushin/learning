@@ -386,4 +386,21 @@ Mutable variables is the source of problems for concurrent programs. They cause 
 Immutability solves these problems.  
 But it's not really to make everything immutable, because immutability requires a lot of storage and processor speed.
 
-#### Segregation of immutability
+#### Segregation of mutability
+
+🤔 One of the compromises is to segregate the app into mutable and immutable parts.  
+🧼 The immutable components perform their tasks in a purely functional way.  
+🤝 The immutable components communicate with components that are not purely immutable, that allow mutable variables etc.
+
+![Mutating state and transactional memory](./images/mutating-state-and-transactional-memory.png)
+
+🛡️ Since mutating state exposes the immutable components to the concurrency problems, it's common practice to use some kind of transactional memory to protect the mutable variables from concurrent updates and race conditions.
+
+So what?
+
+- 👍 it's wise to push as much processing as possible into the immutable components;
+- 👋 we should drive as much code as possible from those components that allow mutation;
+
+#### Event sourcing
+
+The faster modern processors, the less actual memory issues, the less mutable state we need.
