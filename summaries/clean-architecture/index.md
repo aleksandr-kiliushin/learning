@@ -416,7 +416,7 @@ An example:
 - 🤔 but perhaps we don't have to make the scheme work forever, perhaps we have enough storage and processing power to make the scheme work for the reasonable lifetime;
 - 👆 this is the idea behind event sourcing;
 - ∑ event sourcing is a strategy wherein we store the transactions, but not the state; when the state required, we simply apply all the transactions from the beginning of time;
-- 💡 we can optimize the process by computing and saving the state every midnight; so, during the day, we will make calculations based on this saved state and transactions executed from midnight;
+- 💡 we can optimize the process by computing and saving the state every midnight; so, during the day, we will make calculations based on this saved state and transactions executed from midnight.
 
 If we have enough storage and enough processor power, we can make our apps entirely immutable – and, therefore, entirely functional.  
 For example, source code control systems work in this way.
@@ -427,3 +427,35 @@ For example, source code control systems work in this way.
 🙅 What we have learned over the last half-of-century is what not to do.  
 📖 The rules of software are the same today as they were in 1946.
 👉 Software is composed of sequence, selection, iteration, and indirection.
+
+## Part III. Design principles
+
+🧼 Good software systems begin with clean code.  
+🫲 On the one hand, if the bricks aren't well made, the architecture of the building doesn't matter much.  
+🫱 On the other hand, you can made a substantial mess with well-made bricks.
+
+🤲 SOLID tells us how to arrange our functions and data structures into classes (or other function and data groupings) and how those groupings should be interconnected.
+
+The goal of SOLID is creation of mid-level software structures that:
+
+- tolerate change;
+- are easy to understand;
+- are the basis of components that can be used in different software system.
+
+«Mid-level» means that SOLID is applied by programmers working at the module level.
+
+SOLID:
+
+- 1️⃣ **SRP**: the single responsibility principle.  
+  The best structure for a software system is heavily influenced by the social structure of the organization that uses it.  
+  So that each software module has one, and only one, reason to change.
+- 🚪 **OCP**: the open-closed principle.  
+  For software systems to be easy to change, they must be designed to allow the behavior of those systems to be changed by adding new code, rather than changing existing code.
+- 🔄 **LSP**: the Liskov substitution principle.  
+  To build software system from interchangeable parts, these parts must adhere to a contract that allows those parts to be substituted one for another.
+- 🗑️ **ISP**: the interface segregation principle.  
+  Avoid depending on things that you don't use.
+- 🫡 **DIP**: the dependency inversion principle.  
+  High-level policy code shouldn't depend on the code that implements low-level details. Rather, details should depend on policies.
+
+The following chapters focus on their architectural implications.
