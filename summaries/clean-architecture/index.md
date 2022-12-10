@@ -214,11 +214,11 @@ Imposes discipline on direct transfer of control.
 
 #### Object-oriented programming
 
-No content.
+Imposes discipline on indirect transfer of control.
 
 #### Functional programming
 
-No content.
+Imposes discipline on variable assignment.
 
 #### Food for thought
 
@@ -403,4 +403,27 @@ So what?
 
 #### Event sourcing
 
-The faster modern processors, the less actual memory issues, the less mutable state we need.
+📱 The faster modern processors, the less actual memory issues, the less mutable state we need.
+
+An example:
+
+- 🏦 we have a banking app that maintains the account balances of its customers;
+- 😩 it mutates balances when deposit and withdrawal transactions are executed;
+- 🤔 imagine that instead of storing the account balances, we store only the transactions;
+- ∑ whenewer anyone wants to know their account balance, we simply add up all the transactions for that account, from the beginning of time;
+- 🤩 this scheme requires no mutable variables;
+- 😔 but this approach is absurd because the number of transactions grow without bound, so to make this scheme work forever we need infinite storage and infinite processing power;
+- 🤔 but perhaps we don't have to make the scheme work forever, perhaps we have enough storage and processing power to make the scheme work for the reasonable lifetime;
+- 👆 this is the idea behind event sourcing;
+- ∑ event sourcing is a strategy wherein we store the transactions, but not the state; when the state required, we simply apply all the transactions from the beginning of time;
+- 💡 we can optimize the process by computing and saving the state every midnight; so, during the day, we will make calculations based on this saved state and transactions executed from midnight;
+
+If we have enough storage and enough processor power, we can make our apps entirely immutable – and, therefore, entirely functional.  
+For example, source code control systems work in this way.
+
+#### Conclusion
+
+🚨 Each of the paradighms take something away from us. None of them has added to our power or out capabilities.  
+🙅 What we have learned over the last half-of-century is what not to do.  
+📖 The rules of software are the same today as they were in 1946.
+👉 Software is composed of sequence, selection, iteration, and indirection.
