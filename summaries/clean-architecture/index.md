@@ -1,6 +1,6 @@
-# Summary: Clean code by Robert C. Martin
+# SUMMARY: CLEAN ARCHITECTURE BY ROBERT C. MARTIN
 
-## Foreword
+## FOREWORD
 
 > Architecture represents the significant design decisions that shape a system, where significant is measured by cost of change.
 
@@ -26,14 +26,14 @@ There are a lot of paths to build the architecture:
 
 A good architecture is ~~a destination or a frozen artifact~~ an ongoing process like a jorney or enquiry.
 
-## Preface
+## PREFACE
 
 Software systems are created for different domains and using various technologies.  
 But they share similar rules of architecture.  
 These rules are about ordering and assembling the building blocks of programs.  
 They are universal regardless time and system types.
 
-## Part I. Introduction
+## PART I. INTRODUCTION
 
 Getting software working is easy.  
 Kids produce working code. Students start businesses based on a few lines of PHP code. Juniors make their tasks done.  
@@ -60,7 +60,7 @@ When your software is done right:
 - functionality and flexibility are maximized;
 - customers are happy, managers trust you;
 
-### Chapter 1. What is design and architecture
+### CHAPTER 1. WHAT IS DESIGN AND ARCHITECTURE
 
 Design and architecture are the same.  
 The word «architecture» is often used to describe high-level concepts that are divorced from low-level details.  
@@ -69,7 +69,7 @@ But this separation is nonsensical when you look what a real architect does.
 Low-level details and high-level decision are all part of the same whole. There is no clear dividing line between them.  
 There is simply a continuum of decisions from the highest to the lowest levels.
 
-#### The goal
+#### THE GOAL
 
 > The goal of software architecure is to minimize the human resources required to build and maintain the required system.
 
@@ -77,7 +77,7 @@ The measure of design quality is the measure of the effort required to meet the 
 The effort is low, and stays low throughout the lifetime of the system? The design is good.  
 The effort grows with each release? The design is bad.
 
-#### Case study
+#### CASE STUDY
 
 You can measure how some interesting measures change during the system lifetime.
 
@@ -87,12 +87,12 @@ You can measure how some interesting measures change during the system lifetime.
 - company's monthly development payroll;
 - other productivity indices.
 
-#### The signature of a mess
+#### THE SIGNATURE OF A MESS
 
 When a system is messy, the developers' job becomes «moving the mess from one place to the next, and the next», so that they can add one more inadequately little feature.  
 Company earnings fall down, developers frustrate, managers are in rage.
 
-#### What went wrong
+#### WHAT WENT WRONG
 
 The morals of the «Tortoise and the Hare» story:
 
@@ -115,25 +115,25 @@ Start taking the responsibility for the mess you've made.
 The solution is ~~to start over from scratch and redesign the whole system~~. It's just another manifestation of the same overconfidence that led to the mess.  
 Their overconfidence will drive the redesign into the same mess as the original project.
 
-#### Conclusion
+#### CONCLUSION
 
 - Recognize and avoid you overconfidence.
 - Start taking the quality of your software seriously.
 - You need to know what good software architecture is, what its attributes are.
 
-### Chapter 2. A tale of two values
+### CHAPTER 2. A TALE OF TWO VALUES
 
 Every software system provides two different values to the stakeholders: behavior and structure.  
 Developers are responsible for ensuring that both of them remain high.  
 Unfortunetely, developers often focus of one of them, leaving the software system eventually valueless.
 
-#### Behavior
+#### BEHAVIOR
 
 Developers are hired to make machines to behave in a way that makes or saves money for the stakeholders.  
 We do this by helping the stakeholders to develop a functional specification, or requirements document.  
 Many programmers think that is the entirely of their job. They are sadly mistaken.
 
-#### Architecture
+#### ARCHITECTURE
 
 The second value of software relates to the softness of software.  
 Software is intended to be a way to easily change the behavior of machines.
@@ -142,7 +142,7 @@ To fulfill its purpose, software must be soft.
 When the stakeholders change their minds about a feature, that change should be simple and easy to make.  
 The difficulty in making such a change should be proportional only to the scope of the change, and not to the shape of the change.
 
-#### The greater value
+#### THE GREATER VALUE
 
 What is more important for the software system – to work, or to be easy to change?
 
@@ -170,7 +170,7 @@ Many systems reach that point in some of their features or configurations.
 - 🧑‍💻 Estimated cost of these changes will unaffordably high.
 - 🧑‍💼 How did you let the system get to this point?
 
-#### Eisenhower's matrix
+#### EISENHOWER'S MATRIX
 
 |                      |                          |
 | -------------------- | ------------------------ |
@@ -186,7 +186,7 @@ The dilemma for developers is that managers are not equipped to evaluate the imp
 That's what developers were hired to do.  
 It's the responsibility of the software development team to assert the importance of architecture over the urgency of features.
 
-#### Fight for the architecture
+#### FIGHT FOR THE ARCHITECTURE
 
 Fulfilling this responsibility means wading into a fight.  
 The development team has to struggle for what they believe to be best for the company.  
@@ -202,40 +202,40 @@ Architects are focused on creating an architecture that allows features to be ea
 If architecture comes last, then the system will become ever more costly to develop.  
 This means that the software development team did not fight hard enough.
 
-## Part II. Starting with the bricks: programming paradigms
+## PART II. STARTING WITH THE BRICKS: PROGRAMMING PARADIGMS
 
-### Chapter 3. Paradigm overview
+### CHAPTER 3. PARADIGM OVERVIEW
 
 No content.
 
-#### Structured programming
+#### STRUCTURED PROGRAMMING
 
 Imposes discipline on direct transfer of control.
 
-#### Object-oriented programming
+#### OBJECT-ORIENTED PROGRAMMING
 
 Imposes discipline on indirect transfer of control.
 
-#### Functional programming
+#### FUNCTIONAL PROGRAMMING
 
 Imposes discipline on variable assignment.
 
-#### Food for thought
+#### FOOD FOR THOUGHT
 
 Each of the paradigms removes capabilities from the programmer.  
 None of them adds new capabilities.  
 Each imposes extra discipline.  
 The paradigms tell us what not to do, more than what to do.
 
-#### Conclusion
+#### CONCLUSION
 
 No content.
 
-### Chapter 4. Structured programming
+### CHAPTER 4. STRUCTURE PROGRAMMING
 
 It was invented by Edsger Wybe Dijkstra.
 
-#### Proof
+#### PROOF
 
 - 🧩 programming was hard before SP was invented;
 - 😓 programmers didn't do it very well because a program contains too many details for a human brain to manage;
@@ -247,7 +247,7 @@ It was invented by Edsger Wybe Dijkstra.
 - 👌 other uses of the `goto` statement are «good» (these have evoleved to `if`, `while`, etc);
 - ✅ the created technique mathematically traced the input of the sequence to the output of the sequence, which has no difference from any normal mathematical proof;
 
-#### A harmful proclamation
+#### A HARMFUL PROCLAMATION
 
 As the result of a 10-years discussion, Dijkstra proved harmfulness of the `goto` statement. `goto` is no longer a part of any modern language.
 
@@ -255,17 +255,17 @@ Nowadays, we are all structured programmers, though not by necessary by choice.
 It's just that our languages don't give us the opinion to use undisciplined direct transfer of control.  
 Yes, there are some `goto` analogs in modern languages, but they are very strict, or at least scoped within the current function.
 
-#### Functional decomposition
+#### FUNCTIONAL DECOMPOSITION
 
 SP allows you to decompose a large-scale problem statement into high-level functions.  
 Each of those functions can then be decomposed into lower-level functions, ad infinitum.  
 Moreover, each of those functions can be represented using the restricted control structures of SP.
 
-#### No formal proofs
+#### NO FORMAL PROOFS
 
 Mathematics is not applicable to prove correctness of our provable functions.
 
-#### Science to the resque
+#### SCIENCE TO THE RESQUE
 
 Science is fundamentally different from mathematics.  
 In the context of proving of functions correctness, programming closer to science, than to mathematics.  
@@ -275,20 +275,20 @@ No matter how many experiments I conduct, or how much empirical evidence I gathe
 Science doesn't work by proving statements true, but rather by proving statements false.  
 Those statements that we can't prove false, after much effort, we deem to be true enough for our purposes.
 
-#### Tests
+#### TESTS
 
 Testing shows the presence, not the absence, of bugs.
 
 SP forces us to recursively decompose a program into a set of small provable functions. We can then use tests to try to prove those small provable functions are incorrect. If such tests fail to prove incorrectness, then we consider the functions to be correct enough for our purposes.
 
-#### Conclusion
+#### CONCLUSION
 
 SP is valuable for it's ability to create testable units. This is the reason why modern languages don't typically support unrestrained `goto` statements. At the architectural level, this is why we consider functional decomposition to be a best practice.
 
 At every level, software is like a science and, therefore, is driven by testability.  
 Architects strive to define modules, components and services to that are easily testable. To do so, they employ restrictive disciplines similar to structured programming.
 
-### Chapter 5. Object-oriented programming
+### CHAPTER 5. OBJECT-ORIENTED PROGRAMMING
 
 The basis of a good architecture is the understanding and application of OO design.
 
@@ -307,7 +307,7 @@ What is OO?
 
 OO is the proper admixture of encapsulation, inheritance and polymorphism.
 
-#### Encapsulation
+#### ENCAPSULATION
 
 OO languages provide easy and effective encapsulation of data and function. As a result, a line can be drawn around a cohesive set of data and functions. Outline of that line, the data is hidden and only some of the functions are known.
 
@@ -319,13 +319,13 @@ Clients of the code don't have direct access to either the data or the internal 
 
 For these reasons, it's difficult to accept that OO depends on strong encapsulation. Indeed, many OO languages have little or no enforced encapsulation.
 
-#### Inheritance
+#### INHERITANCE
 
 Technically, inheritance is a redeclaration of a group of variables and functions within an enclosing scope.
 
 In the context of inheritance, OO languages haven't given us anything completely new. Long before OO languages were invented, we had tricks to implement inheritance. OOP introduced a more convenient way to implement inheritance, and multiple inheritance in particular.
 
-#### Polymorphism
+#### POLYMORPHISM
 
 - is the ability of any data to be processed in more than one form;
 - _poly_ means _many_, _morphism_ means _types_;
@@ -338,11 +338,11 @@ The `+` operator in JS is polymorphic, as it can either sum or concatenate, depe
 
 OO imposes discipline on indirect transfer of control.
 
-##### The power of polymorphism
+##### THE POWER OF POLYMORPTHISM
 
 No content.
 
-##### Dependency inversion
+##### DEPENDENCY INVERSION
 
 A typical dependencies tree:
 
@@ -363,15 +363,15 @@ What power does it provide?
 - 👍 The DB and UI can be plugins to the BLL. It means that the source code of the BLL never mentions the DB or UI.
 - 🪚 BLL, UI and DB are developed and deployed separately. Changes to the UI or DB don't have any effect to the BLL. Changes to the DB or the UI don't have any effect on the business rules. Those components can be deployed and developed independently and separately.
 
-#### Conclusion
+#### CONCLUSION
 
 OO is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system.
 
-### Chapter 6. Functional programming
+### CHAPTER 6. FUNCTIONAL PROGRAMMING
 
 No content.
 
-#### Squares of integers
+#### SQUARES OF INTEGERS
 
 - 🧼 purity;
 - 🐢 immutability;
@@ -379,14 +379,14 @@ No content.
 - 𝑓 first-class functions and higher-order functions;
 - 👥 referential transparency (we can replace a function call with its invocation result and the final result will be the same);
 
-#### Immutability and architecture
+#### IMMUTABILITY AND ARCHITECTURE
 
 Mutable variables is the source of problems for concurrent programs. They cause race conditions, deadlock conditions and concurrent update problems.
 
 Immutability solves these problems.  
 But it's not really to make everything immutable, because immutability requires a lot of storage and processor speed.
 
-#### Segregation of mutability
+#### SEGREGATION OF MUTABILITY
 
 🤔 One of the compromises is to segregate the app into mutable and immutable parts.  
 🧼 The immutable components perform their tasks in a purely functional way.  
@@ -401,7 +401,7 @@ So what?
 - 👍 it's wise to push as much processing as possible into the immutable components;
 - 👋 we should drive as much code as possible from those components that allow mutation;
 
-#### Event sourcing
+#### EVENT SOURCING
 
 📱 The faster modern processors, the less actual memory issues, the less mutable state we need.
 
@@ -421,7 +421,7 @@ An example:
 If we have enough storage and enough processor power, we can make our apps entirely immutable – and, therefore, entirely functional.  
 For example, source code control systems work in this way.
 
-#### Conclusion
+#### CONCLUSION
 
 🚨 Each of the paradighms take something away from us. None of them has added to our power or out capabilities.  
 🙅 What we have learned over the last half-of-century is what not to do.  
@@ -468,7 +468,7 @@ Make no mistake, there is a principle like that. A function should do one, and o
 
 Historically, the SRP has been described this way:
 
-> A module should have one, and only one, reason to change.
+> A module should have one, and only one, reason to change, meaning that a class should have only one job.
 
 Software systems are changed to satisfy users and stakeholders; those users and stakeholders are the «reason to change» that the SRP is talking about. Let's rephase the principle:
 
