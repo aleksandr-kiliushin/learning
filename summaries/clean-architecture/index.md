@@ -425,10 +425,10 @@ For example, source code control systems work in this way.
 
 🚨 Each of the paradighms take something away from us. None of them has added to our power or out capabilities.  
 🙅 What we have learned over the last half-of-century is what not to do.  
-📖 The rules of software are the same today as they were in 1946.
+📖 The rules of software are the same today as they were in 1946.  
 👉 Software is composed of sequence, selection, iteration, and indirection.
 
-## Part III. Design principles
+## PART III. DESIGN PRINCIPLES
 
 🧼 Good software systems begin with clean code.  
 🫲 On the one hand, if the bricks aren't well made, the architecture of the building doesn't matter much.  
@@ -460,7 +460,7 @@ SOLID:
 
 The following chapters focus on their architectural implications.
 
-### Chapter 7. The single responsibility principle
+### CHAPTER 7. THE SINGLE RESPONSIBILITY PRINCIPLE
 
 No, it doesn't mean that each module should do just one thing. The principle has a particulary inappropriate name.
 
@@ -485,7 +485,7 @@ The word «cohesive» implies the SRP. Cohesion is the force that binds together
 
 Perhaps the best way to understand the SRP is by looking at the symptoms of violating it.
 
-#### Symptom 1: accidental duplication
+#### SYMPTOM 1: ACCIDENTAL DUPLICATION
 
 Let's say we're working on a payroll app.  
 We have the `Employee` class with the following methods: `calculatePay`, `reportHours` and `save`.
@@ -504,7 +504,6 @@ We have the `Employee` class with the following methods: `calculatePay`, `report
       reportHours
       save
     end
-
 
     AD-->calculatePay
     HRD-->reportHours
@@ -540,7 +539,89 @@ Of course, HRD doesn't know that this is happening. HRD will receive incorrect r
 These problems occurs because we put code that different actors depend on into close proximity.  
 The SRP says to separate the code that different actors depend on.
 
-#### Symptom 2: merges
+#### SYMPTOM 2: MERGES
 
 If a module is responsible to one, and only one, actor, it's less likely for merge conflits to occur.  
-If a developer makes a task related to `someMethod`, it's less likely that there is another task related to `someMethod` in progress.
+If a developer makes a task related to `someMethod`, it's unlikely that other developers have reasons to edit this file at the same time.
+
+#### SOLUTIONS
+
+One of the solutions:
+
+- separate the data from the functions;
+- the three classes share access to `EmployeeData` which is a simple data structure with no methods;
+- each class holds only the source code necessary for its particular function;
+- the three classes aren't allowed to know about each other;
+- thus any accidental duplication is avoided;
+
+```mermaid
+  graph LR
+    calculatePay
+    reportHours
+    save
+    EmployeeData
+
+    subgraph PayCalculator
+      calculatePay
+    end
+
+    subgraph HourReporter
+      reportHours
+    end
+
+    subgraph EmployeeSaver
+      save
+    end
+
+    EmployeeData
+
+    calculatePay-->EmployeeData
+    reportHours-->EmployeeData
+    save-->EmployeeData
+```
+
+The downside of this solution is that the developers now have three classes that they have to instantiate and track. A common solution to this dilemma is to use the Facade pattern.
+
+```mermaid
+  graph LR
+    EmployeeFacade_calculatePay[calculatePay]
+    EmployeeFacade_reportHours[reportHours]
+    EmployeeFacade_save[save]
+    PayCalculator_calculatePay[calculatePay]
+    HourReporter_reportHours[reportHours]
+    EmployeeSaver_save[save]
+    EmployeeData
+
+    subgraph EmployeeFacade
+      EmployeeFacade_calculatePay
+      EmployeeFacade_reportHours
+      EmployeeFacade_save
+    end
+
+    subgraph PayCalculator
+      PayCalculator_calculatePay
+    end
+
+    subgraph HourReporter
+      HourReporter_reportHours
+    end
+
+    subgraph EmployeeSaver
+      EmployeeSaver_save
+    end
+
+    EmployeeData
+
+    EmployeeFacade_calculatePay-->PayCalculator_calculatePay-->EmployeeData
+    EmployeeFacade_reportHours-->HourReporter_reportHours-->EmployeeData
+    EmployeeFacade_save-->EmployeeSaver_save-->EmployeeData
+```
+
+The `EmployeeFacade` contains very little code. It's responsible for instantiating and delegating to the three classes with the functions.
+
+#### CONCLUSION
+
+The SRP is about functions and classes – but it reappears in a different form at two more levels:
+
+- at the level of components, it becomes the _Common closure principle_;
+- at the architectural level, it becomes the _Axis of change_ responsible for _Architectural boudaries_.
