@@ -446,16 +446,16 @@ The goal of SOLID is creation of mid-level software structures that:
 
 SOLID:
 
-- 1️⃣ **SRP**: the single responsibility principle.  
+- **SRP**: the single responsibility principle.  
   The best structure for a software system is heavily influenced by the social structure of the organization that uses it.  
   So that each software module has one, and only one, reason to change.
-- 🚪 **OCP**: the open-closed principle.  
+- **OCP**: the open-closed principle.  
   For software systems to be easy to change, they must be designed to allow the behavior of those systems to be changed by adding new code, rather than changing existing code.
-- 🔄 **LSP**: the Liskov substitution principle.  
+- **LSP**: the Liskov substitution principle.  
   To build software system from interchangeable parts, these parts must adhere to a contract that allows those parts to be substituted one for another.
-- 🗑️ **ISP**: the interface segregation principle.  
+- **ISP**: the interface segregation principle.  
   Avoid depending on things that you don't use.
-- 🫡 **DIP**: the dependency inversion principle.  
+- **DIP**: the dependency inversion principle.  
   High-level policy code shouldn't depend on the code that implements low-level details. Rather, details should depend on policies.
 
 The following chapters focus on their architectural implications.
@@ -484,3 +484,58 @@ The final version of SRP is:
 The word «cohesive» implies the SRP. Cohesion is the force that binds together the code responsible to a single actor.
 
 Perhaps the best way to understand the SRP is by looking at the symptoms of violating it.
+
+#### Symptom 1: accidental duplication
+
+Let's say we're working on a payroll app.  
+We have the `Employee` class with the following methods: `calculatePay`, `reportHours` and `save`.
+
+```mermaid
+  graph LR
+    AD
+    HRD
+    DBAD
+    calculatePay
+    reportHours
+    save
+
+    subgraph Employee
+      calculatePay
+      reportHours
+      save
+    end
+
+
+    AD-->calculatePay
+    HRD-->reportHours
+    DBAD-->save
+```
+
+This class violates the SRP because those three methods are responsible to three very different actors.
+
+- `calculatePay` – specified by the AD;
+- `reportHours` – specified by the HRD;
+- `save` – specified by the DBAD;
+
+By putting the source code of these three methods into a single `Employee` class, the developers have coupled each of these actors to the others. This coupling can cause the actions of AD to affect something that HRD depends on.
+
+Suppose, `calculatePay` and `reportHours` share the same algorithm for calculating non-overtime hours. Suppose that it's extracted to the `regularHours` to eliminate duplicated code.
+
+```mermaid
+  graph TD;
+    calculatePay
+    reportHours
+    regularHours
+
+    calculatePay-->regularHours
+    reportHours-->regularHours
+```
+
+Suppose, AD decides to tweak the way non-overtime hours for `calculatePay` are calculated.  
+HRD don't need this particular tweak because they use non-overtime hours for a different purpose.  
+A developer is tasket to change the `regularHours` method.  
+Unfortunately, the developer doesn't notice that the `regularHours` is also called by `reportHours` for HRD purposes.  
+Of course, HRD doesn't know that this is happening. HRD will receive incorrect report hours, possibly losing money every day.
+
+These problems occurs because we put code that different actors depend on into close proximity.  
+The SRP says to separate the code that different actors depend on.
