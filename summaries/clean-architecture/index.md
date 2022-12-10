@@ -459,3 +459,28 @@ SOLID:
   High-level policy code shouldn't depend on the code that implements low-level details. Rather, details should depend on policies.
 
 The following chapters focus on their architectural implications.
+
+### Chapter 7. The single responsibility principle
+
+No, it doesn't mean that each module should do just one thing. The principle has a particulary inappropriate name.
+
+Make no mistake, there is a principle like that. A function should do one, and only one, thing. We use that principle when we're refactoring large function into smaller ones; we use it at the lowest levels. But it is not SRP.
+
+Historically, the SRP has been described this way:
+
+> A module should have one, and only one, reason to change.
+
+Software systems are changed to satisfy users and stakeholders; those users and stakeholders are the «reason to change» that the SRP is talking about. Let's rephase the principle:
+
+> A module should be responsible to one, and only one, user or stakeholder.
+
+Unfortunately, the words «user» and «stakeholder» aren't really the right words to use here. There will likely be more than one user or stakeholder who wants the system changed in the same way. We're referring to a group – one or more people who require that change. We'll refer to that group as an actor.
+
+The final version of SRP is:
+
+> A module should be responsible to one, and only one, actor.
+
+«Module» here is a cohesive set of functions and data structures. Most of the time, it's just a source file.  
+The word «cohesive» implies the SRP. Cohesion is the force that binds together the code responsible to a single actor.
+
+Perhaps the best way to understand the SRP is by looking at the symptoms of violating it.
