@@ -539,3 +539,8 @@ Of course, HRD doesn't know that this is happening. HRD will receive incorrect r
 
 These problems occurs because we put code that different actors depend on into close proximity.  
 The SRP says to separate the code that different actors depend on.
+
+#### Symptom 2: merges
+
+If a module is responsible to one, and only one, actor, it's less likely for merge conflits to occur.  
+If a developer makes a task related to `someMethod`, it's less likely that there is another task related to `someMethod` in progress.
