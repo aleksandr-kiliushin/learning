@@ -625,3 +625,107 @@ The SRP is about functions and classes – but it reappears in a different form 
 
 - at the level of components, it becomes the _Common closure principle_;
 - at the architectural level, it becomes the _Axis of change_ responsible for _Architectural boudaries_.
+
+### CHAPTER 8. THE OPEN-CLOSED PRINCIPLE
+
+> A software artifact should be open for extension but closed for modification.
+
+In other words, the behavior of a software artifact ought to be extensible without having to modify that artifact.
+
+If simple extensions to the requirements force massive changes to the software, it's the architect's failure.
+
+The OCP is significant at the levels:
+
+- of modules;
+- of architectural components.
+
+#### A THOUGH EXPERIMENT
+
+Suppose, we have a system that displays a financial summary on a web page. The data is scrollable, negative numbers are rendered in red.
+
+The stakeholders ask to make it printable as a report on a black-and-white printer. It should have pagination, page header, footer and labels. Negative numbers should be surrounded with parentheses.
+
+Clearly, some new code must be written. But how much old code will have to change?
+
+A good software architecture reduces the amount of changed code to the barest minimum. Ideally, zero.
+
+How?
+
+- by properly separating the things that change for different reasons (SRP);
+- and then organizing the dependencies between those things properly (DIP);
+
+First, apply the SRP:
+
+```mermaid
+  graph LR
+    financialData(Financial data):::dataStructure
+    financialAnalyzer[Financial analyzer]
+    financialReportData(Financial report data):::dataStructure
+    webReporter[Web reporter]
+    printReporter[Print reporter]
+
+    financialData-->financialAnalyzer-->financialReportData
+    financialReportData-->webReporter
+    financialReportData-->printReporter
+
+    classDef dataStructure fill:lightgray;
+```
+
+The general insight here is that generating the report involves two separate responsibilities:
+
+- report data calculation;
+- presentation of the data into a web- and printer-friendly form.
+
+Having made this separation, we need to organize the source code dependencies to ensure that changes to one of those responsibilities don't cause changes in the other.
+
+![Partioning the processes into classes and separating the classes into components](./images/partioning-the-processes-into-classes-and-separating-the-classes-into-components.png)
+Legend:
+
+- separate components are indicated by a double-line border;
+- `<I>` – interfaces;
+- `<DS>` – data structures;
+- open arrowheads – _using_ relationships;
+- closed arrowheader – _implements_ or _inheritance_ relationships;
+
+Some things to notice:
+
+1.  All the dependencies are the source code dependencies.  
+    `class A --> class B` means that the source code of `A` mentions the name of `B`, but `B` mentions nothing about `A`.  
+    For example, `FinancialDataMapper` knows about `FinancialDataGateway` through an _implements_ relationship, but `FinancialDataGateway` knows nothing at all about `FinancialDataMapper`.
+2.  Each double line is crossed in one direction only.  
+    These arrow point toward the components that we want to protect from change.
+
+> If a component A should be protected from changes in component B, then component B should depend on component A.
+
+In our scheme we want to:
+
+- protect the Presenters from changes in the Views;
+- protect the Controller from changes in the Presenters;
+- protect the Interactor from changes from anything.
+
+The Interactor is in the position that best comforms to the OCP.  
+Changes to the Database, or the Controller, or the Presenters, or the Views will have no impact on the Interactor.
+
+Why should the Interactor hold such a priveleged position?
+
+- the Interactor contains the business rules;
+- the Interactor contains the highest-level policies of the app;
+- all the other components deal with peripheral concerns;
+- the Interactor deals with the central concern;
+
+More about the scheme:
+
+- the Controller is peripheral to the Interactor, but it's central to the Presenters and Views;
+- the Presenters are peripheral to the Controller, but they're central to the Views;
+
+There is a hierarchy of protection:
+
+- Interactors are the highest-level concepts, so they're most protected;
+- Views are the lowest-level concepts, so they're the least protected;
+- protection of components gradualy reduces from Interactors to Views.
+
+This is how the OCP works at the architectural level:
+
+- architects separate functionality based on how, why, and when it changes;
+- then they organize that separated functionality into a hierarchy of components;
+- higher-level components in that hierarcy are protected from changes made to lower-level components.
