@@ -729,3 +729,12 @@ This is how the OCP works at the architectural level:
 - architects separate functionality based on how, why, and when it changes;
 - then they organize that separated functionality into a hierarchy of components;
 - higher-level components in that hierarcy are protected from changes made to lower-level components.
+
+#### DIRECTIONAL CONTROL
+
+Much of the complexity in the diagram is intended to point the dependencies between the components in the correct direction.
+
+For example, the `FinancialDataGateway` interface between the `FinancialReportGenerator` and the `FinancialDataMapper` exists to invert the dependency that would otherwise have pointed from the Interactor component to the Database component.  
+The same is true for the `FinancialReportPresenter` and the two View interfaces.
+
+#### INFORMATION HIDING
