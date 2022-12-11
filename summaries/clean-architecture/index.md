@@ -738,3 +738,15 @@ For example, the `FinancialDataGateway` interface between the `FinancialReportGe
 The same is true for the `FinancialReportPresenter` and the two View interfaces.
 
 #### INFORMATION HIDING
+
+The `FinancialReportRequester` interface serves a different purpose. It protects the `FinancialReportController` from knowing too much about the internals of the Interactor. Without `FinancialReportRequester`, the Controller would have transitive dependencies on the `FinancialEntities`.
+
+Transitive dependencies are a violation of the general principle that software entities shouldn't depend on things that they don't directly use.
+
+Our first priority is to protect the Interactor from changes to the Controller.  
+We also want to protect the Controller from changes to the Interactor by hiding the internal of the interactor.
+
+#### CONCLUSION
+
+The goal of the OCP is to make the system easy to extend without incurring a high impact of change.  
+This goal is accomplished by partitioning the system into components and arranging those components into a dependency hierarchy that protects higher-level components from changes in lower-level components.
