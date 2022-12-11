@@ -750,3 +750,73 @@ We also want to protect the Controller from changes to the Interactor by hiding 
 
 The goal of the OCP is to make the system easy to extend without incurring a high impact of change.  
 This goal is accomplished by partitioning the system into components and arranging those components into a dependency hierarchy that protects higher-level components from changes in lower-level components.
+
+### CHAPTER 9. THE LISKOV SUBSTITUTION PRINCIPLE
+
+> What is wanted here is something like the following substitution property:  
+> If for each object `o1` of type `S` here is an object `o2` of type `T` such that for all programs `P` defined in terms of `T`, the behavior of `P` is unchanged when `o1` is substituted for `o2` then `S` is a subtype of `T`.
+
+#### GUIDING THE USE OF INHERITANCE
+
+Imagine that we have a `License` class.  
+This class has a method `calcFee`, which is called by the `Billing` app.  
+There are two «subtypes» of `License`: `PersonalLicense` and `BusinessLicense`. They use different algorithms to calculate the license fee.
+
+![License, and its derivatives, conform to LSP](./images/license-and-its-derivatives-conform-to-lsp.png)
+
+The design conforms to the LSP because the behavior of the `Billing` app doesn't depend, in any way, on which of the two subtypes it uses. Both of the subtypes are substitutable for the `License` type.
+
+#### THE SQUARE / RECTANGLE PROBLEM
+
+![The infamous square / rectangle problem](./images/the-infamous-square-rectangle-problem.png)
+
+In this example, `Square` is no a proper subtype of `Rectangle`, because the height and width of the `Rectangle` are independently mutable; in contrast, the height and width of the square must change together.  
+The LSP is violated.
+
+#### LSP AND ARCHITECTURE
+
+The LSP concerns not only how to use **inheritance**.  
+The LSP has morphed into a **broader principle** that pertains to **interfaces** and **implementations**.
+
+The LSP is applicable when users depend on **well-defined interfaces**, and on the **substitability of the implementations** of those interfaces.
+
+#### EXAMPLE LSP VIOLATION
+
+Suppose we have a RESTful system that serves for a taxi aggregator.
+
+An order endpoint example:
+
+```
+purplecab.com/driver/Bob
+  /pickupAddress/24 Maple St.
+  /pickupTime/153
+  /destination/ORD
+```
+
+A new taxi vendor «Acme» has been joined to our aggregator.  
+Their developers didn't read the aggregator API docs very carefully and used `dest` instead of `destination` in URL.  
+Suppose, there is no way to fix this on their side.
+
+What would happen to our architecture? Obviously, we'd need to add a special case. Requests from «Acme» drivers should be processed using a different set of rules.
+
+The simplest way to accomplish this goal is:
+
+```
+if (driver.getDispatchUri().startsWith("acme.com")) { ... }
+```
+
+No sane architect would add such a construct to the system that mentions `"acme.com"`. We don't want to have mysterious errors and other consequenses. If there will be another case for the «PurpleTaxi» vendor, will we add one more `if`?
+
+More clean and scalable solution would be to add a configuration file like this:
+
+```
+{
+  "Acme.com": "/pickupAddress/%s/pickupTime/%s/dest/%s",
+  "*.*": "/pickupAddress/%s/pickupTime/%s/destination/%s",
+}
+```
+
+#### CONCLUSION
+
+The LSP can, and should, be extended to the level of architecture.  
+A simple violation of substitutability can cause a system's architecture to be polluted with a significant amount of extra mechanisms.
