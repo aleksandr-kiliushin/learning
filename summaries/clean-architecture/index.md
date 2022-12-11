@@ -956,3 +956,14 @@ The curved line is an architectural boundary. It separates the abstract componen
 The abstract component contains all the high-level business rules. The concrete component contains all the implementation details of those business rules.
 
 The flow of control crosses the curved line in the opposite direction of the source code dependencies – which is why we refer to this principle as Dependency Inversion.
+
+#### CONCRETE COMPONENTS
+
+The concrete component in figure 11.1 contains a single dependency, so it violates the DIP. This is typical. DIP violations cannot be entirely removed but they can be gathered into a small number of concrete components and kept separate from the rest of the system.
+
+#### CONCLUSION
+
+As we cover higher-level architectural principles, the DIP will show up again and again.  
+The DIP will be the most visible organizing principle in our architecture diagrams.  
+The curved line in figure 11.1 will become the architectural boundaries in later chapters.  
+The way the dependencies cross the curved line in one direction, and toward more abstract entities, will become a new rule called the Dependency Rule.
