@@ -912,3 +912,33 @@ Even worse, a failure of one of those features within `D` may cause failures in 
 #### CONCLUSION
 
 Depending on something that carries baggage that you don't need can cause you troubles that you didn't expect.
+
+### CHAPTER 11. THE DEPENDENCY INVERSION PRINCIPLE
+
+> The most flexible systems are those in which source code dependencies refer only to abstractions, not to concretions.
+
+In a statically typed language, like Java, this means that the use, import and include statements should refer only to source modules containing interfaces, abstract classes, or some other kind of abstract declaration. Noting concrete should be depended on.
+
+The same rule applies for dynamically typed languages like Python. Source code dependencies shouldn't refer to concrete modules. In these languages it's harder to defined what a concrete module is. In particular, it's any module in which the functions being called are implemented.
+
+Clearly, treating this idea as a rule is unrealistic, because software systems must depend on many concrete facilities. For example, the `String` class in Java is concrete, and we must import and use it.  
+By comparison, the `String` class is very stable and we don't worry about capricius changes to it.
+
+So, we tolerate some concrete dependencies because we can rely on them not to change.
+
+Our system shouldn't depend on volatile concrete modules – those that we're actively developing, and that are undegoing frequent change.
+
+#### STABLE ABSTRACTIONS
+
+Every change to an abstract interface corresponds to a change to its concrete implementations.  
+Conversively, changes to concrete implementations usually don't require changes to the interfaces that they implement.  
+Therefore **interfaces are less volatile than implementations**.
+
+Good architects work hard to **reduce the volatility of interfaces**. They try to find ways to **add functionality to implementations without making changes to the interfaces**.
+
+Stable architectures are those that avoid depending on volatile cocretions, and that favor the use of stable abstract interfaces. This implications boils down to a set of very specific coding practices:
+
+- **Don't refer to volatile concrete classes. Refer to abstract interfaces instead.** This rule is applied in all languages, whether statically or dynamically typed.
+- **Don't derive from volatile concrete classes.**
+- **Don't override concrete functions.** Instead, make the function abstract and create multiple implementations.
+- **Never mention the name of anything concrete and volatile.** Actually, it's just a restatement of the principle itself.
