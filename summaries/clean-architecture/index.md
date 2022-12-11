@@ -942,3 +942,17 @@ Stable architectures are those that avoid depending on volatile cocretions, and 
 - **Don't derive from volatile concrete classes.**
 - **Don't override concrete functions.** Instead, make the function abstract and create multiple implementations.
 - **Never mention the name of anything concrete and volatile.** Actually, it's just a restatement of the principle itself.
+
+#### FACTORIES
+
+Creation of volatile concrete objects requires special handling.  
+In most OO languages we'd use an Abstract Factory to manage this undesirable dependency.
+
+![Use of the Abstract Factory pattern to manage the dependency](./images/use-of-the-abstract-factory-pattern-to-manage-the-dependency.png)
+
+The `Application` uses the `ConcreteImpl` through the `Service` interface. However, the `Application` must somehow create instances of the `ConcreteImpl`. To achieve this without creating a source code dependency on the `ConcreteImpl`, the `Application` calls the `makeSvc` method of the `ServiceFactory` interface. This method is implemented by the `ServiceFactoryImpl` class, which derives from `ServiceFactory`. That implementation instantiates the concrete `ConcreteImpl` and returns it as a `Service`.
+
+The curved line is an architectural boundary. It separates the abstract component from the concrete component. All source code dependencies cross that curved line pointing in the same direction, toward the abstract side.  
+The abstract component contains all the high-level business rules. The concrete component contains all the implementation details of those business rules.
+
+The flow of control crosses the curved line in the opposite direction of the source code dependencies – which is why we refer to this principle as Dependency Inversion.
