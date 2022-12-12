@@ -2,23 +2,24 @@
 
 ## FOREWORD
 
-> Architecture represents the significant design decisions that shape a system, where significant is measured by cost of change.
+> **Architecture** represents the **significant design decisions that shape a system**, where significant is measured by cost of change.
 
 System's development changes should be:
 
 - ~~💸 costly~~;
 - ~~🤯 hard to make~~;
 - ~~🏭 managed projects of their own~~;
+- 🥱 easy to implement;
 - 🧘 folded into the daily workflow.
 
 There are a lot of paths to build the architecture:
 
-- 🗿 Architecture can be too strong and stable, born from authority and rigidity.  
-  If change is expensive, change is eliminated, which causes subdued or headed of into a bureacratic ditch.  
-  Totalitarism in architecture becomes a dystrophia for developers and a constant source of developers for all.
-- 🤡 Architecture can have a strong smell of speculative generality.  
+- 🗿 Architecture can be too strong and stable, born from **authority and rigidity**.  
+  If change is expensive, change is eliminated, which causes subdued or headed off into a bureacratic ditch.  
+  Totalitarism in architecture becomes a dystrophia for developers and a constant source of frustration for all.
+- 🤡 Architecture can have a strong smell of **speculative generality**.  
   Your project becomes filled with hard-coded guesswork, countless parameters, tombs of dead code, and more complexity than your maintanance budget can allow.
-- 😊 Architecture can be maintanable and flourishing.
+- 😊 Architecture can be **maintanable and flourishing**.
   - software softness is preserved as a first-class property of the system;
   - new things are discovered and created;
   - questions are asked;
@@ -28,22 +29,13 @@ A good architecture is ~~a destination or a frozen artifact~~ an ongoing process
 
 ## PREFACE
 
-Software systems are created for different domains and using various technologies.  
-But they share similar rules of architecture.  
-These rules are about ordering and assembling the building blocks of programs.  
-They are universal regardless time and system types.
+Software systems are created for different domains and using various technologies. But they share similar rules of architecture: rules are about ordering and assembling the building blocks of programs.
 
 ## PART I. INTRODUCTION
 
-Getting software working is easy.  
-Kids produce working code. Students start businesses based on a few lines of PHP code. Juniors make their tasks done.  
-The code they produce may not be pretty; but it works.  
-It works because getting something to work – once – is easy.
+Getting software working is easy. Kids, students and juniors create programs. The code they produce may not be pretty, but it works because getting something to work – once – is easy.
 
-Gettings software right is hard.  
-It requires knowledge, skills that most programmers don't take time to develop.  
-It requires high level of and discipline and didication that most programmers never dreamed they'd need.  
-It takes a passion for the craft and the desire to be a professional.
+Gettings software right is hard. It requires knowledge, skills that most programmers don't take time to develop. It requires high level of and discipline and didication that most programmers never dreamed they'd need. It takes a passion for the craft and the desire to be a professional.
 
 When your software is done right:
 
@@ -53,27 +45,25 @@ When your software is done right:
 - ~~bad code and rotten design~~;
 - ~~exhausted patience of the managers~~;
 - ~~trivial changes require two-week digging and involve high risks~~;
-- you need only a fraction of human resources to to create and maintain;
+- the system structure is intuitive;
+- you need only a fraction of human resources to create and maintain;
 - changes are simple and rapid;
 - defects are few and far between;
 - effort is minimized;
 - functionality and flexibility are maximized;
-- customers are happy, managers trust you;
+- customers are happy, managers trust you.
 
 ### CHAPTER 1. WHAT IS DESIGN AND ARCHITECTURE
 
-Design and architecture are the same.  
-The word «architecture» is often used to describe high-level concepts that are divorced from low-level details.  
-The word «design», conversely, more often implies structures and decisions at a low level.  
+Design and architecture are the same. The word «architecture» is often used to describe high-level concepts that are divorced from low-level details. The word «design», conversely, more often implies structures and decisions at a low level.  
 But this separation is nonsensical when you look what a real architect does.  
-Low-level details and high-level decision are all part of the same whole. There is no clear dividing line between them.  
-There is simply a continuum of decisions from the highest to the lowest levels.
+Low-level details and high-level decision are all part of the same whole. There is no clear dividing line between them. There is simply a continuum of decisions from the highest to the lowest levels.
 
 #### THE GOAL
 
-> The goal of software architecure is to minimize the human resources required to build and maintain the required system.
+> The **goal** of software architecure is to **minimize the human resources required** to build and maintain the required system.
 
-The measure of design quality is the measure of the effort required to meet the customer's needs.  
+The **measure of design quality** is the measure of the **effort required** to meet the customer's needs.  
 The effort is low, and stays low throughout the lifetime of the system? The design is good.  
 The effort grows with each release? The design is bad.
 
@@ -89,16 +79,15 @@ You can measure how some interesting measures change during the system lifetime.
 
 #### THE SIGNATURE OF A MESS
 
-When a system is messy, the developers' job becomes «moving the mess from one place to the next, and the next», so that they can add one more inadequately little feature.  
-Company earnings fall down, developers frustrate, managers are in rage.
+When a system is messy, the developers' job becomes «moving the mess from one place to the next, and the next», so that they can add one more inadequately little feature. The company's earnings fall down, developers frustrate, managers are in rage.
 
 #### WHAT WENT WRONG
 
 The morals of the «Tortoise and the Hare» story:
 
-- Slow and steady wins the race.
-- The race is not to the swift, nor the battle to the strong.
-- The more haste, the less speed.
+- slow and steady wins the race;
+- the race is not to the swift, nor the battle to the strong;
+- the more haste, the less speed.
 
 Most developers work hard, but a part of their brain sleeps – the part that knows that clean, well-designed code matters.
 
@@ -112,14 +101,14 @@ Writing messy code makes them go fast in the short term and slows them down in t
 Stop be overconfident.  
 Start taking the responsibility for the mess you've made.
 
-The solution is ~~to start over from scratch and redesign the whole system~~. It's just another manifestation of the same overconfidence that led to the mess.  
+The solution is ~~to start over from scratch and redesign the whole system~~. No, it will be just another manifestation of the same overconfidence that led to the mess.  
 Their overconfidence will drive the redesign into the same mess as the original project.
 
 #### CONCLUSION
 
-- Recognize and avoid you overconfidence.
-- Start taking the quality of your software seriously.
-- You need to know what good software architecture is, what its attributes are.
+- Recognize and **avoid your overconfidence**.
+- Start taking the quality of your software **seriously**.
+- You need to **know what good architecture is**, what **its attributes** are.
 
 ### CHAPTER 2. A TALE OF TWO VALUES
 
@@ -139,7 +128,7 @@ The second value of software relates to the softness of software.
 Software is intended to be a way to easily change the behavior of machines.
 
 To fulfill its purpose, software must be soft.  
-When the stakeholders change their minds about a feature, that change should be simple and easy to make.  
+**When the stakeholders change their minds about a feature**, that change should be **easy to make**.  
 The difficulty in making such a change should be proportional only to the scope of the change, and not to the shape of the change.
 
 #### THE GREATER VALUE
@@ -156,7 +145,7 @@ Let's examine the extremes:
 - Extreme 2:
   - a program doesn't work;
   - it is easy to make it work;
-  - it is easy to keep it working as requirements change.
+  - it is easy to keep it working as requirements change;
   - therefore the program will remain continually useful.
 
 Yes, these are theoretical extremes and there are no programs that are unable to be changed.  
@@ -182,25 +171,22 @@ The second value of software – architecture – is important but never particu
 
 Of course, some things are both important and urgent, and some – both unimportant and not urgent.
 
-The dilemma for developers is that managers are not equipped to evaluate the importance of architecture.  
-That's what developers were hired to do.  
-It's the responsibility of the software development team to assert the importance of architecture over the urgency of features.
+The dilemma for developers is that managers are not equipped to evaluate the importance of architecture. That's what developers were hired to do.  
+It's the **responsibility of the software development team to assert the importance of the architecture** over the urgency of features.
 
 #### FIGHT FOR THE ARCHITECTURE
 
 Fulfilling this responsibility means wading into a fight.  
-The development team has to struggle for what they believe to be best for the company.  
+The development team has to **struggle for** what they believe to be **best for the company**.  
 And so do the management team, and the marketing team, and the sales team.
 
 Effective software developers uabashedly squabble with all the other stakeholders as equals.  
-Remember, as a software developer, you are a stakeholder. You have a stake in the software that you need to safeguard.  
-It's a part of you role, of your duty. It's a big part of why you were hired.
+Remember, as a software **developer**, you are a **stakeholder**. You have a **stake** in the software that you need to **safeguard**.  
+It's a part of you **role**, of your **duty**. It's a big part of **why you were hired**.
 
-This challenge is doubly important if you're a software architect.  
-Architects are focused on creating an architecture that allows features to be easily developed, modified and extended.
+This challenge is doubly important if you're a software architect. Architects are focused on creating an architecture that allows features to be easily developed, modified and extended.
 
-If architecture comes last, then the system will become ever more costly to develop.  
-This means that the software development team did not fight hard enough.
+If architecture comes last, then the system will become ever more costly to develop. This means that the software development team did not fight hard enough.
 
 ## PART II. STARTING WITH THE BRICKS: PROGRAMMING PARADIGMS
 
