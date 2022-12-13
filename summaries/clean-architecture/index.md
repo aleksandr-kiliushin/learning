@@ -208,10 +208,8 @@ Imposes discipline on variable assignment.
 
 #### FOOD FOR THOUGHT
 
-Each of the paradigms removes capabilities from the programmer.  
-None of them adds new capabilities.  
-Each imposes extra discipline.  
-The paradigms tell us what not to do, more than what to do.
+Each of the paradigms **removes capabilities** from the programmer. None of them adds new capabilities.  
+Each imposes extra **discipline**. The paradigms tell us **what not to do**, more than what to do.
 
 #### CONCLUSION
 
@@ -219,7 +217,7 @@ No content.
 
 ### CHAPTER 4. STRUCTURE PROGRAMMING
 
-It was invented by Edsger Wybe Dijkstra.
+No content.
 
 #### PROOF
 
