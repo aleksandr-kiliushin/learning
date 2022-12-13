@@ -21,7 +21,7 @@
 
 </details>
 
-<details>
+<details open>
 <summary>Functional programming</summary>
 
 - 🧼 pure functions;
@@ -56,7 +56,7 @@ Avoid side effects. **Don't modify** the arguments and data **outside** the func
 
 #### SEGREGATION OF MUTABILITY
 
-It's not really to make everything immutable, because it requires a lot of storage and processor speed.
+We can't make everything immutable, because it requires a lot of storage and processor speed.
 
 🤔 One of the compromises is to **segregate** the app into **mutable and immutable** parts.  
 🧼 The immutable components **perform their tasks** in a purely functional way.  
@@ -71,19 +71,12 @@ So what?
 
 #### EVENT SOURCING
 
-📱 The faster modern processors, the less actual memory issues, the more immutability we can allow.
+> Event storing is a pattern for **storing data as events in an append-only** log.
 
-An example:
-
-- 🏦 we have a banking **app** that maintains the account **balances** of its customers;
-- 😩 it **mutates balances** when deposit and withdrawal transactions are executed;
-- 🤔 imagine that **instead** of storing the account balances, we **store** only the **transactions**;
-- ∑ whenewer anyone wants to know their account balance, we simply **add up all the transactions** for that account, from the beginning of time;
-- 🤩 this scheme requires **no mutable** variables;
-- 😔 but this approach is absurd because the number of transactions grow without bound, so to make this scheme work forever we need **infinite storage and** infinite processing **power**;
-- 🤔 but perhaps we don't have to make the scheme work forever, perhaps we have enough storage and processing power to make the scheme work for the reasonable lifetime;
-- 👆 this is the idea behind event sourcing;
-- ∑ **event sourcing is a strategy wherein we store the transactions, but not the state**; when the state required, we simply **apply all the transactions from the beginning of time**;
-- 💡 we can **optimize** the process by **computing and saving the state every midnight**; so, during the day, we will make calculations based on this saved state and transactions executed from midnight.
+- events are the **source of truth**;
+- ES allows to **store the context** of the event: its timestamp, reason, etc.;
+- to **source (derive) the state from the events**, we replay all the events in order of occurence;
+- ES enables **audit**, **time travel** and **reshape**.
+- state deriving can be **optimized by computing and saving the state**, e. g. every midnight; so, during the day, we calculate based on this saved state and the transactions executed from midnight.
 
 </details>
