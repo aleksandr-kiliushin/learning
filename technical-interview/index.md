@@ -2,7 +2,7 @@
 
 ## ARCHITECTURE
 
-<details open>
+<details>
 <summary>Structured programming</summary>
 
 - also known as «modular»;
@@ -21,7 +21,7 @@
 
 </details>
 
-<details open>
+<details>
 <summary>Functional programming</summary>
 
 - 🧼 pure functions;
@@ -78,5 +78,12 @@ So what?
 - to **source (derive) the state from the events**, we replay all the events in order of occurence;
 - ES enables **audit**, **time travel** and **reshape**.
 - state deriving can be **optimized by computing and saving the state**, e. g. every midnight; so, during the day, we calculate based on this saved state and the transactions executed from midnight.
+
+</details>
+
+<details open>
+<summary>Object-oriented programming</summary>
+
+Continue here.
 
 </details>
