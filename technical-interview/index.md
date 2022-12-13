@@ -3,9 +3,6 @@
 ## Architecture
 
 <details open>
-<summary>Architecture</summary>
-
-<details open>
 	<summary>Structured programming</summary>
 - Vegetables
 - Fruits
@@ -24,6 +21,4 @@
 - Vegetables
 - Fruits
 - Fish
-</details>
-
 </details>
