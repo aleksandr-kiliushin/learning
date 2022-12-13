@@ -2,23 +2,19 @@
 
 ## Architecture
 
-<details open>
-	<summary>Structured programming</summary>
-- Vegetables
-- Fruits
-- Fish
-</details>
+<details>
+<summary>Structured programming</summary>
 
-<details open>
-	<summary>Object-oriented programming</summary>
-- Vegetables
-- Fruits
-- Fish
-</details>
+- also known as «modular»;
+- three basic patterns: sequence, selection (conditions) and repetition (loops);
+  ![Structured programming patterns](./images/structured-programming-patterns.png)
+- facilitates readable code and reusable components;
+- encourages hierarchy of modules and code reuse;
+- uses constuctions like `if`, `white`;
+- unconditional transfer of control (`goto`) is not available;
+- improves code quality;
+- eliminates «spaghetti» code;
+- all others paradighms are subtypes of SP;
+- all modern languages use SP;
 
-<details open>
-	<summary>Functional programming</summary>
-- Vegetables
-- Fruits
-- Fish
 </details>
