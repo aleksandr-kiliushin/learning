@@ -221,56 +221,31 @@ No content.
 
 #### PROOF
 
-- 🧩 programming was hard before SP was invented;
-- 😓 programmers didn't do it very well because a program contains too many details for a human brain to manage;
-- 👾 a program may seem to work but fails in surprising ways;
-- ∑ the idea behind it is applying the mathematical discipline of proof;
-- ☝️ it turned out that the construction of a Euclidian hierarchy of postulates, theorems and lemmas are useful in programming
-- 🧐 programmers can use these proven structures the way mathematicians do;
-- 🙅 certain uses of the `goto` statement prevented code from being decomposed into smaller modules, thereby prevented use of the divide-and-conquer approach necessary for reasonable proofs;
-- 👌 other uses of the `goto` statement are «good» (these have evoleved to `if`, `while`, etc);
-- ✅ the created technique mathematically traced the input of the sequence to the output of the sequence, which has no difference from any normal mathematical proof;
+No content.
 
 #### A HARMFUL PROCLAMATION
 
-As the result of a 10-years discussion, Dijkstra proved harmfulness of the `goto` statement. `goto` is no longer a part of any modern language.
-
-Nowadays, we are all structured programmers, though not by necessary by choice.  
-It's just that our languages don't give us the opinion to use undisciplined direct transfer of control.  
-Yes, there are some `goto` analogs in modern languages, but they are very strict, or at least scoped within the current function.
+No content.
 
 #### FUNCTIONAL DECOMPOSITION
 
-SP allows you to decompose a large-scale problem statement into high-level functions.  
-Each of those functions can then be decomposed into lower-level functions, ad infinitum.  
-Moreover, each of those functions can be represented using the restricted control structures of SP.
+No content.
 
 #### NO FORMAL PROOFS
 
-Mathematics is not applicable to prove correctness of our provable functions.
+No content.
 
 #### SCIENCE TO THE RESQUE
 
-Science is fundamentally different from mathematics.  
-In the context of proving of functions correctness, programming closer to science, than to mathematics.  
-I can demonstrate my function works, I can show that it's correct in many different cases, but I can't prove it in the sense of a mathematical proof.  
-No matter how many experiments I conduct, or how much empirical evidence I gather, there is always the chance that another experiment will fail with certain conditions.
-
-Science doesn't work by proving statements true, but rather by proving statements false.  
-Those statements that we can't prove false, after much effort, we deem to be true enough for our purposes.
+No content.
 
 #### TESTS
 
-Testing shows the presence, not the absence, of bugs.
-
-SP forces us to recursively decompose a program into a set of small provable functions. We can then use tests to try to prove those small provable functions are incorrect. If such tests fail to prove incorrectness, then we consider the functions to be correct enough for our purposes.
+No content.
 
 #### CONCLUSION
 
-SP is valuable for it's ability to create testable units. This is the reason why modern languages don't typically support unrestrained `goto` statements. At the architectural level, this is why we consider functional decomposition to be a best practice.
-
-At every level, software is like a science and, therefore, is driven by testability.  
-Architects strive to define modules, components and services to that are easily testable. To do so, they employ restrictive disciplines similar to structured programming.
+No content.
 
 ### CHAPTER 5. OBJECT-ORIENTED PROGRAMMING
 
@@ -357,53 +332,19 @@ No content.
 
 #### SQUARES OF INTEGERS
 
-- 🧼 purity;
-- 🐢 immutability;
-- 🐚 disciplined state;
-- 𝑓 first-class functions and higher-order functions;
-- 👥 referential transparency (we can replace a function call with its invocation result and the final result will be the same);
+No content.
 
 #### IMMUTABILITY AND ARCHITECTURE
 
-Mutable variables is the source of problems for concurrent programs. They cause race conditions, deadlock conditions and concurrent update problems.
-
-Immutability solves these problems.  
-But it's not really to make everything immutable, because immutability requires a lot of storage and processor speed.
+No content.
 
 #### SEGREGATION OF MUTABILITY
 
-🤔 One of the compromises is to segregate the app into mutable and immutable parts.  
-🧼 The immutable components perform their tasks in a purely functional way.  
-🤝 The immutable components communicate with components that are not purely immutable, that allow mutable variables etc.
-
-![Mutating state and transactional memory](./images/mutating-state-and-transactional-memory.png)
-
-🛡️ Since mutating state exposes the immutable components to the concurrency problems, it's common practice to use some kind of transactional memory to protect the mutable variables from concurrent updates and race conditions.
-
-So what?
-
-- 👍 it's wise to push as much processing as possible into the immutable components;
-- 👋 we should drive as much code as possible from those components that allow mutation;
+No content.
 
 #### EVENT SOURCING
 
-📱 The faster modern processors, the less actual memory issues, the less mutable state we need.
-
-An example:
-
-- 🏦 we have a banking app that maintains the account balances of its customers;
-- 😩 it mutates balances when deposit and withdrawal transactions are executed;
-- 🤔 imagine that instead of storing the account balances, we store only the transactions;
-- ∑ whenewer anyone wants to know their account balance, we simply add up all the transactions for that account, from the beginning of time;
-- 🤩 this scheme requires no mutable variables;
-- 😔 but this approach is absurd because the number of transactions grow without bound, so to make this scheme work forever we need infinite storage and infinite processing power;
-- 🤔 but perhaps we don't have to make the scheme work forever, perhaps we have enough storage and processing power to make the scheme work for the reasonable lifetime;
-- 👆 this is the idea behind event sourcing;
-- ∑ event sourcing is a strategy wherein we store the transactions, but not the state; when the state required, we simply apply all the transactions from the beginning of time;
-- 💡 we can optimize the process by computing and saving the state every midnight; so, during the day, we will make calculations based on this saved state and transactions executed from midnight.
-
-If we have enough storage and enough processor power, we can make our apps entirely immutable – and, therefore, entirely functional.  
-For example, source code control systems work in this way.
+No content.
 
 #### CONCLUSION
 
