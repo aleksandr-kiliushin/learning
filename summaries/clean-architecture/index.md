@@ -254,10 +254,12 @@ OO is the proper admixture of encapsulation, inheritance and polymorphism.
 #### ENCAPSULATION
 
 - objects **provide an interface to other** code that wants to use them;
-- a line can be drawn around a **cohesive set of data and functions**;
+- a line (firewall) can be drawn around a **cohesive set of data and functions**;
 - clients **don't have direct access to** either the **data** or the internal **implementation**; they **call methods** that return the data in a reasonable format;
-- incapsulation is available in any language, but OO languages are more **frendly** for it;
+- available in any language, but OO languages are more **frendly** for it;
 - the `public`, `private` and `protected` **keywords** encourage encapsulation;
+- you **control** how your data is **accessed and manipulated**;
+- allows to write **safer**, **mainatainable** and **debuggable** code;
 - Java and C# put **header and implementation side by side**, thereby **weaking encapsulation**; in these languages it's impossible to separate the declaration and definition of a class.
 
 #### INHERITANCE
