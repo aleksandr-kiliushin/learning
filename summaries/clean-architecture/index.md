@@ -124,8 +124,7 @@ Many programmers think that is the entirely of their job. They are sadly mistake
 
 #### ARCHITECTURE
 
-The second value of software relates to the softness of software.  
-Software is intended to be a way to easily change the behavior of machines.
+The second value of software relates to the softness of software. Software is intended to be a way to easily change the behavior of machines.
 
 To fulfill its purpose, software must be soft.  
 **When the stakeholders change their minds about a feature**, that change should be **easy to make**.  
@@ -208,8 +207,7 @@ Imposes discipline on variable assignment.
 
 #### FOOD FOR THOUGHT
 
-Each of the paradigms **removes capabilities** from the programmer. None of them adds new capabilities.  
-Each imposes extra **discipline**. The paradigms tell us **what not to do**, more than what to do.
+Each of the paradigms **removes capabilities** from the programmer. None of them adds new capabilities. Each imposes extra **discipline**. The paradigms tell us **what not to do**, more than what to do.
 
 #### CONCLUSION
 
@@ -249,34 +247,18 @@ No content.
 
 ### CHAPTER 5. OBJECT-ORIENTED PROGRAMMING
 
-The basis of a good architecture is the understanding and application of OO design.
-
-What is OO?
-
-- The combination of data and function?
-  - is unsatisfying, because it implies that `o.f()` is somehow different from `f(0)`, which is absurd;
-  - programmers were passing data into functions long before 1966, when Dahl and Nygaard moved the function call stack frame to the heap and invented OO.
-- A way to modal the real world?
-
-  - an evasive answer at best;
-  - what does «modeling the real world» actually mean?
-  - why do we want to model the real world?
-  - is intended to imply that OO makes software easier to understand because it has closer relationship to the real world;
-  - the statement is still loosely defined and doesn't tell us what OO is.
+> OOP is a programming paradighm that relies on the concept of classes and objects.
 
 OO is the proper admixture of encapsulation, inheritance and polymorphism.
 
 #### ENCAPSULATION
 
-OO languages provide easy and effective encapsulation of data and function. As a result, a line can be drawn around a cohesive set of data and functions. Outline of that line, the data is hidden and only some of the functions are known.
-
-Clients of the code don't have direct access to either the data or the internal implementation. They call methods that return the data in a reasonable format.
-
-- Incapsulation is available in non-OO languages (like C), but OO languages (like C++) are a lot more frendly for it.
-- Some OO languages provide useful keywords like `public`, `private` and `protected`, encouragin encapsulation.
-- Some OO languages like Java and C# abolished the header / implementation split altogether, thereby weaking encapsulation. In these languages it's impossible to separate the declaration and definition of a class.
-
-For these reasons, it's difficult to accept that OO depends on strong encapsulation. Indeed, many OO languages have little or no enforced encapsulation.
+- objects **provide an interface to other** code that wants to use them;
+- a line can be drawn around a **cohesive set of data and functions**;
+- clients **don't have direct access to** either the **data** or the internal **implementation**; they **call methods** that return the data in a reasonable format;
+- incapsulation is available in any language, but OO languages are more **frendly** for it;
+- the `public`, `private` and `protected` **keywords** encourage encapsulation;
+- Java and C# put **header and implementation side by side**, thereby **weaking encapsulation**; in these languages it's impossible to separate the declaration and definition of a class.
 
 #### INHERITANCE
 
@@ -312,7 +294,7 @@ Dependencies tree enabled by depency inversion:
 
 - 😊 decouples modules;
 - 👯 high level modules should not depend on low level modules – both should depend on abstractions;
-- 🙅 abstractions shouldn't depend on concrete implementation;
+- 🙅 abstractions shouldn't depend on concrete implementations;
 - 🤗 concrete implementations should depend upon abstractions;
 
 What power does it provide?
@@ -324,7 +306,7 @@ What power does it provide?
 
 #### CONCLUSION
 
-OO is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system.
+OOP is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system.
 
 ### CHAPTER 6. FUNCTIONAL PROGRAMMING
 
