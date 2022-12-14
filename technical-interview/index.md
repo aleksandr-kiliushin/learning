@@ -108,6 +108,10 @@ OO is the proper **admixture** of encapsulation, inheritance and polymorphism.
 
 #### POLYMORPHISM
 
+TODO: ADD CONTENT.
+
 #### ABSTRACTION
+
+> Abstraction **hides all but the relevant data** about an object through in order to **reduce complexity** and **increase efficiency**;
 
 </details>
