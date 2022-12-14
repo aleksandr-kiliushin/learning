@@ -84,37 +84,30 @@ So what?
 <details open>
 <summary>Object-oriented programming</summary>
 
-TODO: ADD DEFINITION.
+> OOP is a programming paradighm that relies on the **concept of classes and objects**.
+
+OO is the proper **admixture** of encapsulation, inheritance and polymorphism.
 
 #### ENCAPSULATION
 
-OO languages provide easy and effective encapsulation of data and function. As a result, a line can be drawn around a cohesive set of data and functions. Outline of that line, the data is hidden and only some of the functions are known.
-
-Clients of the code don't have direct access to either the data or the internal implementation. They call methods that return the data in a reasonable format.
-
-- Incapsulation is available in non-OO languages (like C), but OO languages (like C++) are a lot more frendly for it.
-- Some OO languages provide useful keywords like `public`, `private` and `protected`, encouragin encapsulation.
-- Some OO languages like Java and C# abolished the header / implementation split altogether, thereby weaking encapsulation. In these languages it's impossible to separate the declaration and definition of a class.
-
-For these reasons, it's difficult to accept that OO depends on strong encapsulation. Indeed, many OO languages have little or no enforced encapsulation.
+- objects **provide an interface to other** code that wants to use them;
+- a line (firewall) can be drawn around a **cohesive set of data and functions**;
+- clients **don't have direct access to** either the **data** or the internal **implementation**; they **call methods** that return the data in a reasonable format;
+- available in any language, but OO languages are more **frendly** for it;
+- the `public`, `private` and `protected` **keywords** encourage encapsulation;
+- you **control** how your data is **accessed and manipulated**;
+- allows to write **safer**, **mainatainable** and **debuggable** code;
+- Java and C# put **header and implementation side by side**, thereby **weaking encapsulation**; in these languages it's impossible to separate the declaration and definition of a class.
 
 #### INHERITANCE
 
-Technically, inheritance is a redeclaration of a group of variables and functions within an enclosing scope.
+> Inheritance is a **redeclaration of fields** in classes **hierarchy**.
 
-In the context of inheritance, OO languages haven't given us anything completely new. Long before OO languages were invented, we had tricks to implement inheritance. OOP introduced a more convenient way to implement inheritance, and multiple inheritance in particular.
+- allows **classify objects** per common characteristicts;
+- allows **use**, **replace**, and **partially replace** inherited fields.
 
 #### POLYMORPHISM
 
-- is the ability of any data to be processed in more than one form;
-- _poly_ means _many_, _morphism_ means _types_;
-- allows to represent a function in many types and many forms;
-- lets the system choose which function to call based on type and parameter signatures.
-
-Here, OOP still invents nothing completely new, but provides a way to implement polymorphism much safer, convenient and even trivial.
-
-The `+` operator in JS is polymorphic, as it can either sum or concatenate, depending on the data type of its operands.
-
-OO imposes discipline on indirect transfer of control.
+#### ABSTRACTION
 
 </details>
