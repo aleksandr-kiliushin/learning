@@ -108,7 +108,38 @@ OO is the proper **admixture** of encapsulation, inheritance and polymorphism.
 
 #### POLYMORPHISM
 
-TODO: ADD CONTENT.
+> Polymorphism is the **ability** of an element **to have many forms**.
+
+- _poly_ = _many_, _morphism_ = _types_;
+- allows to represent a function in many types and many forms;
+- lets the system **choose** which function to call **based on** type and parameter **signatures**.
+- **OOP** didn't invent it, but **provides a way to implement** polymorphism much **safer**, **convenient** and even trivial.
+
+Example:
+
+- The `+` operator in JS is polymorphic, as it can either sum or concatenate, depending on the data type of its operands.
+
+##### STATIC POLYMORPHISM
+
+Also: compile-time polymorphism, method overloading.
+
+Static polymorphism allows to defined **multiple methods** with the **same name**, but with **different signatures** (parameters types).
+
+```
+add(a: number, b: number) { ... }
+add(a: string, b: string) { ... }
+
+add(1, 3) // Variant 1 is called (activated).
+add("Hehe", "Haha") // Variant 2 is (activated).
+```
+
+Which method will be called is defined by **which of the parameters set is passed** (= which of the forms is activated) by client code.
+
+##### DYNAMIC POLYMORPHISM
+
+Also: run-time polymorphism, method overriding.
+
+TODO: CONTINUE HERE.
 
 #### ABSTRACTION
 

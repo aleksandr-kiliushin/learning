@@ -261,16 +261,7 @@ No content.
 
 #### POLYMORPHISM
 
-- is the ability of any data to be processed in more than one form;
-- _poly_ means _many_, _morphism_ means _types_;
-- allows to represent a function in many types and many forms;
-- lets the system choose which function to call based on type and parameter signatures.
-
-Here, OOP still invents nothing completely new, but provides a way to implement polymorphism much safer, convenient and even trivial.
-
-The `+` operator in JS is polymorphic, as it can either sum or concatenate, depending on the data type of its operands.
-
-OO imposes discipline on indirect transfer of control.
+No content.
 
 ##### THE POWER OF POLYMORPHISM
 
