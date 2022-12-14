@@ -247,9 +247,9 @@ No content.
 
 ### CHAPTER 5. OBJECT-ORIENTED PROGRAMMING
 
-> OOP is a programming paradighm that relies on the concept of classes and objects.
+> OOP is a programming paradighm that relies on the **concept of classes and objects**.
 
-OO is the proper admixture of encapsulation, inheritance and polymorphism.
+OO is the proper **admixture** of encapsulation, inheritance and polymorphism.
 
 #### ENCAPSULATION
 
@@ -282,9 +282,7 @@ The `+` operator in JS is polymorphic, as it can either sum or concatenate, depe
 
 OO imposes discipline on indirect transfer of control.
 
-##### THE POWER OF POLYMORPTHISM
-
-No content.
+##### ABSTRACTION
 
 ##### DEPENDENCY INVERSION
 
