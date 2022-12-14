@@ -264,9 +264,10 @@ OO is the proper admixture of encapsulation, inheritance and polymorphism.
 
 #### INHERITANCE
 
-Technically, inheritance is a redeclaration of a group of variables and functions within an enclosing scope.
+> Inheritance is a **redeclaration of fields** in classes **hierarchy**.
 
-In the context of inheritance, OO languages haven't given us anything completely new. Long before OO languages were invented, we had tricks to implement inheritance. OOP introduced a more convenient way to implement inheritance, and multiple inheritance in particular.
+- allows **classify objects** per common characteristicts;
+- allows **use**, **replace**, and **partially replace** inherited fields.
 
 #### POLYMORPHISM
 
