@@ -123,14 +123,27 @@ Example:
 
 Also: compile-time polymorphism, method overloading.
 
-Static polymorphism allows to defined **multiple methods** with the **same name**, but with **different signatures** (parameters types).
+Static polymorphism allows to defined **multiple functions** with the **same name**, but with **different signatures and implementations**.  
+Each of those overloaded functions provides **different**, but very **similar functionality**.
 
-```
-add(a: number, b: number) { ... }
-add(a: string, b: string) { ... }
+```java
+class HelloWorld {
+    public static void main(String[] args) {
+        HelloWorld helloWorld = new HelloWorld();
+        helloWorld.add(3, 4);
+        helloWorld.add("Hehe", "Haha", "Hihi");
+    }
+    public void add(int a, int b) {
+        System.out.println("Add two numbers. Result: " + a + b);
+    }
+    public void add(String a, String b, String c) {
+        System.out.println("Concatenate three strings. Result: " + a + b + c);
+    }
+}
 
-add(1, 3) // Variant 1 is called (activated).
-add("Hehe", "Haha") // Variant 2 is (activated).
+// Output.
+Two numbers were added. Result: 34
+Three strings were concatenated. Result: HeheHahaHihi
 ```
 
 Which method will be called is defined by **which of the parameters set is passed** (= which of the forms is activated) by client code.
@@ -139,7 +152,9 @@ Which method will be called is defined by **which of the parameters set is passe
 
 Also: run-time polymorphism, method overriding.
 
-TODO: CONTINUE HERE.
+Dynamic polymorphism doesn't allow the compiler to determine the executed method; it's done in runtime;
+
+It's more related to classes and inheritance. I don't understand it properly. There is a good explanation here: https://stackify.com/oop-concept-polymorphism.
 
 #### ABSTRACTION
 
