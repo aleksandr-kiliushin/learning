@@ -269,24 +269,7 @@ No content.
 
 ##### DEPENDENCY INVERSION
 
-A typical dependencies tree:
-
-- 😐 _main functions_ call _high-level functions_, that call _mid-level functions_, that call _low-level functions_;
-- 😖 _system behavior_ dictates _control flow_, _control flow_ dictates _source code dependencies_;
-
-Dependencies tree enabled by depency inversion:
-
-- 😊 decouples modules;
-- 👯 high level modules should not depend on low level modules – both should depend on abstractions;
-- 🙅 abstractions shouldn't depend on concrete implementations;
-- 🤗 concrete implementations should depend upon abstractions;
-
-What power does it provide?
-
-- 😎 Which module does the calling? Which module is called? No matter. The software architect can point the source code dependency in either direction.
-- 💪 The DB and the UI will depend on the BLL, rather than the other way around.
-- 👍 The DB and UI can be plugins to the BLL. It means that the source code of the BLL never mentions the DB or UI.
-- 🪚 BLL, UI and DB are developed and deployed separately. Changes to the UI or DB don't have any effect to the BLL. Changes to the DB or the UI don't have any effect on the business rules. Those components can be deployed and developed independently and separately.
+No content.
 
 #### CONCLUSION
 
@@ -818,6 +801,27 @@ By comparison, the `String` class is very stable and we don't worry about capric
 So, we tolerate some concrete dependencies because we can rely on them not to change.
 
 Our system shouldn't depend on volatile concrete modules – those that we're actively developing, and that are undegoing frequent change.
+
+#### MORE ABOUT DEPENDENCY INVERSION
+
+A typical dependencies tree:
+
+- 😐 _main functions_ call _high-level functions_, that call _mid-level functions_, that call _low-level functions_;
+- 😖 _system behavior_ dictates _control flow_, _control flow_ dictates _source code dependencies_;
+
+Dependencies tree enabled by depency inversion:
+
+- 😊 decouples modules;
+- 👯 high level modules should not depend on low level modules – both should depend on abstractions;
+- 🙅 abstractions shouldn't depend on concrete implementations;
+- 🤗 concrete implementations should depend upon abstractions;
+
+What power does it provide?
+
+- 😎 Which module does the calling? Which module is called? No matter. The software architect can point the source code dependency in either direction.
+- 💪 The DB and the UI will depend on the BLL, rather than the other way around.
+- 👍 The DB and UI can be plugins to the BLL. It means that the source code of the BLL never mentions the DB or UI.
+- 🪚 BLL, UI and DB are developed and deployed separately. Changes to the UI or DB don't have any effect to the BLL. Changes to the DB or the UI don't have any effect on the business rules. Those components can be deployed and developed independently and separately.
 
 #### STABLE ABSTRACTIONS
 

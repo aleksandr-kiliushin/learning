@@ -81,7 +81,7 @@ So what?
 
 </details>
 
-<details open>
+<details>
 <summary>Object-oriented programming</summary>
 
 > OOP is a programming paradighm that relies on the **concept of classes and objects**.
