@@ -179,12 +179,13 @@ The goal of SOLID is creation of **mid-level** software structures that:
 
 </details>
 
-<details open>
+<details>
 <summary>Single responsiblity principle</summary>
 
 > A module should have one and only **one reason to change**, meaning it should have only **one job**.
 
-Why you might want to change this module? Is there **«and»** in your answer? Shouldn't be.
+Why you might want to change this module? Is there **«and»** in your answer? Shouldn't be.  
+No swiss knifes, no god-objects, that know and can everything.
 
 When there are **new requirements** ~~it's easier to stick new line of code to an existing module~~ we should carefully think if **new functionality** should be a part of an **existing module**, **or** we should create a **separate module**.
 
@@ -202,5 +203,26 @@ The **SRP is about functions and classes** – **but** it reappears in a differe
 
 - at the level of components, it becomes the _Common closure principle_;
 - at the architectural level, it becomes the _Axis of change_ responsible for _Architectural boudaries_.
+
+</details>
+
+<details>
+<summary>Open / closed principle</summary>
+
+> Software entities should be **open for extension** but **closed for modification**.
+
+A software entity ought to be **extensible without having to modify that artifact**.
+
+If simple extensions to the requirements force massive changes to the software, it's the architect's failure.
+
+The OCP is **significant** at the levels of **modules** and **architectural components**.
+
+Use **interfaces** instead of superclasses to **allow different implementations** which you can **easily substitute** without changing the code that uses them. Interfaces are **closed to modifications**, you can provide new implementations to **extend** the functionality of your software.
+
+When changes are made to a module, OCP prevents the need to change its depending / related modules.
+
+OCP allows to **avoid unexpected errors** in code that use the module we change, because we actually **don't change** it, **but add** new functionality.
+
+The OCP goal is accomplished by **partitioning** the system into **components** and arranging those components into a **dependency hierarchy** that **protects higher-level** components **from** changes in **lower-level** components.
 
 </details>

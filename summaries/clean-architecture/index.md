@@ -328,19 +328,7 @@ No content.
 
 ### CHAPTER 8. THE OPEN-CLOSED PRINCIPLE
 
-**OCP**: the open-closed principle.  
-For software systems to be easy to change, they must be designed to allow the behavior of those systems to be changed by adding new code, rather than changing existing code.
-
-> A software artifact should be open for extension but closed for modification.
-
-In other words, the behavior of a software artifact ought to be extensible without having to modify that artifact.
-
-If simple extensions to the requirements force massive changes to the software, it's the architect's failure.
-
-The OCP is significant at the levels:
-
-- of modules;
-- of architectural components.
+No content.
 
 #### A THOUGH EXPERIMENT
 
@@ -392,11 +380,11 @@ Legend:
 
 Some things to notice:
 
-1.  All the dependencies are the source code dependencies.  
-    `class A --> class B` means that the source code of `A` mentions the name of `B`, but `B` mentions nothing about `A`.  
-    For example, `FinancialDataMapper` knows about `FinancialDataGateway` through an _implements_ relationship, but `FinancialDataGateway` knows nothing at all about `FinancialDataMapper`.
-2.  Each double line is crossed in one direction only.  
-    These arrow point toward the components that we want to protect from change.
+1. All the dependencies are the source code dependencies.  
+   `class A --> class B` means that the source code of `A` mentions the name of `B`, but `B` mentions nothing about `A`.  
+   For example, `FinancialDataMapper` knows about `FinancialDataGateway` through an _implements_ relationship, but `FinancialDataGateway` knows nothing at all about `FinancialDataMapper`.
+2. Each double line is crossed in one direction only.  
+   These arrow point toward the components that we want to protect from change.
 
 > If a component A should be protected from changes in component B, then component B should depend on component A.
 
@@ -451,8 +439,7 @@ We also want to protect the Controller from changes to the Interactor by hiding 
 
 #### CONCLUSION
 
-The goal of the OCP is to make the system easy to extend without incurring a high impact of change.  
-This goal is accomplished by partitioning the system into components and arranging those components into a dependency hierarchy that protects higher-level components from changes in lower-level components.
+No content.
 
 ### CHAPTER 9. THE LISKOV SUBSTITUTION PRINCIPLE
 
