@@ -304,203 +304,32 @@ No content.
 
 ## PART III. DESIGN PRINCIPLES
 
-🧼 Good software systems begin with clean code.  
-🫲 On the one hand, if the bricks aren't well made, the architecture of the building doesn't matter much.  
-🫱 On the other hand, you can made a substantial mess with well-made bricks.
-
-🤲 SOLID tells us how to arrange our functions and data structures into classes (or other function and data groupings) and how those groupings should be interconnected.
-
-The goal of SOLID is creation of mid-level software structures that:
-
-- tolerate change;
-- are easy to understand;
-- are the basis of components that can be used in different software system.
-
-«Mid-level» means that SOLID is applied by programmers working at the module level.
-
-SOLID:
-
-- **SRP**: the single responsibility principle.  
-  The best structure for a software system is heavily influenced by the social structure of the organization that uses it.  
-  So that each software module has one, and only one, reason to change.
-- **OCP**: the open-closed principle.  
-  For software systems to be easy to change, they must be designed to allow the behavior of those systems to be changed by adding new code, rather than changing existing code.
-- **LSP**: the Liskov substitution principle.  
-  To build software system from interchangeable parts, these parts must adhere to a contract that allows those parts to be substituted one for another.
-- **ISP**: the interface segregation principle.  
-  Avoid depending on things that you don't use.
-- **DIP**: the dependency inversion principle.  
-  High-level policy code shouldn't depend on the code that implements low-level details. Rather, details should depend on policies.
-
-The following chapters focus on their architectural implications.
+No content.
 
 ### CHAPTER 7. THE SINGLE RESPONSIBILITY PRINCIPLE
 
-No, it doesn't mean that each module should do just one thing. The principle has a particulary inappropriate name.
-
-Make no mistake, there is a principle like that. A function should do one, and only one, thing. We use that principle when we're refactoring large function into smaller ones; we use it at the lowest levels. But it is not SRP.
-
-Historically, the SRP has been described this way:
-
-> A module should have one, and only one, reason to change, meaning that a class should have only one job.
-
-Software systems are changed to satisfy users and stakeholders; those users and stakeholders are the «reason to change» that the SRP is talking about. Let's rephase the principle:
-
-> A module should be responsible to one, and only one, user or stakeholder.
-
-Unfortunately, the words «user» and «stakeholder» aren't really the right words to use here. There will likely be more than one user or stakeholder who wants the system changed in the same way. We're referring to a group – one or more people who require that change. We'll refer to that group as an actor.
-
-The final version of SRP is:
-
-> A module should be responsible to one, and only one, actor.
-
-«Module» here is a cohesive set of functions and data structures. Most of the time, it's just a source file.  
-The word «cohesive» implies the SRP. Cohesion is the force that binds together the code responsible to a single actor.
-
-Perhaps the best way to understand the SRP is by looking at the symptoms of violating it.
+No content.
 
 #### SYMPTOM 1: ACCIDENTAL DUPLICATION
 
-Let's say we're working on a payroll app.  
-We have the `Employee` class with the following methods: `calculatePay`, `reportHours` and `save`.
-
-```mermaid
-  graph LR
-    AD
-    HRD
-    DBAD
-    calculatePay
-    reportHours
-    save
-
-    subgraph Employee
-      calculatePay
-      reportHours
-      save
-    end
-
-    AD-->calculatePay
-    HRD-->reportHours
-    DBAD-->save
-```
-
-This class violates the SRP because those three methods are responsible to three very different actors.
-
-- `calculatePay` – specified by the AD;
-- `reportHours` – specified by the HRD;
-- `save` – specified by the DBAD;
-
-By putting the source code of these three methods into a single `Employee` class, the developers have coupled each of these actors to the others. This coupling can cause the actions of AD to affect something that HRD depends on.
-
-Suppose, `calculatePay` and `reportHours` share the same algorithm for calculating non-overtime hours. Suppose that it's extracted to the `regularHours` to eliminate duplicated code.
-
-```mermaid
-  graph TD;
-    calculatePay
-    reportHours
-    regularHours
-
-    calculatePay-->regularHours
-    reportHours-->regularHours
-```
-
-Suppose, AD decides to tweak the way non-overtime hours for `calculatePay` are calculated.  
-HRD don't need this particular tweak because they use non-overtime hours for a different purpose.  
-A developer is tasket to change the `regularHours` method.  
-Unfortunately, the developer doesn't notice that the `regularHours` is also called by `reportHours` for HRD purposes.  
-Of course, HRD doesn't know that this is happening. HRD will receive incorrect report hours, possibly losing money every day.
-
-These problems occurs because we put code that different actors depend on into close proximity.  
-The SRP says to separate the code that different actors depend on.
+No content.
 
 #### SYMPTOM 2: MERGES
 
-If a module is responsible to one, and only one, actor, it's less likely for merge conflits to occur.  
-If a developer makes a task related to `someMethod`, it's unlikely that other developers have reasons to edit this file at the same time.
+No content.
 
 #### SOLUTIONS
 
-One of the solutions:
-
-- separate the data from the functions;
-- the three classes share access to `EmployeeData` which is a simple data structure with no methods;
-- each class holds only the source code necessary for its particular function;
-- the three classes aren't allowed to know about each other;
-- thus any accidental duplication is avoided;
-
-```mermaid
-  graph LR
-    calculatePay
-    reportHours
-    save
-    EmployeeData
-
-    subgraph PayCalculator
-      calculatePay
-    end
-
-    subgraph HourReporter
-      reportHours
-    end
-
-    subgraph EmployeeSaver
-      save
-    end
-
-    EmployeeData
-
-    calculatePay-->EmployeeData
-    reportHours-->EmployeeData
-    save-->EmployeeData
-```
-
-The downside of this solution is that the developers now have three classes that they have to instantiate and track. A common solution to this dilemma is to use the Facade pattern.
-
-```mermaid
-  graph LR
-    EmployeeFacade_calculatePay[calculatePay]
-    EmployeeFacade_reportHours[reportHours]
-    EmployeeFacade_save[save]
-    PayCalculator_calculatePay[calculatePay]
-    HourReporter_reportHours[reportHours]
-    EmployeeSaver_save[save]
-    EmployeeData
-
-    subgraph EmployeeFacade
-      EmployeeFacade_calculatePay
-      EmployeeFacade_reportHours
-      EmployeeFacade_save
-    end
-
-    subgraph PayCalculator
-      PayCalculator_calculatePay
-    end
-
-    subgraph HourReporter
-      HourReporter_reportHours
-    end
-
-    subgraph EmployeeSaver
-      EmployeeSaver_save
-    end
-
-    EmployeeData
-
-    EmployeeFacade_calculatePay-->PayCalculator_calculatePay-->EmployeeData
-    EmployeeFacade_reportHours-->HourReporter_reportHours-->EmployeeData
-    EmployeeFacade_save-->EmployeeSaver_save-->EmployeeData
-```
-
-The `EmployeeFacade` contains very little code. It's responsible for instantiating and delegating to the three classes with the functions.
+No content.
 
 #### CONCLUSION
 
-The SRP is about functions and classes – but it reappears in a different form at two more levels:
-
-- at the level of components, it becomes the _Common closure principle_;
-- at the architectural level, it becomes the _Axis of change_ responsible for _Architectural boudaries_.
+No content.
 
 ### CHAPTER 8. THE OPEN-CLOSED PRINCIPLE
+
+**OCP**: the open-closed principle.  
+For software systems to be easy to change, they must be designed to allow the behavior of those systems to be changed by adding new code, rather than changing existing code.
 
 > A software artifact should be open for extension but closed for modification.
 
@@ -627,6 +456,9 @@ This goal is accomplished by partitioning the system into components and arrangi
 
 ### CHAPTER 9. THE LISKOV SUBSTITUTION PRINCIPLE
 
+**LSP**: the Liskov substitution principle.  
+To build software system from interchangeable parts, these parts must adhere to a contract that allows those parts to be substituted one for another.
+
 > What is wanted here is something like the following substitution property:  
 > If for each object `o1` of type `S` here is an object `o2` of type `T` such that for all programs `P` defined in terms of `T`, the behavior of `P` is unchanged when `o1` is substituted for `o2` then `S` is a subtype of `T`.
 
@@ -696,6 +528,9 @@ The LSP can, and should, be extended to the level of architecture.
 A simple violation of substitutability can cause a system's architecture to be polluted with a significant amount of extra mechanisms.
 
 ### CHAPTER 10. THE INTERFACE SEGREGATION PRINCIPLE
+
+**ISP**: the interface segregation principle.  
+Avoid depending on things that you don't use.
 
 ```mermaid
   graph LR
@@ -788,6 +623,9 @@ Even worse, a failure of one of those features within `D` may cause failures in 
 Depending on something that carries baggage that you don't need can cause you troubles that you didn't expect.
 
 ### CHAPTER 11. THE DEPENDENCY INVERSION PRINCIPLE
+
+**DIP**: the dependency inversion principle.  
+High-level policy code shouldn't depend on the code that implements low-level details. Rather, details should depend on policies.
 
 > The most flexible systems are those in which source code dependencies refer only to abstractions, not to concretions.
 

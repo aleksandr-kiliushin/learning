@@ -161,3 +161,46 @@ It's more related to classes and inheritance. I don't understand it properly. Th
 > Abstraction **hides all but the relevant data** about an object through in order to **reduce complexity** and **increase efficiency**;
 
 </details>
+
+<details>
+<summary>SOLID</summary>
+
+SOLID tells us how to **arrange functions and data structures into groupings** and how those groupings should be **interconnected**.
+
+Good high-level design decisions don't matter much if there is a mess at mid-level.
+
+The goal of SOLID is creation of **mid-level** software structures that:
+
+- **tolerate change**;
+- are easy to **understand**;
+- are the **basis of components** that can be used in different software systems.
+
+«Mid-level» means applicable at the **module level**.
+
+</details>
+
+<details open>
+<summary>Single responsiblity principle</summary>
+
+> A module should have one and only **one reason to change**, meaning it should have only **one job**.
+
+Why you might want to change this module? Is there **«and»** in your answer? Shouldn't be.
+
+When there are **new requirements** ~~it's easier to stick new line of code to an existing module~~ we should carefully think if **new functionality** should be a part of an **existing module**, **or** we should create a **separate module**.
+
+Benefits:
+
+- **prevents unexpected side-effects** of future changes;
+- when the requirements change, it's **clear in which module changes** should be done;
+- it's **easier to understand**, explain and **implement** modules that do only one thing;
+- **prevents merge conflicts** to occur;
+- increases testability.
+
+There is another principle like that: **function should do only one thing**. We use that principle when we're refactoring large function into smaller ones; we use it at the lowest levels. But it **is not SRP**.
+
+The **SRP is about functions and classes** – **but** it reappears in a different form at **two more levels**:
+
+- at the level of components, it becomes the _Common closure principle_;
+- at the architectural level, it becomes the _Axis of change_ responsible for _Architectural boudaries_.
+
+</details>
