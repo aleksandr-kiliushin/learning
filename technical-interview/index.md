@@ -226,3 +226,22 @@ OCP allows to **avoid unexpected errors** in code that use the module we change,
 The OCP goal is accomplished by **partitioning** the system into **components** and arranging those components into a **dependency hierarchy** that **protects higher-level** components **from** changes in **lower-level** components.
 
 </details>
+
+<details open>
+<summary>Liskov substitution principle</summary>
+
+> Objects of a superclass should be replaceable with objects of its subclasses without breaking the app.
+
+The LSP **extends the OCP** by focusing on the behavior of a superclass and its subclasses, which is in the middle of the scene.
+
+**The objects** of a **subclasses** and the objects of their **superclass** should:
+
+- **behave in the same way**; subclasses fields shouldn't contradict superclass fields;
+- **accept** in their **methods the same parameters**; subclasses **should not implement stricter validation** rules on input parameters than implemented by the parent class;
+- **return from** subclasses **methods** (or properties) a value of **the same type** as superclass has, **or** a value of the more **stricter subtype**.
+
+The OCP requires the objects of subclasses to **behave in the same way** as the objects of their superclass.
+
+**Inheritance allows** to ~~re-use some fields of the superclass and completely **replace** the other fields~~ **extend** the behavior defined in the **superclass**.
+
+</details>
