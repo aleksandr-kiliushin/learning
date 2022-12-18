@@ -511,73 +511,7 @@ The LSP can, and should, be extended to the level of architecture. A simple viol
 
 ### CHAPTER 10. THE INTERFACE SEGREGATION PRINCIPLE
 
-**ISP**: the interface segregation principle.  
-Avoid depending on things that you don't use.
-
-```mermaid
-  graph LR
-    User1
-    User2
-    User3
-    op1
-    op2
-    op3
-
-    subgraph Ops
-      op1
-      op2
-      op3
-    end
-
-    User1-->op1
-    User2-->op2
-    User3-->op3
-```
-
-There are several users who use the operations of the `Ops` class.  
-Let's assume that:
-
-- `User1` uses only `op1`;
-- `User2` uses only `op2`;
-- `User3` uses only `op3`;
-
-In that case, the source code of `User1` depends on `op2` and `op3`, even though it doesn't call them. This dependence means that a change to the source code of `op2` of `Ops` will force `User1` to be recombiled and redeployed (in Java), even though nothing that it cared about has actually changed.
-
-This problem can be resolved by segregating the operations into interfaces:
-
-```mermaid
-  graph LR
-    User1
-    User2
-    User3
-    U1OpsOp1[op1]
-    U2OpsOp2[op2]
-    U3OpsOp3[op3]
-    OpsOp1[op1]
-    OpsOp2[op2]
-    OpsOp3[op3]
-
-    subgraph U1Ops
-      U1OpsOp1
-    end
-    subgraph U2Ops
-      U2OpsOp2
-    end
-    subgraph U3Ops
-      U3OpsOp3
-    end
-    subgraph Ops
-      OpsOp1
-      OpsOp2
-      OpsOp3
-    end
-
-    User1-->U1OpsOp1-->OpsOp1
-    User2-->U2OpsOp2-->OpsOp2
-    User3-->U3OpsOp3-->OpsOp3
-```
-
-Again, if we imagine it is implementd in a statically typed language like Java, then the source code of `User1` will depend on `U1Ops` and `op1`, but will not depend on `Ops`. Thus a change to `Ops` that `User1` doesn't care about will not cause `User1` to be recompiled and redeployed.
+No content.
 
 #### ISP AND LANGUAGE
 
@@ -585,24 +519,11 @@ No content.
 
 #### ISP AND ARCHITECTURE
 
-It's harmful to depend on modules that contain more than you need.
-
-```mermaid
-  graph LR
-    SystemS[System S]
-    FrameworkF[Framework F]
-    DatabaseD[Database D]
-
-    SystemS-->FrameworkF-->DatabaseD
-```
-
-Suppose that D contains features that `F` doesn't use, and therefore `S` doesn't care about.  
-Changes to those features within `D` may force the redeployment of `F`, and, therefore, the redeployment of `S`.  
-Even worse, a failure of one of those features within `D` may cause failures in `F` and `S`.
+No content.
 
 #### CONCLUSION
 
-Depending on something that carries baggage that you don't need can cause you troubles that you didn't expect.
+No content.
 
 ### CHAPTER 11. THE DEPENDENCY INVERSION PRINCIPLE
 

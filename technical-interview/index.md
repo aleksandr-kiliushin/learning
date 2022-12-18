@@ -227,7 +227,7 @@ The OCP goal is accomplished by **partitioning** the system into **components** 
 
 </details>
 
-<details open>
+<details>
 <summary>Liskov substitution principle</summary>
 
 > Objects of a superclass should be replaceable with objects of its subclasses without breaking the app.
@@ -243,5 +243,99 @@ The LSP **extends the OCP** by focusing on the behavior of a superclass and its 
 The OCP requires the objects of subclasses to **behave in the same way** as the objects of their superclass.
 
 **Inheritance allows** to ~~re-use some fields of the superclass and completely **replace** the other fields~~ **extend** the behavior defined in the **superclass**.
+
+</details>
+
+<details open>
+<summary>Interface segregation principle</summary>
+
+> Code clients shouldn't depend upon interfaces that they don't use.
+
+The goal of ISP is to **reduce the side effects** and **frequency of required changes** by **splitting** an interface into multiple, **independent** ones.
+
+**Several specialized interfaces are better than a single universal one.**
+
+Depending on something that carries baggage that you don't need can cause you troubles that you didn't expect.
+
+ISP is **like SRP** but for interfaces.
+
+#### EXAMPLE 1
+
+```mermaid
+  graph LR
+    User1
+    User2
+    User3
+    op1
+    op2
+    op3
+
+    subgraph Ops
+      op1
+      op2
+      op3
+    end
+
+    User1-->op1
+    User2-->op2
+    User3-->op3
+```
+
+There are several users who use the operations of the `Ops` class. Let's assume that:
+
+- `User1` uses only `op1`;
+- `User2` uses only `op2`;
+- `User3` uses only `op3`;
+
+In that case, the source code of `User1` **depends** on `op2` and `op3`, **even though it doesn't call** them. This dependence means that a change to the source code of `op2` of `Ops` will force `User1` to be **recompiled and redeployed** (in Java), even though nothing that it cared about has actually changed.
+
+This problem can be resolved by **segregating the operations into interfaces**:
+
+```mermaid
+  graph LR
+    User1
+    User2
+    User3
+    U1OpsOp1[op1]
+    U2OpsOp2[op2]
+    U3OpsOp3[op3]
+    OpsOp1[op1]
+    OpsOp2[op2]
+    OpsOp3[op3]
+
+    subgraph U1Ops
+      U1OpsOp1
+    end
+    subgraph U2Ops
+      U2OpsOp2
+    end
+    subgraph U3Ops
+      U3OpsOp3
+    end
+    subgraph Ops
+      OpsOp1
+      OpsOp2
+      OpsOp3
+    end
+
+    User1-->U1OpsOp1-->OpsOp1
+    User2-->U2OpsOp2-->OpsOp2
+    User3-->U3OpsOp3-->OpsOp3
+```
+
+After this change, the source code of `User1` will depend on `U1Ops` and `op1`, but will not depend on `Ops`. Thus **`User1` doesn't care about changes to `Ops`**.
+
+#### EXAMPLE 2
+
+Suppose that D contains features that `F` doesn't use, and therefore `S` doesn't care about. Changes to those features within `D` may force the redeployment of `F`, and, therefore, the redeployment of `S`. Even worse, a failure of one of those features within `D` may cause failures in `F` and `S`.
+
+```mermaid
+  graph LR
+    SystemS[System S]
+    FrameworkF[Framework F]
+    DatabaseD[Database D]
+
+    SystemS-->FrameworkF-->DatabaseD
+```
 
 </details>
