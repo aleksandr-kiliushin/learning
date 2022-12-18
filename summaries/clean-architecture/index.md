@@ -527,57 +527,15 @@ No content.
 
 ### CHAPTER 11. THE DEPENDENCY INVERSION PRINCIPLE
 
-**DIP**: the dependency inversion principle.  
-High-level policy code shouldn't depend on the code that implements low-level details. Rather, details should depend on policies.
-
-> The most flexible systems are those in which source code dependencies refer only to abstractions, not to concretions.
-
-In a statically typed language, like Java, this means that the use, import and include statements should refer only to source modules containing interfaces, abstract classes, or some other kind of abstract declaration. Noting concrete should be depended on.
-
-The same rule applies for dynamically typed languages like Python. Source code dependencies shouldn't refer to concrete modules. In these languages it's harder to defined what a concrete module is. In particular, it's any module in which the functions being called are implemented.
-
-Clearly, treating this idea as a rule is unrealistic, because software systems must depend on many concrete facilities. For example, the `String` class in Java is concrete, and we must import and use it.  
-By comparison, the `String` class is very stable and we don't worry about capricius changes to it.
-
-So, we tolerate some concrete dependencies because we can rely on them not to change.
-
-Our system shouldn't depend on volatile concrete modules – those that we're actively developing, and that are undegoing frequent change.
+No content
 
 #### MORE ABOUT DEPENDENCY INVERSION
 
-A typical dependencies tree:
-
-- 😐 _main functions_ call _high-level functions_, that call _mid-level functions_, that call _low-level functions_;
-- 😖 _system behavior_ dictates _control flow_, _control flow_ dictates _source code dependencies_;
-
-Dependencies tree enabled by depency inversion:
-
-- 😊 decouples modules;
-- 👯 high level modules should not depend on low level modules – both should depend on abstractions;
-- 🙅 abstractions shouldn't depend on concrete implementations;
-- 🤗 concrete implementations should depend upon abstractions;
-
-What power does it provide?
-
-- 😎 Which module does the calling? Which module is called? No matter. The software architect can point the source code dependency in either direction.
-- 💪 The DB and the UI will depend on the BLL, rather than the other way around.
-- 👍 The DB and UI can be plugins to the BLL. It means that the source code of the BLL never mentions the DB or UI.
-- 🪚 BLL, UI and DB are developed and deployed separately. Changes to the UI or DB don't have any effect to the BLL. Changes to the DB or the UI don't have any effect on the business rules. Those components can be deployed and developed independently and separately.
+No content.
 
 #### STABLE ABSTRACTIONS
 
-Every change to an abstract interface corresponds to a change to its concrete implementations.  
-Conversively, changes to concrete implementations usually don't require changes to the interfaces that they implement.  
-Therefore **interfaces are less volatile than implementations**.
-
-Good architects work hard to **reduce the volatility of interfaces**. They try to find ways to **add functionality to implementations without making changes to the interfaces**.
-
-Stable architectures are those that avoid depending on volatile cocretions, and that favor the use of stable abstract interfaces. This implications boils down to a set of very specific coding practices:
-
-- **Don't refer to volatile concrete classes. Refer to abstract interfaces instead.** This rule is applied in all languages, whether statically or dynamically typed.
-- **Don't derive from volatile concrete classes.**
-- **Don't override concrete functions.** Instead, make the function abstract and create multiple implementations.
-- **Never mention the name of anything concrete and volatile.** Actually, it's just a restatement of the principle itself.
+No content.
 
 #### FACTORIES
 

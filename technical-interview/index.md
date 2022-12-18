@@ -246,7 +246,7 @@ The OCP requires the objects of subclasses to **behave in the same way** as the 
 
 </details>
 
-<details open>
+<details >
 <summary>Interface segregation principle</summary>
 
 > Code clients shouldn't depend upon interfaces that they don't use.
@@ -337,5 +337,53 @@ Suppose that D contains features that `F` doesn't use, and therefore `S` doesn't
 
     SystemS-->FrameworkF-->DatabaseD
 ```
+
+</details>
+
+<details open>
+<summary>Dependency inversion principle</summary>
+
+> High-level modules should not depend on low-level modules. Both should depend on abstractions.
+
+High-level (policy) modules should be **unaffected** by changes in low-level (details) modules.
+
+We need an **abstraction** that **decouples** the high-level and low-level modules from each other.
+
+> Abstractions should not depend on details. Details should depend on abstractions.
+
+The most **flexible** systems are those in which source code dependencies refer only to abstractions, not to concretions.
+
+The `import` statements should refer **only** to modules containing interfaces, abstract classes, or some other kind of **abstract** declaration. **Noting concrete** (like a module with a function defined) should be **depended on**.
+
+It's unrealistic to follow DIP absolutly. In practice, we can **tolerate stable concrete non-capricious modules**.
+
+#### BENEFITS
+
+- 😎 Which module does the calling? Which module is called? No matter. The software architect can point the source code dependency in either direction.
+- 💪 The DB and the UI will depend on the BLL, rather than the other way around.
+- 👍 The DB and UI can be plugins to the BLL. It means that the source code of the BLL never mentions the DB or UI.
+- 🪚 BLL, UI and DB are developed and deployed separately. Changes to the UI or DB don't have any effect to the BLL. Changes to the DB or the UI don't have any effect on the business rules. Those components can be deployed and developed independently and separately.
+
+#### STABLE ABSTRACTIONS
+
+Every change to an abstract interface corresponds to a change to its concrete implementations.  
+Conversively, changes to concrete implementations usually don't require changes to the interfaces that they implement.  
+Therefore **interfaces are less volatile than implementations**.
+
+Good architects work hard to **reduce the volatility of interfaces**. They try to find ways to **add functionality to implementations without making changes to the interfaces**.
+
+A stable architecture needs the following:
+
+- **Don't refer to volatile concrete classes. Refer to abstract interfaces instead.** This rule is applied in all languages, whether statically or dynamically typed.
+- **Don't derive from volatile concrete classes.**
+- **Don't override concrete functions.** Instead, make the function abstract and create multiple implementations.
+- **Never mention the name of anything concrete and volatile.** Actually, it's just a restatement of the principle itself.
+
+#### BASED ON OTHER SOLID PRINCIPLES
+
+Applying OCP and LSP means following the DIP.
+
+1. Achieve the OCP by introducing an interface that is closed to modification. You can extend it by providing a new implementation.
+2. Your implementations should follow the LSP so that you can replace them with other implementations of the same interface without breaking the app.
 
 </details>
