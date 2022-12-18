@@ -443,11 +443,7 @@ No content.
 
 ### CHAPTER 9. THE LISKOV SUBSTITUTION PRINCIPLE
 
-**LSP**: the Liskov substitution principle.  
-To build software system from interchangeable parts, these parts must adhere to a contract that allows those parts to be substituted one for another.
-
-> What is wanted here is something like the following substitution property:  
-> If for each object `o1` of type `S` here is an object `o2` of type `T` such that for all programs `P` defined in terms of `T`, the behavior of `P` is unchanged when `o1` is substituted for `o2` then `S` is a subtype of `T`.
+No content.
 
 #### GUIDING THE USE OF INHERITANCE
 
@@ -463,7 +459,7 @@ The design conforms to the LSP because the behavior of the `Billing` app doesn't
 
 ![The infamous square / rectangle problem](./images/the-infamous-square-rectangle-problem.png)
 
-In this example, `Square` is no a proper subtype of `Rectangle`, because the height and width of the `Rectangle` are independently mutable; in contrast, the height and width of the square must change together.  
+In this example, `Square` isn't a proper subtype of `Rectangle`, because the height and width of the `Rectangle` are independently mutable; in contrast, the height and width of the square must change together.  
 The LSP is violated.
 
 #### LSP AND ARCHITECTURE
@@ -511,8 +507,7 @@ More clean and scalable solution would be to add a configuration file like this:
 
 #### CONCLUSION
 
-The LSP can, and should, be extended to the level of architecture.  
-A simple violation of substitutability can cause a system's architecture to be polluted with a significant amount of extra mechanisms.
+The LSP can, and should, be extended to the level of architecture. A simple violation of substitutability can cause a system's architecture to be polluted with a significant amount of extra mechanisms.
 
 ### CHAPTER 10. THE INTERFACE SEGREGATION PRINCIPLE
 
