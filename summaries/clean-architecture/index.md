@@ -561,3 +561,32 @@ As we cover higher-level architectural principles, the DIP will show up again an
 The DIP will be the most visible organizing principle in our architecture diagrams.  
 The curved line in figure 11.1 will become the architectural boundaries in later chapters.  
 The way the dependencies cross the curved line in one direction, and toward more abstract entities, will become a new rule called the Dependency Rule.
+
+## PART IV. COMPONENT PRINCIPLES
+
+SOLID tells us how to arrange bricks into walls and rooms.  
+Component principles tells us how to arrage the rooms into buildings.
+
+### CHAPTER 12. COMPONENTS
+
+A component is an **independently developable and independently deployable unit**.
+
+| Environment           | Component                      |
+| --------------------- | ------------------------------ |
+| Java                  | A `.jar` file                  |
+| Ruby                  | A `.gem` file                  |
+| .NET                  | A `.dll` file                  |
+| Compile languages     | An aggregation of binary files |
+| Interpreted languages | An aggregation of source files |
+
+#### A BRIEF HISTORY OF COMPONENTS
+
+No content.
+
+#### RELOCATIBILITY
+
+No content.
+
+#### CONCLUSION
+
+After 50 years, we has arrived to component plugin architecture to be the casual default.
