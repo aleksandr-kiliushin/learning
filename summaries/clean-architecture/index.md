@@ -590,3 +590,17 @@ No content.
 #### CONCLUSION
 
 After 50 years, we has arrived to component plugin architecture to be the casual default.
+
+### CHAPTER 13. COMPONENTS COHESION
+
+Which modules belong to which components?
+
+The three principles of component cohesion:
+
+- **REP**: the reuse / release equivalence principle;
+- **CCP**: the common closure principle;
+- **CRP**: the common reuse principle.
+
+#### THE REUSE / RELEASE EQUIVALENCE PRINCIPLE
+
+> The granule of reuse it the granule of release.
