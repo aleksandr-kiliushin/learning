@@ -669,3 +669,7 @@ Generally, projects **tend to start on the right** hand side of the triangle, wh
 #### CONCLUSION
 
 **Balancing** these forces with the needs of the app is **nontrivial**. Moreover, the **balance is** almost always **dynamic**.
+
+### CHAPTER 14. COMPONENT COUPLING
+
+The next **three principles** deal with the **relationships between components**. Here again we'll run into **tension between develop-ability and logical design**. The **forces** that **impinge** upon the **architecture** are **technical, political and volatile**.
