@@ -673,3 +673,22 @@ Generally, projects **tend to start on the right** hand side of the triangle, wh
 ### CHAPTER 14. COMPONENT COUPLING
 
 The next **three principles** deal with the **relationships between components**. Here again we'll run into **tension between develop-ability and logical design**. The **forces** that **impinge** upon the **architecture** are **technical, political and volatile**.
+
+#### THE ACYCLIC DEPENDENCIES PRINCIPLE
+
+> Allows no cycles in the component dependency graph.
+
+The «morning after syndrome» occurs where many developers modify the same source files. Yesterday evening it worked, but today it's broken – because someone changed the files I rely on.
+
+Two solutions:
+
+- «the weekly build»;
+- the Acyclic dependencies principle (ADP).
+
+##### THE WEEKLY BUILD
+
+The developers ignore each other for the first 4 days of the week, working in their private copies. On Friday, they integrate all their changes and build the system. This integration is a serious penalty, cost and ineffective.
+
+##### ELIMINATING DEPENDENCY CYCLES
+
+The solution to this problems is to **partition** the development environment **into releasable components**.
