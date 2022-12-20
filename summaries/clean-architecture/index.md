@@ -618,3 +618,25 @@ What is **not obvious**: modules grouped together into a **component** should be
 This is the SRP restated for components.
 
 For most apps, **maintainability is more important than reusability**. If an app code must change, you'd **prefer** the **changes** to be **concentrated in a single component**, rather than be distributed across many components. So, we deploy only the changed component. The others don't even know about the changes.
+
+#### THE COMMON REUSE PRINCIPLE
+
+> Don't force users of a component to depend on things they don't need.
+
+CRP is another principle that helps us to decide which modules should be placed into a component. **Modules that tend to be reused together belong to the same component.**
+
+The CRP tells us:
+
+- which modules **to put together** in a component;
+- which modules **not to put together** in a component;
+
+CRP tells us that **modules that aren't tightly bound** to each other should be in **separate** components.
+
+##### RELATION TO ISP
+
+**CRP** is the **generic** version of **ISP**:
+
+- ISP tells us not to depend on **modules** that have **methods** we do not use;
+- CRP tells us not to depend on **components** that have **modules** we do not use.
+
+In general: **don't depend on things you don't need**.
