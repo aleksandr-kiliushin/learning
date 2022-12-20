@@ -605,10 +605,16 @@ The three principles of component cohesion:
 
 > The granule of reuse it the granule of release.
 
-We're living in the age of software reuse.
-
 People who want to reuse components cannot do so unless those components are tracked through a release process and are given release numbers. Having release numbers ensure components compatibility with each other. Release notes allows ease intregration of a new version.
 
 The principle means that the **modules formed into a component** must belong to a **cohesive group**. A component cannot consist of a random mixture of modules. There must be a **common purpose all modules share**. It's quire **obvious**.
 
 What is **not obvious**: modules grouped together into a **component** should be **releasable**. The same release number, release tracking and release docs should make sense both to the author and users.
+
+#### THE COMMON CLOSURE PRINCIPLE
+
+> Gather together into components those modules that change at the same times and for the same reasons. Separate those modules that change at different times and for different reasons.
+
+This is the SRP restated for components.
+
+For most apps, **maintainability is more important than reusability**. If an app code must change, you'd **prefer** the **changes** to be **concentrated in a single component**, rather than be distributed across many components. So, we deploy only the changed component. The others don't even know about the changes.
