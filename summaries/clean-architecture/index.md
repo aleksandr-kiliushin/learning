@@ -611,4 +611,4 @@ People who want to reuse components cannot do so unless those components are tra
 
 The principle means that the **modules formed into a component** must belong to a **cohesive group**. A component cannot consist of a random mixture of modules. There must be a **common purpose all modules share**. It's quire **obvious**.
 
-What is **not obvious**: modules grouped together into a component should be releasable. The same release number, release tracking and release docs should make sense both to the author and users.
+What is **not obvious**: modules grouped together into a **component** should be **releasable**. The same release number, release tracking and release docs should make sense both to the author and users.
