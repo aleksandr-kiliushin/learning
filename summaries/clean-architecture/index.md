@@ -370,6 +370,7 @@ The general insight here is that generating the report involves two separate res
 Having made this separation, we need to organize the source code dependencies to ensure that changes to one of those responsibilities don't cause changes in the other.
 
 ![Partioning the processes into classes and separating the classes into components](./images/partioning-the-processes-into-classes-and-separating-the-classes-into-components.png)
+
 Legend:
 
 - separate components are indicated by a double-line border;
@@ -640,3 +641,31 @@ CRP tells us that **modules that aren't tightly bound** to each other should be 
 - CRP tells us not to depend on **components** that have **modules** we do not use.
 
 In general: **don't depend on things you don't need**.
+
+#### THE TENSION DIAGRAM FOR COMPONENT COHESION
+
+The three component principles tend to fight each other:
+
+- **REP** and **CCP** are **inclusive**: both tell to **make components larger**;
+- **CRP** is **exclusive**: it tells to **make components smaller**.
+
+This is the **tension** between these principles that good architects seek **to resolve**.
+
+**Tension diagram** tells **how** the three **principles** of cohesion **interact** with each other.  
+The edges of the diagram describe the **cost of abandoning** the principle on the opposite vertex.
+
+![Tension diagram for component cohesion](./images/tension-diagram-for-component-cohesion.png)
+
+Conclusions:
+
+- **focusing** on just the **REP and CRP** causes that too many components are impacted when simple changes are made;
+- **focusing** on just the **CCP and REP** causes too many unneedeed releases to be generated.
+
+A good architect **finds a position** in that tension triangle **that meet the current concerns** of the development team.  
+A good architect is also aware that those **concerns will change over time**. For example, early in the development of a project, the CCP is much more important than the REP, because develop-ability is more important than reuse.
+
+Generally, projects **tend to start on the right** hand side of the triangle, where **the only sacrifice is reuse**. As the project **matures** and other projects begin to draw from it, the project will **slide over to the left**. This means that the **component structure** of a project can **vary with time and maturity**. It has more to do with the way the project is developed and used than with what the project actually does.
+
+#### CONCLUSION
+
+**Balancing** these forces with the needs of the app is **nontrivial**. Moreover, the **balance is** almost always **dynamic**.
