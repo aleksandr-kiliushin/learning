@@ -348,18 +348,18 @@ How?
 First, apply the SRP:
 
 ```mermaid
-  graph LR
-    financialData(Financial data):::dataStructure
-    financialAnalyzer[Financial analyzer]
-    financialReportData(Financial report data):::dataStructure
-    webReporter[Web reporter]
-    printReporter[Print reporter]
+graph LR
+  financialData(Financial data):::dataStructure
+  financialAnalyzer[Financial analyzer]
+  financialReportData(Financial report data):::dataStructure
+  webReporter[Web reporter]
+  printReporter[Print reporter]
 
-    financialData-->financialAnalyzer-->financialReportData
-    financialReportData-->webReporter
-    financialReportData-->printReporter
+  financialData-->financialAnalyzer-->financialReportData
+  financialReportData-->webReporter
+  financialReportData-->printReporter
 
-    classDef dataStructure fill:lightgray;
+  classDef dataStructure fill:lightgray;
 ```
 
 The general insight here is that generating the report involves two separate responsibilities:
@@ -737,3 +737,59 @@ We **don't want components that change frequently** and for capricious reasons *
 **Component dependency graph** is created by architects to **protect stable high-value components from volatile components**.
 
 If we tried to design the component dependency structure before we designed any modules, we'd likely fail. We wouldn't know much about common closure, we'd be unaware of any reusable elements, and we'd cernainly create components that produced dependency cycles. Thus the **component dependency structure evolves with the logical design of the system**.
+
+#### THE STABLE DEPENDENCIES PRINCIPLE
+
+> Depend in the direction of stability.
+
+Design can't be completely static, **some volatility is necessary**. With CCP, we create components that are **sensetive** to certain kinds of changes but **immune** to others. **Some** of these components are **designed to be volatile**, we expect them to change.
+
+A module that you designed to be easy to change **can be made difficult to change** by someone else who simply hangs a dependency on it.
+
+**SDP says** that modules that are intended to be easy to change aren't depended on by modules that are harder to change.
+
+##### STABILITY
+
+Stability is related to the **amount of work required to make a change**.
+
+Many factors may make a component hard to change – its size, complexity, etc. We'll focus on another factor. One sure way to make a component difficult to change is to make lots of other software components depend on it. A component with lots of incoming dependencies is very stable because it requires a great deal of work to reconcile any changes with all the dependent components.
+
+```mermaid
+---
+title: A stable component
+---
+graph TD
+  componentA[ ]
+  componentB[ ]
+  componentC[ ]
+  componentX[X]
+
+  componentA-->componentX
+  componentB-->componentX
+  componentC-->componentX
+```
+
+About `X`:
+
+- **three components depend on `X`**, so `X` has three good **reasons not to change**; **`X` is responsible to** those three components;
+- conversely, **`X` depends on nothing**, so it has **no external influence** to make it change; `X` is **independent**.
+
+```mermaid
+---
+title: A very unstable component
+---
+graph TD
+  componentA[ ]
+  componentB[ ]
+  componentC[ ]
+  componentY[Y]
+
+  componentY-->componentA
+  componentY-->componentB
+  componentY-->componentC
+```
+
+About `Y`:
+
+- **no components depend on `Y`**, so `Y` is **irresponsible**;
+- there are three components that **`Y` depends on**, so **changes may come from three external sources**; `Y` is **dependent**.
