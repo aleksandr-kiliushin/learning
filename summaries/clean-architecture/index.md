@@ -691,4 +691,19 @@ The developers ignore each other for the first 4 days of the week, working in th
 
 ##### ELIMINATING DEPENDENCY CYCLES
 
-The solution to this problems is to **partition** the development environment **into releasable components**.
+The solution to this problems is to **partition** the development environment **into releasable components**. The components become **units of work** that can be **responsibility of a single developer or a team** of developers. When developers get a component working, they **release** it **for** use by the **other developers**. They give it a release number and move it into a directory for others team to use. Other teams start **using** the new version **as soon as** they are **ready**. Each team **decides when to integrate** the changes in components. **Small steady increments** instead of immediate affects.
+
+To make it works, you must manage the dependency structure of the components.
+
+![Typical component diagram](./images/typical-component-diagram.png)
+
+The structure has no cycles, it's a directed acyclic graph (**DAG**).
+
+Example:
+
+- a new version of `Presenters` is released;
+- to find affected components, just follow the dependency arrows backward – `View` and `Main`;
+
+When `Main` is released, it has no effect on any component of the system. They don't know about `Main` and they don't care when it changes. It means that the impact of releasing `Main` is relatively small.
+
+The process of building the entire system is very clear because we understand the dependencies between it's parts. It proceeds from the bottom up: first – `Entities`, last – `Main`.
