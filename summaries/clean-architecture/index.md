@@ -702,7 +702,8 @@ The structure has no cycles, it's a directed acyclic graph (**DAG**).
 Example:
 
 - a new version of `Presenters` is released;
-- to find affected components, just follow the dependency arrows backward – `View` and `Main`;
+- we need to find affected components;
+- we just follow the dependency arrows backward – `View` and `Main`.
 
 When `Main` is released, it has no effect on any component of the system. They don't know about `Main` and they don't care when it changes. It means that the impact of releasing `Main` is relatively small.
 
