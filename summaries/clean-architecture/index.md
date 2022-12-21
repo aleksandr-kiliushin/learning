@@ -714,3 +714,10 @@ The process of building the entire system is very clear because we understand th
 Cycles in dependency graph cause «morning after syndrome» and make it different to release components.
 
 With cycles, it can be **difficult** to work out the **order** in which you must build the components. There **probably** is **no correct order**.
+
+##### BREAKING THE CYCLE
+
+There are two ways:
+
+1. apply the DIP;
+2. create a new component that cycled components will both depend on.
