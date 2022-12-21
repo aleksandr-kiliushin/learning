@@ -708,3 +708,9 @@ Example:
 When `Main` is released, it has no effect on any component of the system. They don't know about `Main` and they don't care when it changes. It means that the impact of releasing `Main` is relatively small.
 
 The process of building the entire system is very clear because we understand the dependencies between it's parts. It proceeds from the bottom up: first – `Entities`, last – `Main`.
+
+##### THE EFFECT OF A CYCLE IN THE COMPONENT DEPENDENCY GRAPH
+
+Cycles in dependency graph cause «morning after syndrome» and make it different to release components.
+
+With cycles, it can be **difficult** to work out the **order** in which you must build the components. There **probably** is **no correct order**.
