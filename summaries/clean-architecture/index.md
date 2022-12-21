@@ -721,3 +721,7 @@ There are two ways:
 
 1. apply the DIP;
 2. create a new component that cycled components will both depend on.
+
+##### THE "JITTERS"
+
+No content.
