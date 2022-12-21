@@ -633,6 +633,8 @@ The CRP tells us:
 
 CRP tells us that **modules that aren't tightly bound** to each other should be in **separate** components.
 
+The more our app grows, the more we begin to concern about reusable components, the more the CRP influences the components composition.
+
 ##### RELATION TO ISP
 
 **CRP** is the **generic** version of **ISP**:
@@ -725,3 +727,13 @@ There are two ways:
 ##### THE "JITTERS"
 
 No content.
+
+##### TOP-DOWN DESIGN
+
+A conclusion from the issues discussed so far: a **component structure can't be designed from the top down**.
+
+We should localize and **isolate volatility**.  
+We **don't want components that change frequently** and for capricious reasons **to affect components that ought to be stable**. For example, we **don't want** cosmetic changes to the **GUI** to have an **impact** on our **business rules**.  
+**Component dependency graph** is created by architects to **protect stable high-value components from volatile components**.
+
+If we tried to design the component dependency structure before we designed any modules, we'd likely fail. We wouldn't know much about common closure, we'd be unaware of any reusable elements, and we'd cernainly create components that produced dependency cycles. Thus the **component dependency structure evolves with the logical design of the system**.
