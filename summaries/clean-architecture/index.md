@@ -802,7 +802,7 @@ These counts will allow us to calculate the **positional stability** of the comp
 
 - **Fan-in**: **incoming dependencies** – the number of modules outside the component that depend on modules that are within the component.
 - **Fan-out**: **outgoing dependencies** – the number of modules inside this component that depend on modules outside this component.
-- Instability varies from 0 to 1.  
+- Instability ranges from 0 to 1.  
   **I = 0** indicates a maximally **stable** component, **I = 1 – unstable**.
 
 $$ Instability = {Fan–out \over Fan–in + Fan–out} $$
@@ -912,3 +912,13 @@ Thus, if a **component** is to be **stable**, it **should consist of interfaces 
 **SAP + SDP = DIP for components.** Because SDP says that dependencies should run in the direction of stability, and SAP says that stability implies abstraction. Thus dependencies run in the direction of abstraction.
 
 The DIP, however, deals with classes – and with classes there are no shades of gray. Either a class is abstract or it's not. SAP + SDP deals with components and allows that a component can be partially abstract and partially stable.
+
+##### MEASURING ABSTRACTION
+
+Abstractness (`A`) is the **ratio of interfaces and abstract classes** in a component **to** the **total** number of **classes** in the component.
+
+- `Nc` – the number of classes in a component;
+- `Na` - the number of abstract classes and interfaces in the component;
+- `A` – abstractness, `A = Na / Nc`.
+
+`A` ranges from 0 to 1. `A = 0` implies that the component has no abstract classes at all. `A = 1` implies that the component contains nothing but abstract classes.
