@@ -845,3 +845,45 @@ About the `ComponentC`:
 Amount of dependencies are represented by `import`-ed modules.
 
 > `I` of a component should be larger than `I` of the component that it depends on. `I` should decrease in the direction of dependency.
+
+#### NOT ALL COMPONENTS SHOULD BE STABLE
+
+If all the components in the system were maximally stable, the system would be unchangeable, which is not desired. We want some components to be stable and some – unstable.
+
+```mermaid
+---
+title: An ideal configuration for a system with 3 components
+---
+graph TD
+  ComponentA[instable <b>I = 1</b>]
+  ComponentB[instable <b>I = 1</b>]
+  ComponentC[stable <b>I = 0</b>]
+
+  ComponentA-->ComponentC
+  ComponentB-->ComponentC
+```
+
+The figure above: the changeable components on top depend on the stable component at the bottom.
+
+```mermaid
+---
+title: SDP violation
+---
+graph TD
+  ComponentA[instable, <b>I = 1</b>]
+  ComponentB[instable, <b>I = 1</b>]
+  ComponentC[<i>supposed to be</i> stable, but <b>I = 0.33</b>]
+  ComponentD[<i>supposed to be</i> flexible, but <b>I = 0</b>]
+
+  ComponentA-->ComponentC
+  ComponentB-->ComponentC
+  ComponentC-->ComponentD
+```
+
+The figure above:
+
+- `Flexible` is a component we've designed to be easy to change, we want it to be unstable;
+- some developer working on `Stable` has hung a dependency on `Flexible` – `Stable` depends on `Flexible`;
+- as a result, `Flexible` is no longer be easy to change; – a change to `Flexible` will force us to deal with `Stable` and its dependents.
+
+We can fix it by using the DIP.
