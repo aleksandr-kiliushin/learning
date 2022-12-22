@@ -793,3 +793,55 @@ About `Y`:
 
 - **no components depend on `Y`**, so `Y` is **irresponsible**;
 - there are three components that **`Y` depends on**, so **changes may come from three external sources**; `Y` is **dependent**.
+
+##### STABILITY METRICS
+
+One way to measure the stability of a component is to **count** the number of **dependencies** that **enter and leave** that component.
+
+These counts will allow us to calculate the **positional stability** of the component:
+
+- **Fan-in**: **incoming dependencies** – the number of modules outside the component that depend on modules that are within the component.
+- **Fan-out**: **outgoing dependencies** – the number of modules inside this component that depend on modules outside this component.
+- Instability varies from 0 to 1.  
+  **I = 0** indicates a maximally **stable** component, **I = 1 – unstable**.
+
+$$ Instability = {Fan–out \over Fan–in + Fan–out} $$
+
+```mermaid
+---
+title: Calculate ComponentC stability
+---
+graph LR
+  subgraph ComponentA
+    ModuleU
+    ModuleV
+  end
+
+  subgraph ComponentB
+    ModuleW
+  end
+
+  subgraph <b>ComponentC</b>
+    ModuleX
+    ModuleY
+  end
+
+  subgraph ComponentD
+    ModuleZ
+  end
+
+  ModuleU-->ModuleX
+  ModuleV-->ModuleY
+  ModuleW-->ModuleY
+  ModuleY-->ModuleZ
+```
+
+About the `ComponentC`:
+
+- Fan-in = 3;
+- Fan-out = 1;
+- Instability = 1 / (3 + 1) = 0.25.
+
+Amount of dependencies are represented by `import`-ed modules.
+
+> `I` of a component should be larger than `I` of the component that it depends on. `I` should decrease in the direction of dependency.
