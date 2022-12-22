@@ -855,9 +855,9 @@ If all the components in the system were maximally stable, the system would be u
 title: An ideal configuration for a system with 3 components
 ---
 graph TD
-  ComponentA[instable <b>I = 1</b>]
-  ComponentB[instable <b>I = 1</b>]
-  ComponentC[stable <b>I = 0</b>]
+  ComponentA[instable, <b>I = 1</b>]
+  ComponentB[instable, <b>I = 1</b>]
+  ComponentC[stable, <b>I = 0</b>]
 
   ComponentA-->ComponentC
   ComponentB-->ComponentC
@@ -887,3 +887,28 @@ The figure above:
 - as a result, `Flexible` is no longer be easy to change; – a change to `Flexible` will force us to deal with `Stable` and its dependents.
 
 We can fix it by using the DIP.
+
+#### THE STABLE ABSTRACTIONS PRINCIPLE
+
+> A component should be as abstract as it's stable.
+
+##### WHERE DO WE PUT THE HIGH-LEVEL POLICY?
+
+Some software in the system should not change very often. This software represents **high-level architecture and policy decisions**, which we don **not** want to be **voliatile**. Such software should be **placed into stable components** (`I = 0`). **Unstable components** (`I = 1`) should **contain** only the software that is **volatile** – software that we want to be able to **easily change**.
+
+However, **if high-level policies** are placed **into stable components**, then the source code that represents those policies **will be difficult to change**. This could make the overall **architecture inflexible**. How a component with `I = 0` be flexible enough to windstand change? The **OCP helps** us. The OCP tells that it's possible and desirable to create classes that are flexible enough to be extended without requiring modification. Which kind of classes conform this principle? **Abstract classes.**
+
+##### INTRODUCING THE STABLE ABSTRACTIONS PRINCIPLE
+
+The **SAP** sets up a **relationship between stability and abstractness**.
+
+The SAP states:
+
+- a **stable component should be abstract** so that its stability doesn't prevent it from **being extended**;
+- an **unstable components should be concrete** since it its instability allows the concrete code within it **to be easily changed**.
+
+Thus, if a **component** is to be **stable**, it **should consist of interfaces and abstract classes** so that it **can be extended**. Stable components that are extensible are flexible and don't overly constrain the architecture.
+
+**SAP + SDP = DIP for components.** Because SDP says that dependencies should run in the direction of stability, and SAP says that stability implies abstraction. Thus dependencies run in the direction of abstraction.
+
+The DIP, however, deals with classes – and with classes there are no shades of gray. Either a class is abstract or it's not. SAP + SDP deals with components and allows that a component can be partially abstract and partially stable.
