@@ -922,3 +922,20 @@ Abstractness (`A`) is the **ratio of interfaces and abstract classes** in a comp
 - `A` – abstractness, `A = Na / Nc`.
 
 `A` ranges from 0 to 1. `A = 0` implies that the component has no abstract classes at all. `A = 1` implies that the component contains nothing but abstract classes.
+
+##### THE MAIN SEQUENCE
+
+Let's define relationships between `I` and `A`.
+
+![The I / A graph](./images/the-instability-abstraction-graph.png)
+
+There are two «good» kinds of components in this graph:
+
+- stable and abstract at (0, 1);
+- unstable and concrete (1, 0).
+
+Not all components fall into one of these two positions, because components often have degrees of abstraction and instability.
+
+![Zones of exclusion](./images/zones-of-exclusion.png)
+
+«Zones of exclusion» shows reasonable positions and «bad» zones for components.
