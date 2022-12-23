@@ -1,5 +1,16 @@
 # SUMMARY: CLEAN ARCHITECTURE BY ROBERT C. MARTIN
 
+## GLOSSARY
+
+- **SRP** – single responsibility principle;
+- **OCP** – open / closed principle;
+- **LSP** – Liskov substitution principle;
+- **ISP** – interface segregation principle;
+- **DIP** – dependency inversion principle;
+- **REP** – reuse / release equivalence principle;
+- **CCP** – common closure principle;
+- **CRP** – common reuse principle;
+
 ## FOREWORD
 
 > **Architecture** represents the **significant design decisions that shape a system**, where significant is measured by cost of change.
@@ -565,20 +576,11 @@ The way the dependencies cross the curved line in one direction, and toward more
 
 ## PART IV. COMPONENT PRINCIPLES
 
-SOLID tells us how to arrange bricks into walls and rooms.  
-Component principles tells us how to arrage the rooms into buildings.
+SOLID tells us how to arrange bricks into walls and rooms. Component principles tells us how to arrage the rooms into buildings.
 
 ### CHAPTER 12. COMPONENTS
 
 A component is an **independently developable and independently deployable unit**.
-
-| Environment           | Component                      |
-| --------------------- | ------------------------------ |
-| Java                  | A `.jar` file                  |
-| Ruby                  | A `.gem` file                  |
-| .NET                  | A `.dll` file                  |
-| Compile languages     | An aggregation of binary files |
-| Interpreted languages | An aggregation of source files |
 
 #### A BRIEF HISTORY OF COMPONENTS
 
@@ -606,11 +608,14 @@ The three principles of component cohesion:
 
 > The granule of reuse it the granule of release.
 
-People who want to reuse components cannot do so unless those components are tracked through a release process and are given release numbers. Having release numbers ensure components compatibility with each other. Release notes allows ease intregration of a new version.
+Release **numbers** and release **notes** for a component allow:
+
+- reused components are compatible with each other;
+- ease integration of new versions.
 
 The principle means that the **modules formed into a component** must belong to a **cohesive group**. A component cannot consist of a random mixture of modules. There must be a **common purpose all modules share**. It's quire **obvious**.
 
-What is **not obvious**: modules grouped together into a **component** should be **releasable**. The same release number, release tracking and release docs should make sense both to the author and users.
+What is **not obvious**: modules grouped together into a component should be **releasable**. The same release number, release tracking and release docs should make sense both to the author and users.
 
 #### THE COMMON CLOSURE PRINCIPLE
 
