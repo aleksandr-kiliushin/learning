@@ -973,3 +973,21 @@ A component that sits on the main sequence:
 - is **depends on others** to the extent that it is concrete.
 
 The **most desirable** positions are **(0, 1) and (1, 0)**. Good architects strive to position the majority of their components at those endpoints. In practice, some small fraction of components are neither perfectly anstract nor perfectly stable. Those components have the best characteristics if they are on, or close, to the main sequence.
+
+##### DISTANCE FROM THE MAIN SEQUENCE
+
+$$ D = |A + I - 1| $$
+
+`D` ranges from 0 to 1. Components with `D` not near to zero can be reexamined and restructured. You can set a reasonable threshold, for example 0.1.
+
+What can be calculated:
+
+- `D` for each component:
+  ![Plot of D for a project components](./images/plot-of-d-for-a-project-components.png)
+- `D` for each component over time:
+  ![Plot of D for a single component over time](./images/plot-of-d-for-a-single-components-over-time.png)
+- mean `D` for an entire project;
+
+#### CONCLUSION
+
+No content.
