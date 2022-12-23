@@ -958,3 +958,18 @@ A component at (1, 1):
 
 - maximally abstract + no dependents = useless;
 - they are often abstract classes that noone ever implemented;
+
+##### AVOIDING THE ZONES OF EXCLUSION
+
+Our most **volatile components** should be kept from as **far from** both **zones of execution** as possible. The locus of points that are **maximally distant from each zone** is the **line** that connects (0, 1) and (1, 0), called the **main sequence**.
+
+A component that sits on the main sequence:
+
+- is **not "too abstract"** for its stability;
+- is **not "too unstable"** for its abstractness;
+- is **not** particularly **useless**;
+- is **not** particularly **painful**;
+- is **depended on** to the extent that it is abstract;
+- is **depends on others** to the extent that it is concrete.
+
+The **most desirable** positions are **(0, 1) and (1, 0)**. Good architects strive to position the majority of their components at those endpoints. In practice, some small fraction of components are neither perfectly anstract nor perfectly stable. Those components have the best characteristics if they are on, or close, to the main sequence.
