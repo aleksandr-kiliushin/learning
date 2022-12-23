@@ -939,3 +939,22 @@ Not all components fall into one of these two positions, because components ofte
 ![Zones of exclusion](./images/zones-of-exclusion.png)
 
 «Zones of exclusion» shows reasonable positions and «bad» zones for components.
+
+###### THE ZONE OF PAIN
+
+A component at (0, 0):
+
+- is difficult to change because it's highly stable and concrete;
+- isn't desirable because it's rigid;
+- can't be extended because it's not abstract;
+- a well-designed component can't take a position near (0, 0).
+
+Example: a DB schema.  
+It's volatile, concrete and highly depended on. Updating a DB schema is painful.
+
+###### THE ZONE OF USELESSNESS
+
+A component at (1, 1):
+
+- maximally abstract + no dependents = useless;
+- they are often abstract classes that noone ever implemented;
