@@ -10,6 +10,9 @@
 - **REP** – reuse / release equivalence principle;
 - **CCP** – common closure principle;
 - **CRP** – common reuse principle;
+- **ADP** – acyclic dependencies principle;
+- **SDP** – stable dependencies principle;
+- **SAP** – stable abstractions principle;
 
 ## FOREWORD
 
@@ -669,11 +672,11 @@ The edges of the diagram describe the **cost of abandoning** the principle on th
 
 Conclusions:
 
-- **focusing** on just the **REP and CRP** causes that too many components are impacted when simple changes are made;
-- **focusing** on just the **CCP and REP** causes too many unneedeed releases to be generated.
+- **focusing** on just the **REP and CRP** causes that too **many components are impacted** when simple changes are made;
+- **focusing** on just the **REP and CCP** causes too many **unneedeed releases** to be generated.
 
 A good architect **finds a position** in that tension triangle **that meet the current concerns** of the development team.  
-A good architect is also aware that those **concerns will change over time**. For example, early in the development of a project, the CCP is much more important than the REP, because develop-ability is more important than reuse.
+A good architect is also aware that those **concerns change over time**. For example, early in the development of a project, the CCP is much more important than the REP, because develop-ability is more important than reuse.
 
 Generally, projects **tend to start on the right** hand side of the triangle, where **the only sacrifice is reuse**. As the project **matures** and other projects begin to draw from it, the project will **slide over to the left**. This means that the **component structure** of a project can **vary with time and maturity**. It has more to do with the way the project is developed and used than with what the project actually does.
 
@@ -683,26 +686,21 @@ Generally, projects **tend to start on the right** hand side of the triangle, wh
 
 ### CHAPTER 14. COMPONENT COUPLING
 
-The next **three principles** deal with the **relationships between components**. Here again we'll run into **tension between develop-ability and logical design**. The **forces** that **impinge** upon the **architecture** are **technical, political and volatile**.
+The next **three principles** deal with the **relationships between components**. Here again we'll run into **tension between develop-ability and logical design**. The forces that impinge upon the architecture are technical, political and volatile.
 
 #### THE ACYCLIC DEPENDENCIES PRINCIPLE
 
 > Allows no cycles in the component dependency graph.
 
-The «morning after syndrome» occurs where many developers modify the same source files. Yesterday evening it worked, but today it's broken – because someone changed the files I rely on.
-
-Two solutions:
-
-- «the weekly build»;
-- the Acyclic dependencies principle (ADP).
+The dependency structure must always be **monitored for cycles**. When **cycles** occur, they **must be broken**. Sometimes, this will mean creating a new component, making the dependency structure grow.
 
 ##### THE WEEKLY BUILD
 
-The developers ignore each other for the first 4 days of the week, working in their private copies. On Friday, they integrate all their changes and build the system. This integration is a serious penalty, cost and ineffective.
+No content.
 
 ##### ELIMINATING DEPENDENCY CYCLES
 
-The solution to this problems is to **partition** the development environment **into releasable components**. The components become **units of work** that can be **responsibility of a single developer or a team** of developers. When developers get a component working, they **release** it **for** use by the **other developers**. They give it a release number and move it into a directory for others team to use. Other teams start **using** the new version **as soon as** they are **ready**. Each team **decides when to integrate** the changes in components. **Small steady increments** instead of immediate affects.
+We should **partition** the development environment **into releasable components**. The components become **units of work** that can be **responsibility of a developer or team**. When developers get a component working, they give it a number and **release** it **for** the **others**. Each team start **using** the new version **as soon as** they are **ready** to migrate to it. **Small steady increments** instead of immediate affects.
 
 To make it works, you must manage the dependency structure of the components.
 
@@ -714,7 +712,7 @@ Example:
 
 - a new version of `Presenters` is released;
 - we need to find affected components;
-- we just follow the dependency arrows backward – `View` and `Main`.
+- we just follow the dependency arrows backward (`View` and `Main`).
 
 When `Main` is released, it has no effect on any component of the system. They don't know about `Main` and they don't care when it changes. It means that the impact of releasing `Main` is relatively small.
 
@@ -722,7 +720,7 @@ The process of building the entire system is very clear because we understand th
 
 ##### THE EFFECT OF A CYCLE IN THE COMPONENT DEPENDENCY GRAPH
 
-Cycles in dependency graph cause «morning after syndrome» and make it different to release components.
+Cycles in dependency graph cause «morning after syndrome» and make it difficult to release components.
 
 With cycles, it can be **difficult** to work out the **order** in which you must build the components. There **probably** is **no correct order**.
 
@@ -761,7 +759,7 @@ A module that you designed to be easy to change **can be made difficult to chang
 
 Stability is related to the **amount of work required to make a change**.
 
-Many factors may make a component hard to change – its size, complexity, etc. We'll focus on another factor. One sure way to make a component difficult to change is to make lots of other software components depend on it. A component with lots of incoming dependencies is very stable because it requires a great deal of work to reconcile any changes with all the dependent components.
+One way to make a component difficult to change is to make lots of other software components depend on it. A component with lots of incoming dependencies is very stable because it requires a great deal of work to reconcile any changes with all the dependent components.
 
 ```mermaid
 ---
@@ -895,6 +893,8 @@ The figure above:
 - some developer working on `Stable` has hung a dependency on `Flexible` – `Stable` depends on `Flexible`;
 - as a result, `Flexible` is no longer be easy to change; – a change to `Flexible` will force us to deal with `Stable` and its dependents.
 
+> Any component that we expect to be volatile shouldn't be depended on by a component that is difficult to change. Otherwise, the volatile component will also be difficult to change.
+
 We can fix it by using the DIP.
 
 #### THE STABLE ABSTRACTIONS PRINCIPLE
@@ -903,7 +903,7 @@ We can fix it by using the DIP.
 
 ##### WHERE DO WE PUT THE HIGH-LEVEL POLICY?
 
-Some software in the system should not change very often. This software represents **high-level architecture and policy decisions**, which we don **not** want to be **voliatile**. Such software should be **placed into stable components** (`I = 0`). **Unstable components** (`I = 1`) should **contain** only the software that is **volatile** – software that we want to be able to **easily change**.
+**High-level architecture and policy decisions** should not change very often. We don **not** want them to be **voliatile**. Such software should be **placed into stable components** (`I = 0`). **Unstable components** (`I = 1`) should **contain** only the software that is **volatile** – software that we want to be able to **easily change**.
 
 However, **if high-level policies** are placed **into stable components**, then the source code that represents those policies **will be difficult to change**. This could make the overall **architecture inflexible**. How a component with `I = 0` be flexible enough to windstand change? The **OCP helps** us. The OCP tells that it's possible and desirable to create classes that are flexible enough to be extended without requiring modification. Which kind of classes conform this principle? **Abstract classes.**
 
