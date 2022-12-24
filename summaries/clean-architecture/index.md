@@ -608,14 +608,18 @@ The three principles of component cohesion:
 
 > The granule of reuse it the granule of release.
 
+Anything that we reuse must be released and tracked.
+
 Release **numbers** and release **notes** for a component allow:
 
 - reused components are compatible with each other;
 - ease integration of new versions.
 
-The principle means that the **modules formed into a component** must belong to a **cohesive group**. A component cannot consist of a random mixture of modules. There must be a **common purpose all modules share**. It's quire **obvious**.
+REP gives us our first **hint at how to partition** our design into components.
 
-What is **not obvious**: modules grouped together into a component should be **releasable**. The same release number, release tracking and release docs should make sense both to the author and users.
+The principle means that the **modules formed into a component** must belong to a **cohesive group**. A component cannot consist of a random mixture of modules. There must be a **common purpose all modules share**. It's quite obvious.
+
+What is not obvious: modules grouped together into a component should be **releasable**. The same release number, release tracking and release docs should make sense both to the author and users.
 
 #### THE COMMON CLOSURE PRINCIPLE
 
