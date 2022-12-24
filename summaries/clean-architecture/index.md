@@ -633,7 +633,7 @@ For most apps, **maintainability is more important than reusability**. If an app
 
 > Don't force users of a component to depend on things they don't need.
 
-CRP is another principle that helps us to decide which modules should be placed into a component. **Modules that tend to be reused together belong to the same component.**
+CRP is another principle that helps us to decide which modules should be placed into a component. **Modules that tend to be reused together belong to the same component.** In such a component, we'd expect to see **modules** that have lots of **dependencies on each other** – coupled modules.
 
 The CRP tells us:
 
