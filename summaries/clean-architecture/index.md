@@ -1092,3 +1092,22 @@ No content.
 #### CONCLUSION
 
 No content.
+
+### CHAPTER 16. INDEPENDENCE
+
+As we previously stated, a good architecture must support:
+
+- use cases and operation;
+- maintenance;
+- development;
+- deployment.
+
+#### USE CASES
+
+The first priority of the architecture architecture is to support the intent of the system. If the system is a shopping cart app, then the architecture must support shopping cart use cases.
+
+Architecture does not manage behavior. Instead, it supports behavior by clarifying and exposing that behavior so that the intent of the system is visible at the architectural level.
+
+A shopping cart app should look like a shopping cart app. Its use cases will be plainly visible within the structure of the system. Developers will not have to hunt for behaviors. The behaviors will be first-class elements visible at the top level of the system. Those elements will be modules that have prominent positions within the architecture and they will have names that clearly describe their function.
+
+Chapter 21 «Screaming architecture» will make this point much clearer.
