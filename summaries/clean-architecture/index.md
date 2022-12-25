@@ -1021,3 +1021,32 @@ Architecture also ensures the system to **work properly**, but it is **not its m
 Supporting the proper behavior of the system is one of the responsibilities of architecture, and it's critical. At the same time, it's passive and cosmetic, not active or essential.
 
 The **primary purpose** of architecture is to support the life cycle of the system. Good architecture makes the system easy to understand, easy to develop, easy to maintain, and easy to deploy. The **ultimate goal** is to minimize the lifetime cost of the system and to maximize programmer productivity.
+
+#### DEVELOPMENT
+
+A system is easy for the team to develop -> the system has long and healthy lifetime.
+
+Different team imply different architectural decisions:
+
+- On the other hand, a small team of five developers can effectively work to develop a monolithic system without well-defined components or interfaces. Such a team would likely find the limitations of an architecture something of an impediment during the early days of development. This is likely the reason why so many systems lack good architecture: they were begun with none, because the team was small and did not want the impediment of a superstructure.
+- On the other hand, a system being developed by five different teams, each of which includes seven developers, cannot make progress unless the system is divided into well-defined components with reliable stable interfaces.
+
+#### DEPLOYMENT
+
+Systems with cheap and fast deployment are more useful and effective. The **goal** of architecture is to make a system, deployable with a **single action**.
+
+#### OPERATION
+
+The impact of architecture on operation is less than the impact on development, deployment and maintenance. Almost any opertional difficulty can be resolved by throwing more hardware (storage and servers) at the system. It's because hardware is cheap and people are expensive.
+
+A good architecture makes the operation of the system apparent ot the developers. Architecture should reveal operations. The architecture should elevate the use cases, the features, and the required behavior of the system to first-class entities that are visible landmarks for the developers. This simplifies understanding of the system and, therefore, greatly aids in depevelopment and maintenance.
+
+#### MAINTENANCE
+
+Of all the aspects of a software system maintenance is the most costly. Creating new featurs and fixing defects consume a vast amount of human resources.
+
+The primary cost of maintenance is in spelunking and risk.
+
+- Spelunking is the cost of digging through the existing software, trying to determine the best place and the best strategy to add a new feature or to repair a defect. While making such changes, the likelihood of creating inadvertent defects is always there, adding to the cost of rist.
+
+A carefully thought-through architecture vastly mitigates these costs. Separating the system into components, and isolating those components through stable interfaces illuminates the pathways for future features and greatly reduces the risks of inadvertent breakage.
