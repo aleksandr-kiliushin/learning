@@ -1076,3 +1076,19 @@ Imagine, we have a part of the high-level policy working and still agnostic to t
 What if the decision have already been made by someone else? Pretend that they have not beed and shape the system such that those decisions can still be deferred or changed for as long as possible.
 
 > Maximize the number of decisions not made.
+
+#### DEVICE INDEPENDENCE
+
+No content.
+
+#### JUNK MAIL
+
+No content.
+
+#### PHYSICAL ADDRESSING
+
+No content.
+
+#### CONCLUSION
+
+No content.
