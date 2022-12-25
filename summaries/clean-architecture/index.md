@@ -1133,3 +1133,9 @@ Conway's law:
 > Any organization that designs a system will produce a design whose structure is the copy of the organization's communication structure.
 
 A system that must be developed by many teams with different concerns must have an architecture that facilitates independent actions by those teams, so that the teams do not interfere with each other during development. This is accomplished by properly partitioning the system into well-isolated, independently developable components. Those components can be allocated to teams that can work independently of each other.
+
+#### DEPLOYMENT
+
+How easy is it to deploy your system? Architecture plays a huge role here. The goal is «immediate deployment» after build. A good architecture does not rely on dozens of configurations scripts and properly file tweaks.
+
+Again, this is achieved through the proper partitioning isolation of the components, including those master components that tie the whole system together and ensure that each component is properly started, integrated and supervised.
