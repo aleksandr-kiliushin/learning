@@ -1050,3 +1050,29 @@ The primary cost of maintenance is in spelunking and risk.
 - Spelunking is the cost of digging through the existing software, trying to determine the best place and the best strategy to add a new feature or to repair a defect. While making such changes, the likelihood of creating inadvertent defects is always there, adding to the cost of rist.
 
 A carefully thought-through architecture vastly mitigates these costs. Separating the system into components, and isolating those components through stable interfaces illuminates the pathways for future features and greatly reduces the risks of inadvertent breakage.
+
+#### KEEPING OPTIONS OPEN
+
+Keep software soft. The softness depends on how the components are formed and interconnected.
+
+The way you keep software soft is to leave as many options open as possible, for as long as possible. What are these options? These optiona are the details that don't matter.
+
+A system can be decomposed into two major elements – policy and details:
+
+- **Policy** contains the true value of the system, it embodies business rules and procedures.
+- **Details** enable humans, developers and other systems to communicate with the policy, but that do not impact the behavior of the policy at all. Details include databases, servers, frameworks, communication protocols, etc.
+
+A good architecture recognizes policy as the most essential element of the system while making the details irrelevant to that policy. This allows decision about those details to be delayed.
+
+- we try to build the architecture without commiting regarding any of the surrounding details;
+- we delay decisions about the details as long as possible;
+- the longer we wait to make the decisions regarding the details, the more information we have to make them properly;
+
+Imagine, we have a part of the high-level policy working and still agnostic to the details (DB / framework / server). This allows experiments with different details to check applicability and performance.  
+=> the longer we have options open;  
+=> the more experiments we can run, the more things we can try;  
+=> the more information we will have at the moment when those decision can no longer be deferred.
+
+What if the decision have already been made by someone else? Pretend that they have not beed and shape the system such that those decisions can still be deferred or changed for as long as possible.
+
+> Maximize the number of decisions not made.
