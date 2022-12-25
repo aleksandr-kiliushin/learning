@@ -1007,20 +1007,20 @@ No content.
 
 It's wrong that architects pull back from code to focus on higher-level issues. Architects continue to take programming tasks, while they also guide the rest of the team toward a design that maximizes productivity. Architects may not write as much code as other programmers do, but they continue to engage in programming tasks to experience the effects of their architectural decisions.
 
-The **architecture** of a software system **is** its shape:
+The architecture of a software system is its shape:
 
-- **division** of the system **into components**;
-- **arrangement** of those components;
-- the **ways** those **components communicate** with each other.
+- division of the system into components;
+- arrangement of those components;
+- the ways those components communicate with each other.
 
-The **purpose** of architecture is to facilitate the development, deployment, operation, and maintenance of the software system contained within it.
+The purpose of architecture is to facilitate the development, deployment, operation, and maintenance of the software system contained within it.
 
-The **strategy** behind the facilitation is to leave as many options open as possible, for as long as possible.
+The strategy behind the facilitation is to leave as many options open as possible, for as long as possible.
 
-Architecture also ensures the system to **work properly**, but it is **not its main goal**. There are many systems with terrible architectures, that work just fine. Their troubles don't line in their operation; rather, they occur in their deployment, maintenance, and ongoing development.  
+Architecture also ensures the system to work properly, but it is not its main goal. There are many systems with terrible architectures, that work just fine. Their troubles don't line in their operation; rather, they occur in their deployment, maintenance, and ongoing development.  
 Supporting the proper behavior of the system is one of the responsibilities of architecture, and it's critical. At the same time, it's passive and cosmetic, not active or essential.
 
-The **primary purpose** of architecture is to support the life cycle of the system. Good architecture makes the system easy to understand, easy to develop, easy to maintain, and easy to deploy. The **ultimate goal** is to minimize the lifetime cost of the system and to maximize programmer productivity.
+The primary purpose of architecture is to support the life cycle of the system. Good architecture makes the system easy to understand, easy to develop, easy to maintain, and easy to deploy. The ultimate goal is to minimize the lifetime cost of the system and to maximize programmer productivity.
 
 #### DEVELOPMENT
 
@@ -1033,7 +1033,7 @@ Different team imply different architectural decisions:
 
 #### DEPLOYMENT
 
-Systems with cheap and fast deployment are more useful and effective. The **goal** of architecture is to make a system, deployable with a **single action**.
+Systems with cheap and fast deployment are more useful and effective. The goal of architecture is to make a system, deployable with a single action.
 
 #### OPERATION
 
@@ -1114,7 +1114,7 @@ Chapter 21 «Screaming architecture» will make this point much clearer.
 
 #### OPERATION
 
-If the system must handle 100,000 customers per second or to query big data in milliseconds, then the **architecture must be structured to allow it**.
+If the system must handle 100,000 customers per second or to query big data in milliseconds, then the architecture must be structured to allow it.
 
 It may mean:
 
@@ -1122,4 +1122,14 @@ It may mean:
 - an array of services running in parallel on a server in different threads;
 - a simple monolithic program running in a single thread.
 
-This decision is one of the **options** that a good architect leaves **open**. For example, it is hard to upgrade a monolith to a multiple processes, threads or services should the need arise.
+This decision is one of the options that a good architect leaves open. For example, it is hard to upgrade a monolith to a multiple processes, threads or services should the need arise.
+
+#### DEVELOPMENT
+
+Architecture plays a significant role in supporting the dev environment.
+
+Conway's law:
+
+> Any organization that designs a system will produce a design whose structure is the copy of the organization's communication structure.
+
+A system that must be developed by many teams with different concerns must have an architecture that facilitates independent actions by those teams, so that the teams do not interfere with each other during development. This is accomplished by properly partitioning the system into well-isolated, independently developable components. Those components can be allocated to teams that can work independently of each other.
