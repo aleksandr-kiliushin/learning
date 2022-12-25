@@ -1111,3 +1111,15 @@ Architecture does not manage behavior. Instead, it supports behavior by clarifyi
 A shopping cart app should look like a shopping cart app. Its use cases will be plainly visible within the structure of the system. Developers will not have to hunt for behaviors. The behaviors will be first-class elements visible at the top level of the system. Those elements will be modules that have prominent positions within the architecture and they will have names that clearly describe their function.
 
 Chapter 21 «Screaming architecture» will make this point much clearer.
+
+#### OPERATION
+
+If the system must handle 100,000 customers per second or to query big data in milliseconds, then the **architecture must be structured to allow it**.
+
+It may mean:
+
+- an array of services running in parallel on different servers;
+- an array of services running in parallel on a server in different threads;
+- a simple monolithic program running in a single thread.
+
+This decision is one of the **options** that a good architect leaves **open**. For example, it is hard to upgrade a monolith to a multiple processes, threads or services should the need arise.
