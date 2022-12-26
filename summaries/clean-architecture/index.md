@@ -1147,3 +1147,15 @@ A good architecture balances all of those concerns with a component structure th
 Achieving this balance is pretty hard. The problem is that all the use cases are, the operational constrais, the operational constrains, the deployment requirements are unknown or dynamic as the system moves through its life cycle. The goals we must meet are indistinct and inconstant.
 
 Architecture principles help balance those concerns even when you don't have a clear picture. They help partition our system into well-isolated components that allow to leave as many options as possible, for as long as possible, making the system easy to change.
+
+#### DECOUPLING LAYERS
+
+The architect wants the structure that supports all the necessary use cases. He does not know what they are, but he knows the basic intent of the system. It is a shopping cart / bill of materials / orders processing. So the archictect can employ SRP and CCP to separate those things that change for different reasons and collect those things that change for the same reasons – giving the context of the intent of the system.
+
+For example, GUI and business rules change for different reasons. A good architect would separate them so that they can be independently changed.
+
+Business rules may be closely tied to the app, or may be general. For example, the validation of the inputs is a business rules that is closely tied to the app. In contrast, the calculation of interest and the counting of inventory are business rules that are more closely associated with the domain. These two different kinds of rules will change at different rates, and for different reasons – they should be separated to be changed independently.
+
+The DB, the query language are technical details that have nothing to do with the business rules or the UI. The architecture should separate them from the rest of the system so that they can be independently changed.
+
+Thus we find the system divided into decoupled horisontal layers – GUI, app-specific business rules, app-independent business rules, DB, etc.
