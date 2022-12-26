@@ -1159,3 +1159,13 @@ Business rules may be closely tied to the app, or may be general. For example, t
 The DB, the query language are technical details that have nothing to do with the business rules or the UI. The architecture should separate them from the rest of the system so that they can be independently changed.
 
 Thus we find the system divided into decoupled horisontal layers – GUI, app-specific business rules, app-independent business rules, DB, etc.
+
+#### DECOUPLING USE CASES
+
+The use cases themselver also change for different reasons. «Adding an order» and «deleting an order» are two use cases that change at different rates and for different reasons. Use cases are a very natural way to divide the system.
+
+At the same time, use cases are narrow vertical slices that cut through the horizontal layers of the system. Each use case uses some UI, app-specific business rules, app-independed business rules, DB functionality. Thus, divide the system into horizontal layers and vertial use cases.
+
+To achieve this decoupling, we separate the «add-order» UI from the «delete order» UI, etc.
+
+You can see the pattern here. If you decouple elements that change for different reasons, then you can continue to add new use cases without interferring with old ones. Each use case uses a different aspect of the UI and DB, then adding new use cases will unlikely affect older ones.
