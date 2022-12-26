@@ -1139,3 +1139,11 @@ A system that must be developed by many teams with different concerns must have 
 How easy is it to deploy your system? Architecture plays a huge role here. The goal is «immediate deployment» after build. A good architecture does not rely on dozens of configurations scripts and properly file tweaks.
 
 Again, this is achieved through the proper partitioning isolation of the components, including those master components that tie the whole system together and ensure that each component is properly started, integrated and supervised.
+
+#### LEAVING OPTIONS OPEN
+
+A good architecture balances all of those concerns with a component structure that mutually satisfies them all.
+
+Achieving this balance is pretty hard. The problem is that all the use cases are, the operational constrais, the operational constrains, the deployment requirements are unknown or dynamic as the system moves through its life cycle. The goals we must meet are indistinct and inconstant.
+
+Architecture principles help balance those concerns even when you don't have a clear picture. They help partition our system into well-isolated components that allow to leave as many options as possible, for as long as possible, making the system easy to change.
