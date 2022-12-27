@@ -1176,3 +1176,13 @@ At the same time, use cases are narrow vertical slices that cut through the hori
 To achieve this decoupling, we separate the «add-order» UI from the «delete order» UI, etc.
 
 You can see the pattern here. If you decouple elements that change for different reasons, then you can continue to add new use cases without interferring with old ones. Each use case uses a different aspect of the UI and DB, then adding new use cases will unlikely affect older ones.
+
+#### DECOUPLING MODE
+
+Lets think about independence in context of operations. If UI and DB are separated from business rules, then they can run in different servers.
+
+To run components in separate servers, the components should not depend on being together on the same server / process / thread. They must be independed services, which communicate over a network of some kind.
+
+Such components are often called «services» or «micro-services», and an architecture based on them is called «services-oriented» (SOA).
+
+It's not about that SOA is the best possible architecture, or that micro-services is the wave of the future. The point is that sometimes we have to separate our components all the way to the service level.
