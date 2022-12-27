@@ -1195,3 +1195,7 @@ When components are strongly decoupled, the interference between teams is mitiga
 - The use cases are docoupled from one another. Good. Thus the team focusing on «add order» use case will not interfere with the team focusing on «delete order» use case.
 
 So long as layers and use cases are decoupled, architecture will support the organization of the teams, irrespective of whether they are organized as feature teams, component teams, layer teams, etc.
+
+#### INDEPENDENT DEPLOYABILITY
+
+With well-done decouplint, it is should be possible to hot-swap and use cases in running systems. Adding a new case should be as easy as adding a new source code file.
