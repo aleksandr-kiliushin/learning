@@ -1226,3 +1226,11 @@ Layers and use cases can be decoupled in different modes:
   Many of the components may still live in the same address space, and communicate through function calls. Other components may live in other processes in the same processor and communicate through interprocess communications, sockets, or shared memory. Important: the decoupled components are partitioned into independently deployable units (`.jar`s, `.gem`s, `.dll`s, shared libs, etc).
 - Service (execution unit) level.  
   We reduce the dependencies down to the level of data structures and communicate solely through network packets such that every execution unit is entirely independent of source and binary changes to others (e. g., services or micro-services).
+
+What is the most optimal mode to use? It is hard to say during the early phases of the project and the answer changes during as the project matures.
+
+For example:
+
+- now the system runs comfortably on one server, source code level decoupling is sifficient;
+- in a year, some components need to run in different processes;
+- in two years, the system need some components to run in separate services.
