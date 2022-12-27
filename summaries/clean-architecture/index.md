@@ -1186,3 +1186,12 @@ To run components in separate servers, the components should not depend on being
 Such components are often called «services» or «micro-services», and an architecture based on them is called «services-oriented» (SOA).
 
 It's not about that SOA is the best possible architecture, or that micro-services is the wave of the future. The point is that sometimes we have to separate our components all the way to the service level.
+
+#### INDEPENDENT DEVELOP-ABILITY
+
+When components are strongly decoupled, the interference between teams is mitigated.
+
+- The BR do not know about the UI. Good. Thus the UI team does not affect the BR team.
+- The use cases are docoupled from one another. Good. Thus the team focusing on «add order» use case will not interfere with the team focusing on «delete order» use case.
+
+So long as layers and use cases are decoupled, architecture will support the organization of the teams, irrespective of whether they are organized as feature teams, component teams, layer teams, etc.
