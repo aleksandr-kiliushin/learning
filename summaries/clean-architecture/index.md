@@ -414,7 +414,7 @@ Changes to the Database, or the Controller, or the Presenters, or the Views will
 
 Why should the Interactor hold such a priveleged position?
 
-- the Interactor contains the business rules;
+- the Interactor contains the BR;
 - the Interactor contains the highest-level policies of the app;
 - all the other components deal with peripheral concerns;
 - the Interactor deals with the central concern;
@@ -562,7 +562,7 @@ In most OO languages we'd use an Abstract Factory to manage this undesirable dep
 The `Application` uses the `ConcreteImpl` through the `Service` interface. However, the `Application` must somehow create instances of the `ConcreteImpl`. To achieve this without creating a source code dependency on the `ConcreteImpl`, the `Application` calls the `makeSvc` method of the `ServiceFactory` interface. This method is implemented by the `ServiceFactoryImpl` class, which derives from `ServiceFactory`. That implementation instantiates the concrete `ConcreteImpl` and returns it as a `Service`.
 
 The curved line is an architectural boundary. It separates the abstract component from the concrete component. All source code dependencies cross that curved line pointing in the same direction, toward the abstract side.  
-The abstract component contains all the high-level business rules. The concrete component contains all the implementation details of those business rules.
+The abstract component contains all the high-level BR. The concrete component contains all the implementation details of those BR.
 
 The flow of control crosses the curved line in the opposite direction of the source code dependencies – which is why we refer to this principle as Dependency Inversion.
 
@@ -740,7 +740,7 @@ No content.
 A conclusion from the issues discussed so far: a **component structure can't be designed from the top down**.
 
 We should localize and **isolate volatility**.  
-We **don't want components that change frequently** and for capricious reasons **to affect components that ought to be stable**. For example, we **don't want** cosmetic changes to the **GUI** to have an **impact** on our **business rules**.  
+We **don't want components that change frequently** and for capricious reasons **to affect components that ought to be stable**. For example, we **don't want** cosmetic changes to the **GUI** to have an **impact** on our **BR**.  
 **Component dependency graph** is created by architects to **protect stable high-value components from volatile components**.
 
 If we tried to design the component dependency structure before we designed any modules, we'd likely fail. We wouldn't know much about common closure, we'd be unaware of any reusable elements, and we'd cernainly create components that produced dependency cycles. Thus the **component dependency structure evolves with the logical design of the system**.
@@ -1059,7 +1059,7 @@ The way you keep software soft is to leave as many options open as possible, for
 
 A system can be decomposed into two major elements – policy and details:
 
-- **Policy** contains the true value of the system, it embodies business rules and procedures.
+- **Policy** contains the true value of the system, it embodies BR and procedures.
 - **Details** enable humans, developers and other systems to communicate with the policy, but that do not impact the behavior of the policy at all. Details include databases, servers, frameworks, communication protocols, etc.
 
 A good architecture recognizes policy as the most essential element of the system while making the details irrelevant to that policy. This allows decision about those details to be delayed.
@@ -1152,19 +1152,26 @@ Architecture principles help balance those concerns even when you don't have a c
 
 The architect wants the structure that supports all the necessary use cases. He does not know what they are, but he knows the basic intent of the system. It is a shopping cart / bill of materials / orders processing. So the archictect can employ SRP and CCP to separate those things that change for different reasons and collect those things that change for the same reasons – giving the context of the intent of the system.
 
-For example, GUI and business rules change for different reasons. A good architect would separate them so that they can be independently changed.
+For example, GUI and BR change for different reasons. A good architect would separate them so that they can be independently changed.
 
-Business rules may be closely tied to the app, or may be general. For example, the validation of the inputs is a business rules that is closely tied to the app. In contrast, the calculation of interest and the counting of inventory are business rules that are more closely associated with the domain. These two different kinds of rules will change at different rates, and for different reasons – they should be separated to be changed independently.
+BR may be closely tied to the app, or may be general. For example, the validation of the inputs is a BR that is closely tied to the app. In contrast, the calculation of interest and the counting of inventory are BR that are more closely associated with the domain. These two different kinds of rules will change at different rates, and for different reasons – they should be separated to be changed independently.
 
-The DB, the query language are technical details that have nothing to do with the business rules or the UI. The architecture should separate them from the rest of the system so that they can be independently changed.
+The DB, the query language are technical details that have nothing to do with the BR or the UI. The architecture should separate them from the rest of the system so that they can be independently changed.
 
-Thus we find the system divided into decoupled horisontal layers – GUI, app-specific business rules, app-independent business rules, DB, etc.
+Thus we find the system divided into decoupled horisontal layers – GUI, app-specific BR, app-independent BR, DB, etc.
 
 #### DECOUPLING USE CASES
 
 The use cases themselver also change for different reasons. «Adding an order» and «deleting an order» are two use cases that change at different rates and for different reasons. Use cases are a very natural way to divide the system.
 
-At the same time, use cases are narrow vertical slices that cut through the horizontal layers of the system. Each use case uses some UI, app-specific business rules, app-independed business rules, DB functionality. Thus, divide the system into horizontal layers and vertial use cases.
+At the same time, use cases are narrow vertical slices that cut through the horizontal layers of the system. Each use case uses some UI, app-specific BR, app-independed BR, DB functionality. Thus, divide the system into horizontal layers and vertial use cases.
+
+|                    | Add an order | Remove an order | Edit an order | List orders |
+| ------------------ | ------------ | --------------- | ------------- | ----------- |
+| UI                 | x            | x               | x             |             |
+| App-specific BR    | x            | x               | x             |             |
+| App-independent BR | x            | x               | x             |             |
+| DB                 | x            | x               | x             |             |
 
 To achieve this decoupling, we separate the «add-order» UI from the «delete order» UI, etc.
 
