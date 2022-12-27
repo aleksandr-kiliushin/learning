@@ -1199,3 +1199,17 @@ So long as layers and use cases are decoupled, architecture will support the org
 #### INDEPENDENT DEPLOYABILITY
 
 With well-done decouplint, it is should be possible to hot-swap and use cases in running systems. Adding a new case should be as easy as adding a new source code file.
+
+#### DUPLICATION
+
+Developers often fall into a duplication fear trap.
+
+Duplication is generally a bad thing in software.
+
+But there are different kinds of duplication:
+
+- True duplication, in which every change in one instance necessitates the same change to every duplicate of it.
+- False (accidental) duplication. If two appartently duplicated sections of code evolve along different paths – if they change at different rates and for different reasons – then they are not true duplicates. In a few years you will find them very different from each other.
+
+- a true duplication is recognized => the instances are merged into one instance => code maintanance is made cheaper;
+- an accidental duplication is recognized => the instances are kept separated => the cases will be decoupled.
