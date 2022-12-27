@@ -1213,3 +1213,16 @@ But there are different kinds of duplication:
 
 - a true duplication is recognized => the instances are merged into one instance => code maintanance is made cheaper;
 - an accidental duplication is recognized => the instances are kept separated => the cases will be decoupled.
+
+#### DECOUPLING MODES (AGAIN)
+
+Layers and use cases can be decoupled in different modes:
+
+- Source level.  
+  We control the dependencies between source code modules. So that changes to one module do not force change or recompilation of others.  
+  Components execute in the same address space. They communicate with each other using simple function calls. There is a single executable loaded into computer memory. It is often called monolithic architecture.
+- Deployment (binary code) level.  
+  We control the dependencies between deployable units (`.jar`s, `.gem`s, `.dll`s, shared libs, etc). So that changes to the source code in one module does not force others to be rebuilt and redeployed.  
+  Many of the components may still live in the same address space, and communicate through function calls. Other components may live in other processes in the same processor and communicate through interprocess communications, sockets, or shared memory. Important: the decoupled components are partitioned into independently deployable units (`.jar`s, `.gem`s, `.dll`s, shared libs, etc).
+- Service (execution unit) level.  
+  We reduce the dependencies down to the level of data structures and communicate solely through network packets such that every execution unit is entirely independent of source and binary changes to others (e. g., services or micro-services).
