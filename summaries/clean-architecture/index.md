@@ -1019,32 +1019,40 @@ The **primary purpose** of architecture is to **support the life cycle** of the 
 
 #### DEVELOPMENT
 
-A system is easy for the team to develop -> the system has long and healthy lifetime.
+A system is easy to develop -> the system has long and healthy lifetime.
 
-Different team imply different architectural decisions:
+Different teams imply different architectural decisions:
 
-- On the other hand, a small team of five developers can effectively work to develop a monolithic system without well-defined components or interfaces. Such a team would likely find the limitations of an architecture something of an impediment during the early days of development. This is likely the reason why so many systems lack good architecture: they were begun with none, because the team was small and did not want the impediment of a superstructure.
-- On the other hand, a system being developed by five different teams, each of which includes seven developers, cannot make progress unless the system is divided into well-defined components with reliable stable interfaces.
+- On the **one hand**, a **small team** can **effectively develop a monolithic system** without well-defined components or interfaces. Such a team would likely find the limitations of an architecture something of an impediment during the early days of development (this is a reason why some systems lack good architecture: they were begun with none, because the team was small and did not want the impediment of a superstructure).
+- On the **other hand**, a system being developed by **several big teams**, **cannot progress unless** the system is **divided** into well-defined components with reliable stable interfaces.
 
 #### DEPLOYMENT
 
-Systems with cheap and fast deployment are more useful and effective. The goal of architecture is to make a system, deployable with a single action.
+A goal of architecture is to make deployment **fast and cheap** (ideally, deploy with a single action).
 
 #### OPERATION
 
-The impact of architecture on operation is less than the impact on development, deployment and maintenance. Almost any opertional difficulty can be resolved by throwing more hardware (storage and servers) at the system. It's because hardware is cheap and people are expensive.
+The **impact** of architecture on operation is **less** than on development, deployment and maintenance. Because hardware is cheap and people are expensive, many operational difficulties can be resolved by throwing more hardware (storage and servers) at the system.
 
-A good architecture makes the operation of the system apparent ot the developers. Architecture should reveal operations. The architecture should elevate the use cases, the features, and the required behavior of the system to first-class entities that are visible landmarks for the developers. This simplifies understanding of the system and, therefore, greatly aids in depevelopment and maintenance.
+The architecture should make the **operation appartent** and **elevate**:
+
+- the use cases,
+- the features,
+- the required behavior
+
+of the system to first-class entities that are visible landmarks for the devs.
+
+This **simplifies understanding** of the system and greatly aids in depevelopment and maintenance.
 
 #### MAINTENANCE
 
-Of all the aspects of a software system maintenance is the most costly. Creating new featurs and fixing defects consume a vast amount of human resources.
+Of all the aspects of a software system maintenance is the most **costly**.
 
-The primary cost of maintenance is in spelunking and risk.
+The **primary cost of maintenance** is in **spelunking and risk**.
 
-- Spelunking is the cost of digging through the existing software, trying to determine the best place and the best strategy to add a new feature or to repair a defect. While making such changes, the likelihood of creating inadvertent defects is always there, adding to the cost of rist.
+**Spelunking is** the cost of **digging** through the existing software, trying to determine the best place and the best strategy to add a new feature or to repair a defect. Making such changes is **costly and risky** because it introduces inadvertent defects.
 
-A carefully thought-through architecture vastly mitigates these costs. Separating the system into components, and isolating those components through stable interfaces illuminates the pathways for future features and greatly reduces the risks of inadvertent breakage.
+A carefully thoughtful architecture **mitigates these costs**. Separating the system into components, and isolating those components through stable interfaces illuminates the pathways for future features and **reduces the risks** of inadvertent breakage.
 
 #### KEEPING OPTIONS OPEN
 
