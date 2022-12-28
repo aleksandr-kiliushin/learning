@@ -762,9 +762,6 @@ Stability is related to the **amount of work required to make a change**.
 One way to make a component difficult to change is to make lots of other software components depend on it. A component with lots of incoming dependencies is very stable because it requires a great deal of work to reconcile any changes with all the dependent components.
 
 ```mermaid
----
-title: A stable component
----
 graph TD
   componentA[ ]
   componentB[ ]
@@ -782,9 +779,6 @@ About `X`:
 - conversely, **`X` depends on nothing**, so it has **no external influence** to make it change; `X` is **independent**.
 
 ```mermaid
----
-title: A very unstable component
----
 graph TD
   componentA[ ]
   componentB[ ]
@@ -815,9 +809,6 @@ These counts will allow us to calculate the **positional stability** of the comp
 $$ Instability = {Fan–out \over Fan–in + Fan–out} $$
 
 ```mermaid
----
-title: Calculate ComponentC stability
----
 graph LR
   subgraph ComponentA
     ModuleU
@@ -858,9 +849,6 @@ Amount of dependencies are represented by `import`-ed modules.
 If all the components in the system were maximally stable, the system would be unchangeable, which is not desired. We want some components to be stable and some – unstable.
 
 ```mermaid
----
-title: An ideal configuration for a system with 3 components
----
 graph TD
   ComponentA[instable, <b>I = 1</b>]
   ComponentB[instable, <b>I = 1</b>]
@@ -873,9 +861,6 @@ graph TD
 The figure above: the changeable components on top depend on the stable component at the bottom.
 
 ```mermaid
----
-title: SDP violation
----
 graph TD
   ComponentA[instable, <b>I = 1</b>]
   ComponentB[instable, <b>I = 1</b>]
