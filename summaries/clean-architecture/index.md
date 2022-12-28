@@ -363,17 +363,15 @@ First, apply the SRP:
 
 ```mermaid
 graph LR
-  financialData(Financial data):::dataStructure
+  financialData(Financial data)
   financialAnalyzer[Financial analyzer]
-  financialReportData(Financial report data):::dataStructure
+  financialReportData(Financial report data)
   webReporter[Web reporter]
   printReporter[Print reporter]
 
   financialData-->financialAnalyzer-->financialReportData
   financialReportData-->webReporter
   financialReportData-->printReporter
-
-  classDef dataStructure fill:lightgray;
 ```
 
 The general insight here is that generating the report involves two separate responsibilities:
