@@ -988,22 +988,34 @@ No content.
 
 ### CHAPTER 15. WHAT IS ARCHITECTURE?
 
-It's wrong that architects pull back from code to focus on higher-level issues. Architects continue to take programming tasks, while they also guide the rest of the team toward a design that maximizes productivity. Architects may not write as much code as other programmers do, but they continue to engage in programming tasks to experience the effects of their architectural decisions.
+Architects:
 
-The architecture of a software system is its shape:
+- ~~pull back from code to focus on higher-level issues, because they are not average devs~~;
+- may **not** write as **much code** as other programmers do;
+- take programming tasks, while they also **guide the team** toward a design that maximizes productivity;
+- take programming tasks to **experience the effects** of their architectural decisions.
 
-- division of the system into components;
-- arrangement of those components;
-- the ways those components communicate with each other.
+The **architecture** of a software **system** is its **shape**:
 
-The purpose of architecture is to facilitate the development, deployment, operation, and maintenance of the software system contained within it.
+- **division** of the system into components;
+- **arrangement** of those components;
+- **communication** between those components.
 
-The strategy behind the facilitation is to leave as many options open as possible, for as long as possible.
+The **purpose** of architecture is to **facilitate the development, deployment, operation, and maintenance** of the software system contained within it.
 
-Architecture also ensures the system to work properly, but it is not its main goal. There are many systems with terrible architectures, that work just fine. Their troubles don't line in their operation; rather, they occur in their deployment, maintenance, and ongoing development.  
-Supporting the proper behavior of the system is one of the responsibilities of architecture, and it's critical. At the same time, it's passive and cosmetic, not active or essential.
+The **strategy** behind the facilitation is to leave as many **options open** as possible, for as long as possible.
 
-The primary purpose of architecture is to support the life cycle of the system. Good architecture makes the system easy to understand, easy to develop, easy to maintain, and easy to deploy. The ultimate goal is to minimize the lifetime cost of the system and to maximize programmer productivity.
+For architecture, supporting proper behavior is:
+
+- ~~the main goal~~;
+- one of the responsibilities;
+- critical;
+- ~~active and essential~~;
+- passive and cosmetic.
+
+There are many systems with terrible architectures, that work just fine. Their troubles do not lie in their operation, but in their deployment, maintenance, and development.
+
+The **primary purpose** of architecture is to **support the life cycle** of the system. Good architecture makes the system easy to understand, easy to develop, easy to maintain, and easy to deploy. The **ultimate goal** is to **minimize** the lifetime **cost** of the system and to **maximize** programmer **productivity**.
 
 #### DEVELOPMENT
 
