@@ -1234,3 +1234,25 @@ For example:
 - now the system runs comfortably on one server, source code level decoupling is sifficient;
 - in a year, some components need to run in different processes;
 - in two years, the system need some components to run in separate services.
+
+One solution (popular at the moment) is to simply decouple at the service level by default.
+
+Problems with this approach:
+
+- it encourages coarse-grained decoupling; no matter, how "micro" the micro-services get, the decoupling is not likely to be fine-grained enough;
+- it is expensive, both in development time and in system resources; dealing with service boundaries where none are needed is a waste of memory, cycles, and effort (memory and cycles are cheap, but effort is not).
+
+It's wise to push decoupling to the point where a service can be formet, should it become necessary. But then to leave the components at the same address space as long as possible. This leaves the option for a service open.  
+With this approach, initially the component are separated at the source code level. That may be good enough for the duration of the project's lifetime. If, however, development or deployment issues arise, driving some of the decoupling to a deployment level may be sufficient, at least for a while.  
+As the development, deployment and operational issues increase, I carefully choose, which deployable units to turn into services, and gradually shift the system in that direction.  
+Over time, the operational needs of the system may decline. What once required decoupling at the service level may now require only development- or deployment-level decoupling.
+
+A good architecture allows a system to be born as a monolith, deployed as a single file, but then to grow into a set of independently deployable units, and then all the way to independent services and / or micro-services. Later, as things change, it should allow for reversing that progression and sliding all the way back into a monolith.
+
+A good architecture protects the majority of the source code from those changes. It leaves the decoupling mode open as an option so that large deployments can use one mode, where as small deployment can use another.
+
+It is tricky. Switching between decoupling modes is not a trivial configuration (though sometimes it is). Decoupling mode is likely to change with time a good architect foresees and appropriately facilitates these changes.
+
+#### CONCLUSION
+
+No content.
