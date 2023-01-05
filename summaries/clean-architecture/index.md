@@ -607,7 +607,7 @@ The three principles of component cohesion:
 
 #### THE REUSE / RELEASE EQUIVALENCE PRINCIPLE
 
-> The granule of reuse it the granule of release.
+> A granule of reuse it a granule of release.
 
 Anything that we reuse must be released and tracked.
 
@@ -618,9 +618,9 @@ Release **numbers** and release **notes** for a component allow:
 
 REP gives us our first **hint at how to partition** our design into components.
 
-The principle means that the **modules formed into a component** must belong to a **cohesive group**. A component cannot consist of a random mixture of modules. There must be a **common purpose all modules share**. It's quite obvious.
+The principle means that the **modules formed into a component** must belong to a **cohesive group**. A component cannot consist of a random mixture of modules. There must be a **common purpose** all modules share. It's quite obvious.
 
-What is not obvious: modules grouped together into a component should be **releasable**. The same release number, release tracking and release docs should make sense both to the author and users.
+What is not obvious: modules grouped together into a component should be **releasable**. The same release number, release tracking and release docs should make sense both to the author and the users.
 
 #### THE COMMON CLOSURE PRINCIPLE
 
@@ -628,13 +628,13 @@ What is not obvious: modules grouped together into a component should be **relea
 
 This is the SRP restated for components.
 
-For most apps, **maintainability is more important than reusability**. If an app code must change, you'd **prefer** the **changes** to be **concentrated in a single component**, rather than be distributed across many components. So, we deploy only the changed component. The others don't even know about the changes.
+For most apps, **maintainability is more important than reusability**. If an app code must change, you would prefer the **changes** to be **concentrated in a single component**, rather than be distributed across many components. So, we deploy only the changed component. The others do not even know about the changes.
 
 #### THE COMMON REUSE PRINCIPLE
 
-> Don't force users of a component to depend on things they don't need.
+> Do not force users of a component to depend on things they do not need.
 
-CRP is another principle that helps us to decide which modules should be placed into a component. **Modules that tend to be reused together belong to the same component.** In such a component, we'd expect to see **modules** that have lots of **dependencies on each other** – coupled modules.
+CRP is another principle that helps us to decide which modules should be placed into a component. **Modules that tend to be reused together belong to the same component.** In such a component, we would expect to see **modules** that have lots of **dependencies on each other** – coupled modules.
 
 The CRP tells us:
 
@@ -645,14 +645,12 @@ CRP tells us that **modules that aren't tightly bound** to each other should be 
 
 The more our app grows, the more we begin to concern about reusable components, the more the CRP influences the components composition.
 
-##### RELATION TO ISP
-
 **CRP** is the **generic** version of **ISP**:
 
 - ISP tells us not to depend on **modules** that have **methods** we do not use;
 - CRP tells us not to depend on **components** that have **modules** we do not use.
 
-In general: **don't depend on things you don't need**.
+In general: **do not depend on things you do not need**.
 
 #### THE TENSION DIAGRAM FOR COMPONENT COHESION
 
