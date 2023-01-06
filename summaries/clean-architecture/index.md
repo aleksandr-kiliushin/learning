@@ -645,6 +645,8 @@ CRP tells us that **modules that aren't tightly bound** to each other should be 
 
 The more our app grows, the more we begin to concern about reusable components, the more the CRP influences the components composition.
 
+##### RELATION TO ISP
+
 **CRP** is the **generic** version of **ISP**:
 
 - ISP tells us not to depend on **modules** that have **methods** we do not use;
@@ -682,7 +684,7 @@ Generally, projects **tend to start on the right** hand side of the triangle, wh
 
 ### CHAPTER 14. COMPONENT COUPLING
 
-The next **three principles** deal with the **relationships between components**. Here again we'll run into **tension between develop-ability and logical design**. The forces that impinge upon the architecture are technical, political and volatile.
+The next **3 principles** deal with the **relationships between components**. Here again we'll run into **tension between develop-ability and logical design**. The forces that impinge upon the architecture are technical, political and volatile.
 
 #### THE ACYCLIC DEPENDENCIES PRINCIPLE
 
@@ -696,13 +698,13 @@ No content.
 
 ##### ELIMINATING DEPENDENCY CYCLES
 
-We should **partition** the development environment **into releasable components**. The components become **units of work** that can be **responsibility of a developer or team**. When developers get a component working, they give it a number and **release** it **for** the **others**. Each team start **using** the new version **as soon as** they are **ready** to migrate to it. **Small steady increments** instead of immediate affects.
+We should **partition** the development environment **into releasable components**. A component becomes a **unit of work** that can be **responsibility of a developer or a team**. When developers get a component working, they give it a number and **release** it **for** the **others**. Each team start **using** the new version **as soon as** they are **ready** to migrate to it. **Small steady increments** instead of immediate affects.
 
-To make it works, you must manage the dependency structure of the components.
+To make it work, you must manage the dependency structure of the components.
 
 ![Typical component diagram](./images/typical-component-diagram.png)
 
-The structure has no cycles, it's a directed acyclic graph (**DAG**).
+The structure has **no cycles**, it is a **directed acyclic graph**.
 
 Example:
 
@@ -710,13 +712,13 @@ Example:
 - we need to find affected components;
 - we just follow the dependency arrows backward (`View` and `Main`).
 
-When `Main` is released, it has no effect on any component of the system. They don't know about `Main` and they don't care when it changes. It means that the impact of releasing `Main` is relatively small.
+When `Main` is released, it has no effect on any component of the system. They do not know about `Main` and they don't care when it changes. It means that the impact of releasing `Main` is relatively small.
 
-The process of building the entire system is very clear because we understand the dependencies between it's parts. It proceeds from the bottom up: first – `Entities`, last – `Main`.
+The **process of building** the entire system is very **clear** because we **understand the dependencies** between its parts. It proceeds from the bottom up: first – `Entities`, last – `Main`.
 
 ##### THE EFFECT OF A CYCLE IN THE COMPONENT DEPENDENCY GRAPH
 
-Cycles in dependency graph cause «morning after syndrome» and make it difficult to release components.
+Cycles in dependency graph cause «morning after syndrome» (breaking code when someone else makes changes in the codebase) and make it difficult to release components.
 
 With cycles, it can be **difficult** to work out the **order** in which you must build the components. There **probably** is **no correct order**.
 
@@ -733,13 +735,13 @@ No content.
 
 ##### TOP-DOWN DESIGN
 
-A conclusion from the issues discussed so far: a **component structure can't be designed from the top down**.
+A conclusion from the issues discussed so far: a **component structure cannot be designed from the top down**.
 
 We should localize and **isolate volatility**.  
-We **don't want components that change frequently** and for capricious reasons **to affect components that ought to be stable**. For example, we **don't want** cosmetic changes to the **GUI** to have an **impact** on our **BR**.  
+We **do not want components that change frequently** and for capricious reasons **to affect components that ought to be stable**. For example, we **do not want** cosmetic changes to the **GUI** to have an **impact** on our **BR**.  
 **Component dependency graph** is created by architects to **protect stable high-value components from volatile components**.
 
-If we tried to design the component dependency structure before we designed any modules, we'd likely fail. We wouldn't know much about common closure, we'd be unaware of any reusable elements, and we'd cernainly create components that produced dependency cycles. Thus the **component dependency structure evolves with the logical design of the system**.
+If we tried to design the component dependency structure before we designed any modules, we would likely fail. We would not know much about common closure -> we would be unaware of any reusable elements, and we would cernainly create components that produced dependency cycles. Thus the **component dependency structure evolves with the logical design of the system**.
 
 #### THE STABLE DEPENDENCIES PRINCIPLE
 
@@ -749,13 +751,13 @@ Design can't be completely static, **some volatility is necessary**. With CCP, w
 
 A module that you designed to be easy to change **can be made difficult to change** by someone else who simply hangs a dependency on it.
 
-**SDP says** that modules that are intended to be easy to change aren't depended on by modules that are harder to change.
+**SDP says** that modules that are intended to be easy to change should not be depended on by modules that are harder to change.
 
 ##### STABILITY
 
 Stability is related to the **amount of work required to make a change**.
 
-One way to make a component difficult to change is to make lots of other software components depend on it. A component with lots of incoming dependencies is very stable because it requires a great deal of work to reconcile any changes with all the dependent components.
+One way to make a component difficult to change is to make lots of other software components depend on it. A **component with lots of incoming dependencies is very stable** because it **requires** a great deal of **work** to reconcile any changes with all the dependent components.
 
 ```mermaid
 graph TD
@@ -771,7 +773,7 @@ graph TD
 
 About `X`:
 
-- **three components depend on `X`**, so `X` has three good **reasons not to change**; **`X` is responsible to** those three components;
+- **3 components depend on `X`**, so `X` has three good **reasons not to change**; **`X` is responsible to** those three components;
 - conversely, **`X` depends on nothing**, so it has **no external influence** to make it change; `X` is **independent**.
 
 ```mermaid
@@ -789,13 +791,11 @@ graph TD
 About `Y`:
 
 - **no components depend on `Y`**, so `Y` is **irresponsible**;
-- there are three components that **`Y` depends on**, so **changes may come from three external sources**; `Y` is **dependent**.
+- there are three components that **`Y` depends on**, so **changes may come from 3 external sources**; `Y` is **dependent**.
 
 ##### STABILITY METRICS
 
-One way to measure the stability of a component is to **count** the number of **dependencies** that **enter and leave** that component.
-
-These counts will allow us to calculate the **positional stability** of the component:
+One way to measure the stability of a component is to **count** the number of **dependencies** (imports) that **enter and leave** that component (it is called «positional» stability):
 
 - **Fan-in**: **incoming dependencies** – the number of modules outside the component that depend on modules that are within the component.
 - **Fan-out**: **outgoing dependencies** – the number of modules inside this component that depend on modules outside this component.
@@ -836,8 +836,6 @@ About the `ComponentC`:
 - Fan-out = 1;
 - Instability = 1 / (3 + 1) = 0.25.
 
-Amount of dependencies are represented by `import`-ed modules.
-
 > `I` of a component should be larger than `I` of the component that it depends on. `I` should decrease in the direction of dependency.
 
 #### NOT ALL COMPONENTS SHOULD BE STABLE
@@ -846,9 +844,9 @@ If all the components in the system were maximally stable, the system would be u
 
 ```mermaid
 graph TD
-  ComponentA[instable, <b>I = 1</b>]
-  ComponentB[instable, <b>I = 1</b>]
-  ComponentC[stable, <b>I = 0</b>]
+  ComponentA[Instable, <b>I = 1</b>]
+  ComponentB[Instable, <b>I = 1</b>]
+  ComponentC[Stable, <b>I = 0</b>]
 
   ComponentA-->ComponentC
   ComponentB-->ComponentC
@@ -858,10 +856,10 @@ The figure above: the changeable components on top depend on the stable componen
 
 ```mermaid
 graph TD
-  ComponentA[instable, <b>I = 1</b>]
-  ComponentB[instable, <b>I = 1</b>]
-  ComponentC[<i>supposed to be</i> stable, but <b>I = 0.33</b>]
-  ComponentD[<i>supposed to be</i> flexible, but <b>I = 0</b>]
+  ComponentA[Instable, <b>I = 1</b>]
+  ComponentB[Instable, <b>I = 1</b>]
+  ComponentC[<i>Supposed to be</i> stable, but <b>I = 0.33</b>]
+  ComponentD[<i>Supposed to be</i> flexible, but <b>I = 0</b>]
 
   ComponentA-->ComponentC
   ComponentB-->ComponentC
@@ -870,11 +868,11 @@ graph TD
 
 The figure above:
 
-- `Flexible` is a component we've designed to be easy to change, we want it to be unstable;
+- `Flexible` is a component we have designed to be easy to change, we want it to be flexible and unstable;
 - some developer working on `Stable` has hung a dependency on `Flexible` – `Stable` depends on `Flexible`;
-- as a result, `Flexible` is no longer be easy to change; – a change to `Flexible` will force us to deal with `Stable` and its dependents.
+- as a result, `Flexible` is no longer easy to change; a change to `Flexible` will force us to deal with `Stable` and its dependents.
 
-> Any component that we expect to be volatile shouldn't be depended on by a component that is difficult to change. Otherwise, the volatile component will also be difficult to change.
+> Any component that we expect to be volatile should not be depended on by a component that is difficult to change. Otherwise, the volatile component will also be difficult to change.
 
 We can fix it by using the DIP.
 
@@ -884,7 +882,7 @@ We can fix it by using the DIP.
 
 ##### WHERE DO WE PUT THE HIGH-LEVEL POLICY?
 
-**High-level architecture and policy decisions** should not change very often. We don **not** want them to be **voliatile**. Such software should be **placed into stable components** (`I = 0`). **Unstable components** (`I = 1`) should **contain** only the software that is **volatile** – software that we want to be able to **easily change**.
+**High-level architecture and policy decisions** should not change very often. We do **not** want them to be **voliatile**. Such software should be **placed into stable components** (`I = 0`). **Unstable components** (`I = 1`) should **contain** only the software that is **volatile** – software that we want to be able to **easily change**.
 
 However, **if high-level policies** are placed **into stable components**, then the source code that represents those policies **will be difficult to change**. This could make the overall **architecture inflexible**. How a component with `I = 0` be flexible enough to windstand change? The **OCP helps** us. The OCP tells that it's possible and desirable to create classes that are flexible enough to be extended without requiring modification. Which kind of classes conform this principle? **Abstract classes.**
 
@@ -894,14 +892,14 @@ The **SAP** sets up a **relationship between stability and abstractness**.
 
 The SAP states:
 
-- a **stable component should be abstract** so that its stability doesn't prevent it from **being extended**;
+- a **stable component should be abstract** so that its stability does not prevent it from **being extended**;
 - an **unstable components should be concrete** since it its instability allows the concrete code within it **to be easily changed**.
 
-Thus, if a **component** is to be **stable**, it **should consist of interfaces and abstract classes** so that it **can be extended**. Stable components that are extensible are flexible and don't overly constrain the architecture.
+Thus, if a **component** is to be **stable**, it **should consist of interfaces and abstract classes** so that it **can be extended**. Stable components that are extensible are flexible and do not overly constrain the architecture.
 
 **SAP + SDP = DIP for components.** Because SDP says that dependencies should run in the direction of stability, and SAP says that stability implies abstraction. Thus dependencies run in the direction of abstraction.
 
-The DIP, however, deals with classes – and with classes there are no shades of gray. Either a class is abstract or it's not. SAP + SDP deals with components and allows that a component can be partially abstract and partially stable.
+The DIP, however, deals with classes – and with classes there are no shades of gray. Either a class is abstract or it is not. SAP + SDP deals with components and allows that a component can be partially abstract and partially stable.
 
 ##### MEASURING ABSTRACTION
 
@@ -934,19 +932,19 @@ Not all components fall into one of these two positions, because components ofte
 
 A component at (0, 0):
 
-- is difficult to change because it's highly stable and concrete;
-- isn't desirable because it's rigid;
-- can't be extended because it's not abstract;
-- a well-designed component can't take a position near (0, 0).
+- is **difficult to change** because it is highly stable and concrete;
+- is not desirable because it is **rigid**;
+- **cannot be extended** because it is **not abstract**;
+- a well-designed component cannot take a position near (0, 0).
 
 Example: a DB schema.  
-It's volatile, concrete and highly depended on. Updating a DB schema is painful.
+It is volatile, concrete and highly depended on. Updating a DB schema is painful.
 
 ###### THE ZONE OF USELESSNESS
 
 A component at (1, 1):
 
-- maximally abstract + no dependents = useless;
+- maximally **abstract** + **no dependents** = **useless**;
 - they are often abstract classes that noone ever implemented;
 
 ##### AVOIDING THE ZONES OF EXCLUSION
@@ -962,7 +960,7 @@ A component that sits on the main sequence:
 - is **depended on** to the extent that it is abstract;
 - is **depends on others** to the extent that it is concrete.
 
-The **most desirable** positions are **(0, 1) and (1, 0)**. Good architects strive to position the majority of their components at those endpoints. In practice, some small fraction of components are neither perfectly anstract nor perfectly stable. Those components have the best characteristics if they are on, or close, to the main sequence.
+The **most desirable** positions are **(0, 1) and (1, 0)**. Good architects strive to position the majority of their components at those endpoints. In practice, some small fraction of components are neither perfectly anstract nor perfectly stable. Those components have the **best characteristics** if they are **on, or close, to the main sequence**.
 
 ##### DISTANCE FROM THE MAIN SEQUENCE
 
