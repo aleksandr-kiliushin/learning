@@ -988,8 +988,8 @@ Architects:
 
 - ~~pull back from code to focus on higher-level issues, because they are not average devs~~;
 - may **not** write as **much code** as other programmers do;
-- take programming tasks, while they also **guide the team** toward a design that maximizes productivity;
-- take programming tasks to **experience the effects** of their architectural decisions.
+- **take programming tasks**, while they **also guide the team** toward a design that maximizes productivity;
+- **take programming tasks** to **experience the effects** of their architectural decisions.
 
 The **architecture** of a software **system** is its **shape**:
 
@@ -997,11 +997,11 @@ The **architecture** of a software **system** is its **shape**:
 - **arrangement** of those components;
 - **communication** between those components.
 
-The **purpose** of architecture is to **facilitate the development, deployment, operation, and maintenance** of the software system contained within it.
+The **purpose** of architecture is to **facilitate the development, deployment, operation, and maintenance** of the software system.
 
 The **strategy** behind the facilitation is to leave as many **options open** as possible, for as long as possible.
 
-For architecture, supporting proper behavior is:
+For architecture, **supporting proper behavior** is:
 
 - ~~the main goal~~;
 - one of the responsibilities;
@@ -1011,16 +1011,25 @@ For architecture, supporting proper behavior is:
 
 There are many systems with terrible architectures, that work just fine. Their troubles do not lie in their operation, but in their deployment, maintenance, and development.
 
-The **primary purpose** of architecture is to **support the life cycle** of the system. Good architecture makes the system easy to understand, easy to develop, easy to maintain, and easy to deploy. The **ultimate goal** is to **minimize** the lifetime **cost** of the system and to **maximize** programmer **productivity**.
+The **primary purpose** of architecture is to **support the life cycle** of the system.
+
+Good architecture makes the system:
+
+- easy to understand;
+- easy to develop;
+- easy to maintain;
+- easy to deploy.
+
+The **ultimate goal** is to **minimize** the lifetime **cost** of the system and to **maximize** programmer **productivity**.
 
 #### DEVELOPMENT
 
-A system is easy to develop -> the system has long and healthy lifetime.
+A system is **easy to develop** -> the system has long and **healthy lifetime**.
 
 Different teams imply different architectural decisions:
 
 - On the **one hand**, a **small team** can **effectively develop a monolithic system** without well-defined components or interfaces. Such a team would likely find the limitations of an architecture something of an impediment during the early days of development (this is a reason why some systems lack good architecture: they were begun with none, because the team was small and did not want the impediment of a superstructure).
-- On the **other hand**, a system being developed by **several big teams**, **cannot progress unless** the system is **divided** into well-defined components with reliable stable interfaces.
+- On the **other hand**, a system being developed by **several big teams**, **cannot progress unless** the system is **divided** into well-defined **components with** reliable stable **interfaces**.
 
 #### DEPLOYMENT
 
@@ -1054,19 +1063,18 @@ A carefully thoughtful architecture **mitigates these costs**. Separating the sy
 
 Keep software soft. The softness depends on how the components are formed and interconnected.
 
-The way you keep software soft is to leave as **many options open** as possible, for as **long** as possible. What are these options? These optiona are the details that don't matter.
+The way you keep software soft is to leave as **many options open** as possible, for as **long** as possible. What are these options? They are the details that do not matter.
 
 A system can be decomposed into two major elements – policy and details:
 
-- **Policy** contains the true value of the system, it embodies BR and procedures.
-- **Details** enable humans, developers and other systems to communicate with the policy, but that do not impact the behavior of the policy at all. Details include databases, servers, frameworks, communication protocols, etc.
+- **Policy** contains the **true value** of the system, it embodies BR and procedures.
+- **Details enable** humans, developers and other systems **to communicate with the policy**, but that do not impact the behavior of the policy at all. Details include databases, servers, frameworks, communication protocols, etc.
 
 A good architecture recognizes **policy** as the most **essential** element of the system while making the **details irrelevant** to that policy. This **allows decision about** those **details** to be **delayed**.
 
 - **build the architecture without committing any details**;
 - **delay decisions** about the **details** as long as possible;
-- **wait longer** without making those decisions;
-- have **options open** longer;
+- **wait longer** without making those decisions; have the **options open** longer;
 - run **experiments** and use various details (various DBs, frameworks, servers, etc);
 - at the moment when the decisions can no longer be deferred, have **more information** about the details applicability, performance, etc to **make the decisions properly**.
 
