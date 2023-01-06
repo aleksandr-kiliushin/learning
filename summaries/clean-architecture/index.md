@@ -989,7 +989,7 @@ Architects:
 - ~~pull back from code to focus on higher-level issues, because they are not average devs~~;
 - may **not** write as **much code** as other programmers do;
 - **take programming tasks**, while they **also guide the team** toward a design that maximizes productivity;
-- **take programming tasks** to **experience the effects** of their architectural decisions.
+- **take programming tasks to experience the effects** of their architectural decisions.
 
 The **architecture** of a software **system** is its **shape**:
 
@@ -1024,7 +1024,7 @@ The **ultimate goal** is to **minimize** the lifetime **cost** of the system and
 
 #### DEVELOPMENT
 
-A system is **easy to develop** -> the system has long and **healthy lifetime**.
+A system is **easy to develop** -> the system has **long and healthy lifetime**.
 
 Different teams imply different architectural decisions:
 
@@ -1057,15 +1057,15 @@ The **primary cost of maintenance** is in **spelunking and risk**.
 
 **Spelunking is** the cost of **digging through the existing software**, trying to determine the best place and the best strategy to add a new feature or to repair a defect. Making such changes is **costly and risky** because it introduces inadvertent defects.
 
-A carefully thoughtful architecture **mitigates these costs**. Separating the system into components, and isolating those components through stable interfaces illuminates the pathways for future features and **reduces the risks** of inadvertent breakage.
+A carefully thoughtful architecture **mitigates these costs**. Separating the system into components, and isolating those components through stable interfaces **illuminates the pathways** for future features and **reduces the risks** of inadvertent breakage.
 
 #### KEEPING OPTIONS OPEN
 
 Keep software soft. The softness depends on how the components are formed and interconnected.
 
-The way you keep software soft is to leave as **many options open** as possible, for as **long** as possible. What are these options? They are the details that do not matter.
+The way you keep software soft is to leave as **many options open** as possible, for as **long** as possible. These options are the details that do not matter.
 
-A system can be decomposed into two major elements – policy and details:
+A **system** can be decomposed into **two major elements** – policy and details:
 
 - **Policy** contains the **true value** of the system, it embodies BR and procedures.
 - **Details enable** humans, developers and other systems **to communicate with the policy**, but that **do not impact** the behavior of the **policy** at all. Details include DBs, servers, frameworks, communication protocols, etc.
@@ -1073,8 +1073,7 @@ A system can be decomposed into two major elements – policy and details:
 A good architecture recognizes **policy** as the most **essential** element of the system while making the **details irrelevant** to that policy. This **allows decision about** those **details** to be **delayed**.
 
 - **build the architecture without committing any details**;
-- **delay decisions** about the **details** as long as possible;
-- **wait longer** without making those decisions; have the **options open** longer;
+- **delay decisions** about the **details** as long as possible -> have the **options open** longer;
 - run **experiments** and use various details (various DBs, frameworks, servers, etc);
 - at the moment when the decisions can no longer be deferred, have **more information** about the details applicability, performance, etc to **make the decisions properly**.
 
