@@ -1028,7 +1028,7 @@ A system is **easy to develop** -> the system has long and **healthy lifetime**.
 
 Different teams imply different architectural decisions:
 
-- On the **one hand**, a **small team** can **effectively develop a monolithic system** without well-defined components or interfaces. Such a team would likely find the limitations of an architecture something of an impediment during the early days of development (this is a reason why some systems lack good architecture: they were begun with none, because the team was small and did not want the impediment of a superstructure).
+- On the **one hand**, a **small team** can **effectively develop a monolithic system** without well-defined components or interfaces. Such a team would likely find the limitations of an architecture something of an impediment during the early days of development. This is a reason why some systems lack good architecture: they were begun with none, because the team was small and did not want the impediment of a superstructure.
 - On the **other hand**, a system being developed by **several big teams**, **cannot progress unless** the system is **divided** into well-defined **components with** reliable stable **interfaces**.
 
 #### DEPLOYMENT
@@ -1055,7 +1055,7 @@ Of all the aspects of a software system maintenance is the most **costly**.
 
 The **primary cost of maintenance** is in **spelunking and risk**.
 
-**Spelunking is** the cost of **digging** through the existing software, trying to determine the best place and the best strategy to add a new feature or to repair a defect. Making such changes is **costly and risky** because it introduces inadvertent defects.
+**Spelunking is** the cost of **digging through the existing software**, trying to determine the best place and the best strategy to add a new feature or to repair a defect. Making such changes is **costly and risky** because it introduces inadvertent defects.
 
 A carefully thoughtful architecture **mitigates these costs**. Separating the system into components, and isolating those components through stable interfaces illuminates the pathways for future features and **reduces the risks** of inadvertent breakage.
 
@@ -1068,7 +1068,7 @@ The way you keep software soft is to leave as **many options open** as possible,
 A system can be decomposed into two major elements – policy and details:
 
 - **Policy** contains the **true value** of the system, it embodies BR and procedures.
-- **Details enable** humans, developers and other systems **to communicate with the policy**, but that do not impact the behavior of the policy at all. Details include databases, servers, frameworks, communication protocols, etc.
+- **Details enable** humans, developers and other systems **to communicate with the policy**, but that **do not impact** the behavior of the **policy** at all. Details include DBs, servers, frameworks, communication protocols, etc.
 
 A good architecture recognizes **policy** as the most **essential** element of the system while making the **details irrelevant** to that policy. This **allows decision about** those **details** to be **delayed**.
 
