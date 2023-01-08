@@ -1282,3 +1282,55 @@ No content.
 #### FITNESSE
 
 To delay decision about the DB, we can just put an interface between all data accesses and the data reposity.
+
+#### WHICH LINES DO YOU DRAW, AND WHEN DO YOU DRAW THEM?
+
+You draw lines between things that matter and things that do not.
+
+- the **GUI** does not matter to the **BR**, so there **should be a line between them**;
+- the **DB** does not matter to the **GUI**, so ...;
+- the **DB** does not matter to the **BR**, so ...;
+
+Other statements:
+
+- ~~the BR does care about the DB~~;
+- ~~the DB is inextricably connected to the BR~~;
+- ~~the DB is an embodiment of the BR~~;
+- the DB is a tool that the BR can use indirectly;
+- the BR does not need to know about the schema, or the QL, or other details about the DB;
+- **all** the BR need **to know** is that **there is** a set of **functions** that can be used **to fetch or save data**; this allows us to put the DB behind an **interface**.
+
+```mermaid
+graph TD
+  Br[BR]
+  DbInterface(DB interface)
+  DbAccess[DB access]
+  Db[DB]
+
+  subgraph BrComponent
+    Br
+    DbInterface
+  end
+
+  subgraph DbComponent
+    DbAccess
+    Db
+  end
+
+  Br-->DbInterface
+  DbAccess==The boundary line==>DbInterface
+  DbAccess-->Db
+```
+
+About the diagram:
+
+- the structure in a real-world app may be more complex;
+- the direction of the line is important;
+- the DB knows about the BR;
+- the BR do not know about the DB;
+- the DB does not matter to the BR;
+- the DB cannot exist without the BR.
+- the _DB access_ contains code that translates the calls made by the _BrComponent_ into the QL of the DB;
+- the _BrComponent_ **can use any kind** of DB;
+- the _DbComponent_ **can be replaced** with another **implementation** (Oracle, MySQL, flat files) – the _BrComponent_ does not care;
+- the DB **decision** can be **deferred** and you can **focus on** getting the **BR** written and tested first.
