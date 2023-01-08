@@ -1278,3 +1278,7 @@ A **good** architecture:
 #### A COUPLE OF SAD STORIES
 
 No content.
+
+#### FITNESSE
+
+To delay decision about the DB, we can just put an interface between all data accesses and the data reposity.
