@@ -1260,3 +1260,17 @@ It is tricky. Switching between decoupling modes is not a trivial configuration 
 #### CONCLUSION
 
 No content.
+
+### CHAPTER 17. BOUNDARIES: DRAWING LINES
+
+Architecture is the art of drawing lines that I call boundaries. Those boundaries **separate software elements** from one another, and restrict those on one side **from knowing** about those on **the other**. **Some** of those lines are **drawn** very **early** in the project's life – even before any code is written. **Others** are drawn **later**. Those that drawn early are drawn for the purposes of deferring decisions for as long as possible, and of keeping those decisions from polluting the core BR.
+
+Recall that the goal of an architect is to minimize the human resources required to build and maintain the system. What it is that saps this kind of people-power? Coupling – and especially coupling to premature decisions.
+
+What kind of decisions are premature? Decisions that have nothing to do with the business requirements – the use cases – of the system. These includes decisions about frameworks, DBs, etc.
+
+A **good** architecture:
+
+- is one in which **decisions** like these are rendered **ancillary and deferrable**;
+- **does not depend** on those decisions;
+- allows those **decisions** to be **made** at the **latest possible moment**, without significant impact.
