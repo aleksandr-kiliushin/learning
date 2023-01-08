@@ -1274,3 +1274,7 @@ A **good** architecture:
 - is one in which **decisions** like these are rendered **ancillary and deferrable**;
 - **does not depend** on those decisions;
 - allows those **decisions** to be **made** at the **latest possible moment**, without significant impact.
+
+#### A COUPLE OF SAD STORIES
+
+No content.
