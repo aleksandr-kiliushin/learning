@@ -1363,3 +1363,41 @@ About the figure:
 - the less relevant component **depends on** the more relevant one;
 - the arrow shows **which component knows** about the other and, therefore, **which component cares** about the other; the GUI cares about the BR.
 - the **GUI can be replaced** with any other kind of interface – and the **BR would not care**.
+
+#### PLUGIN ARCHITECTURE
+
+The discussed approach is kind of pattern. This pattern allows addition of other components, it allows third-party plugins.
+
+> The core BR are kept separate from, and independend of, those components that are either optional or can be implemented in many different forms.
+
+```mermaid
+---
+title: Plugging in to the BR
+---
+graph BT
+  Br[BR]
+  Gui[GUI]
+  Db[DB]
+
+  subgraph BrComponent
+    Br
+  end
+
+  subgraph GuiComponent
+    Gui
+  end
+
+  subgraph DbComponent
+    Db
+  end
+
+  Gui--A boundary line-->BrComponent
+  Db--A boundary line-->BrComponent
+```
+
+About the figure above:
+
+- The GUI is considered to be a plugin. We have made it possible to plug in **different or multiple GUIs**: web, desktop, modile, console, etc.
+- The DB is considered to be a plugin. We have made it possible to plug in **different or multiple DBs**: SQL, NoSQL, file-based DB, etc.
+- We **do not know what implementations** of GUI or DB the business will **need in the future**.
+- Implementations replacements might not be trivial. If the initial deployment of our system was web-based, then writing the plugin for a mobile app could be challenging. Some of the communications between the BR and the GUI may require reworking. Ideally, we should **write** these **communications** in a GUI-**agnostic** way.
