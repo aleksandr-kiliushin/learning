@@ -1411,3 +1411,9 @@ Plugin architecture creates **firewalls** across which **changes cannot propagat
 Boundaries are drawn there where is an axis of change. The components on **one side** of the boundary change at **different rates, and for different reasons, than** the ones on **the other side**.
 
 This is simply the **SRP** again. It tells us where to draw our boundaries.
+
+#### CONCLUSION
+
+First, **partition the system into components**. Then, **draw boundaries**. **Some** of those components **are core BR, others are plugins**. We arrange the code so that the dependencies are directed from the plugins from the core BR.
+
+Recognize it as an applications of the **DIP** and the **SAP**. Dependency arrows are arranged to point **from lower-level details to higher-level abstractions**.
