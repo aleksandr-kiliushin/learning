@@ -1317,9 +1317,9 @@ graph TD
     Db
   end
 
-  Br-->DbInterface
-  DbAccess==The boundary line==>DbInterface
-  DbAccess-->Db
+  Br==>DbInterface
+  DbAccess--A boundary line-->DbInterface
+  DbAccess==>Db
 ```
 
 About the diagram:
@@ -1334,3 +1334,32 @@ About the diagram:
 - the _BrComponent_ **can use any kind** of DB;
 - the _DbComponent_ **can be replaced** with another **implementation** (Oracle, MySQL, flat files) – the _BrComponent_ does not care;
 - the DB **decision** can be **deferred** and you can **focus on** getting the **BR** written and tested first.
+
+#### WHAT ABOUT INPUT AND OUTPUT?
+
+What the system is? People often see the GUI and think that the GUI is the system. They define the a in terms of the GUI, so they believe that they should see the GUI start working immediately. They fail to realize a critically important principle: **the IO is irrelevant**.
+
+We often see about the behavior of the system in terms of the behavior of the IO. Your experience is dominated by the interface: the screen, the mouse, the buttons and the sounds. But there is a model behind that interface – a sophisticated set of data structures and functions – driving it. More importantly, that model does not need the interface. It would happily execute its duties, modelling all the events in the game without the game ever being displayed on the screen. **The GUI does not matter to the model – the BR.**
+
+```mermaid
+graph BT
+  Br[BR]
+  Gui[GUI]
+
+  subgraph BrComponent
+    Br
+  end
+
+  subgraph GuiComponent
+    Gui
+  end
+
+  Gui--A boundary line-->BrComponent
+```
+
+About the figure:
+
+- the BR and the GUI are **separated by a boundary line**;
+- the less relevant component **depends on** the more relevant one;
+- the arrow shows **which component knows** about the other and, therefore, **which component cares** about the other; the GUI cares about the BR.
+- the **GUI can be replaced** with any other kind of interface – and the **BR would not care**.
