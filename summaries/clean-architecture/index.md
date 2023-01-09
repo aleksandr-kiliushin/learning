@@ -1417,3 +1417,7 @@ This is simply the **SRP** again. It tells us where to draw our boundaries.
 First, **partition the system into components**. Then, **draw boundaries**. **Some** of those components **are core BR, others are plugins**. We arrange the code so that the dependencies are directed from the plugins from the core BR.
 
 Recognize it as an applications of the **DIP** and the **SAP**. Dependency arrows are arranged to point **from lower-level details to higher-level abstractions**.
+
+### CHAPTER 18. BOUNDARY ANATOMY
+
+Boundaries, separating components come in different forms.
