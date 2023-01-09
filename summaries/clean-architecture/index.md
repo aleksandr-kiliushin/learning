@@ -1460,3 +1460,14 @@ Both monoliths and deployment component can use threads. Threads **are not archi
 - think of an LP as a kind of **uber-component**: the LP consists of lower-level components that manage their dependencies through dynamic polymorphism;
 - the segregation strategy between LPs is the same as for monoliths and binary components; source code **deps point** in the same direction across the boundary, and always toward the higher-level component;
 - the higher-level LP source code must not contain the names or physical addresses of lower-level LPs; the **architectural goal** is for lower-level LPs to be plugins to higher-level processes;
+
+#### SERVICES
+
+- the **strongest boundary**;
+- typically created from the command line or an equivalent system call;
+- do **not depend on their physical location**;
+- two communicating services may, or may not operate in the same physical processor or multicore;
+- **communicate over the network**;
+- communications across service boundaries are very slow compared to function calls; latency is acceptable;
+- lower-level services should "**plug in**" to higher-level services;
+- **higher-level** services should **contain no** specific physical **knowledge** (URI, etc) **about** any **lower-level** service;
