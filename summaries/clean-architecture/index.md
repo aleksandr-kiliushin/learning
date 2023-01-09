@@ -1426,3 +1426,18 @@ Boundaries, separating components come in different forms.
 
 At runtime, boundary crossing is just a function calling a function on the other side and passing along some data.
 The trick to creating an appropriate boundary is to manage the source code deps.
+
+#### THE DREADED MONOLITH
+
+Monolith:
+
+- it is simply a **disciplined segregation** of functions and data **within a single processor and a single address space**;
+- the **most common** architecture;
+- uses the **source-level decoupling mode**;
+- has no strict physical representation;
+- from a deployment point of view it is most commonly a single executable file, like `.jar` or `.exe`;
+- almost always depend on some kind of dynamic polymorphism to manage their internal deps;
+- **the simplest boundary crossing is** a function call from a low-level client to higher-level service;
+- **when a high-level client needs to call a lower-level service**, dynamic polymorphism is used to invert the dependency against the flow of control; the runtime dep opposes the compile-time dep;
+- high-level components **remain independent** of lower-level details;
+- **communitactions** between components are very **fast and cheap**; they are typically **just functions calls**;
