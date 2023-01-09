@@ -1448,4 +1448,15 @@ No content.
 
 #### THREADS
 
-Both monoliths and deployment component can use threads. Threads are not architectural boundaries or units of deployment, but rather a way to organize the schedule and order of execution.
+Both monoliths and deployment component can use threads. Threads **are not architectural boundaries** or units of deployment, but rather **a way to organize the schedule and order of execution**.
+
+#### LOCAL PROCESSES
+
+- is a much **stronger physical architectural boundary**;
+- typically created from the command line or an equivalent system call;
+- run in the **same processor**, **or** in the **same set of processes** within a multicore, **but** run in **separate address spaces**;
+- **communicate with each other** using OS communications like sockets, mailboxes or message queues;
+- each LP may be a statically linked monolith, or a set of dynamically linked deployment components;
+- think of an LP as a kind of **uber-component**: the LP consists of lower-level components that manage their dependencies through dynamic polymorphism;
+- the segregation strategy between LPs is the same as for monoliths and binary components; source code **deps point** in the same direction across the boundary, and always toward the higher-level component;
+- the higher-level LP source code must not contain the names or physical addresses of lower-level LPs; the **architectural goal** is for lower-level LPs to be plugins to higher-level processes;
