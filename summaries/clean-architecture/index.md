@@ -1441,3 +1441,11 @@ Monolith:
 - **when a high-level client needs to call a lower-level service**, dynamic polymorphism is used to invert the dependency against the flow of control; the runtime dep opposes the compile-time dep;
 - high-level components **remain independent** of lower-level details;
 - **communitactions** between components are very **fast and cheap**; they are typically **just functions calls**;
+
+#### DEPLOYMENT COMPONENTS
+
+No content.
+
+#### THREADS
+
+Both monoliths and deployment component can use threads. Threads are not architectural boundaries or units of deployment, but rather a way to organize the schedule and order of execution.
