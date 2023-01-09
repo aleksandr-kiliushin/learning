@@ -1401,3 +1401,13 @@ About the figure above:
 - The DB is considered to be a plugin. We have made it possible to plug in **different or multiple DBs**: SQL, NoSQL, file-based DB, etc.
 - We **do not know what implementations** of GUI or DB the business will **need in the future**.
 - Implementations replacements might not be trivial. If the initial deployment of our system was web-based, then writing the plugin for a mobile app could be challenging. Some of the communications between the BR and the GUI may require reworking. Ideally, we should **write** these **communications** in a GUI-**agnostic** way.
+
+#### THE PLUGIN ARGUMENT
+
+It is **good** to have **deeply asymmetric relationship between the components**. We want certain modules to **immune** to others. We do not want the BR to break when the GUI or the DB schema changes (fragility).
+
+Plugin architecture creates **firewalls** across which **changes cannot propagate**. If the GUI plugs in to the BR, then changes to the GUI cannot affect those BR.
+
+Boundaries are drawn there where is an axis of change. The components on **one side** of the boundary change at **different rates, and for different reasons, than** the ones on **the other side**.
+
+This is simply the **SRP** again. It tells us where to draw our boundaries.
