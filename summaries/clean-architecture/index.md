@@ -1444,7 +1444,9 @@ Monolith:
 
 #### DEPLOYMENT COMPONENTS
 
-No content.
+DC are almost the same as monoliths. The functions generally all exist **in the same processor and address space**. The strategies for segregating the components and managing their deps are the same.
+
+As with monoliths, **communications across DC boundaries** are just function calls and, therefore, **are cheap**.
 
 #### THREADS
 
