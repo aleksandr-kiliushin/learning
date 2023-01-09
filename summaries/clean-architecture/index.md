@@ -1421,3 +1421,8 @@ Recognize it as an applications of the **DIP** and the **SAP**. Dependency arrow
 ### CHAPTER 18. BOUNDARY ANATOMY
 
 Boundaries, separating components come in different forms.
+
+#### BOUNDARY CROSSING
+
+At runtime, boundary crossing is just a function calling a function on the other side and passing along some data.
+The trick to creating an appropriate boundary is to manage the source code deps.
