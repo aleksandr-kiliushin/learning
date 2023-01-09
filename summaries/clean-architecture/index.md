@@ -1471,3 +1471,9 @@ Both monoliths and deployment component can use threads. Threads **are not archi
 - communications across service boundaries are very slow compared to function calls; latency is acceptable;
 - lower-level services should "**plug in**" to higher-level services;
 - **higher-level** services should **contain no** specific physical **knowledge** (URI, etc) **about** any **lower-level** service;
+
+#### CONCLUSION
+
+Most systems, other than monoliths, use **more than one boundary strategy**. A system using service boundaries may also have some local process boundaries. Indeed, as service is just a facade for a set of interacting local processes. A service or a local process will almost certainly be either a monolith composed of source code components or a set of dynamically linked deployment compoents.
+
+This means that the boundaries in a system will often be **a mixture** of local chatty boundaries and boundaries that work with latency.
