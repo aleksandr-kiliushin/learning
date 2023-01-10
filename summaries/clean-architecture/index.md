@@ -1479,3 +1479,20 @@ Both monoliths and deployment component can use threads. Threads **are not archi
 Most systems, other than monoliths, use **more than one boundary strategy**. A system using service boundaries may also have some local process boundaries. Indeed, as service is just a facade for a set of interacting local processes. A service or a local process will almost certainly be either a monolith composed of source code components or a set of dynamically linked deployment compoents.
 
 This means that the boundaries in a system will often be **a mixture** of local chatty boundaries and boundaries that work with latency.
+
+#### CHAPTER 19. POLICY AND LEVEL
+
+A program is a detailed description of the policy by which inputs are transformed into outputs.
+
+The policy is broken into many smaller statements of policy (SoP).
+
+Each of the SoPs can:
+
+- describe particular BR;
+- define certain reports formatting;
+- validations some input;
+- etc.
+
+We should separate these SoPs from one another, and regroup them based on the ways they change. SoPs that change at the same time, for the same reasons, and at the same level, belong to the same component.
+
+The art of architecture often involves forming the regrouped components into a **directed acyclic graph**. The nodes of the graph are the components that contain policies at the same level. The directed edges are the deps between these components.
