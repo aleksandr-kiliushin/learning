@@ -412,7 +412,7 @@ Changes to the Database, or the Controller, or the Presenters, or the Views will
 
 Why should the Interactor hold such a priveleged position?
 
-- the Interactor contains the BR;
+- the Interactor contains the BRs;
 - the Interactor contains the highest-level policies of the app;
 - all the other components deal with peripheral concerns;
 - the Interactor deals with the central concern;
@@ -560,7 +560,7 @@ In most OO languages we'd use an Abstract Factory to manage this undesirable dep
 The `Application` uses the `ConcreteImpl` through the `Service` interface. However, the `Application` must somehow create instances of the `ConcreteImpl`. To achieve this without creating a source code dependency on the `ConcreteImpl`, the `Application` calls the `makeSvc` method of the `ServiceFactory` interface. This method is implemented by the `ServiceFactoryImpl` class, which derives from `ServiceFactory`. That implementation instantiates the concrete `ConcreteImpl` and returns it as a `Service`.
 
 The curved line is an architectural boundary. It separates the abstract component from the concrete component. All source code dependencies cross that curved line pointing in the same direction, toward the abstract side.  
-The abstract component contains all the high-level BR. The concrete component contains all the implementation details of those BR.
+The abstract component contains all the high-level BRs. The concrete component contains all the implementation details of those BRs.
 
 The flow of control crosses the curved line in the opposite direction of the source code dependencies – which is why we refer to this principle as Dependency Inversion.
 
@@ -738,7 +738,7 @@ No content.
 A conclusion from the issues discussed so far: a **component structure cannot be designed from the top down**.
 
 We should localize and **isolate volatility**.  
-We **do not want components that change frequently** and for capricious reasons **to affect components that ought to be stable**. For example, we **do not want** cosmetic changes to the **GUI** to have an **impact** on our **BR**.  
+We **do not want components that change frequently** and for capricious reasons **to affect components that ought to be stable**. For example, we **do not want** cosmetic changes to the **GUI** to have an **impact** on our **BRs**.  
 **Component dependency graph** is created by architects to **protect stable high-value components from volatile components**.
 
 If we tried to design the component dependency structure before we designed any modules, we would likely fail. We would not know much about common closure -> we would be unaware of any reusable elements, and we would cernainly create components that produced dependency cycles. Thus the **component dependency structure evolves with the logical design of the system**.
@@ -1067,7 +1067,7 @@ The way you keep software soft is to leave as **many options open** as possible,
 
 A **system** can be decomposed into **two major elements** – policy and details:
 
-- **Policy** contains the **true value** of the system, it embodies BR and procedures.
+- **Policy** contains the **true value** of the system, it embodies BRs and procedures.
 - **Details enable** humans, developers and other systems **to communicate with the policy**, but that **do not impact** the behavior of the **policy** at all. Details include DBs, servers, frameworks, communication protocols, etc.
 
 A good architecture recognizes **policy** as the most **essential** element of the system while making the **details irrelevant** to that policy. This **allows decision about** those **details** to be **delayed**.
@@ -1156,26 +1156,26 @@ Architecture principles help balance those concerns even when you do not have a 
 
 The architect wants the structure that supports all the necessary use cases. He does not know what they are, but he knows the basic intent of the system. It is a shopping cart / bill of materials / orders processing. So the archictect can employ SRP and CCP to **separate** those things that change for different reasons and **collect** those things that change for the same reasons – **giving the context of the intent** of the system.
 
-For example, GUI and BR change for different reasons. Separate them so that they can be independently changed.
+For example, GUI and BRs change for different reasons. Separate them so that they can be independently changed.
 
-BR may be closely tied to the app, or may be general. For example, the validation of the inputs is a BR that is closely tied to the app. In contrast, the calculation of interest and the counting of inventory are BR that are more closely associated with the domain. These two **different kinds of BR** will change at different rates, and for different reasons – they should be **separated** to be changed independently.
+BRs may be closely tied to the app, or may be general. For example, the validation of the inputs is a BRs that is closely tied to the app. In contrast, the calculation of interest and the counting of inventory are BRs that are more closely associated with the domain. These two **different kinds of BRs** will change at different rates, and for different reasons – they should be **separated** to be changed independently.
 
-The DB, the query language are **technical details** that **have nothing to do with the BR or the UI**. The architecture should **separate them from the rest of the system** so that they can be independently changed.
+The DB, the query language are **technical details** that **have nothing to do with the BRs or the UI**. The architecture should **separate them from the rest of the system** so that they can be independently changed.
 
-Thus we find the system divided into **decoupled horisontal layers** – GUI, app-specific BR, app-independent BR, DB, etc.
+Thus we find the system divided into **decoupled horisontal layers** – GUI, app-specific BRs, app-independent BRs, DB, etc.
 
 #### DECOUPLING USE CASES
 
 The **use cases themselves** also change for different reasons. «Adding an order» and «deleting an order» are two use cases that change at different rates and for different reasons. Use cases are a very natural way to **divide** the system.
 
-At the same time, **use cases** are narrow **vertical slices** that **cut through the horizontal layers** of the system. Each use case uses some UI, app-specific BR, app-independed BR, DB functionality. Thus, divide the system into horizontal layers and vertial use cases.
+At the same time, **use cases** are narrow **vertical slices** that **cut through the horizontal layers** of the system. Each use case uses some UI, app-specific BRs, app-independed BRs, DB functionality. Thus, divide the system into horizontal layers and vertial use cases.
 
-|                    | Add an order | Remove an order | Edit an order | List orders |
-| ------------------ | ------------ | --------------- | ------------- | ----------- |
-| UI                 | x            | x               | x             |             |
-| App-specific BR    | x            | x               | x             |             |
-| App-independent BR | x            | x               | x             |             |
-| DB                 | x            | x               | x             |             |
+|                     | Add an order | Remove an order | Edit an order | List orders |
+| ------------------- | ------------ | --------------- | ------------- | ----------- |
+| UI                  | x            | x               | x             |             |
+| App-specific BRs    | x            | x               | x             |             |
+| App-independent BRs | x            | x               | x             |             |
+| DB                  | x            | x               | x             |             |
 
 To achieve this decoupling, we **separate** the **«add-order» UI** from the **«delete order» UI**, etc.
 
@@ -1183,7 +1183,7 @@ To achieve this decoupling, we **separate** the **«add-order» UI** from the **
 
 #### DECOUPLING MODE
 
-Lets think about independence in context of operations. **If** the UI and the DB are **separated** from the BR, then they **can run in different servers**.
+Lets think about independence in context of operations. **If** the UI and the DB are **separated** from the BRs, then they **can run in different servers**.
 
 To run components in separate servers, the components should not depend on being together on the same server / process / thread. They must be independed services, which communicate over a network of some kind.
 
@@ -1195,7 +1195,7 @@ It is not about that SOA is the best possible architecture. The point is that **
 
 When **components decoupled**, the **interference** between teams is **mitigated**.
 
-- The BR do not know about the UI. Good. Thus the UI team does not affect the BR team.
+- The BRs do not know about the UI. Good. Thus the UI team does not affect the BRs team.
 - The use cases are docoupled from one another. Good. Thus the team focusing on the «add order» use case will not interfere with the team focusing on the «delete order» use case.
 
 Layers and use cases are decoupled -> architecture supports teams organization, irrespective of whether they are organized as feature teams, component teams, layer teams, etc.
@@ -1263,7 +1263,7 @@ No content.
 
 ### CHAPTER 17. BOUNDARIES: DRAWING LINES
 
-Architecture is the art of drawing lines that I call boundaries. Those boundaries **separate software elements** from one another, and restrict those on one side **from knowing** about those on **the other**. **Some** of those lines are **drawn** very **early** in the project's life – even before any code is written. **Others** are drawn **later**. Those that drawn early are drawn for the purposes of deferring decisions for as long as possible, and of keeping those decisions from polluting the core BR.
+Architecture is the art of drawing lines that I call boundaries. Those boundaries **separate software elements** from one another, and restrict those on one side **from knowing** about those on **the other**. **Some** of those lines are **drawn** very **early** in the project's life – even before any code is written. **Others** are drawn **later**. Those that drawn early are drawn for the purposes of deferring decisions for as long as possible, and of keeping those decisions from polluting the core BRs.
 
 Recall that the goal of an architect is to minimize the human resources required to build and maintain the system. What it is that saps this kind of people-power? Coupling – and especially coupling to premature decisions.
 
@@ -1287,22 +1287,22 @@ To delay decision about the DB, we can just put an interface between all data ac
 
 You draw lines between things that matter and things that do not.
 
-- the **GUI** does not matter to the **BR**, so there **should be a line between them**;
+- the **GUI** does not matter to the **BRs**, so there **should be a line between them**;
 - the **DB** does not matter to the **GUI**, so ...;
-- the **DB** does not matter to the **BR**, so ...;
+- the **DB** does not matter to the **BRs**, so ...;
 
 Other statements:
 
-- ~~the BR does care about the DB~~;
-- ~~the DB is inextricably connected to the BR~~;
-- ~~the DB is an embodiment of the BR~~;
-- the DB is a tool that the BR can use indirectly;
-- the BR does not need to know about the schema, or the QL, or other details about the DB;
-- **all** the BR need **to know** is that **there is** a set of **functions** that can be used **to fetch or save data**; this allows us to put the DB behind an **interface**.
+- ~~the BRs does care about the DB~~;
+- ~~the DB is inextricably connected to the BRs~~;
+- ~~the DB is an embodiment of the BRs~~;
+- the DB is a tool that the BRs can use indirectly;
+- the BRs does not need to know about the schema, or the QL, or other details about the DB;
+- **all** the BRs need **to know** is that **there is** a set of **functions** that can be used **to fetch or save data**; this allows us to put the DB behind an **interface**.
 
 ```mermaid
 graph TD
-  Br[BR]
+  Br[BRs]
   DbInterface(DB interface)
   DbAccess[DB access]
   Db[DB]
@@ -1326,24 +1326,24 @@ About the diagram:
 
 - the structure in a real-world app may be more complex;
 - the direction of the line is important;
-- the DB knows about the BR;
-- the BR do not know about the DB;
-- the DB does not matter to the BR;
-- the DB cannot exist without the BR.
+- the DB knows about the BRs;
+- the BRs do not know about the DB;
+- the DB does not matter to the BRs;
+- the DB cannot exist without the BRs.
 - the _DB access_ contains code that translates the calls made by the _BrComponent_ into the QL of the DB;
 - the _BrComponent_ **can use any kind** of DB;
 - the _DbComponent_ **can be replaced** with another **implementation** (Oracle, MySQL, flat files) – the _BrComponent_ does not care;
-- the DB **decision** can be **deferred** and you can **focus on** getting the **BR** written and tested first.
+- the DB **decision** can be **deferred** and you can **focus on** getting the **BRs** written and tested first.
 
 #### WHAT ABOUT INPUT AND OUTPUT?
 
 What the system is? People often see the GUI and think that the GUI is the system. They define the a in terms of the GUI, so they believe that they should see the GUI start working immediately. They fail to realize a critically important principle: **the IO is irrelevant**.
 
-We often see about the behavior of the system in terms of the behavior of the IO. Your experience is dominated by the interface: the screen, the mouse, the buttons and the sounds. But there is a model behind that interface – a sophisticated set of data structures and functions – driving it. More importantly, that model does not need the interface. It would happily execute its duties, modelling all the events in the game without the game ever being displayed on the screen. **The GUI does not matter to the model – the BR.**
+We often see about the behavior of the system in terms of the behavior of the IO. Your experience is dominated by the interface: the screen, the mouse, the buttons and the sounds. But there is a model behind that interface – a sophisticated set of data structures and functions – driving it. More importantly, that model does not need the interface. It would happily execute its duties, modelling all the events in the game without the game ever being displayed on the screen. **The GUI does not matter to the model – the BRs.**
 
 ```mermaid
 graph BT
-  Br[BR]
+  Br[BRs]
   Gui[GUI]
 
   subgraph BrComponent
@@ -1359,23 +1359,23 @@ graph BT
 
 About the figure:
 
-- the BR and the GUI are **separated by a boundary line**;
+- the BRs and the GUI are **separated by a boundary line**;
 - the less relevant component **depends on** the more relevant one;
-- the arrow shows **which component knows** about the other and, therefore, **which component cares** about the other; the GUI cares about the BR.
-- the **GUI can be replaced** with any other kind of interface – and the **BR would not care**.
+- the arrow shows **which component knows** about the other and, therefore, **which component cares** about the other; the GUI cares about the BRs.
+- the **GUI can be replaced** with any other kind of interface – and the **BRs would not care**.
 
 #### PLUGIN ARCHITECTURE
 
 The discussed approach is kind of pattern. This pattern allows addition of other components, it allows third-party plugins.
 
-> The core BR are kept separate from, and independend of, those components that are either optional or can be implemented in many different forms.
+> The core BRs are kept separate from, and independend of, those components that are either optional or can be implemented in many different forms.
 
 ```mermaid
 ---
-title: Plugging in to the BR
+title: Plugging in to the BRs
 ---
 graph BT
-  Br[BR]
+  Br[BRs]
   Gui[GUI]
   Db[DB]
 
@@ -1400,13 +1400,13 @@ About the figure above:
 - The GUI is considered to be a plugin. We have made it possible to plug in **different or multiple GUIs**: web, desktop, modile, console, etc.
 - The DB is considered to be a plugin. We have made it possible to plug in **different or multiple DBs**: SQL, NoSQL, file-based DB, etc.
 - We **do not know what implementations** of GUI or DB the business will **need in the future**.
-- Implementations replacements might not be trivial. If the initial deployment of our system was web-based, then writing the plugin for a mobile app could be challenging. Some of the communications between the BR and the GUI may require reworking. Ideally, we should **write** these **communications** in a GUI-**agnostic** way.
+- Implementations replacements might not be trivial. If the initial deployment of our system was web-based, then writing the plugin for a mobile app could be challenging. Some of the communications between the BRs and the GUI may require reworking. Ideally, we should **write** these **communications** in a GUI-**agnostic** way.
 
 #### THE PLUGIN ARGUMENT
 
-It is **good** to have **deeply asymmetric relationship between the components**. We want certain modules to **immune** to others. We do not want the BR to break when the GUI or the DB schema changes (fragility).
+It is **good** to have **deeply asymmetric relationship between the components**. We want certain modules to **immune** to others. We do not want the BRs to break when the GUI or the DB schema changes (fragility).
 
-Plugin architecture creates **firewalls** across which **changes cannot propagate**. If the GUI plugs in to the BR, then changes to the GUI cannot affect those BR.
+Plugin architecture creates **firewalls** across which **changes cannot propagate**. If the GUI plugs in to the BRs, then changes to the GUI cannot affect those BRs.
 
 Boundaries are drawn there where is an axis of change. The components on **one side** of the boundary change at **different rates, and for different reasons, than** the ones on **the other side**.
 
@@ -1414,7 +1414,7 @@ This is simply the **SRP** again. It tells us where to draw our boundaries.
 
 #### CONCLUSION
 
-First, **partition the system into components**. Then, **draw boundaries**. **Some** of those components **are core BR, others are plugins**. We arrange the code so that the dependencies are directed from the plugins from the core BR.
+First, **partition the system into components**. Then, **draw boundaries**. **Some** of those components **are core BRs, others are plugins**. We arrange the code so that the dependencies are directed from the plugins from the core BRs.
 
 Recognize it as an applications of the **DIP** and the **SAP**. Dependency arrows are arranged to point **from lower-level details to higher-level abstractions**.
 
@@ -1488,7 +1488,7 @@ The policy is broken into many smaller statements of policy (SoP).
 
 Each of the SoPs can:
 
-- describe particular BR;
+- describe particular BRs;
 - define certain reports formatting;
 - validations some input;
 - etc.
@@ -1583,3 +1583,14 @@ Lower-level components should be **plugins** to higher-level ones.
 #### CONCLUSION
 
 No content.
+
+### CHAPTER 20. BUSINESS RULES
+
+There are several different kinds of BRs. BRs are rules or procedures that make or save business money.
+
+Some BRs we call **_critical business rules_** (CBRs), because they are critical to the business and would **exist anyway**, even if the system were not automated.
+
+CBRs typically require some data to work with. E. g. to implement banking interest calculation, we need: a loan balance, an interest rate, a payment schedule.  
+We call this data **_critical business data_** (CBD) – data that would **exist anyway**, even if the system were not automated.
+
+The **CBRs and CBD** are inextricably **bound**, so they are a good candidate for an object. We will call this kind of object an **_entity_**.
