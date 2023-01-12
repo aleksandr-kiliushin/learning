@@ -1594,3 +1594,32 @@ CBRs typically require some data to work with. E. g. to implement banking intere
 We call this data **_critical business data_** (CBD) – data that would **exist anyway**, even if the system were not automated.
 
 The **CBRs and CBD** are inextricably **bound**, so they are a good candidate for an object. We will call this kind of object an **_entity_**.
+
+#### ENTITIES
+
+An entity:
+
+- is an object that **embodies a small set of CBRs operating on CBD**;
+- **either contains CBD or has easy access to it**;
+- has **interface** of the entity consists of the **functions that implement the CBRs that operate on the CBD**.
+
+```mermaid
+---
+title: Loan entity as a module in UML
+---
+classDiagram
+  class Loan
+  Loan: - principle
+  Loan: - rate
+  Loan: - period
+  Loan: + makePayment()
+  Loan: + applyInterest()
+  Loan: + chargeLateFee()
+```
+
+The `Loan` module:
+
+- gathers together the software that is critical to the business;
+- **separated from other concerns** of the system;
+- stands alone as a **representative of the business**;
+- is **unsullied with concerns about DBs, GUIs and third-party frameworks**; it could serve the business in any system, irrespective of how that system was presented, or how the data was stored, or how the data is arranged; the **entity is pure business** and nothing else.
