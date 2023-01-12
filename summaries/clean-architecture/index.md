@@ -1496,3 +1496,90 @@ Each of the SoPs can:
 We should separate these SoPs from one another, and regroup them based on the ways they change. SoPs that change at the same time, for the same reasons, and at the same level, belong to the same component.
 
 The art of architecture often involves forming the regrouped components into a **directed acyclic graph**. The nodes of the graph are the components that contain policies at the same level. The directed edges are the deps between these components.
+
+#### LEVEL
+
+> Level is the distance from inputs and outputs.
+
+**The father a policy** from both the inputs and outputs of the system, **the higher its level**. The policies that manage input and output are the lowest-level policies in the system.
+
+```mermaid
+---
+title: A simple encryption program
+---
+graph TD
+  readChar
+  table
+  translate
+  writeChar
+
+  readChar==Char==>translate==Char==>writeChar
+  table==>translate
+
+  readChar--A SC dep-->translate
+  writeChar--A SC dep-->translate
+```
+
+_Translate_ is the highest-level component because it is farthest from the inputs and outputs.
+
+Note that data flow and the SC deps do not always point in the same direction. It is a part of architecture. We want SC deps to be decoupled from data flow and coupled to levels.
+
+##### An incorrect architecture
+
+```javascript
+function encrypt() {
+  while (true) {
+    writeChar(translate(readChar()))
+  }
+}
+```
+
+The higher-level `encrypt` function depends on lower-level `readChar` and `writeChar` functions.
+
+##### A better architecture
+
+```mermaid
+---
+title: Сlass diagram showing a better architecture
+---
+graph TD
+  CharReaderInterface[CharReader interface]
+  CharWriterInterface[CharWriter interface]
+  ConsoleReader
+  ConsoleWriter
+  Encrypt
+
+  subgraph Encryption
+    CharReaderInterface
+    CharWriterInterface
+    Encrypt
+  end
+
+  Encrypt-->CharReaderInterface
+  Encrypt-->CharWriterInterface
+  ConsoleReader-->CharReaderInterface
+  ConsoleWriter-->CharWriterInterface
+```
+
+Notes about the diagram:
+
+- all the deps of the _Encryption_ element point **inward**;
+- _Encryption_ is the **highest**-level element;
+- _ConsoleReader_ and _ConsoleWriter_ are **low** level because they close to the inputs and outputs;
+- this structure **decouples** the high-level encryption policy from the lower-level IO policies; this makes the encryption policy usable in a wide range of contexts; changes to the IO policies do not affect the encryption policy.
+
+Policies are grouped into components based on the way they change (SRP and CCP in action).
+
+|                          | Higher-level policies | Lower-level policies |
+| ------------------------ | --------------------- | -------------------- |
+| Changes frequence        | Low                   | High                 |
+| Changes urgency          | Low                   | High                 |
+| Changes importance level | High                  | Low                  |
+
+Keeping policies separate, with all SC deps pointing in the direction of the higher-level policies, reduces the impact of change.
+
+Lower-level components should be **plugins** to higher-level ones.
+
+#### CONCLUSION
+
+No content.
