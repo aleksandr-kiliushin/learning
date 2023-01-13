@@ -1623,3 +1623,27 @@ The `Loan` module:
 - **separated from other concerns** of the system;
 - stands alone as a **representative of the business**;
 - is **unsullied with concerns about DBs, GUIs and third-party frameworks**; it could serve the business in any system, irrespective of how that system was presented, or how the data was stored, or how the data is arranged; the **entity is pure business** and nothing else.
+
+#### USE CASES
+
+There are BRs called **_use cases_** those.
+
+About use cases:
+
+- Use cases are **not as pure** as entities.
+- Use cases make or save money for the business by defining the way that an automated system operates.
+- Use cases **describe app-specific BRs** as opposed to the CBRs within the entities.
+- Use cases would not be used in a manual environment, because they **make sense only as part of an automated system**.
+- Use cases contain BRs that specify **how and when the CBRs within the entities are invoked**. Use cases control the dance of the entities.
+- Use cases **do not describe how the system appears to the user**. Use cases do not describe the UI other than to informally specify the data coming in from that UI, and the data going back through that UI. From a use case it is impossible to tell whether the app is delivered on the web, or on a thick client, or on a console, or is a pure service.
+- Describe the app-specific BRs that govern the interaction between the users and the entities. **How the data gets in and out of the system is irrelevant to the use cases.**
+- A use case is an **object**. Each use case **has functions implementing app-specific BRs**. It also **has data elements** that include **input data, output data, and references to the appropriate entities** with which it interacts;
+- Entities have no knowledge of the use cases that control them – DIP in action. **High-level entities know nothing about low-level use cases. Instead, use-cases know about entities.**
+
+Examples of use cases:
+
+- use case A specifies the input to be provided by the user;
+- use case B specifies the output to be returned to the user;
+- use case C specifies the processing steps involved to produce the output;
+
+**Why are entities high level and use cases lower level?** Because **use cases are specific to a single app** and, therefore, are closer to the inputs and outputs of that system. **Entities are generalizations that can be used in different apps**, so they are farther from the inputs and outputs of the system. **Use cases depend on entities. Entities do not depend on use cases.**
