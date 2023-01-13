@@ -1628,22 +1628,32 @@ The `Loan` module:
 
 There are BRs called **_use cases_** those.
 
-About use cases:
+About UCs:
 
-- Use cases are **not as pure** as entities.
-- Use cases make or save money for the business by defining the way that an automated system operates.
-- Use cases **describe app-specific BRs** as opposed to the CBRs within the entities.
-- Use cases would not be used in a manual environment, because they **make sense only as part of an automated system**.
-- Use cases contain BRs that specify **how and when the CBRs within the entities are invoked**. Use cases control the dance of the entities.
-- Use cases **do not describe how the system appears to the user**. Use cases do not describe the UI other than to informally specify the data coming in from that UI, and the data going back through that UI. From a use case it is impossible to tell whether the app is delivered on the web, or on a thick client, or on a console, or is a pure service.
-- Describe the app-specific BRs that govern the interaction between the users and the entities. **How the data gets in and out of the system is irrelevant to the use cases.**
-- A use case is an **object**. Each use case **has functions implementing app-specific BRs**. It also **has data elements** that include **input data, output data, and references to the appropriate entities** with which it interacts;
-- Entities have no knowledge of the use cases that control them – DIP in action. **High-level entities know nothing about low-level use cases. Instead, use-cases know about entities.**
+- UCs are **not as pure** as entities.
+- UCs make or save money for the business by defining the way that an automated system operates.
+- UCs **describe app-specific BRs** as opposed to the CBRs within the entities.
+- UCs would not be used in a manual environment, because they **make sense only as part of an automated system**.
+- UCs contain BRs that specify **how and when the CBRs within the entities are invoked**. UCs control the dance of the entities.
+- UCs **do not describe how the system appears to the user**. UCs do not describe the UI other than to informally specify the data coming in from that UI, and the data going back through that UI. From a UC it is impossible to tell whether the app is delivered on the web, or on a thick client, or on a console, or is a pure service.
+- Describe the app-specific BRs that govern the interaction between the users and the entities. **How the data gets in and out of the system is irrelevant to the UCs.**
+- A UC is an **object**. Each UC **has functions implementing app-specific BRs**. It also **has data elements** that include **input data, output data, and references to the appropriate entities** with which it interacts;
+- Entities have no knowledge of the UCs that control them – DIP in action. **High-level entities know nothing about low-level UCs. Instead, UCs know about entities.**
 
-Examples of use cases:
+Examples of UCs:
 
-- use case A specifies the input to be provided by the user;
-- use case B specifies the output to be returned to the user;
-- use case C specifies the processing steps involved to produce the output;
+- UC A specifies the input to be provided by the user;
+- UC B specifies the output to be returned to the user;
+- UC C specifies the processing steps involved to produce the output;
 
-**Why are entities high level and use cases lower level?** Because **use cases are specific to a single app** and, therefore, are closer to the inputs and outputs of that system. **Entities are generalizations that can be used in different apps**, so they are farther from the inputs and outputs of the system. **Use cases depend on entities. Entities do not depend on use cases.**
+**Why are entities high level and UCs lower level?** Because **UCs are specific to a single app** and, therefore, are closer to the inputs and outputs of that system. **Entities are generalizations that can be used in different apps**, so they are farther from the inputs and outputs of the system. **UCs depend on entities. Entities do not depend on UCs.**
+
+#### REQUEST AND RESPONSE MODELS
+
+**UCs expect input data, and they produce output data.** However, a well-formed UC object should have **no inkling about the way that data is communicated** to the user, or to any other component.
+
+A UC module **accepts simple request DSs** for its input, and **returns simple response DSs** as its output. These DSs are **not dependent on anything**. They do not derive from standard framework interfaces such as `HttpRequest` and `HttpResponse`. UCs know nothing of the web or UI. This lack of dependencies is critical.
+
+#### CONCLUSION
+
+BRs should remain **pristine**, unsullied by concerns like UI or DB. BRs should be **the most independent and reusable code** in the system.
