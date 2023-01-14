@@ -1663,3 +1663,9 @@ BRs should remain **pristine**, unsullied by concerns like UI or DB. BRs should 
 When you see the blueprints of a building, its architecture screams "House" / "Library" / "Hospital".
 
 So what does the architecture of your app scream? When you look at the top level directory structure and SC files do they scream "Health care system", or "Accounting system", or "Inventory management system"? Or do they scream "Rails", or "Django", or "ASP"?
+
+#### THE THEME OF AN ARCHITECTURE
+
+An app architecture should **scream about the use cases** of the app.
+
+Architectures are **not about frameworks**. They should not be supplied by frameworks. Frameworks are tools to be used, not architectures to be conformed to. **If your architecture is based on frameworks, then it cannot be based on your use cases.**
