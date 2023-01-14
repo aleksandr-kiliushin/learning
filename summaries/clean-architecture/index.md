@@ -1675,3 +1675,7 @@ Architectures are **not about frameworks**. They should not be supplied by frame
 Good architectures are centered on use cases so that architects can safely describe the structures that support those use cases with **no commiting to frameworks, tools, and other environments issues**. The first concern of an architect is to make sure that the building is usable – not to ensure that the house is made of bricks. Yes, using bricks do matter, but they should not be in the center of the architecture.
 
 A good architecture allows decisions about frameworks, etc to be deferred, revisited and changed. Frameworks are options to be left open. A good architecture **emphasizes the use cases and decouples them from peripheral concerns**.
+
+#### BUT WHAT ABOUT THE WEB?
+
+Is the web an architecture? Does the fact that your app is delivered on the web dictate the architecture of your system? Not. The web is a delivery mechanism – an IO device. Your system architecture should be ignorant about how it will be delivered: a web app, or a console app, or a thick client app, etc.
