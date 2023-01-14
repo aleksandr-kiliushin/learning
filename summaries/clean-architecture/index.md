@@ -1679,3 +1679,16 @@ A good architecture allows decisions about frameworks, etc to be deferred, revis
 #### BUT WHAT ABOUT THE WEB?
 
 Is the web an architecture? Does the fact that your app is delivered on the web dictate the architecture of your system? Not. The web is a delivery mechanism – an IO device. Your system architecture should be ignorant about how it will be delivered: a web app, or a console app, or a thick client app, etc.
+
+#### FRAMEWORKS ARE TOOLS, NOT WAYS OF LIFE
+
+Frameworks can be very powerful and useful. Their authors show you the way to use the framework. Often they assume an all-encompassing, let-the-framework-do-everything position. This is not the position you want to take.
+
+**Look at each framework with a jaded eye. View it skeptically.** Yes, it might help, but for what cost?
+
+Ask yourself:
+
+- **How** you should **use** it?
+- **How** you should **protect yourself** from it?
+- **How** you can **preserve the use-case emphasis** of your architecture?
+- What strategy you should develop to **prevent the framework from taking over your architecture**?
