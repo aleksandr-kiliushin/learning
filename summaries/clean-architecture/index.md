@@ -1698,3 +1698,11 @@ Ask yourself:
 If your architecture is all about use cases, and if you keep your FWs at arm's length, then you are able to **unit-test** all those **use cases without any FWs in place**:
 
 For your unit tests, your do not need the web server running or the DB connected. Your entity object should be plain old objects that have no deps on FWs, or DBs or other complications. Your use case objects should coordinate your entity objects.
+
+#### CONCLUSION
+
+Your architecture should **tell readers about the system, not about the frameworks used** in the system.
+
+When new programmers look at an repo, their **first impression** should be "Oh this is a health care system.". Those new programmers should **be able to learn all the use cases** of the system, yet still no know how the system is delivered.  
+They may say: "We see some things like models – but where are the views and controllers?".
+And you should respond: "Those are details that need not concern us at the moment. We will decide about them later.".
