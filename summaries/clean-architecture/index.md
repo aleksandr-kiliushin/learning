@@ -1657,3 +1657,9 @@ A UC module **accepts simple request DSs** for its input, and **returns simple r
 #### CONCLUSION
 
 BRs should remain **pristine**, unsullied by concerns like UI or DB. BRs should be **the most independent and reusable code** in the system.
+
+### CHAPTER 21. SCREAMING ARCHITECTURE
+
+When you see the blueprints of a building, its architecture screams "House" / "Library" / "Hospital".
+
+So what does the architecture of your app scream? When you look at the top level directory structure and SC files do they scream "Health care system", or "Accounting system", or "Inventory management system"? Or do they scream "Rails", or "Django", or "ASP"?
