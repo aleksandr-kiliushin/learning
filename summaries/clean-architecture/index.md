@@ -1669,3 +1669,9 @@ So what does the architecture of your app scream? When you look at the top level
 An app architecture should **scream about the use cases** of the app.
 
 Architectures are **not about frameworks**. They should not be supplied by frameworks. Frameworks are tools to be used, not architectures to be conformed to. **If your architecture is based on frameworks, then it cannot be based on your use cases.**
+
+#### THE PURPOSE OF AN ARCHITECTURE
+
+Good architectures are centered on use cases so that architects can safely describe the structures that support those use cases with **no commiting to frameworks, tools, and other environments issues**. The first concern of an architect is to make sure that the building is usable – not to ensure that the house is made of bricks. Yes, using bricks do matter, but they should not be in the center of the architecture.
+
+A good architecture allows decisions about frameworks, etc to be deferred, revisited and changed. Frameworks are options to be left open. A good architecture **emphasizes the use cases and decouples them from peripheral concerns**.
