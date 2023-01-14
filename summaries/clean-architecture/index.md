@@ -1068,13 +1068,13 @@ The way you keep software soft is to leave as **many options open** as possible,
 A **system** can be decomposed into **two major elements** – policy and details:
 
 - **Policy** contains the **true value** of the system, it embodies BRs and procedures.
-- **Details enable** humans, developers and other systems **to communicate with the policy**, but that **do not impact** the behavior of the **policy** at all. Details include DBs, servers, frameworks, communication protocols, etc.
+- **Details enable** humans, developers and other systems **to communicate with the policy**, but that **do not impact** the behavior of the **policy** at all. Details include DBs, servers, FWs, communication protocols, etc.
 
 A good architecture recognizes **policy** as the most **essential** element of the system while making the **details irrelevant** to that policy. This **allows decision about** those **details** to be **delayed**.
 
 - **build the architecture without committing any details**;
 - **delay decisions** about the **details** as long as possible -> have the **options open** longer;
-- run **experiments** and use various details (various DBs, frameworks, servers, etc);
+- run **experiments** and use various details (various DBs, FWs, servers, etc);
 - at the moment when the decisions can no longer be deferred, have **more information** about the details applicability, performance, etc to **make the decisions properly**.
 
 **If** the decisions have **already** been **made** by someone else, **pretend that** they have **not** beed **and shape the system** such that those decisions can still be deferred or changed for as long as possible.
@@ -1267,7 +1267,7 @@ Architecture is the art of drawing lines that I call boundaries. Those boundarie
 
 Recall that the goal of an architect is to minimize the human resources required to build and maintain the system. What it is that saps this kind of people-power? Coupling – and especially coupling to premature decisions.
 
-What kind of decisions are premature? Decisions that have nothing to do with the business requirements – the use cases – of the system. These includes decisions about frameworks, DBs, etc.
+What kind of decisions are premature? Decisions that have nothing to do with the business requirements – the use cases – of the system. These includes decisions about FWs, DBs, etc.
 
 A **good** architecture:
 
@@ -1622,7 +1622,7 @@ The `Loan` module:
 - gathers together the software that is critical to the business;
 - **separated from other concerns** of the system;
 - stands alone as a **representative of the business**;
-- is **unsullied with concerns about DBs, GUIs and third-party frameworks**; it could serve the business in any system, irrespective of how that system was presented, or how the data was stored, or how the data is arranged; the **entity is pure business** and nothing else.
+- is **unsullied with concerns about DBs, UIs and third-party FWs**; it could serve the business in any system, irrespective of how that system was presented, or how the data was stored, or how the data is arranged; the **entity is pure business** and nothing else.
 
 #### USE CASES
 
@@ -1652,7 +1652,7 @@ Examples of UCs:
 
 **UCs expect input data, and they produce output data.** However, a well-formed UC object should have **no inkling about the way that data is communicated** to the user, or to any other component.
 
-A UC module **accepts simple request DSs** for its input, and **returns simple response DSs** as its output. These DSs are **not dependent on anything**. They do not derive from standard framework interfaces such as `HttpRequest` and `HttpResponse`. UCs know nothing of the web or UI. This lack of dependencies is critical.
+A UC module **accepts simple request DSs** for its input, and **returns simple response DSs** as its output. These DSs are **not dependent on anything**. They do not derive from standard FW interfaces such as `HttpRequest` and `HttpResponse`. UCs know nothing of the web or UI. This lack of dependencies is critical.
 
 #### CONCLUSION
 
@@ -1668,13 +1668,13 @@ So what does the architecture of your app scream? When you look at the top level
 
 An app architecture should **scream about the use cases** of the app.
 
-Architectures are **not about frameworks**. They should not be supplied by frameworks. Frameworks are tools to be used, not architectures to be conformed to. **If your architecture is based on frameworks, then it cannot be based on your use cases.**
+Architectures are **not about FWs**. They should not be supplied by FWs. FWs are tools to be used, not architectures to be conformed to. **If your architecture is based on FWs, then it cannot be based on your use cases.**
 
 #### THE PURPOSE OF AN ARCHITECTURE
 
-Good architectures are centered on use cases so that architects can safely describe the structures that support those use cases with **no commiting to frameworks, tools, and other environments issues**. The first concern of an architect is to make sure that the building is usable – not to ensure that the house is made of bricks. Yes, using bricks do matter, but they should not be in the center of the architecture.
+Good architectures are centered on use cases so that architects can safely describe the structures that support those use cases with **no commiting to FWs, tools, and other environments issues**. The first concern of an architect is to make sure that the building is usable – not to ensure that the house is made of bricks. Yes, using bricks do matter, but they should not be in the center of the architecture.
 
-A good architecture allows decisions about frameworks, etc to be deferred, revisited and changed. Frameworks are options to be left open. A good architecture **emphasizes the use cases and decouples them from peripheral concerns**.
+A good architecture allows decisions about FWs, etc to be deferred, revisited and changed. FWs are options to be left open. A good architecture **emphasizes the use cases and decouples them from peripheral concerns**.
 
 #### BUT WHAT ABOUT THE WEB?
 
@@ -1682,13 +1682,19 @@ Is the web an architecture? Does the fact that your app is delivered on the web 
 
 #### FRAMEWORKS ARE TOOLS, NOT WAYS OF LIFE
 
-Frameworks can be very powerful and useful. Their authors show you the way to use the framework. Often they assume an all-encompassing, let-the-framework-do-everything position. This is not the position you want to take.
+FWs can be very powerful and useful. Their authors show you the way to use the FW. Often they assume an all-encompassing, let-the-FW-do-everything position. This is not the position you want to take.
 
-**Look at each framework with a jaded eye. View it skeptically.** Yes, it might help, but for what cost?
+**Look at each FW with a jaded eye. View it skeptically.** Yes, it might help, but for what cost?
 
 Ask yourself:
 
 - **How** you should **use** it?
 - **How** you should **protect yourself** from it?
 - **How** you can **preserve the use-case emphasis** of your architecture?
-- What strategy you should develop to **prevent the framework from taking over your architecture**?
+- What strategy you should develop to **prevent the FW from taking over your architecture**?
+
+#### TESTABLE ARCHITECTURES
+
+If your architecture is all about use cases, and if you keep your FWs at arm's length, then you are able to **unit-test** all those **use cases without any FWs in place**:
+
+For your unit tests, your do not need the web server running or the DB connected. Your entity object should be plain old objects that have no deps on FWs, or DBs or other complications. Your use case objects should coordinate your entity objects.
