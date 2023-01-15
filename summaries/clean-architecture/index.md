@@ -1701,8 +1701,26 @@ For your unit tests, your do not need the web server running or the DB connected
 
 #### CONCLUSION
 
-Your architecture should **tell readers about the system, not about the frameworks used** in the system.
+Your architecture should **tell readers about the system, not about the FWs used** in the system.
 
 When new programmers look at an repo, their **first impression** should be "Oh this is a health care system.". Those new programmers should **be able to learn all the use cases** of the system, yet still no know how the system is delivered.  
 They may say: "We see some things like models – but where are the views and controllers?".
 And you should respond: "Those are details that need not concern us at the moment. We will decide about them later.".
+
+### CHAPTER 22. THE CLEAN ARCHITECTURE
+
+**Different ideas** about architecture (hexagonal architecture, DCI, BCE, etc) vary in their details, but they are **very similar**:
+
+- they have the same objective which is the **separation of concerns**;
+- they achieve this separation by **dividing the software into layers**;
+- each has at least one **layer for BRs**, and another layer **for system and user interfaces**.
+
+Each of these architectures produces systems that have the following **characteristics**:
+
+- **Independent of FWs.** This allows you to use such FWs as tools, rather than forcing your cram your system into their limited constrains.
+- **Testable.** The BRs can be tested without the UI, DB, web server, etc.
+- **Independent of the UI.** The UI can change easily without changing the rest of the system and BRs. Web UI -> console UI? Easy.
+- **Independent of the DB.** You can swap out Postgres for Mongo, file-based DB, or something else. Your BRs are not bound to the DB.
+- **Independent of any external agency.** Your BRs do not know anything about the interfaces to the outside world.
+
+![The clean architecture](./images/the-clean-architecture.png)
