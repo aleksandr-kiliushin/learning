@@ -34,7 +34,7 @@ There are a lot of paths to build the architecture:
 - 🤡 Architecture can have a strong smell of **speculative generality**.  
   Your project becomes filled with hard-coded guesswork, countless parameters, tombs of dead code, and more complexity than your maintanance budget can allow.
 - 😊 Architecture can be **maintanable and flourishing**.
-  - software softness is preserved as a first-class property of the system;
+  - SW softness is preserved as a first-class property of the system;
   - new things are discovered and created;
   - questions are asked;
   - experiments are ran.
@@ -43,15 +43,15 @@ A good architecture is ~~a destination or a frozen artifact~~ an ongoing process
 
 ## PREFACE
 
-Software systems are created for different domains and using various technologies. But they share similar rules of architecture: rules are about ordering and assembling the building blocks of programs.
+SW systems are created for different domains and using various technologies. But they share similar rules of architecture: rules are about ordering and assembling the building blocks of programs.
 
 ## PART I. INTRODUCTION
 
-Getting software working is easy. Kids, students and juniors create programs. The code they produce may not be pretty, but it works because getting something to work – once – is easy.
+Getting SW working is easy. Kids, students and juniors create programs. The code they produce may not be pretty, but it works because getting something to work – once – is easy.
 
-Gettings software right is hard. It requires knowledge, skills that most programmers don't take time to develop. It requires high level of and discipline and didication that most programmers never dreamed they'd need. It takes a passion for the craft and the desire to be a professional.
+Gettings SW right is hard. It requires knowledge, skills that most programmers don't take time to develop. It requires high level of and discipline and didication that most programmers never dreamed they'd need. It takes a passion for the craft and the desire to be a professional.
 
-When your software is done right:
+When your SW is done right:
 
 - ~~you need hords of programmers to keep it working~~;
 - ~~you need massive requirements documents and huge issue tracking systems~~;
@@ -75,7 +75,7 @@ Low-level details and high-level decision are all part of the same whole. There 
 
 #### THE GOAL
 
-> The **goal** of software architecure is to **minimize the human resources required** to build and maintain the required system.
+> The **goal** of SW architecure is to **minimize the human resources required** to build and maintain the required system.
 
 The **measure of design quality** is the measure of the **effort required** to meet the customer's needs.  
 The effort is low, and stays low throughout the lifetime of the system? The design is good.  
@@ -106,7 +106,7 @@ The morals of the «Tortoise and the Hare» story:
 Most developers work hard, but a part of their brain sleeps – the part that knows that clean, well-designed code matters.
 
 Another mistake: «We can clean it up later, we just have to get to market first!» – the Hare's mistake.  
-Why later? Do you think you won't have to get new features done? Or maybe the «Pause the market» button will suddenly appear?  
+Why later? Do you think you will not have to get new features done? Or maybe the «Pause the market» button will suddenly appear?  
 These developers are overconfident in their ability to remain productive.  
 Writing messy code makes them go fast in the short term and slows them down in the long term.
 
@@ -121,14 +121,14 @@ Their overconfidence will drive the redesign into the same mess as the original 
 #### CONCLUSION
 
 - Recognize and **avoid your overconfidence**.
-- Start taking the quality of your software **seriously**.
+- Start taking the quality of your SW **seriously**.
 - You need to **know what good architecture is**, what **its attributes** are.
 
 ### CHAPTER 2. A TALE OF TWO VALUES
 
-Every software system provides two different values to the stakeholders: behavior and structure.  
+Every SW system provides two different values to the stakeholders: behavior and structure.  
 Developers are responsible for ensuring that both of them remain high.  
-Unfortunetely, developers often focus of one of them, leaving the software system eventually valueless.
+Unfortunetely, developers often focus of one of them, leaving the SW system eventually valueless.
 
 #### BEHAVIOR
 
@@ -138,17 +138,17 @@ Many programmers think that is the entirely of their job. They are sadly mistake
 
 #### ARCHITECTURE
 
-The second value of software relates to the softness of software. Software is intended to be a way to easily change the behavior of machines.
+The second value of SW relates to the softness of SW. SW is intended to be a way to easily change the behavior of machines.
 
-To fulfill its purpose, software must be soft.  
+To fulfill its purpose, SW must be soft.  
 **When the stakeholders change their minds about a feature**, that change should be **easy to make**.  
 The difficulty in making such a change should be proportional only to the scope of the change, and not to the shape of the change.
 
 #### THE GREATER VALUE
 
-What is more important for the software system – to work, or to be easy to change?
+What is more important for the SW system – to work, or to be easy to change?
 
-Business managers likely say it's more important for the software system to work. Developers, in turn, often go alogn with this attitude. But it's a wrong attitude.  
+Business managers likely say it's more important for the SW system to work. Developers, in turn, often go alogn with this attitude. But it's a wrong attitude.  
 Let's examine the extremes:
 
 - Extreme 1:
@@ -179,13 +179,13 @@ Many systems reach that point in some of their features or configurations.
 | Important + urgent   | Important + not urgent   |
 | Unimportant + urgent | Unimportant + not urgent |
 
-The first value of software – behavior – is urgent but never particulary important.  
-The second value of software – architecture – is important but never particulary urgent.
+The first value of SW – behavior – is urgent but never particulary important.  
+The second value of SW – architecture – is important but never particulary urgent.
 
 Of course, some things are both important and urgent, and some – both unimportant and not urgent.
 
 The dilemma for developers is that managers are not equipped to evaluate the importance of architecture. That's what developers were hired to do.  
-It's the **responsibility of the software development team to assert the importance of the architecture** over the urgency of features.
+It's the **responsibility of the SW development team to assert the importance of the architecture** over the urgency of features.
 
 #### FIGHT FOR THE ARCHITECTURE
 
@@ -193,13 +193,13 @@ Fulfilling this responsibility means wading into a fight.
 The development team has to **struggle for** what they believe to be **best for the company**.  
 And so do the management team, and the marketing team, and the sales team.
 
-Effective software developers uabashedly squabble with all the other stakeholders as equals.  
-Remember, as a software **developer**, you are a **stakeholder**. You have a **stake** in the software that you need to **safeguard**.  
+Effective SW developers uabashedly squabble with all the other stakeholders as equals.  
+Remember, as a SW **developer**, you are a **stakeholder**. You have a **stake** in the SW that you need to **safeguard**.  
 It's a part of you **role**, of your **duty**. It's a big part of **why you were hired**.
 
-This challenge is doubly important if you're a software architect. Architects are focused on creating an architecture that allows features to be easily developed, modified and extended.
+This challenge is doubly important if you're a SW architect. Architects are focused on creating an architecture that allows features to be easily developed, modified and extended.
 
-If architecture comes last, then the system will become ever more costly to develop. This means that the software development team did not fight hard enough.
+If architecture comes last, then the system will become ever more costly to develop. This means that the SW development team did not fight hard enough.
 
 ## PART II. STARTING WITH THE BRICKS: PROGRAMMING PARADIGMS
 
@@ -313,8 +313,8 @@ No content.
 
 🚨 Each of the paradighms take something away from us. None of them has added to our power or out capabilities.  
 🙅 What we have learned over the last half-of-century is what not to do.  
-📖 The rules of software are the same today as they were in 1946.  
-👉 Software is composed of sequence, selection, iteration, and indirection.
+📖 The rules of SW are the same today as they were in 1946.  
+👉 SW is composed of sequence, selection, iteration, and indirection.
 
 ## PART III. DESIGN PRINCIPLES
 
@@ -352,7 +352,7 @@ The stakeholders ask to make it printable as a report on a black-and-white print
 
 Clearly, some new code must be written. But how much old code will have to change?
 
-A good software architecture reduces the amount of changed code to the barest minimum. Ideally, zero.
+A good SW architecture reduces the amount of changed code to the barest minimum. Ideally, zero.
 
 How?
 
@@ -445,7 +445,7 @@ The same is true for the `FinancialReportPresenter` and the two View interfaces.
 
 The `FinancialReportRequester` interface serves a different purpose. It protects the `FinancialReportController` from knowing too much about the internals of the Interactor. Without `FinancialReportRequester`, the Controller would have transitive dependencies on the `FinancialEntities`.
 
-Transitive dependencies are a violation of the general principle that software entities shouldn't depend on things that they don't directly use.
+Transitive dependencies are a violation of the general principle that SW entities shouldn't depend on things that they don't directly use.
 
 Our first priority is to protect the Interactor from changes to the Controller.  
 We also want to protect the Controller from changes to the Interactor by hiding the internal of the interactor.
@@ -757,7 +757,7 @@ A module that you designed to be easy to change **can be made difficult to chang
 
 Stability is related to the **amount of work required to make a change**.
 
-One way to make a component difficult to change is to make lots of other software components depend on it. A **component with lots of incoming dependencies is very stable** because it **requires** a great deal of **work** to reconcile any changes with all the dependent components.
+One way to make a component difficult to change is to make lots of other SW components depend on it. A **component with lots of incoming dependencies is very stable** because it **requires** a great deal of **work** to reconcile any changes with all the dependent components.
 
 ```mermaid
 graph TD
@@ -882,7 +882,7 @@ We can fix it by using the DIP.
 
 ##### WHERE DO WE PUT THE HIGH-LEVEL POLICY?
 
-**High-level architecture and policy decisions** should not change very often. We do **not** want them to be **voliatile**. Such software should be **placed into stable components** (`I = 0`). **Unstable components** (`I = 1`) should **contain** only the software that is **volatile** – software that we want to be able to **easily change**.
+**High-level architecture and policy decisions** should not change very often. We do **not** want them to be **voliatile**. Such SW should be **placed into stable components** (`I = 0`). **Unstable components** (`I = 1`) should **contain** only the SW that is **volatile** – SW that we want to be able to **easily change**.
 
 However, **if high-level policies** are placed **into stable components**, then the source code that represents those policies **will be difficult to change**. This could make the overall **architecture inflexible**. How a component with `I = 0` be flexible enough to windstand change? The **OCP helps** us. The OCP tells that it's possible and desirable to create classes that are flexible enough to be extended without requiring modification. Which kind of classes conform this principle? **Abstract classes.**
 
@@ -991,13 +991,13 @@ Architects:
 - **take programming tasks**, while they **also guide the team** toward a design that maximizes productivity;
 - **take programming tasks to experience the effects** of their architectural decisions.
 
-The **architecture** of a software **system** is its **shape**:
+The **architecture** of a SW **system** is its **shape**:
 
 - **division** of the system into components;
 - **arrangement** of those components;
 - **communication** between those components.
 
-The **purpose** of architecture is to **facilitate the development, deployment, operation, and maintenance** of the software system.
+The **purpose** of architecture is to **facilitate the development, deployment, operation, and maintenance** of the SW system.
 
 The **strategy** behind the facilitation is to leave as many **options open** as possible, for as long as possible.
 
@@ -1051,19 +1051,19 @@ This **simplifies understanding** of the system and greatly aids in depevelopmen
 
 #### MAINTENANCE
 
-Of all the aspects of a software system maintenance is the most **costly**.
+Of all the aspects of a SW system maintenance is the most **costly**.
 
 The **primary cost of maintenance** is in **spelunking and risk**.
 
-**Spelunking is** the cost of **digging through the existing software**, trying to determine the best place and the best strategy to add a new feature or to repair a defect. Making such changes is **costly and risky** because it introduces inadvertent defects.
+**Spelunking is** the cost of **digging through the existing SW**, trying to determine the best place and the best strategy to add a new feature or to repair a defect. Making such changes is **costly and risky** because it introduces inadvertent defects.
 
 A carefully thoughtful architecture **mitigates these costs**. Separating the system into components, and isolating those components through stable interfaces **illuminates the pathways** for future features and **reduces the risks** of inadvertent breakage.
 
 #### KEEPING OPTIONS OPEN
 
-Keep software soft. The softness depends on how the components are formed and interconnected.
+Keep SW soft. The softness depends on how the components are formed and interconnected.
 
-The way you keep software soft is to leave as **many options open** as possible, for as **long** as possible. These options are the details that do not matter.
+The way you keep SW soft is to leave as **many options open** as possible, for as **long** as possible. These options are the details that do not matter.
 
 A **system** can be decomposed into **two major elements** – policy and details:
 
@@ -1206,7 +1206,7 @@ With well-done decoupling, it is possible to hot-swap layers and use cases in ru
 
 #### DUPLICATION
 
-Developers often fall into a duplication fear trap. Duplication is generally a bad thing in software.
+Developers often fall into a duplication fear trap. Duplication is generally a bad thing in SW.
 
 But there are different kinds of duplication:
 
@@ -1263,7 +1263,7 @@ No content.
 
 ### CHAPTER 17. BOUNDARIES: DRAWING LINES
 
-Architecture is the art of drawing lines that I call boundaries. Those boundaries **separate software elements** from one another, and restrict those on one side **from knowing** about those on **the other**. **Some** of those lines are **drawn** very **early** in the project's life – even before any code is written. **Others** are drawn **later**. Those that drawn early are drawn for the purposes of deferring decisions for as long as possible, and of keeping those decisions from polluting the core BRs.
+Architecture is the art of drawing lines that I call boundaries. Those boundaries **separate SW elements** from one another, and restrict those on one side **from knowing** about those on **the other**. **Some** of those lines are **drawn** very **early** in the project's life – even before any code is written. **Others** are drawn **later**. Those that drawn early are drawn for the purposes of deferring decisions for as long as possible, and of keeping those decisions from polluting the core BRs.
 
 Recall that the goal of an architect is to minimize the human resources required to build and maintain the system. What it is that saps this kind of people-power? Coupling – and especially coupling to premature decisions.
 
@@ -1619,7 +1619,7 @@ classDiagram
 
 The `Loan` module:
 
-- gathers together the software that is critical to the business;
+- gathers together the SW that is critical to the business;
 - **separated from other concerns** of the system;
 - stands alone as a **representative of the business**;
 - is **unsullied with concerns about DBs, UIs and third-party FWs**; it could serve the business in any system, irrespective of how that system was presented, or how the data was stored, or how the data is arranged; the **entity is pure business** and nothing else.
@@ -1712,7 +1712,7 @@ And you should respond: "Those are details that need not concern us at the momen
 **Different ideas** about architecture (hexagonal architecture, DCI, BCE, etc) vary in their details, but they are **very similar**:
 
 - they have the same objective which is the **separation of concerns**;
-- they achieve this separation by **dividing the software into layers**;
+- they achieve this separation by **dividing the SW into layers**;
 - each has at least one **layer for BRs**, and another layer **for system and user interfaces**.
 
 Each of these architectures produces systems that have the following **characteristics**:
@@ -1724,3 +1724,13 @@ Each of these architectures produces systems that have the following **character
 - **Independent of any external agency.** Your BRs do not know anything about the interfaces to the outside world.
 
 ![The clean architecture](./images/the-clean-architecture.png)
+
+#### THE DEPENDENCY RULE
+
+The circles in the figure above represent different areas of SW. The further in you go, the higher level the SW becomes. The outer circles are mechanisms, the inner – policies.
+
+The overriding rule that makes this architecture work is the **dependency rule**:
+
+> SC deps must point only inward, toward higher-level policies.
+
+**Nothing in an inner circle can know anything about and an outer circle.** In particular, the name of anything declared in an outer circler must not be mentioned by the SC in an inner circle. This includes functions, classes, variables, or any other named entities. **Outer circles do not impact inner circles.**
