@@ -1735,13 +1735,13 @@ The overriding rule that makes this architecture work is the **dependency rule**
 
 **Nothing in an inner circle can know anything about and an outer circle.** In particular, the name of anything declared in an outer circler must not be mentioned by the SC in an inner circle. This includes FNs, classes, variables, or any other named entities. **Outer circles do not impact inner circles.**
 
-#### ENTITIES
+##### ENTITIES
 
 **Entities encapsulate enterprise-wide CBRs.** An entity can be an object with methods, or it can be a set of DSs with FNs. It does not matter so long as the entities can be used by many different apps in the enterprise.
 
 If you do not have an enterprise and are wring just a single app, the these entities are business objects of the app. The encapsulate the **most general and high-level rules.** They are the least likely to change when something external changes (e. g., page navigation or security). **No operational change should affect the entity layer.**
 
-#### USE CASES
+##### USE CASES
 
 UCs layer **implements all the app-specific BRs** of the system. These UCs **orchestrate data flow to and from the entities**.
 
@@ -1752,7 +1752,7 @@ About interconnections of the UCs layer:
 - **changes to the operation might affect** the UCs layer;
 - if some UC details change, the UCs layer SC will certainly be changed.
 
-#### INTERFACE ADAPTERS
+##### INTERFACE ADAPTERS
 
 The interface adapters layer **converts data from the UCs-and-entities-convenient format, to the external-agencies-convenient format**, e. g. for a DB or a client.  
 It might wholly contain the MVC architecture of the GUI. Presenters, views, and controllers all belong to the interface adapters layer. The models are likely just DSs that are passed from the controllers to the UCs, and then back from the UCs to the presenters and views.
@@ -1761,7 +1761,7 @@ No code inward should know anything about where the data is stored (DB, files, e
 
 This layer **also converts data from the external-agencies-convenient format, to the UCs-and-entities-convenient format**.
 
-#### FRAMEWORKS AND DRIVERS
+##### FRAMEWORKS AND DRIVERS
 
 The outermost layer of the model is generally composed of frameworks and tools such as the DB. It includes little glue code to communicate to the next level inward.
 
@@ -1773,6 +1773,16 @@ The circles on the figure are intended to be schematic: there is no rule to have
 
 However, the dependency rule always applies. **SC deps always point inward. As you move inward, the level of abstraction and policy increases, the code becomes higher-level and more abstract.** The outermost level consists of lower-level concrete details.
 
-#### CROSSING BOUNDARIES
+##### CROSSING BOUNDARIES
 
 At the lower right of the diagram is an example of **how we cross the circle boundaries**. It shows the controllers and presenters communicating with the UCs in the next layer. Note the flow of control: it begins in the controller, moves through the UC, and finishes in the presenter. Note also the SC deps: each points inwards toward the UCs. **DIP** resolves this apparent contradiction.
+
+##### WHICH DATA CROSSES THE BOUNDARIES
+
+Typically, this data are simple DSs. This data can simply be arguments in FNs calls.
+
+It is important that **simple DSs should be passed through boundaries**. Do not cheat: **do not pass entity object or DB rows – we do not want the DSs to have any kind of dep** that violates the dependency rule.
+
+For example, many DB FWs return a convenient data format in response to a query. We might call it a "row structure". Passing it "as is" would violate the dependency rule because it would force an inner circle to know something about an outer circle.
+
+> Thus, when we pass data across a boundary, it is always in the form that is most convenient for the inner circle.
