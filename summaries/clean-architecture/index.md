@@ -49,7 +49,7 @@ SW systems are created for different domains and using various technologies. But
 
 Getting SW working is easy. Kids, students and juniors create programs. The code they produce may not be pretty, but it works because getting something to work – once – is easy.
 
-Gettings SW right is hard. It requires knowledge, skills that most programmers don't take time to develop. It requires high level of and discipline and didication that most programmers never dreamed they'd need. It takes a passion for the craft and the desire to be a professional.
+Gettings SW right is hard. It requires knowledge, skills that most programmers do not take time to develop. It requires high level of and discipline and didication that most programmers never dreamed they'd need. It takes a passion for the craft and the desire to be a professional.
 
 When your SW is done right:
 
@@ -156,7 +156,7 @@ Let's examine the extremes:
   - it's impossible to make changes when the requirements change;
   - therefore the program will become useless.
 - Extreme 2:
-  - a program doesn't work;
+  - a program does not work;
   - it is easy to make it work;
   - it is easy to keep it working as requirements change;
   - therefore the program will remain continually useful.
@@ -379,7 +379,7 @@ The general insight here is that generating the report involves two separate res
 - report data calculation;
 - presentation of the data into a web- and printer-friendly form.
 
-Having made this separation, we need to organize the source code dependencies to ensure that changes to one of those responsibilities don't cause changes in the other.
+Having made this separation, we need to organize the source code dependencies to ensure that changes to one of those responsibilities do not cause changes in the other.
 
 ![Partioning the processes into classes and separating the classes into components](./images/partioning-the-processes-into-classes-and-separating-the-classes-into-components.png)
 
@@ -445,7 +445,7 @@ The same is true for the `FinancialReportPresenter` and the two View interfaces.
 
 The `FinancialReportRequester` interface serves a different purpose. It protects the `FinancialReportController` from knowing too much about the internals of the Interactor. Without `FinancialReportRequester`, the Controller would have transitive dependencies on the `FinancialEntities`.
 
-Transitive dependencies are a violation of the general principle that SW entities shouldn't depend on things that they don't directly use.
+Transitive dependencies are a violation of the general principle that SW entities shouldn't depend on things that they do not directly use.
 
 Our first priority is to protect the Interactor from changes to the Controller.  
 We also want to protect the Controller from changes to the Interactor by hiding the internal of the interactor.
@@ -466,7 +466,7 @@ There are two «subtypes» of `License`: `PersonalLicense` and `BusinessLicense`
 
 ![License, and its derivatives, conform to LSP](./images/license-and-its-derivatives-conform-to-lsp.png)
 
-The design conforms to the LSP because the behavior of the `Billing` app doesn't depend, in any way, on which of the two subtypes it uses. Both of the subtypes are substitutable for the `License` type.
+The design conforms to the LSP because the behavior of the `Billing` app does not depend, in any way, on which of the two subtypes it uses. Both of the subtypes are substitutable for the `License` type.
 
 #### THE SQUARE / RECTANGLE PROBLEM
 
@@ -496,7 +496,7 @@ purplecab.com/driver/Bob
 ```
 
 A new taxi vendor «Acme» has been joined to our aggregator.  
-Their developers didn't read the aggregator API docs very carefully and used `dest` instead of `destination` in URL.  
+Their developers did not read the aggregator API docs very carefully and used `dest` instead of `destination` in URL.  
 Suppose, there is no way to fix this on their side.
 
 What would happen to our architecture? Obviously, we'd need to add a special case. Requests from «Acme» drivers should be processed using a different set of rules.
@@ -507,7 +507,7 @@ The simplest way to accomplish this goal is:
 if (driver.getDispatchUri().startsWith("acme.com")) { ... }
 ```
 
-No sane architect would add such a construct to the system that mentions `"acme.com"`. We don't want to have mysterious errors and other consequenses. If there will be another case for the «PurpleTaxi» vendor, will we add one more `if`?
+No sane architect would add such a construct to the system that mentions `"acme.com"`. We do not want to have mysterious errors and other consequenses. If there will be another case for the «PurpleTaxi» vendor, will we add one more `if`?
 
 More clean and scalable solution would be to add a configuration file like this:
 
@@ -712,7 +712,7 @@ Example:
 - we need to find affected components;
 - we just follow the dependency arrows backward (`View` and `Main`).
 
-When `Main` is released, it has no effect on any component of the system. They do not know about `Main` and they don't care when it changes. It means that the impact of releasing `Main` is relatively small.
+When `Main` is released, it has no effect on any component of the system. They do not know about `Main` and they do not care when it changes. It means that the impact of releasing `Main` is relatively small.
 
 The **process of building** the entire system is very **clear** because we **understand the dependencies** between its parts. It proceeds from the bottom up: first – `Entities`, last – `Main`.
 
@@ -1224,10 +1224,10 @@ Layers and use cases can be decoupled in different modes:
 
 - **Source level.**  
   We control the dependencies between source code modules. So that changes to one module do not force change or recompilation of others.  
-  Components execute in the same address space. They **communicate** with each other using simple **function calls**. There is a **single executable** loaded into computer memory. It is often called **monolithic** architecture.
+  Components execute in the same address space. They **communicate** with each other using simple **FN calls**. There is a **single executable** loaded into computer memory. It is often called **monolithic** architecture.
 - **Deployment (binary code) level.**  
   We control the dependencies between deployable units (`.jar`s, `.gem`s, `.dll`s, shared libs, etc). So that changes to the source code in one module does not force others to be rebuilt and redeployed.  
-  **Some** of the components **may still live in** the same address space, and communicate through function calls. **Other** components **may live in** other processes in the same processor and communicate through interprocess communications, sockets, or shared memory. Important: the decoupled **components are partitioned into independently deployable units** (`.jar`s, `.gem`s, `.dll`s, shared libs, etc).
+  **Some** of the components **may still live in** the same address space, and communicate through FN calls. **Other** components **may live in** other processes in the same processor and communicate through interprocess communications, sockets, or shared memory. Important: the decoupled **components are partitioned into independently deployable units** (`.jar`s, `.gem`s, `.dll`s, shared libs, etc).
 - **Service (execution unit) level.**  
   We reduce the dependencies down to the level of data structures and **communicate solely through network packets** such that **every execution unit is entirely independent of source and binary changes to others** (e. g., services or micro-services).
 
@@ -1298,7 +1298,7 @@ Other statements:
 - ~~the DB is an embodiment of the BRs~~;
 - the DB is a tool that the BRs can use indirectly;
 - the BRs does not need to know about the schema, or the QL, or other details about the DB;
-- **all** the BRs need **to know** is that **there is** a set of **functions** that can be used **to fetch or save data**; this allows us to put the DB behind an **interface**.
+- **all** the BRs need **to know** is that **there is** a set of **FNs** that can be used **to fetch or save data**; this allows us to put the DB behind an **interface**.
 
 ```mermaid
 graph TD
@@ -1339,7 +1339,7 @@ About the diagram:
 
 What the system is? People often see the GUI and think that the GUI is the system. They define the a in terms of the GUI, so they believe that they should see the GUI start working immediately. They fail to realize a critically important principle: **the IO is irrelevant**.
 
-We often see about the behavior of the system in terms of the behavior of the IO. Your experience is dominated by the interface: the screen, the mouse, the buttons and the sounds. But there is a model behind that interface – a sophisticated set of data structures and functions – driving it. More importantly, that model does not need the interface. It would happily execute its duties, modelling all the events in the game without the game ever being displayed on the screen. **The GUI does not matter to the model – the BRs.**
+We often see about the behavior of the system in terms of the behavior of the IO. Your experience is dominated by the interface: the screen, the mouse, the buttons and the sounds. But there is a model behind that interface – a sophisticated set of data structures and FNs – driving it. More importantly, that model does not need the interface. It would happily execute its duties, modelling all the events in the game without the game ever being displayed on the screen. **The GUI does not matter to the model – the BRs.**
 
 ```mermaid
 graph BT
@@ -1424,29 +1424,29 @@ Boundaries, separating components come in different forms.
 
 #### BOUNDARY CROSSING
 
-At runtime, boundary crossing is just a function calling a function on the other side and passing along some data.
+At runtime, boundary crossing is just a FN calling a FN on the other side and passing along some data.
 The trick to creating an appropriate boundary is to manage the source code deps.
 
 #### THE DREADED MONOLITH
 
 Monolith:
 
-- it is simply a **disciplined segregation** of functions and data **within a single processor and a single address space**;
+- it is simply a **disciplined segregation** of FNs and data **within a single processor and a single address space**;
 - the **most common** architecture;
 - uses the **source-level decoupling mode**;
 - has no strict physical representation;
 - from a deployment point of view it is most commonly a single executable file, like `.jar` or `.exe`;
 - almost always depend on some kind of dynamic polymorphism to manage their internal deps;
-- **the simplest boundary crossing is** a function call from a low-level client to higher-level service;
+- **the simplest boundary crossing is** a FN call from a low-level client to higher-level service;
 - **when a high-level client needs to call a lower-level service**, dynamic polymorphism is used to invert the dependency against the flow of control; the runtime dep opposes the compile-time dep;
 - high-level components **remain independent** of lower-level details;
-- **communitactions** between components are very **fast and cheap**; they are typically **just functions calls**;
+- **communitactions** between components are very **fast and cheap**; they are typically **just FNs calls**;
 
 #### DEPLOYMENT COMPONENTS
 
-DC are almost the same as monoliths. The functions generally all exist **in the same processor and address space**. The strategies for segregating the components and managing their deps are the same.
+DC are almost the same as monoliths. The FNs generally all exist **in the same processor and address space**. The strategies for segregating the components and managing their deps are the same.
 
-As with monoliths, **communications across DC boundaries** are just function calls and, therefore, **are cheap**.
+As with monoliths, **communications across DC boundaries** are just FN calls and, therefore, **are cheap**.
 
 #### THREADS
 
@@ -1470,7 +1470,7 @@ Both monoliths and deployment component can use threads. Threads **are not archi
 - do **not depend on their physical location**;
 - two communicating services may, or may not operate in the same physical processor or multicore;
 - **communicate over the network**;
-- communications across service boundaries are very slow compared to function calls; latency is acceptable;
+- communications across service boundaries are very slow compared to FN calls; latency is acceptable;
 - lower-level services should "**plug in**" to higher-level services;
 - **higher-level** services should **contain no** specific physical **knowledge** (URI, etc) **about** any **lower-level** service;
 
@@ -1534,7 +1534,7 @@ function encrypt() {
 }
 ```
 
-The higher-level `encrypt` function depends on lower-level `readChar` and `writeChar` functions.
+The higher-level `encrypt` FN depends on lower-level `readChar` and `writeChar` FNs.
 
 ##### A better architecture
 
@@ -1601,7 +1601,7 @@ An entity:
 
 - is an object that **embodies a small set of CBRs operating on CBD**;
 - **either contains CBD or has easy access to it**;
-- has **interface** of the entity consists of the **functions that implement the CBRs that operate on the CBD**.
+- has **interface** of the entity consists of the **FNs that implement the CBRs that operate on the CBD**.
 
 ```mermaid
 ---
@@ -1637,7 +1637,7 @@ About UCs:
 - UCs contain BRs that specify **how and when the CBRs within the entities are invoked**. UCs control the dance of the entities.
 - UCs **do not describe how the system appears to the user**. UCs do not describe the UI other than to informally specify the data coming in from that UI, and the data going back through that UI. From a UC it is impossible to tell whether the app is delivered on the web, or on a thick client, or on a console, or is a pure service.
 - Describe the app-specific BRs that govern the interaction between the users and the entities. **How the data gets in and out of the system is irrelevant to the UCs.**
-- A UC is an **object**. Each UC **has functions implementing app-specific BRs**. It also **has data elements** that include **input data, output data, and references to the appropriate entities** with which it interacts;
+- A UC is an **object**. Each UC **has FNs implementing app-specific BRs**. It also **has data elements** that include **input data, output data, and references to the appropriate entities** with which it interacts;
 - Entities have no knowledge of the UCs that control them – DIP in action. **High-level entities know nothing about low-level UCs. Instead, UCs know about entities.**
 
 Examples of UCs:
@@ -1733,4 +1733,10 @@ The overriding rule that makes this architecture work is the **dependency rule**
 
 > SC deps must point only inward, toward higher-level policies.
 
-**Nothing in an inner circle can know anything about and an outer circle.** In particular, the name of anything declared in an outer circler must not be mentioned by the SC in an inner circle. This includes functions, classes, variables, or any other named entities. **Outer circles do not impact inner circles.**
+**Nothing in an inner circle can know anything about and an outer circle.** In particular, the name of anything declared in an outer circler must not be mentioned by the SC in an inner circle. This includes FNs, classes, variables, or any other named entities. **Outer circles do not impact inner circles.**
+
+#### ENTITIES
+
+**Entities encapsulate enterprise-wide CBRs.** An entity can be an object with methods, or it can be a set of DSs with FNs. It does not matter so long as the entities can be used by many different apps in the enterprise.
+
+If you do not have an enterprise and are wring just a single app, the these entities are business objects of the app. The encapsulate the **most general and high-level rules.** They are the least likely to change when something external changes (e. g., page navigation or security). **No operational change should affect the entity layer.**
