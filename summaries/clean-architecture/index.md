@@ -1790,3 +1790,8 @@ For example, many DB FWs return a convenient data format in response to a query.
 #### A TYPICAL SCENARIO
 
 No content.
+
+#### CONCLUSION
+
+Conforming to these simple rules is not difficult, and it will save you a lot of headaches going forward.
+When any of the external parts of the system becomes obsolete (the DB, the web framework, etc), you **can replace those obsolete elements with a minimum of fuss**.
