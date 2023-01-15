@@ -1760,3 +1760,9 @@ It might wholly contain the MVC architecture of the GUI. Presenters, views, and 
 No code inward should know anything about where the data is stored (DB, files, etc), what is the IO device (web, console, etc).
 
 This layer **also converts data from the external-agencies-convenient format, to the UCs-and-entities-convenient format**.
+
+#### FRAMEWORKS AND DRIVERS
+
+The outermost layer of the model is generally composed of frameworks and tools such as the DB. It includes little glue code to communicate to the next level inward.
+
+This layer is where all the details go: the web, the DB. We keep these things at the outermost position where they can do little harm.
