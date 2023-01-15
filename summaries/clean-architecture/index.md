@@ -1041,7 +1041,7 @@ The **impact** of architecture on operation is **less** than on development, dep
 
 The architecture should make the **operation appartent** and **elevate**:
 
-- the use cases,
+- the UC,
 - the features,
 - the required behavior
 
@@ -1101,18 +1101,18 @@ No content.
 
 As we previously stated, a good architecture must support:
 
-- use cases and operation;
+- UCs and operation;
 - maintenance;
 - development;
 - deployment.
 
 #### USE CASES
 
-The **first priority** of the architecture is to **support the intent** of the system. If the system is a shopping cart app, then the architecture must support shopping cart use cases.
+The **first priority** of the architecture is to **support the intent** of the system. If the system is a shopping cart app, then the architecture must support shopping cart UCs.
 
 Architecture **does not manage behavior**. Instead, it **supports behavior by clarifying and exposing that behavior** so that the intent of the system is visible at the architectural level.
 
-A shopping cart app should look like a shopping cart app. Its **use cases should be plainly visible** within the structure of the system. Developers should not have to hunt for behaviors. The behaviors should be first-class elements visible at the top level of the system. Those elements should be modules that have prominent positions within the architecture and they should have names that clearly describe their function.
+A shopping cart app should look like a shopping cart app. Its **UCs should be plainly visible** within the structure of the system. Developers should not have to hunt for behaviors. The behaviors should be first-class elements visible at the top level of the system. Those elements should be modules that have prominent positions within the architecture and they should have names that clearly describe their function.
 
 Chapter 21 «Screaming architecture» will make this point much clearer.
 
@@ -1148,13 +1148,13 @@ Again, this is achieved through the proper **partitioning** and isolation of the
 
 A good architecture **balances all of those concerns** with a component structure that mutually satisfies them all.
 
-Achieving this balance is pretty hard. The problem is that all the **use cases**, the operational constrains and the deployment **requirements** are **unknown or dynamic** as the system moves through its life cycle. The goals we must meet are indistinct and inconstant.
+Achieving this balance is pretty hard. The problem is that all the UCs, the operational constrains and the deployment **requirements** are **unknown or dynamic** as the system moves through its life cycle. The goals we must meet are indistinct and inconstant.
 
 Architecture principles help balance those concerns even when you do not have a clear picture. They help partition our system into well-isolated components that allow to leave as many options as possible, for as long as possible, making the system easy to change.
 
 #### DECOUPLING LAYERS
 
-The architect wants the structure that supports all the necessary use cases. He does not know what they are, but he knows the basic intent of the system. It is a shopping cart / bill of materials / orders processing. So the archictect can employ SRP and CCP to **separate** those things that change for different reasons and **collect** those things that change for the same reasons – **giving the context of the intent** of the system.
+The architect wants the structure that supports all the necessary UCs. He does not know what they are, but he knows the basic intent of the system. It is a shopping cart / bill of materials / orders processing. So the archictect can employ SRP and CCP to **separate** those things that change for different reasons and **collect** those things that change for the same reasons – **giving the context of the intent** of the system.
 
 For example, GUI and BRs change for different reasons. Separate them so that they can be independently changed.
 
@@ -1166,9 +1166,9 @@ Thus we find the system divided into **decoupled horisontal layers** – GUI, ap
 
 #### DECOUPLING USE CASES
 
-The **use cases themselves** also change for different reasons. «Adding an order» and «deleting an order» are two use cases that change at different rates and for different reasons. Use cases are a very natural way to **divide** the system.
+The **UCs themselves** also change for different reasons. «Adding an order» and «deleting an order» are two UCs that change at different rates and for different reasons. UCs are a very natural way to **divide** the system.
 
-At the same time, **use cases** are narrow **vertical slices** that **cut through the horizontal layers** of the system. Each use case uses some UI, app-specific BRs, app-independed BRs, DB functionality. Thus, divide the system into horizontal layers and vertial use cases.
+At the same time, **UCs** are narrow **vertical slices** that **cut through the horizontal layers** of the system. Each UC uses some UI, app-specific BRs, app-independed BRs, DB functionality. Thus, divide the system into horizontal layers and vertial UCs.
 
 |                     | Add an order | Remove an order | Edit an order | List orders |
 | ------------------- | ------------ | --------------- | ------------- | ----------- |
@@ -1179,7 +1179,7 @@ At the same time, **use cases** are narrow **vertical slices** that **cut throug
 
 To achieve this decoupling, we **separate** the **«add-order» UI** from the **«delete order» UI**, etc.
 
-**You can add new use cases without interferring with old ones.** Each use case uses a different aspect of the UI and DB, then adding new use cases will unlikely affect older ones.
+**You can add new UCs without interferring with old ones.** Each UC uses a different aspect of the UI and DB, then adding new UCs will unlikely affect older ones.
 
 #### DECOUPLING MODE
 
@@ -1196,13 +1196,13 @@ It is not about that SOA is the best possible architecture. The point is that **
 When **components decoupled**, the **interference** between teams is **mitigated**.
 
 - The BRs do not know about the UI. Good. Thus the UI team does not affect the BRs team.
-- The use cases are docoupled from one another. Good. Thus the team focusing on the «add order» use case will not interfere with the team focusing on the «delete order» use case.
+- The UCs are docoupled from one another. Good. Thus the team focusing on the «add order» UC will not interfere with the team focusing on the «delete order» UC.
 
-Layers and use cases are decoupled -> architecture supports teams organization, irrespective of whether they are organized as feature teams, component teams, layer teams, etc.
+Layers and UCs are decoupled -> architecture supports teams organization, irrespective of whether they are organized as feature teams, component teams, layer teams, etc.
 
 #### INDEPENDENT DEPLOYABILITY
 
-With well-done decoupling, it is possible to hot-swap layers and use cases in running systems. Adding a new case should be as easy as adding a new source code file.
+With well-done decoupling, it is possible to hot-swap layers and UCs in running systems. Adding a new case should be as easy as adding a new source code file.
 
 #### DUPLICATION
 
@@ -1220,7 +1220,7 @@ How to resolve it:
 
 #### DECOUPLING MODES (AGAIN)
 
-Layers and use cases can be decoupled in different modes:
+Layers and UCs can be decoupled in different modes:
 
 - **Source level.**  
   We control the dependencies between source code modules. So that changes to one module do not force change or recompilation of others.  
@@ -1267,7 +1267,7 @@ Architecture is the art of drawing lines that I call boundaries. Those boundarie
 
 Recall that the goal of an architect is to minimize the human resources required to build and maintain the system. What it is that saps this kind of people-power? Coupling – and especially coupling to premature decisions.
 
-What kind of decisions are premature? Decisions that have nothing to do with the business requirements – the use cases – of the system. These includes decisions about FWs, DBs, etc.
+What kind of decisions are premature? Decisions that have nothing to do with the business requirements – the UCs – of the system. These includes decisions about FWs, DBs, etc.
 
 A **good** architecture:
 
@@ -1666,15 +1666,15 @@ So what does the architecture of your app scream? When you look at the top level
 
 #### THE THEME OF AN ARCHITECTURE
 
-An app architecture should **scream about the use cases** of the app.
+An app architecture should **scream about the UCs** of the app.
 
-Architectures are **not about FWs**. They should not be supplied by FWs. FWs are tools to be used, not architectures to be conformed to. **If your architecture is based on FWs, then it cannot be based on your use cases.**
+Architectures are **not about FWs**. They should not be supplied by FWs. FWs are tools to be used, not architectures to be conformed to. **If your architecture is based on FWs, then it cannot be based on your UCs.**
 
 #### THE PURPOSE OF AN ARCHITECTURE
 
-Good architectures are centered on use cases so that architects can safely describe the structures that support those use cases with **no commiting to FWs, tools, and other environments issues**. The first concern of an architect is to make sure that the building is usable – not to ensure that the house is made of bricks. Yes, using bricks do matter, but they should not be in the center of the architecture.
+Good architectures are centered on UCs so that architects can safely describe the structures that support those UCs with **no commiting to FWs, tools, and other environments issues**. The first concern of an architect is to make sure that the building is usable – not to ensure that the house is made of bricks. Yes, using bricks do matter, but they should not be in the center of the architecture.
 
-A good architecture allows decisions about FWs, etc to be deferred, revisited and changed. FWs are options to be left open. A good architecture **emphasizes the use cases and decouples them from peripheral concerns**.
+A good architecture allows decisions about FWs, etc to be deferred, revisited and changed. FWs are options to be left open. A good architecture **emphasizes the UCs and decouples them from peripheral concerns**.
 
 #### BUT WHAT ABOUT THE WEB?
 
@@ -1690,20 +1690,20 @@ Ask yourself:
 
 - **How** you should **use** it?
 - **How** you should **protect yourself** from it?
-- **How** you can **preserve the use-case emphasis** of your architecture?
+- **How** you can **preserve the UC-emphasis** of your architecture?
 - What strategy you should develop to **prevent the FW from taking over your architecture**?
 
 #### TESTABLE ARCHITECTURES
 
-If your architecture is all about use cases, and if you keep your FWs at arm's length, then you are able to **unit-test** all those **use cases without any FWs in place**:
+If your architecture is all about UCs, and if you keep your FWs at arm's length, then you are able to **unit-test** all those **UCs without any FWs in place**:
 
-For your unit tests, your do not need the web server running or the DB connected. Your entity object should be plain old objects that have no deps on FWs, or DBs or other complications. Your use case objects should coordinate your entity objects.
+For your unit tests, your do not need the web server running or the DB connected. Your entity object should be plain old objects that have no deps on FWs, or DBs or other complications. Your UC objects should coordinate your entity objects.
 
 #### CONCLUSION
 
 Your architecture should **tell readers about the system, not about the FWs used** in the system.
 
-When new programmers look at an repo, their **first impression** should be "Oh this is a health care system.". Those new programmers should **be able to learn all the use cases** of the system, yet still no know how the system is delivered.  
+When new programmers look at an repo, their **first impression** should be "Oh this is a health care system.". Those new programmers should **be able to learn all the UCs** of the system, yet still no know how the system is delivered.  
 They may say: "We see some things like models – but where are the views and controllers?".
 And you should respond: "Those are details that need not concern us at the moment. We will decide about them later.".
 
