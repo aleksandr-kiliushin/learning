@@ -1766,3 +1766,9 @@ This layer **also converts data from the external-agencies-convenient format, to
 The outermost layer of the model is generally composed of frameworks and tools such as the DB. It includes little glue code to communicate to the next level inward.
 
 This layer is where all the details go: the web, the DB. We keep these things at the outermost position where they can do little harm.
+
+#### ONLY FOUR CIRCLES?
+
+The circles on the figure are intended to be schematic: there is no rule to have just 4 one, **you can add more layers**.
+
+However, the dependency rule always applies. **SC deps always point inward. As you move inward, the level of abstraction and policy increases, the code becomes higher-level and more abstract.** The outermost level consists of lower-level concrete details.
