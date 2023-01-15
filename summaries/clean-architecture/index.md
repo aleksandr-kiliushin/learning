@@ -1772,3 +1772,7 @@ This layer is where all the details go: the web, the DB. We keep these things at
 The circles on the figure are intended to be schematic: there is no rule to have just 4 one, **you can add more layers**.
 
 However, the dependency rule always applies. **SC deps always point inward. As you move inward, the level of abstraction and policy increases, the code becomes higher-level and more abstract.** The outermost level consists of lower-level concrete details.
+
+#### CROSSING BOUNDARIES
+
+At the lower right of the diagram is an example of **how we cross the circle boundaries**. It shows the controllers and presenters communicating with the UCs in the next layer. Note the flow of control: it begins in the controller, moves through the UC, and finishes in the presenter. Note also the SC deps: each points inwards toward the UCs. **DIP** resolves this apparent contradiction.
