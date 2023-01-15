@@ -1751,3 +1751,12 @@ About interconnections of the UCs layer:
 - UCs layer **is not affected by changes made in UI, DB, frameworks**; the UCs layer is isolated from such concerns;
 - **changes to the operation might affect** the UCs layer;
 - if some UC details change, the UCs layer SC will certainly be changed.
+
+#### INTERFACE ADAPTERS
+
+The interface adapters layer **converts data from the UCs-and-entities-convenient format, to the external-agencies-convenient format**, e. g. for a DB or a client.  
+It might wholly contain the MVC architecture of the GUI. Presenters, views, and controllers all belong to the interface adapters layer. The models are likely just DSs that are passed from the controllers to the UCs, and then back from the UCs to the presenters and views.
+
+No code inward should know anything about where the data is stored (DB, files, etc), what is the IO device (web, console, etc).
+
+This layer **also converts data from the external-agencies-convenient format, to the UCs-and-entities-convenient format**.
