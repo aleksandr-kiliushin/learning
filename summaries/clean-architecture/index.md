@@ -1786,3 +1786,7 @@ It is important that **simple DSs should be passed through boundaries**. Do not 
 For example, many DB FWs return a convenient data format in response to a query. We might call it a "row structure". Passing it "as is" would violate the dependency rule because it would force an inner circle to know something about an outer circle.
 
 > Thus, when we pass data across a boundary, it is always in the form that is most convenient for the inner circle.
+
+#### A TYPICAL SCENARIO
+
+No content.
