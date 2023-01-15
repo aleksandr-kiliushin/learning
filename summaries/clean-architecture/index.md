@@ -1740,3 +1740,14 @@ The overriding rule that makes this architecture work is the **dependency rule**
 **Entities encapsulate enterprise-wide CBRs.** An entity can be an object with methods, or it can be a set of DSs with FNs. It does not matter so long as the entities can be used by many different apps in the enterprise.
 
 If you do not have an enterprise and are wring just a single app, the these entities are business objects of the app. The encapsulate the **most general and high-level rules.** They are the least likely to change when something external changes (e. g., page navigation or security). **No operational change should affect the entity layer.**
+
+#### USE CASES
+
+UCs layer **implements all the app-specific BRs** of the system. These UCs **orchestrate data flow to and from the entities**.
+
+About interconnections of the UCs layer:
+
+- changes in UCs layer **do not affect entities**;
+- UCs layer **is not affected by changes made in UI, DB, frameworks**; the UCs layer is isolated from such concerns;
+- **changes to the operation might affect** the UCs layer;
+- if some UC details change, the UCs layer SC will certainly be changed.
