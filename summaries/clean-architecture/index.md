@@ -1802,7 +1802,7 @@ No content.
 
 #### THE HUMBLE OBJECT PATTERN
 
-The _Humble object_ pattern is a pattern that **separates behaviors that is hard to test from behaviors that is easy to test**.
+The _Humble Object_ pattern is a pattern that **separates behaviors that is hard to test from behaviors that is easy to test**.
 
 The ideas is simple: **split the behavior into two modules**.
 
@@ -1810,3 +1810,17 @@ The ideas is simple: **split the behavior into two modules**.
 - **The other** module contains all the **testable behaviors** that were stripped out of the humble object.
 
 For example, GUIs are hard to unit test because it is very difficult to write tests that can see the screen and check that the appropriate elements are displayed there. However, most of the behavior of the GUI is, in fact, easy to test. Using the Humble object pattern, we can separate these two kinds of behaviors into two different modules called the Presenter and the View.
+
+#### PRESENTERS AND VIEWS
+
+**The View is a humble object that is hard to test.** The code in this object is as **simple** as possible. It moves data into the GUI but **does not process that data**.
+
+**The Presenter is the testable object.** Its job is to **accept the data** from the app **and format it for presentation** so that the View can simply add it to the screen.
+
+Examples:
+
+- If the app wants a date displayed in a field, it will hand the Presenter a `Date` object. The Presenter will then format that data into an appropriate string and place it in a simple DS called the View Model, where the View can find it.
+- If the app wants to display money on the screen, it might pass a `Currency` object to the Presenter. The Presenter will format that object with the appropriate decimal places and currency markers, creating a string, that it can place in the View Model. If that currency value should be turned red if it is negative, then a simple boolean flag in the View model will be set appropriately.
+- Every button in the screen will have a name. That name will be a string in the View Model, placed there by the Presenter. If those buttons should be grayed out, the Presenter will set an appropriate boolean flag in the View model. Every menu item name is a string in the View model, loaded by the Presenter. The names for every radio button, checkbox, and text field are loaded, by the Presenter, into tables of properly formatted strings in the View model.
+
+Everything that appears on the screen, and that the app has some kind of control over, is represented in the View Model as a string, or a boolean, or an enum. The View only loads the data from the View Model into the screen. Thus View is humble.
