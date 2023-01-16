@@ -1851,3 +1851,7 @@ ORMs reside in the DB layer. ORMs form another kind of Humble Object boundary be
 If an app consumes or provides services, the Humble Object pattern creates a service boundary.
 
 The app loads data into simple DSs and then passes them across the boundary to modules that properly format the data and send it to external services. On the input side, the input services will receive data from the service interface and format it into a simple DS that can be used by the app. That DS is then passed across the service boundary.
+
+#### CONCLUSION
+
+At each architectural boundary, we are likely to find the Humble Object pattern lurking somewhere nearby. The communication across this boundary will almost always involve some kind of simple DS, and the boundary will frequently divide hard- and easy-to-test parts. The use of this pattern at architectural boundaries vastly increases the testability of the entire system.
