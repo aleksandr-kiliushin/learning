@@ -1845,3 +1845,9 @@ There is no such thing as an ORM because objects are not DSs, at least from the 
 A DS, in contrast, is a set of public data variables that have no implied behavior. ORMs would be better named "data mappers", because they load data into DSs from DBs.
 
 ORMs reside in the DB layer. ORMs form another kind of Humble Object boundary between the gateway interfaces and the DB.
+
+#### SERVICE LISTENERS
+
+If an app consumes or provides services, the Humble Object pattern creates a service boundary.
+
+The app loads data into simple DSs and then passes them across the boundary to modules that properly format the data and send it to external services. On the input side, the input services will receive data from the service interface and format it into a simple DS that can be used by the app. That DS is then passed across the service boundary.
