@@ -1828,3 +1828,12 @@ Everything that appears on the screen, and that the app has some kind of control
 #### TESTING AND ARCHITECTURE
 
 Testability is an attribute of a good architecture. The Humble Object pattern is a good example, because the separation of the behaviors into testable and non-testable parts often defines an architectural boundary. The Presenter / View boundary is one of those boundaries, but there are many others.
+
+#### DATABASE GATEWAYS
+
+Between the UC interactors and the DB are the DB gateways. These gateways are polymorphic interfaces that contain methods for every create, read, update, or delete operation performed by the app on the DB.
+
+Example:  
+If the app needs to know the last names of all the users who logged in yesterday, then the `UserGateway` interface will have a method named `getLastNameOfUsersWhoLoggedInAfter` that takes a `Date` as its argument and returns a list of last names.
+
+We do not allow SQL in the UCs layer; instead, we use gateway interfaces that have appropriate methods. Those gateways are implemented by modules in the DB layer. That implementation is the humble object. It simply uses SQL, or whatever the interface to the DB is, to access the data required by each of the methods. The interactors, in contrast, are not humble because they encapsulate app-specific BRs. Although they are not humble, those interactors are testable, because the gateways can be replaced with appropriate stubs and test doubles.
