@@ -1795,3 +1795,18 @@ No content.
 
 Conforming to these simple rules is not difficult, and it will save you a lot of headaches going forward.
 When any of the external parts of the system becomes obsolete (the DB, the web framework, etc), you **can replace those obsolete elements with a minimum of fuss**.
+
+### CHAPTER 23. PRESENTERS AND HUMBLE OBJECTS
+
+No content.
+
+#### THE HUMBLE OBJECT PATTERN
+
+The _Humble object_ pattern is a pattern that **separates behaviors that is hard to test from behaviors that is easy to test**.
+
+The ideas is simple: **split the behavior into two modules**.
+
+- **One** module **is humble**. It contains all the **hard-to-test behaviors** stripped down to their barest essense.
+- **The other** module contains all the **testable behaviors** that were stripped out of the humble object.
+
+For example, GUIs are hard to unit test because it is very difficult to write tests that can see the screen and check that the appropriate elements are displayed there. However, most of the behavior of the GUI is, in fact, easy to test. Using the Humble object pattern, we can separate these two kinds of behaviors into two different modules called the Presenter and the View.
