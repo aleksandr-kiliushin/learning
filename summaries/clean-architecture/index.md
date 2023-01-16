@@ -1824,3 +1824,7 @@ Examples:
 - Every button in the screen will have a name. That name will be a string in the View Model, placed there by the Presenter. If those buttons should be grayed out, the Presenter will set an appropriate boolean flag in the View model. Every menu item name is a string in the View model, loaded by the Presenter. The names for every radio button, checkbox, and text field are loaded, by the Presenter, into tables of properly formatted strings in the View model.
 
 Everything that appears on the screen, and that the app has some kind of control over, is represented in the View Model as a string, or a boolean, or an enum. The View only loads the data from the View Model into the screen. Thus View is humble.
+
+#### TESTING AND ARCHITECTURE
+
+Testability is an attribute of a good architecture. The Humble Object pattern is a good example, because the separation of the behaviors into testable and non-testable parts often defines an architectural boundary. The Presenter / View boundary is one of those boundaries, but there are many others.
