@@ -1837,3 +1837,11 @@ Example:
 If the app needs to know the last names of all the users who logged in yesterday, then the `UserGateway` interface will have a method named `getLastNameOfUsersWhoLoggedInAfter` that takes a `Date` as its argument and returns a list of last names.
 
 We do not allow SQL in the UCs layer; instead, we use gateway interfaces that have appropriate methods. Those gateways are implemented by modules in the DB layer. That implementation is the humble object. It simply uses SQL, or whatever the interface to the DB is, to access the data required by each of the methods. The interactors, in contrast, are not humble because they encapsulate app-specific BRs. Although they are not humble, those interactors are testable, because the gateways can be replaced with appropriate stubs and test doubles.
+
+#### DATA MAPPERS
+
+There is no such thing as an ORM because objects are not DSs, at least from the users' point of view. The users of an object cannot see the data, since it is all private. Those users only the public methods of that object. So, from the user's point of view, an object is simply a set of operations.
+
+A DS, in contrast, is a set of public data variables that have no implied behavior. ORMs would be better named "data mappers", because they load data into DSs from DBs.
+
+ORMs reside in the DB layer. ORMs form another kind of Humble Object boundary between the gateway interfaces and the DB.
