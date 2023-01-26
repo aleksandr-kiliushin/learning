@@ -1866,3 +1866,10 @@ Full-fledged architectural boundaries are expensive. They require:
 - maintenance.
 
 Creating and maintaining such a full-fledged boundary you are might even _not gonna need it_ is expensive. In that case, you may implement a partial boundary.
+
+#### SKIP THE LAST STEP
+
+One way to construct a partial boundary is to do all the work necessary to create independently compilable and deployable components, and then simply keep them together in the same component.
+
+Partial boundary requires the same amount of code and preparatory design as a full boundary. However, it does not require the administration of multiple components.
+No version number tracking, no release management burden.
