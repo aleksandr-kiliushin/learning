@@ -1855,3 +1855,14 @@ The app loads data into simple DSs and then passes them across the boundary to m
 #### CONCLUSION
 
 At each architectural boundary, we are likely to find the Humble Object pattern lurking somewhere nearby. The communication across this boundary will almost always involve some kind of simple DS, and the boundary will frequently divide hard- and easy-to-test parts. The use of this pattern at architectural boundaries vastly increases the testability of the entire system.
+
+### CHAPTER 24. PARTIAL BOUNDARIES
+
+Full-fledged architectural boundaries are expensive. They require:
+
+- reciprocal polymorphic `Boundary` interfaces;
+- having `Input` and `Output` DSs;
+- dependency management necessary to isolate the two sides;
+- maintenance.
+
+Creating and maintaining such a full-fledged boundary you are might even _not gonna need it_ is expensive. In that case, you may implement a partial boundary.
