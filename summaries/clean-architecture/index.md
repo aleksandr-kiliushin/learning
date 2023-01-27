@@ -1967,3 +1967,9 @@ Both streams meet at the top at `GameRules`, which is the ultimate processor of 
 As systems become more complex, the component structure may split into many such streams.
 
 ![Architectural boundaries axes with more streams](./images/architectural-boundaries-axes-with-more-streams.png)
+
+#### SPLITTING THE STREAMS
+
+Not all the streams eventually meet at the top in a single component, the structure might be more complex.
+
+![The higher level policy manages the player](./images/the-higher-level-policy-manages-the-player.png)
