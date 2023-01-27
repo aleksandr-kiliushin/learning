@@ -1961,3 +1961,9 @@ The flow of data is divided into **two streams**:
 - the right one is concerned with data persistence.
 
 Both streams meet at the top at `GameRules`, which is the ultimate processor of the data that goes through both streams.
+
+#### CROSSING THE STREAMS
+
+As systems become more complex, the component structure may split into many such streams.
+
+![Architectural boundaries axes with more streams](./images/architectural-boundaries-axes-with-more-streams.png)
