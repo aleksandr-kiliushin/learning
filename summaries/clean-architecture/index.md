@@ -1901,3 +1901,11 @@ graph LR
 We have seen three simple ways to partially implement an architectural boundary. Each of them has its pros and cons.
 
 It is an architect who should decide where an architectural boundary might one day exist, and whether to fully or partially implement that boundary.
+
+### CHAPTER 25. LAYERS AND BOUNDARIES
+
+It is easy to think of systems as being composed of three components: UI, BRs, and DB. For most systems, there are more components.
+
+#### HUNT THE WUMPUS
+
+No content.
