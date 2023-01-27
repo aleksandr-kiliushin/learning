@@ -1909,3 +1909,55 @@ It is easy to think of systems as being composed of three components: UI, BRs, a
 #### HUNT THE WUMPUS
 
 No content.
+
+#### CLEAN ARCHITECTURE?
+
+We can easily apply the clean architecture approach, with UCs, boundaries, entities, and corresponding DSs. But have we really found all the significant architectural boundaries?
+
+For example, language is not the only axis of change for UI. We also might want to vary the mechanism by which we communicate the text (console, SMS, a chat app, etc).
+
+That means that there is **a potential architectural boundary defined by this axis of change**. We should construct an API that crosses that boundary and isolates the language from the communications mechanism.
+
+![Architectural boundaries axes](./images/architectural-boundaries-axes.png)
+
+The dashed outlines indicate abstract components that defined an API that is implemented by the components above or below them. For example, the _Text delivery_ API is implemented in _SMS_ and _Console_.
+
+**The API is defined and owned by the user, rather by the implementer:**
+
+- `GameRules` communicates with `Language` through an API that `GameRules` defines and `Language` implements;
+- `Language` communicates with `TextDelivery` using an API that `Language` defines but `TextDelivery` implements;
+
+If we look inside `GamesRules`, we would find:
+
+- polymorphic `Boundary` interfaces used by `GameRules` and implemented by `Language`;
+- polymorphic `Boundary` interfaces used by `Language` and implemented by code inside `GameRules`;
+
+If we look inside `Language`, we would find the same:
+
+- polymorphic `Boundary` interfaces implemented by `TextDelivery`;
+- polymorphic `Boundary` interfaces used by `TextDelivery` and implemented by `Language`;
+
+In each case, the **API** defined by those `Boundary` interfaces **is owned by the upstream component**.
+
+**The variations**, such as `English`, `SMS`, and `CloudData` **are provided by polymorphic interfaces** in the abstract API component, **and implemented by the concrete components** that serve them. For example, we would expect polymorphic interfaces defined in `Language` to be implemented by `English` and `Spanish`.
+
+We can simplify the diagram by eliminating all the variations and focusing on just the API components.
+
+![Architectural boundaries axes simplified](./images/architectural-boundaries-axes-simplified.png)
+
+Note that all the arrows point up. `GameRules` contains the highest-level policies, so it is placed at the top.
+
+Consider the **direction of information flow**:
+
+- all **input comes from the user** through the `TextDelivery` component at the **bottom left**;
+- that info **raises** through the `Language` component, **getting translated** into commands to the `GameRules`;
+- `GameRules` processes the user input and sends appropriate data **down to `DataStorage` at the lower right**;
+- `GameRules` then sends output back down to `Language`, which translates the API back to the appropriate language;
+- then the info is delivered to the user through `TextDelivery`.
+
+The flow of data is divided into **two streams**:
+
+- the left one is concerned with communicating with the user;
+- the right one is concerned with data persistence.
+
+Both streams meet at the top at `GameRules`, which is the ultimate processor of the data that goes through both streams.
