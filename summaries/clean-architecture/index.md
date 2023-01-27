@@ -1873,3 +1873,13 @@ One way to construct a partial boundary is to do all the work necessary to creat
 
 Partial boundary requires the same amount of code and preparatory design as a full boundary. However, it does not require the administration of multiple components.
 No version number tracking, no release management burden.
+
+#### ONE-DIRECTIONAL BOUNDARIES
+
+The full-fledged architectural boundary uses reciprocal boundary interfaces to maintain isolation in both directions, which is expensive.
+
+The figure below demonstrates demonstrates how to hold the place for later extension for a full-fledged boundary. It exemplifies the traditional Strategy pattern. A `ServiceBoundary` interface is used by clients and implemented by `ServiceImpl` classes.
+
+![The strategy pattern](./images/the-strategy-pattern.png)
+
+This sets the stage for a future architectural boundary. The necessary dependency inversion is in place in in attempt to isolate the `Client` from the `ServiceImpl`. The separation can degrade pretty rapidly, as shown by the nested dotted arrow in the diagram. Without reciprocal interfaces, nothing prevents this kind of backchannel other than the discipline of the devs.
