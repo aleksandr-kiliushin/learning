@@ -1973,3 +1973,28 @@ As systems become more complex, the component structure may split into many such
 Not all the streams eventually meet at the top in a single component, the structure might be more complex.
 
 ![The higher level policy manages the player](./images/the-higher-level-policy-manages-the-player.png)
+
+#### CONCLUSION
+
+We must be careful to **recognize when architectural boundaries are needed**.
+
+As architects, we have to:
+
+- carefully **recognize when** architectural boundaries **are needed**;
+- be aware that architectural boundaries, when **fully implemented**, are **expensive**;
+- recognize that **when** architectural boundaries are **ignored**, they are very expensive to add in later – even in the presense of tests and refactoring discipline.
+
+**On the one hand**, remember of **YAGNI**. Over-engineering is often much worse than under-engnineering.  
+**On the other hand**, when you discover that you truly need an architectural boundary when none exists, the **costs and risks** can be very **high to add such a boundary**.
+
+You must see the future. You must guess – intelligently. You must weight the costs and **determine where the architectural boundaries lie**:
+
+- **which** should be **fully implemented**;
+- **which** should be **partially implemented**;
+- **which** should be **ignored**.
+
+This is **not a one-time decision**. Rather, you watch. You pay the attention as the system evolves. You note where boundaries **may become required**.
+
+At that point, you weight the **cost** of **implementing** these architectural boundaries **VS ignoring** them – and you **review your decision frequently**.
+
+> Your goal is to implement the boundaries right at the inflection point where the cost of implementing becomes less than the cost of ignoring.
