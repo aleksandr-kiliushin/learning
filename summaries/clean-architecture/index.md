@@ -1883,3 +1883,21 @@ The figure below demonstrates demonstrates how to hold the place for later exten
 ![The strategy pattern](./images/the-strategy-pattern.png)
 
 This sets the stage for a future architectural boundary. The necessary dependency inversion is in place in in attempt to isolate the `Client` from the `ServiceImpl`. The separation can degrade pretty rapidly, as shown by the nested dotted arrow in the diagram. Without reciprocal interfaces, nothing prevents this kind of backchannel other than the discipline of the devs.
+
+#### FACEDES
+
+An even simpler boundary is the Facade pattern. Even the dependency inversion is sacrificed. The boundary is defined by the `Facade` class, which lists all the services as methods, and deploys the service calls to classes that the client is not supposed to access.
+
+```mermaid
+graph LR
+  Client-->Facade
+  Facade-->ServiceA
+  Facade-->ServiceB
+  Facade-->ServiceC
+```
+
+#### CONCLUSION
+
+We have seen three simple ways to partially implement an architectural boundary. Each of them has its pros and cons.
+
+It is an architect who should decide where an architectural boundary might one day exist, and whether to fully or partially implement that boundary.
