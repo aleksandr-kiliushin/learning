@@ -1998,3 +1998,22 @@ This is **not a one-time decision**. Rather, you watch. You pay the attention as
 At that point, you weight the **cost** of **implementing** these architectural boundaries **VS ignoring** them – and you **review your decision frequently**.
 
 > Your goal is to implement the boundaries right at the inflection point where the cost of implementing becomes less than the cost of ignoring.
+
+### CHAPTER 26. THE MAIN COMPONENT
+
+In every system there is at least one component that creates, coordinates, and oversees the others. Let's call this component `Main`.
+
+#### THE ULTIMATE DETAIL
+
+About the `Main` component:
+
+- it is the initial entry point of the system;
+- nothing, than the OS, depends on `Main`;
+- it is the ultimate detail – the lowest-level policy;
+- its job is to create
+- it is in this `Main` component that deps should be injected by a Dependency Injection framework; once they are injected into `Main`, `Main` should distribute those deps normally, without using the framework;
+- `Main` is **a dirty low-level module in the outermost circle of the clean architecture**; it loads everything up for the high-level system, and then hands control over to it;
+- think of `Main` as **the dirtiest** of all the dirty components;
+- think of `Main` as **a plugin to the app** – a plugin that sets up the initial conditions and configurations, gathers all the outside resources, and then hands control over to the high-level policy of the app;
+- since it is a plugin, it is **possible to have many** `Main` components, one for each config (for dev, for test, for prod, for USA to deploy to, for Germany to deploy to, for CompanyA customer, for CompanyB customer, etc.);
+- when you think about `Main` as a plugin component, sitting behind an architectural boundary, the problem with configuration becomes a lot easier to solve.
