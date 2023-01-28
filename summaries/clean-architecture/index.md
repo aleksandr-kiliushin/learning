@@ -2056,3 +2056,7 @@ There is some true in this belief – but only some:
 
 - first, history has shown that large enterprise systems can be built from monoliths and component-based systems as well as service-based systems;
 - second, services cannot always be independently developed, deployed, and operated. As long as they are coupled by data and behavior.
+
+#### THE KITTY PROBLEM
+
+No matter how strongly your services are "decoupled". New significant features might touch each of your "independent" services.
