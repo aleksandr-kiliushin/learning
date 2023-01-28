@@ -2238,3 +2238,11 @@ You can use the FW – just do not couple to it. Keep it at arm's length. Treat 
 
 For example, maybe you like Spring. Spring is a good dependency injection FW. Maybe you use Spring to auto-wire your deps. That is fine, but you should not sprinkle `@autowired` annotations all through you business objects (Entities). Your business objects should not know about Spring.  
 Instead, you can use Spring to inject deps into your `Main` component. It is ok for `Main` to know about Spring since `Main` is the dirtiest, lowest-level component in the architecture.
+
+#### I NOW PRONOUNCE YOU ...
+
+It is ok to marry \<your-language\>-standard-library or things like this.
+
+#### CONCLUSION
+
+When faced with a FW, try not to marry it right away. See if there are not ways to date it for a while before you take a plunge. Keep the framework behind an architectural boundary if at all possible, for as long as possible.
