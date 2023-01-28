@@ -2017,3 +2017,10 @@ About the `Main` component:
 - think of `Main` as **a plugin to the app** – a plugin that sets up the initial conditions and configurations, gathers all the outside resources, and then hands control over to the high-level policy of the app;
 - since it is a plugin, it is **possible to have many** `Main` components, one for each config (for dev, for test, for prod, for USA to deploy to, for Germany to deploy to, for CompanyA customer, for CompanyB customer, etc.);
 - when you think about `Main` as a plugin component, sitting behind an architectural boundary, the problem with configuration becomes a lot easier to solve.
+
+### CHAPTER 27. SERVICES: GREAT AND SMALL
+
+Service-oriented "architectures" and micro-service "architectures" have become very **popular** of late. Some of the **reasons** (they are only **parially true**):
+
+- services seem to be strongly **decoupled** from each other;
+- services appear to support **independence of development and deployment**.
