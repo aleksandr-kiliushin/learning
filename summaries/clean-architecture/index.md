@@ -2218,3 +2218,10 @@ For the FW author, coupling to their FW is not a risk, because the author has ab
 What is more, the author wants you to couple to the FW, because once coupled in this way, it is hard to break away.
 
 You take on all the risks and burden; the FW author takes on nothing at all.
+
+#### THE RISKS
+
+- The architecture of the FW is often not very clean. FWs tend to **violate the Dependency Rule**. They ask you to inherit their code into your business objects - your Entities! They want their FW coupled into that innermost circle. Once in, that FW is not coming bad out.
+- The FW may help you with some early features of your app. However, as your project matures, it may outgrow the facilities of the FW. You will find the **FW fighting you more and more as time passes**.
+- The FW may **evolve in a direction that you do not find helpful**. You may be stuck upgrading to new versions that do not help you. You may even find old features, which you made use of, dissapearing or changing in ways that are difficult for you to keep up with.
+- **A new and better FW** may come along that you wish you could **switch to**.
