@@ -2024,3 +2024,10 @@ Service-oriented "architectures" and micro-service "architectures" have become v
 
 - services seem to be strongly **decoupled** from each other;
 - services appear to support **independence of development and deployment**.
+
+#### SERVICE ARCHITECTURE?
+
+Is using services, by their nature, an architecture? No.  
+The architecture of a system is defined by boundaries that separate high-level policies from low-level detail and follow the Dependency Rule. Splitting the app into services is like splitting into functions, and this is not necessarily architecturally significant.
+
+Services are, after all, are function calls across process and / or platform boundaries.
