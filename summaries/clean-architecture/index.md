@@ -2138,3 +2138,11 @@ No content.
 ### CHAPTER 29. CLEAN EMBEDDED ARCHITECTURE
 
 No content.
+
+## PART VI. DETAILS
+
+### CHAPTER 30. THE DATABASE IS A DETAIL
+
+From an architectural point of view, the DB is a non-entity – it is a detail somewhere below the architectural level.
+
+I am not taking about the data model. The structure you give to the data is highly significant to the architecture of your system. But the DB is not the data model. The DB is a utility that provides access to the data. Do not allow low-level mechanisms to pollute the system architecture.
