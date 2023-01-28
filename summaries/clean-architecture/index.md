@@ -2060,3 +2060,9 @@ There is some true in this belief – but only some:
 #### THE KITTY PROBLEM
 
 No matter how strongly your services are "decoupled". New significant features might touch each of your "independent" services.
+
+#### OBJECTS TO THE RESQUE
+
+In a component-based architecture, with a guidance of SOLID, we would have created a set of classes that could be polymoprhically extended to handle new features.
+
+The boundaries would be in place, the dependencies would follow the Dependency Rule.
