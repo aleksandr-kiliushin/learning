@@ -2031,3 +2031,28 @@ Is using services, by their nature, an architecture? No.
 The architecture of a system is defined by boundaries that separate high-level policies from low-level detail and follow the Dependency Rule. Splitting the app into services is like splitting into functions, and this is not necessarily architecturally significant.
 
 Services are, after all, are function calls across process and / or platform boundaries.
+
+#### SERVICE BENEFITS?
+
+This section is going to challenge the current popular orthodoxy of service architecture.
+
+##### THE DECOUPLING FALLACY
+
+Some **popular statements** about services **decoupling**:
+
+- services are decoupled because each one runs in a different process, or event a different processor;
+- services do not share variables;
+- the interface of each service must be well-defined.
+
+These benefits are **illusions**.
+
+Yes, services are decoupled at the level of individual variables. However, they can still be coupled by shared resources within a processor, or on the network.
+
+As for interfaces being well-defined, that is certainly true – but it is no less true for functions.
+
+##### THE FALLACY OF INDEPENDENT DEVELOPMENT AND DEPLOYMENT
+
+There is some true in this belief – but only some:
+
+- first, history has shown that large enterprise systems can be built from monoliths and component-based systems as well as service-based systems;
+- second, services cannot always be independently developed, deployed, and operated. As long as they are coupled by data and behavior.
