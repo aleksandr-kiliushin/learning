@@ -1748,7 +1748,7 @@ UCs layer **implements all the app-specific BRs** of the system. These UCs **orc
 About interconnections of the UCs layer:
 
 - changes in UCs layer **do not affect entities**;
-- UCs layer **is not affected by changes made in UI, DB, frameworks**; the UCs layer is isolated from such concerns;
+- UCs layer **is not affected by changes made in UI, DB, FWs**; the UCs layer is isolated from such concerns;
 - **changes to the operation might affect** the UCs layer;
 - if some UC details change, the UCs layer SC will certainly be changed.
 
@@ -1763,7 +1763,7 @@ This layer **also converts data from the external-agencies-convenient format, to
 
 ##### FRAMEWORKS AND DRIVERS
 
-The outermost layer of the model is generally composed of frameworks and tools such as the DB. It includes little glue code to communicate to the next level inward.
+The outermost layer of the model is generally composed of FWs and tools such as the DB. It includes little glue code to communicate to the next level inward.
 
 This layer is where all the details go: the web, the DB. We keep these things at the outermost position where they can do little harm.
 
@@ -1794,7 +1794,7 @@ No content.
 #### CONCLUSION
 
 Conforming to these simple rules is not difficult, and it will save you a lot of headaches going forward.
-When any of the external parts of the system becomes obsolete (the DB, the web framework, etc), you **can replace those obsolete elements with a minimum of fuss**.
+When any of the external parts of the system becomes obsolete (the DB, the web FW, etc), you **can replace those obsolete elements with a minimum of fuss**.
 
 ### CHAPTER 23. PRESENTERS AND HUMBLE OBJECTS
 
@@ -2011,7 +2011,7 @@ About the `Main` component:
 - nothing, than the OS, depends on `Main`;
 - it is the ultimate detail – the lowest-level policy;
 - its job is to create
-- it is in this `Main` component that deps should be injected by a Dependency Injection framework; once they are injected into `Main`, `Main` should distribute those deps normally, without using the framework;
+- it is in this `Main` component that deps should be injected by a Dependency Injection FW; once they are injected into `Main`, `Main` should distribute those deps normally, without using the FW;
 - `Main` is **a dirty low-level module in the outermost circle of the clean architecture**; it loads everything up for the high-level system, and then hands control over to it;
 - think of `Main` as **the dirtiest** of all the dirty components;
 - think of `Main` as **a plugin to the app** – a plugin that sets up the initial conditions and configurations, gathers all the outside resources, and then hands control over to the high-level policy of the app;
@@ -2151,7 +2151,7 @@ I am not taking about the data model. The structure you give to the data is high
 
 There is nothing architecturally significant in arranging data into rows withing tables. The UCs of your app should neither know nor care about such matters. Knowledge of the tabular structure of the data should be restricted to the lowest-level utility functions in the outer circles of the architecture.
 
-Many data access frameworks allow DB rows and tables to be passed around the system as objects. Allowing this is an architectural error. It couples the UCs, BRs, and even the GUI to the relational structure of the data.
+Many data access FWs allow DB rows and tables to be passed around the system as objects. Allowing this is an architectural error. It couples the UCs, BRs, and even the GUI to the relational structure of the data.
 
 #### WHY ARE DATABASE SYSTEMS SO PREVALENT?
 
@@ -2196,3 +2196,25 @@ The upshot is simply this: the GUI is a detail. The web is a GUI, an IO device. 
 #### CONCLUSION
 
 This kind of abstraction is not easy, and it will likely take several iterations to get right. But it is possible.
+
+### CHAPTER 32: FRAMEWORKS ARE DETAILS
+
+FWs are generally good things. However, FWs are not architectures – though some try to be.
+
+#### FRAMEWORK AUTHORS
+
+Most authors offer their work for free bacause they want to be helpful to the community. However, those authors do not have your best interests in heart. They cannot because they do no know you and your problems.
+
+The FW author know their own problems, and the problems of their coworkers and friends. And they write their FWs to solve those problems – not yours. Of course, your problems will likely overlap with those other problems quite a bit, otherwise FWs would not be so popular.
+
+#### ASYMMETRIC MARRIAGE
+
+You make a huge commitment to your FW, but the FW author makes no commitment to you.
+
+You read through the docs that the author provides. You wrapping your architecture around that FW. The author recommends that you derive from the FW's base classes and import the FW's facilities into your business objects. The author urges you to couple your app to the FWs as tightly as possible.
+
+For the FW author, coupling to their FW is not a risk, because the author has absolute control over that FW.
+
+What is more, the author wants you to couple to the FW, because once coupled in this way, it is hard to break away.
+
+You take on all the risks and burden; the FW author takes on nothing at all.
