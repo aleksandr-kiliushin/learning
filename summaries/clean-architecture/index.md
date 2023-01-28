@@ -2174,3 +2174,17 @@ No content.
 #### CONCLUSION
 
 > The data is significant. The DB is a detail.
+
+### CHAPTER 31. THE WEB IS A DETAIL
+
+No content.
+
+#### THE ENDLESS PENDULUM
+
+The web is **just the latest** in a series of oscillations that our industry has gone through since 1960s.
+
+The web changes its forms over the time. ClassicClientServer -> LightServerAndFatClient -> FatServerAndLightClient -> ???
+
+At the moment the web and its current form are prominent. As architects, though, we have to look at the long term.
+
+You should decouple your BRs from your GUI. You do not know whether your app will take shape of the web, desktop app or mobile app.
