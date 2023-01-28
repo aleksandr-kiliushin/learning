@@ -2083,3 +2083,19 @@ The architecture of a system is:
 
 - **defined by boundaries** drawn within that system, **and** by the **deps** that cross those boundaries;
 - **not defined by physical mechanisms** by which elements communicate and execute.
+
+### CHAPTER 28. THE TEST BOUNDARY
+
+Yes, the tests are part of the system, and they participate in the architecture just like every other part of the system does.
+
+#### TESTS AS SYSTEM COMPONENTS
+
+About tests **from architecture point of view**:
+
+- **all kinds** of tests are architecturally **equivalent**;
+- tests, by their nature, follow the **Dependency Rule**;
+- tests are very detailed and **concrete**;
+- tests always **depend inward** toward the code being tested;
+- **nothing** within the system **depends on the tests**;
+- tests are **independently deployable**; they are deployed in test system rather in production ones;
+- tests are **the most isolated** system component; they are not necessary for system operation; no user depends on them; their role to support development, not operation; they are no less a system component than any other; in many ways they represent the model that all other system components should follow.
