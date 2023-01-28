@@ -2188,3 +2188,11 @@ The web changes its forms over the time. ClassicClientServer -> LightServerAndFa
 At the moment the web and its current form are prominent. As architects, though, we have to look at the long term.
 
 You should decouple your BRs from your GUI. You do not know whether your app will take shape of the web, desktop app or mobile app.
+
+#### THE UPSHOT
+
+The upshot is simply this: the GUI is a detail. The web is a GUI, an IO device. So the web is detail. As an architect, you want to put details like that behind boundaries that keep them separate from your core BRs.
+
+#### CONCLUSION
+
+This kind of abstraction is not easy, and it will likely take several iterations to get right. But it is possible.
