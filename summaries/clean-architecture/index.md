@@ -2070,3 +2070,16 @@ The boundaries would be in place, the dependencies would follow the Dependency R
 #### COMPONENT-BASED SERVICES
 
 Services do not need to be little monoliths. Services can, instead, be designed using SOLID, and adding new components within a service can be done without changing the existing components within this service.
+
+#### CROSS-CUTTING CONCERNS
+
+Services must be designed with internal component architectures that follow the Dependency Rule.
+
+#### CONCLUSION
+
+Services, in their nature, are not architecturally significant elements.
+
+The architecture of a system is:
+
+- **defined by boundaries** drawn within that system, **and** by the **deps** that cross those boundaries;
+- **not defined by physical mechanisms** by which elements communicate and execute.
