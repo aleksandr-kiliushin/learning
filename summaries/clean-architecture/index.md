@@ -2097,7 +2097,7 @@ About tests **from architecture point of view**:
 - tests are very detailed and **concrete**;
 - tests always **depend inward** toward the code being tested;
 - **nothing** within the system **depends on the tests**;
-- tests are **independently deployable**; they are deployed in test system rather in production ones;
+- tests are **independently deployable**; they are deployed in test system rather in prod ones;
 - tests are **the most isolated** system component; they are not necessary for system operation; no user depends on them; their role to support development, not operation; they are no less a system component than any other; in many ways they represent the model that all other system components should follow.
 
 #### DESIGN FOR TESTABILITY
@@ -2109,3 +2109,28 @@ The issue is coupling. Tests that are strongly coupled to the system must change
 Fragile tests make the system rigid. When devs realize that simple changes to the system can cause massive test failures, they may resist making those changes.
 
 The first rule of software design – whether for testability or for any other reason – is always the same: **do not depend on volatile things**. GUIs are volatile. Test suites that operate the system through the GUI must be fragile. Therefore design the system, and the tests, so that business rules can be tested without using the GUI.
+
+#### THE TESTING API
+
+The way to accomplish this goal is to create a specific API that tests can use to verify all the BRs. This API should have superpowers that allow the tests to avoid security constrains, bypass expensive resouces (such as DBs), and force the system into particular testable states. This API will be a superset of the suite of interactors and interface adapters that are used by the user interface.
+
+The **purpose** of the testing API is to **decouple the tests from the app**. It is more than just detaching the tests from the UI: the goal is to decouple the structure of the tests from the structure of the app.
+
+##### STRUCTURAL COUPLING
+
+Structural coupling is a strong and harmful form of coupling. Imagine a test suite that has a test class for every prod class, and a set of tests methods for every prod method. Such a test suite is strongly coupled to the structure of the app.
+
+When one of those prod methods or classes changes, a large number of tests must change as well. Consequently, the tests are fragile, and they make the prod code rigid.
+
+**The role** of the testing API is **to hide the structure of the app from the tests**:
+
+- evolving and refactoring of the prod code do not affect the tests;
+- evolving and refactoring of the tests do not affect the prod code.
+
+##### SECURITY
+
+No content.
+
+#### CONCLUSION
+
+No content.
