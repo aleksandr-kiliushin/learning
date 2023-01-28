@@ -2225,3 +2225,16 @@ You take on all the risks and burden; the FW author takes on nothing at all.
 - The FW may help you with some early features of your app. However, as your project matures, it may outgrow the facilities of the FW. You will find the **FW fighting you more and more as time passes**.
 - The FW may **evolve in a direction that you do not find helpful**. You may be stuck upgrading to new versions that do not help you. You may even find old features, which you made use of, dissapearing or changing in ways that are difficult for you to keep up with.
 - **A new and better FW** may come along that you wish you could **switch to**.
+
+#### THE SOLUTION
+
+> Do not marry the framework.
+
+You can use the FW – just do not couple to it. Keep it at arm's length. Treat the FW as a detail that belongs in one of the outer circles of the architecture. **Do not let it into the inner circles.**
+
+**If the FW wants you to derive your business objects (Entities) from its base classes, say no. Derive proxies instead, and keep those proxies in components that are plugins to your BRs.**
+
+**Do not let FWs into your core code. Instead, integrate them into components that plug in into your core code, following the Dependency Rule.**
+
+For example, maybe you like Spring. Spring is a good dependency injection FW. Maybe you use Spring to auto-wire your deps. That is fine, but you should not sprinkle `@autowired` annotations all through you business objects (Entities). Your business objects should not know about Spring.  
+Instead, you can use Spring to inject deps into your `Main` component. It is ok for `Main` to know about Spring since `Main` is the dirtiest, lowest-level component in the architecture.
