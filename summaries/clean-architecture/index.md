@@ -2099,3 +2099,13 @@ About tests **from architecture point of view**:
 - **nothing** within the system **depends on the tests**;
 - tests are **independently deployable**; they are deployed in test system rather in production ones;
 - tests are **the most isolated** system component; they are not necessary for system operation; no user depends on them; their role to support development, not operation; they are no less a system component than any other; in many ways they represent the model that all other system components should follow.
+
+#### DESIGN FOR TESTABILITY
+
+Tests that are not well-integrated into design of the system into the design of the system are fragile. They make the system rigid and difficult to change.
+
+The issue is coupling. Tests that are strongly coupled to the system must change along with the system. Even a trivial change to a system component can cause many coupled tests to break or require changes. This is known as the Fragile Test Problem.
+
+Fragile tests make the system rigid. When devs realize that simple changes to the system can cause massive test failures, they may resist making those changes.
+
+The first rule of software design – whether for testability or for any other reason – is always the same: **do not depend on volatile things**. GUIs are volatile. Test suites that operate the system through the GUI must be fragile. Therefore design the system, and the tests, so that business rules can be tested without using the GUI.
