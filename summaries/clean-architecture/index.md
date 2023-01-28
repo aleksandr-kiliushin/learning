@@ -2146,3 +2146,31 @@ No content.
 From an architectural point of view, the DB is a non-entity – it is a detail somewhere below the architectural level.
 
 I am not taking about the data model. The structure you give to the data is highly significant to the architecture of your system. But the DB is not the data model. The DB is a utility that provides access to the data. Do not allow low-level mechanisms to pollute the system architecture.
+
+#### RELATIONAL DATABASES
+
+There is nothing architecturally significant in arranging data into rows withing tables. The UCs of your app should neither know nor care about such matters. Knowledge of the tabular structure of the data should be restricted to the lowest-level utility functions in the outer circles of the architecture.
+
+Many data access frameworks allow DB rows and tables to be passed around the system as objects. Allowing this is an architectural error. It couples the UCs, BRs, and even the GUI to the relational structure of the data.
+
+#### WHY ARE DATABASE SYSTEMS SO PREVALENT?
+
+No content.
+
+#### DETAILS
+
+DB is just a mechanism to move the data back and forth between the surface of the disk and RAM. It is just a bucket of bits where we store our data on a long-term basis.
+
+Architecture should not know about the form of the data stored in the disk. It should not also know that the disk exists at all.
+
+#### BUT WHAT ABOUT PERFORMANCE?
+
+Yes, performance is one of the concerns of the architecture. Writing and reading data should be performed quickly, but that is a low-level concern which should be addressed with low-level data access mechanisms.
+
+#### ANECDOTE
+
+No content.
+
+#### CONCLUSION
+
+> The data is significant. The DB is a detail.
