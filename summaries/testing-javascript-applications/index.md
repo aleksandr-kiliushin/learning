@@ -1409,11 +1409,7 @@ Check its docs, `npm install --save-dev @percy/cypress` and write your visual re
 
 ### CHAPTER 12. CONTINIOUS INTEGRATION AND CONTINIOUS DELIVERY
 
-When developers write code in their own branch for a long time without integration their work with others' work, the consequences are bad.  
-The main branch, the code upon which they building their branch might have already changed.  
-This causes a lot of rework and conflicts, which is constly, risky and frustrating.  
-Deliver early and deliver frequently.  
-You'll get customer's feedback sooner and learn more about what to build next.
+When developers write code in their own branch for a long time without integration their work with others' work, the consequences are bad. The main branch, the code upon which they building their branch might have already changed. This causes a lot of rework and conflicts, which is constly, risky and frustrating. **Deliver early and deliver frequently.** You will get customer's feedback sooner and learn more about what to build next.
 
 #### SECTION 12.1. WHAT ARE CONTINUOUS INTEGRATION AND CONTINUOUS DELIVERY
 
