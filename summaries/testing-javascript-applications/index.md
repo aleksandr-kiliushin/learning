@@ -1475,6 +1475,51 @@ Those builds should happen **quickly**. Devs need to notice their mistakes as so
 
 ##### 12.1.2. CONTINUOUS DELIVERY
 
+Instead of merely merging your work into main, produce artifacts that you can immediately put into the hands of customers.
+
+With CD, you are able to deploy an up-to-date version of the app at any point in time.
+
+CI is a prerequisite for CD.
+
+Instead of developing a huge feature your customer may not need, you can build small parts at a time, listen to your customers' feedback, and deliver the exact product they want.
+
+Feature flags are a useful technique to enable teams to perform continuous deployment.
+
+By deploying new features behind FFs, devs can send to prod code that **does not yet impact users**, or that is available only for a small percentage of them.  
+Besides allowing devs to ship code more often, FFs reduce communication overhead because they separate the process of making features available from the process of deploying them.  
+With FFs, you can hide some part of the app that are not ready for the users to see, such as screens whose UI is incomplete.  
+[A post about FFs](https://martin-fowler.com/articles/feature-toggles.html)
+
+Early feedback helps you understand what matters to your customers and, therefore, avoid writing unnecessary code.
+
+~~Writing as much code as possible.~~ Providing as much value as possible.
+
+##### CONTINUOUS DELIVERY VS CONTINUOUS DEPLOYMENT
+
+With continuous delivery, a human still needs to decide to "push the button".
+
+```mermaid
+---
+title: CI + continuous delivery
+---
+flowchart LR
+  ContinuousIntegration-->Release-->ContinuousIntegration
+  Release--Manually-->Deploy
+```
+
+With continuous deployment, every release is sent to production automatically.
+
+```mermaid
+---
+title: CI + continuous deployment
+---
+flowchart LR
+  ContinuousDelivery--Automatically-->Deploy
+  Deploy-->ContinuousDelivery
+```
+
+As you move from continuous integration to continuous delivery, and then to continuous deployment, the pace of releases becomes quicker, forching you to implement more sophisticated deployment techniques and automations, better monitoring, and more reliable quality guarantees.
+
 #### SECTION 12.2. THE ROLE OF AUTOMATED TESTS IN A CI / CD PIPELINE
 
 #### SECTION 12.3. VERSION-CONTROL CHECKS
