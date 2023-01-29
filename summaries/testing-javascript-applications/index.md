@@ -1556,6 +1556,20 @@ Unlike tests, type systems are _not_ based on experimentation. They are based on
 
 #### SECTION 13.2. REVIEWING CODE TO CATCH PROBLEMS MACHINES CAN'T
 
+Code review helps when type checkings and tests cannot help, for example to keep architectual quality high.
+
+Tips for good code review:
+
+- to keep your changes easier to change and digest, try to **keep you pull requests small**; **split** big features into multiple pull requests or request others to review **intermediary stages** of your changes;
+- **read the pull request description** (it is encouraged to have one);
+- code review is a **conversation** – add comment regardless of whether you are suggesting changes;
+- **explain why** a particular piece of code needs changes;
+- by **describing the advantages of the suggested approach**, you make debates more fluid and give the author more information to consider when making a decision;
+- **clearly indicate whether** you consider **a suggested change to be required** for the author to obtain your approval;
+- **keep you IDE open**; reviews should not be linear; **follow the code** – by exploring the changed files dependency graph you can reveal files that were not changed, but should be (these files are not presented in the pull request diffs).
+
+Good code review discipline significantly **increases** productivity, the team's members experience and mutual relations.
+
 #### SECTION 13.3. USING LINTERS AND FORMATTERS TO PRODUCE CONSISTENT CODE
 
 #### SECTION 13.4. MONITORING YOUR SYSTEMS TO UNDERSTAND HOW THEY ACTUALLY BEHAVE
