@@ -1430,6 +1430,49 @@ There are two prictices at the core of this success:
 
 ##### 12.1.1. CONTINUOUS INTEGRATION
 
+Integrating with others' work **reduces waste and rework**.
+
+Imagine that two devs are working on the same feature in different branches. CI makes work **less frustrating and more predictable** when time to **merge** comes.
+
+With CI, you will **frequently integrate** your work **with** the project **main** branch, and so will your coworker. Both of you will **constantly correct course** as you develop your feature.
+
+You are communicating the changes you are doing, so that everyone is working on top of a working version of your software.
+
+To make CI painless you should **automate**:
+
+- executing **static analysis**;
+- enforcing **code style**;
+- running **tests**;
+- **building** the project.
+
+I also recommend adopt **code-review before merging to the main** branch.
+
+```mermaid
+flowchart LR
+  Code
+
+  subgraph CI tool
+    Analyze
+    Build
+    Test
+  end
+
+  Code-->Analyze-->Build-->Test
+  Test--Continuous integration-->Code
+```
+
+With this automation, it takes only a **few seconds** for a developer **to know** whether their work **is valid** when combined with the changes in the project's main branch.
+
+> Automate your quality control process. Incorporate it into your build process. Launch it after each change to the repo is commited.
+
+If you use a CI tool, but you integrate your work with the main branch only once a month, you are not doint CI.
+
+After some commit broken your app, you can either fix it or rollback the changes.
+
+Additionally, **if** you have a **broken** build, you will **forbid others from merging new code** because, if they do, you will not know whether their code have failures, too, given that the build is already broken. Furthermore, it will be more challenging to find the problem's root cause bacause you will have more changes to investigate. **Your CI builds should always be working.**
+
+Those builds should happen **quickly**. Devs need to notice their mistakes as soon as possible. Fast build speeds up the team delivery rhythm because you do not need wait for a long time to the previous changed validated.
+
 ##### 12.1.2. CONTINUOUS DELIVERY
 
 #### SECTION 12.2. THE ROLE OF AUTOMATED TESTS IN A CI / CD PIPELINE
