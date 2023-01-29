@@ -2,19 +2,19 @@
 
 ## PART 1. TESTING JAVASCRIPT APPLICATIONS
 
-### SECTION 1. AN INTRODUCTION TO AUTOMATED TESTING
+### CHAPTER 1. AN INTRODUCTION TO AUTOMATED TESTING
 
-### SECTION 2. WHAT TO TEST AND WHEN?
+### CHAPTER 2. WHAT TO TEST AND WHEN?
 
 ## PART 2. WRITING TESTS
 
-### SECTION 3. TESTING TECHNIQUES
+### CHAPTER 3. TESTING TECHNIQUES
 
-### SECTION 4. TESTING BACKEND APPLICATIONS
+### CHAPTER 4. TESTING BACKEND APPLICATIONS
 
 No content.
 
-#### 4.1. STRUCTURING A TESTING ENVIRONMENT
+#### SECTION 4.1. STRUCTURING A TESTING ENVIRONMENT
 
 Software should be designed with testing in mind.
 
@@ -452,7 +452,7 @@ We can test it:
     linkStyle 0,1,2,3,4,5,6,7,8,9,10,12,13,14,15 stroke:green,color:green;
 ```
 
-#### 4.2. TESTING HTTP ENDPOINTS
+#### SECTION 4.2. TESTING HTTP ENDPOINTS
 
 When testing HTTP endpoints, we aren't directly interacting with the unit under test.  
 Instead, we interact with the entire app through HTTP requests.  
@@ -519,7 +519,7 @@ describe("get cart items", () => {
     linkStyle 5 stroke-width:3px,stroke:red,color:red;
 ```
 
-#### 4.3. DEALING WITH EXTERNAL DEPENDENCIES
+#### SECTION 4.3. DEALING WITH EXTERNAL DEPENDENCIES
 
 No content.
 
@@ -596,7 +596,7 @@ But if we don't mock DB, there are also cons:
 
 No content.
 
-### SECTION 5. ADVANCED BACKEND TESTING TECHNIQUES
+### CHAPTER 5. ADVANCED BACKEND TESTING TECHNIQUES
 
 Our goals, in order of priority:
 
@@ -606,7 +606,7 @@ Our goals, in order of priority:
 
 Also, if you can't trust your tests, it doesn't matter how quickly they run or how easy it is to update them.
 
-#### 5.1. ELIMINATING NONDETERMINISM
+#### SECTION 5.1. ELIMINATING NONDETERMINISM
 
 **Deterministic tests** are the ones that, given the same input, always produce the same results.
 
@@ -653,7 +653,7 @@ No content.
 
 No content.
 
-#### 5.2. REDUCING COSTS WHILE PRESERVING QUALITY
+#### SECTION 5.2. REDUCING COSTS WHILE PRESERVING QUALITY
 
 No content.
 
@@ -680,16 +680,16 @@ Doing this, you can say: _I already know that `myAwesomeFunction` works because 
 
 You don't always need a separate test to check a specific behaviour. If other tests depend on that behaviour to pass, you can already consider it covered.
 
-### SECTION 6. TESTING FRONTEND APPLICATIONS
+### CHAPTER 6. TESTING FRONTEND APPLICATIONS
 
-#### 6.1. INTRODUCING JSDOM
+#### SECTION 6.1. INTRODUCING JSDOM
 
 Jest can't run in a browser, you should simulate browser environment within Node.js.  
 You make assertions on functions return value and DOM elements interactions and contents.  
 You simulate scrolling, clicking, typing and dragging.  
 You should test if your code interfaces correctly with history and web storage APIs.
 
-#### 6.2. ASSERTING ON THE DOM
+#### SECTION 6.2. ASSERTING ON THE DOM
 
 ```javascript
 const data = { count: 0 }
@@ -789,29 +789,29 @@ You can assert, for example, that an element is exists, using the `toBeTruthy` a
 But you can make your assertions more reliable and readable by using `jest-dom`. It extends basic Jest's assertions with new ones, designed specially for testing web pages.  
 `.toHaveStyle()`, `.toBeDisabled()`, `.toBeEnabled`, `.toBeVisible()` and other assertions make it easier to write tests.
 
-#### 6.3. HANDLING EVENTS
+#### SECTION 6.3. HANDLING EVENTS
 
-#### 6.4. TESTING AND BROWSER APIS
+#### SECTION 6.4. TESTING AND BROWSER APIS
 
 ##### 6.4.1. TESTING A LOCALSTORAGE INTERGRATION
 
 ##### 6.4.2 TESTING A HISTORY API INTERGRATION
 
-#### 6.5. DEALING WITH WEBSOCKETS AND HTTP REQUESTS
+#### SECTION 6.5. DEALING WITH WEBSOCKETS AND HTTP REQUESTS
 
 ##### 6.5.1 TESTING INVOLVING HTTP REQUESTS
 
 ##### 6.5.2 TESTING INVOLVING WEBSOCKETS
 
-### SECTION 7. THE REACT TESTING ECOSYSTEM
+### CHAPTER 7. THE REACT TESTING ECOSYSTEM
 
-#### 7.1. SETTING UP A TEST ENVIRONMENT FOR REACT
+#### SECTION 7.1. SETTING UP A TEST ENVIRONMENT FOR REACT
 
 ##### 7.1.1. SETTING UP A REACT APPLICATION
 
 ##### 7.1.2. SETTING UP A TESTING ENVIRONMENT
 
-#### 7.2. AN OVERVIEW OF REACT TESTING LIBRARIES
+#### SECTION 7.2. AN OVERVIEW OF REACT TESTING LIBRARIES
 
 ##### 7.2.1. RENDERING COMPONENTS AND THE DOM
 
@@ -910,11 +910,11 @@ I don't see the benefit of using React's test renderer.
 Setting up JSDOM is quick, and it makes your tests more reliable because it makes your code run just like it would in a browser.  
 The main use case for `react-test-renderer` is when you are not rendering components to a DOM but would still like to inspect their contents. It can be applied in testing `react-native` applications, for example.
 
-### SECTION 8. TESTING REACT APPLICATIONS
+### CHAPTER 8. TESTING REACT APPLICATIONS
 
 No content.
 
-#### 8.1. TESTING COMPONENT INTEGRATION
+#### SECTION 8.1. TESTING COMPONENT INTEGRATION
 
 Tests should provide reliable guarantees that your components work in integration. If your test covers some top-level component like `<App />` or `<Profile />` it will automatically cover its underlying component.
 
@@ -928,7 +928,7 @@ When you have too many tests that depend on a single point of failure, centraliz
 
 No content.
 
-#### 8.2 SNAPSHOT TESTING
+#### SECTION 8.2 SNAPSHOT TESTING
 
 No content.
 
@@ -940,7 +940,7 @@ No content.
 
 No content.
 
-#### 8.3. TESTING STYLES
+#### SECTION 8.3. TESTING STYLES
 
 When testing your styles, if you are using an external css file, you will not be able to check whether the specific style rules within a class are applied. You will be able to check only whether a component's `className` property is correct.
 
@@ -954,7 +954,7 @@ To address this issue, you can use `css-in-js` libs (like `emotion`) that allows
 You `toHaveStyle` assertions passed inline styles. But with `emotion` they will fail, because your components don't use inline styles to highlight your component in red anymore. Instead, because of how emotion works, your app will have automatically generated classes for the rules you created with `emotion` and apply those classes to your elements. To address this issue you can use `jest-emotion` package which allow you to extend Jest with a `toHaveStyleRule` matcher that verifies the style rules applied by emotion.  
 Example: `expect(cheesecakeItem).toHaveStyleRule("color", "red");`
 
-#### 8.4. COMPONENT-LEVEL ACCEPTANCE TESTS AND COMPONENT STORIES
+#### SECTION 8.4. COMPONENT-LEVEL ACCEPTANCE TESTS AND COMPONENT STORIES
 
 No content.
 
@@ -966,13 +966,13 @@ No content.
 
 No content.
 
-### SECTION 9. TEST-DRIVEN DEVELOPMENT
+### CHAPTER 9. TEST-DRIVEN DEVELOPMENT
 
-### SECTION 10. UI-BASED END-TO-END TESTING
+### CHAPTER 10. UI-BASED END-TO-END TESTING
 
 No content.
 
-#### 10.1. WHAT ARE UI-BASED END-TO-END TESTS
+#### SECTION 10.1. WHAT ARE UI-BASED END-TO-END TESTS
 
 End-to-end tests help you ensure that the _entire_ app works as it should. The scope of these tests is large. The reliability guarantees they generate are strong. End-to-end tests are at the very top of the testing pyramid.
 
@@ -991,7 +991,7 @@ The first two examples are not exactly end-to-end tests because they don't cover
 UI tests and e2e tests are not mutually exclusive classifications.  
 A test can be both a UI test and an e2e test, or only one of them.
 
-#### 10.2. WHEN TO WRITE EACH TYPE OF TEST
+#### SECTION 10.2. WHEN TO WRITE EACH TYPE OF TEST
 
 - Pure e2e tests.
 - Pure UI tests.
@@ -1092,7 +1092,7 @@ More about pure UI tests:
 
 No content.
 
-#### 10.3. AN OVERVIEW OF END-TO-END TESTING TOOLS
+#### SECTION 10.3. AN OVERVIEW OF END-TO-END TESTING TOOLS
 
 The tools described in this section interact with your software through its UI, rather than through your code directly.
 
@@ -1212,11 +1212,11 @@ When tests detects a bug in your app, you can add break points to your app's cod
 
 If you're looking for a tool _exclusively_ to write tests for Chrome and Firefox.
 
-### Section 11. WRITING UI-BASED END-TO-END TESTS
+### CHAPTER 11. WRITING UI-BASED END-TO-END TESTS
 
 No content.
 
-#### 11.1. YOUR FIRST UI-BASED END-TO-END TESTS
+#### SECTION 11.1. YOUR FIRST UI-BASED END-TO-END TESTS
 
 No content.
 
@@ -1271,7 +1271,7 @@ To run a single test, add a `.only` to it.
 
 ![Cypress's queue](./img/cypress-queue.png)
 
-#### 11.2. Best practices end-to-end tests
+#### SECTION 11.2. Best practices end-to-end tests
 
 No content.
 
@@ -1354,7 +1354,7 @@ The disadvantage of using app actions is that they couple your tests to your app
 
 Personally, I use app actions only in my test's _arrange_ step. To _act_ and _assert_, I use selectors from a page object.
 
-#### 11.3. DEALING WITH FLAKINESS
+#### SECTION 11.3. DEALING WITH FLAKINESS
 
 Flakiness makes you less confident that your tests - your bug-detection mechanisms - can identify mistakes.
 
@@ -1383,7 +1383,7 @@ When writing UI-based e2e tests, you should use stubs to make tests deterministi
 Imagine, your test has become non-deterministic and you don't have enough time to make it deterministic right now.  
 You can set up restarting your tests.
 
-#### 11.4. RUNNING TESTS ON MULTIPLE BROWSERS
+#### SECTION 11.4. RUNNING TESTS ON MULTIPLE BROWSERS
 
 ##### 11.4.1. USING A TESTING FRAMEWORK FOR RUNNING TESTS WITHIN A BROWSER
 
@@ -1407,7 +1407,7 @@ Check its docs, `npm install --save-dev @percy/cypress` and write your visual re
 
 ## Part 3: BUSINESS IMPACT
 
-### SECTION 12. CONTINIOUS INTEGRATION AND CONTINIOUS DELIVERY
+### CHAPTER 12. CONTINIOUS INTEGRATION AND CONTINIOUS DELIVERY
 
 When developers write code in their own branch for a long time without integration their work with others' work, the consequences are bad.  
 The main branch, the code upon which they building their branch might have already changed.  
@@ -1415,24 +1415,24 @@ This causes a lot of rework and conflicts, which is constly, risky and frustrati
 Deliver early and deliver frequently.  
 You'll get customer's feedback sooner and learn more about what to build next.
 
-#### 12.1. WHAT ARE CONTINUOUS INTEGRATION AND CONTINUOUS DELIVERY
+#### SECTION 12.1. WHAT ARE CONTINUOUS INTEGRATION AND CONTINUOUS DELIVERY
 
-#### 12.1.1. CONTINUOUS INTEGRATION
+##### 12.1.1. CONTINUOUS INTEGRATION
 
-#### 12.1.2. CONTINUOUS DELIVERY
+##### 12.1.2. CONTINUOUS DELIVERY
 
-#### 12.2. THE ROLE OF AUTOMATED TESTS IN A CI / CD PIPELINE
+#### SECTION 12.2. THE ROLE OF AUTOMATED TESTS IN A CI / CD PIPELINE
 
-#### 12.3. VERSION-CONTROL CHECKS
+#### SECTION 12.3. VERSION-CONTROL CHECKS
 
-### SECTION 13. A CULTURE OF QUALITY
+### CHAPTER 13. A CULTURE OF QUALITY
 
-#### 13.1. USING TYPE SYSTEMS TO MAKE INVALID STATES INPRESENTABLE
+#### SECTION 13.1. USING TYPE SYSTEMS TO MAKE INVALID STATES INPRESENTABLE
 
-#### 13.2. REVIEWING CODE TO CATCH PROBLEMS MACHINES CAN'T
+#### SECTION 13.2. REVIEWING CODE TO CATCH PROBLEMS MACHINES CAN'T
 
-#### 13.3. USING LINTERS AND FORMATTERS TO PRODUCE CONSISTENT CODE
+#### SECTION 13.3. USING LINTERS AND FORMATTERS TO PRODUCE CONSISTENT CODE
 
-#### 13.4. MONITORING YOUR SYSTEMS TO UNDERSTAND HOW THEY ACTUALLY BEHAVE
+#### SECTION 13.4. MONITORING YOUR SYSTEMS TO UNDERSTAND HOW THEY ACTUALLY BEHAVE
 
-#### 13.5. EXPLAINING YOUR SOFTWARE WITH GOOD DOCUMENTATION
+#### SECTION 13.5. EXPLAINING YOUR SOFTWARE WITH GOOD DOCUMENTATION
