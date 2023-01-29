@@ -1,20 +1,20 @@
-# Summary: Testing JavaScript applications by Lucas da Costa
+# SUMMARY: TESTING JAVASCRIPT APPLICATIONS BY LUCAS DA COSTA
 
-## Part 1: Testing JavaScriptApplications
+## PART 1. TESTING JAVASCRIPT APPLICATIONS
 
-### Section 1. An introduction to automated testing
+### SECTION 1. AN INTRODUCTION TO AUTOMATED TESTING
 
-### Section 2. What to test and when?
+### SECTION 2. WHAT TO TEST AND WHEN?
 
-## Part 2: Writing tests
+## PART 2. WRITING TESTS
 
-### Section 3. Testing techniques
+### SECTION 3. TESTING TECHNIQUES
 
-### Section 4. Testing backend applications
+### SECTION 4. TESTING BACKEND APPLICATIONS
 
 No content.
 
-#### 4.1 Structuring a testing environment
+#### 4.1. STRUCTURING A TESTING ENVIRONMENT
 
 Software should be designed with testing in mind.
 
@@ -66,7 +66,7 @@ Figure: What tests can access if an application is not designed with testing in 
 In this situation the best you can do is send an HTTP request and check it response.  
 Testable software is broken down in smaller accessible pieces, which you can test separately.
 
-##### 4.1.1 End-to-end testing
+##### 4.1.1. END-TO-END TESTING
 
 Imagine an application that does not expose anything but its routes.  
 You can interact with it only by sending HTTP requests.  
@@ -156,7 +156,7 @@ If you provide direct access to the app DB you are able to make assertions again
 - Access to the router allows to exercise the app.
 - Access to the DB allows to set up an initial state and test whether the new state is valid.
 
-##### 4.1.2 Integration testing
+##### 4.1.2. INTEGRATION TESTING
 
 We need to make integration testing possible.  
 Code winthin routes should be moved to separate modules.  
@@ -348,7 +348,7 @@ We should set up testing environment for integration tests to be able:
 - check writing to DB and FS;
 - use test doubles as few as possible;
 
-##### 4.1.3 Unit testing
+##### 4.1.3. UNIT TESTING
 
 Unit tests are ideal for function that don't depend on external deps like a DB or the FS.  
 Unit tests don't require complex environment. It's enough that their target are extracted to a separate function and exported.
@@ -452,7 +452,7 @@ We can test it:
     linkStyle 0,1,2,3,4,5,6,7,8,9,10,12,13,14,15 stroke:green,color:green;
 ```
 
-#### 4.2 Testing HTTP endpoints
+#### 4.2. TESTING HTTP ENDPOINTS
 
 When testing HTTP endpoints, we aren't directly interacting with the unit under test.  
 Instead, we interact with the entire app through HTTP requests.  
@@ -477,7 +477,7 @@ describe("get cart items", () => {
 })
 ```
 
-##### 4.2.1 Testing middleware
+##### 4.2.1. TESTING MIDDLEWARE
 
 ```mermaid
   flowchart TB
@@ -519,11 +519,11 @@ describe("get cart items", () => {
     linkStyle 5 stroke-width:3px,stroke:red,color:red;
 ```
 
-#### 4.3 Dealing with external dependencies
+#### 4.3. DEALING WITH EXTERNAL DEPENDENCIES
 
 No content.
 
-##### 4.3.1 Integrations with databases
+##### 4.3.1. INTEGRATIONS WITH DATABASES
 
 It is possible to mock interactions with a DB,  
 but this approach has cons:
@@ -592,11 +592,11 @@ But if we don't mock DB, there are also cons:
     classDef pink fill:#e699ff;
 ```
 
-##### 4.3.2 Integrations with outer APIs
+##### 4.3.2. INTEGRATIONS WITH OTHER APIS
 
 No content.
 
-### Section 5. Advanced backend testing techniques
+### SECTION 5. ADVANCED BACKEND TESTING TECHNIQUES
 
 Our goals, in order of priority:
 
@@ -606,7 +606,7 @@ Our goals, in order of priority:
 
 Also, if you can't trust your tests, it doesn't matter how quickly they run or how easy it is to update them.
 
-#### 5.1 Eliminating nondeterminism
+#### 5.1. ELIMINATING NONDETERMINISM
 
 **Deterministic tests** are the ones that, given the same input, always produce the same results.
 
@@ -645,19 +645,19 @@ Some situations:
 
   As a rule of thumb, we should **mock everything we can't control**.
 
-##### 5.1.1 Parallelism and shared resources
+##### 5.1.1. PARALLELISM AND SHARED RESOURCES
 
 No content.
 
-##### 5.1.2 Dealing with time
+##### 5.1.2. DEALING WITH TIME
 
 No content.
 
-#### 5.2 Reducing costs while preserving quality
+#### 5.2. REDUCING COSTS WHILE PRESERVING QUALITY
 
 No content.
 
-##### 5.2.1 Reducing overlap between tests
+##### 5.2.1. REDUCING OVERLAP BETWEEN TESTS
 
 Tests overlap when the run they run the same pieces of code and repeat each other's verifications.  
 By eliminating this overlap you can often reduce the amount of code you have to maintain.
@@ -666,7 +666,7 @@ To test some functionality, you can either write 3 different tests (for example,
 Putting all 3 assertions into a single e2e test make it easier to reason about them, and easier to maintain.  
 But this approach has its downsides: with a single e2e tests you can't test some complex scenarios.
 
-##### 5.2.2 Creating transitive guarantees
+##### 5.2.2. CREATING TRANSITIVE GUARANTEES
 
 Instead of repeating expensive checks when testing each function that requires `myAwesomeFunction`, you can:
 
@@ -676,20 +676,20 @@ Instead of repeating expensive checks when testing each function that requires `
 
 Doing this, you can say: _I already know that `myAwesomeFunction` works because I've tested it. Now, I just want to make sure it's invoked with the correct arguments._
 
-##### 5.2.3 Turning assertions into preconditions
+##### 5.2.3. TURNING ASSERTIONS INTO PRECONDITIONS
 
 You don't always need a separate test to check a specific behaviour. If other tests depend on that behaviour to pass, you can already consider it covered.
 
-### Section 6. Testing frontend applications
+### SECTION 6. TESTING FRONTEND APPLICATIONS
 
-#### 6.1 Introducing JSDOM
+#### 6.1. INTRODUCING JSDOM
 
 Jest can't run in a browser, you should simulate browser environment within Node.js.  
 You make assertions on functions return value and DOM elements interactions and contents.  
 You simulate scrolling, clicking, typing and dragging.  
 You should test if your code interfaces correctly with history and web storage APIs.
 
-#### 6.2 Asserting on the DOM
+#### 6.2. ASSERTING ON THE DOM
 
 ```javascript
 const data = { count: 0 }
@@ -778,42 +778,42 @@ By passing the value `"jsdom"` to Jest's `testEnvironment` option, you can make 
 
 Figure: The JS environment within Node.js.
 
-##### 6.2.1 Making it easier to find elements
+##### 6.2.1. MAKING IT EASIER TO FIND ELEMENTS
 
 You can find page elements by their ID's or by their position in the page hierarchial chain. But this approach tightly couples the tests to the markup and requires more complex maintenance. Tests may fail after minimal changes to the markup.  
 To avoid maintenance overhead and to make tests more readable, use `dom-testing-library`. So you can find elements by their text, alt text, label, role, etc.
 
-##### 6.2.2 Writing better assertions
+##### 6.2.2. WRITING BETTER ASSERTIONS
 
 You can assert, for example, that an element is exists, using the `toBeTruthy` assertion.  
 But you can make your assertions more reliable and readable by using `jest-dom`. It extends basic Jest's assertions with new ones, designed specially for testing web pages.  
 `.toHaveStyle()`, `.toBeDisabled()`, `.toBeEnabled`, `.toBeVisible()` and other assertions make it easier to write tests.
 
-#### 6.3 Handling events
+#### 6.3. HANDLING EVENTS
 
-#### 6.4 Testing and browser APIs
+#### 6.4. TESTING AND BROWSER APIS
 
-##### 6.4.1 Testing a localStorage integration
+##### 6.4.1. TESTING A LOCALSTORAGE INTERGRATION
 
-##### 6.4.2 Testing a History API integration
+##### 6.4.2 TESTING A HISTORY API INTERGRATION
 
-#### 6.5 Dealing with WebSockets and HTTP requests
+#### 6.5. DEALING WITH WEBSOCKETS AND HTTP REQUESTS
 
-##### 6.5.1 Testing involving HTTP requests
+##### 6.5.1 TESTING INVOLVING HTTP REQUESTS
 
-##### 6.5.2 Testing involving WebSockets
+##### 6.5.2 TESTING INVOLVING WEBSOCKETS
 
-### Section 7. The React testing ecosystem
+### SECTION 7. THE REACT TESTING ECOSYSTEM
 
-#### 7.1 Setting up a test environment for React
+#### 7.1. SETTING UP A TEST ENVIRONMENT FOR REACT
 
-##### 7.1.1 Setting up a React application
+##### 7.1.1. SETTING UP A REACT APPLICATION
 
-##### 7.1.2 Setting up a testing environment
+##### 7.1.2. SETTING UP A TESTING ENVIRONMENT
 
-#### 7.2 An overview of React testing libraries
+#### 7.2. AN OVERVIEW OF REACT TESTING LIBRARIES
 
-##### 7.2.1 Rendering components and the DOM
+##### 7.2.1. RENDERING COMPONENTS AND THE DOM
 
 Jest has already set up a JSDOM instance for you.  
 You must wrap each of your interactions with a component into a React testing library called `act`., which is part of the `react-dom` package. The `act` function ensures that the updates associated to your interactions have been proceeded and applied to the DOM, which, in this case, is implemented by JSDOM.
@@ -871,7 +871,7 @@ This test uses `react-dom/test-utils` to render `App` to a JSDOM instance. And t
     jest <--Web APIs--> document
 ```
 
-##### 7.2.2 React testing library
+##### 7.2.2. REACT TESTING LIBRARY
 
 We can write tests using only `react-dom/test-utils`.  
 Or we can use `react-testing-library`:
@@ -897,11 +897,11 @@ To avoid having to use `waitFor` every time you need to wait for an element, you
 A `findBy*` query runs asynchronously. The promise returned by this kind of query either resolves with the found element or rejects after one second if it didn't find anything matching the passed criteria.  
 You can use it, for example, to replace `waitFor`, which causes your tests to wait for the list to have three children.
 
-##### 7.2.3 Enzyme
+##### 7.2.3. ENZYME
 
 No content.
 
-##### 7.2.4 The React test renderer
+##### 7.2.4. THE REACT TEST RENDERER
 
 Unlike React testing library or Enzyme, it renders components to plain JS objects instead of rendering them to the DOM.  
 It can be useful, for example, when you are not using JSDOM, or if you can't use it.  
@@ -910,11 +910,11 @@ I don't see the benefit of using React's test renderer.
 Setting up JSDOM is quick, and it makes your tests more reliable because it makes your code run just like it would in a browser.  
 The main use case for `react-test-renderer` is when you are not rendering components to a DOM but would still like to inspect their contents. It can be applied in testing `react-native` applications, for example.
 
-### Section 8. Testing React applications
+### SECTION 8. TESTING REACT APPLICATIONS
 
 No content.
 
-#### 8.1 Testing component integration
+#### 8.1. TESTING COMPONENT INTEGRATION
 
 Tests should provide reliable guarantees that your components work in integration. If your test covers some top-level component like `<App />` or `<Profile />` it will automatically cover its underlying component.
 
@@ -924,23 +924,23 @@ The only downside of having this test is that you will have one extra test to fi
 
 When you have too many tests that depend on a single point of failure, centralize that point of failure into a single piece that you will use throughout your tests. Create a transitive guarantee. Modularity can make both your application's code and tests more robust.
 
-##### 8.1.1 Stubbing components
+##### 8.1.1 STUBBING COMPONENTS
 
 No content.
 
-#### 8.2 Snapshot testing
+#### 8.2 SNAPSHOT TESTING
 
 No content.
 
-##### 8.2.1 Snapshots beyoud components
+##### 8.2.1 SNAPSHOTS BEYONG COMPONENTS
 
 No content.
 
-##### 8.2.2 Serializers
+##### 8.2.2 SERIALIZERS
 
 No content.
 
-#### 8.3 Testing styles
+#### 8.3. TESTING STYLES
 
 When testing your styles, if you are using an external css file, you will not be able to check whether the specific style rules within a class are applied. You will be able to check only whether a component's `className` property is correct.
 
@@ -954,25 +954,25 @@ To address this issue, you can use `css-in-js` libs (like `emotion`) that allows
 You `toHaveStyle` assertions passed inline styles. But with `emotion` they will fail, because your components don't use inline styles to highlight your component in red anymore. Instead, because of how emotion works, your app will have automatically generated classes for the rules you created with `emotion` and apply those classes to your elements. To address this issue you can use `jest-emotion` package which allow you to extend Jest with a `toHaveStyleRule` matcher that verifies the style rules applied by emotion.  
 Example: `expect(cheesecakeItem).toHaveStyleRule("color", "red");`
 
-#### 8.4 Component-level acceptance tests and component stories
+#### 8.4. COMPONENT-LEVEL ACCEPTANCE TESTS AND COMPONENT STORIES
 
 No content.
 
-##### 8.4.1 Writing stories
+##### 8.4.1. WRITING STORIES
 
 No content.
 
-##### 8.4.2 Writing documentation
+##### 8.4.2. WRITING DOCUMENTATION
 
 No content.
 
-### Section 9. Test-driven development
+### SECTION 9. TEST-DRIVEN DEVELOPMENT
 
-### Section 10. UI-based end-to-end testing
+### SECTION 10. UI-BASED END-TO-END TESTING
 
 No content.
 
-#### 10.1. What are UI-based end-to-end tests
+#### 10.1. WHAT ARE UI-BASED END-TO-END TESTS
 
 End-to-end tests help you ensure that the _entire_ app works as it should. The scope of these tests is large. The reliability guarantees they generate are strong. End-to-end tests are at the very top of the testing pyramid.
 
@@ -991,7 +991,7 @@ The first two examples are not exactly end-to-end tests because they don't cover
 UI tests and e2e tests are not mutually exclusive classifications.  
 A test can be both a UI test and an e2e test, or only one of them.
 
-#### 10.2. When to write each type of test
+#### 10.2. WHEN TO WRITE EACH TYPE OF TEST
 
 - Pure e2e tests.
 - Pure UI tests.
@@ -1002,7 +1002,7 @@ It is common for people to call "e2e tests" any test that interact with an app t
 Though that defenition is correct, given that these tests' is the entire app under test.  
 But we will adopt more pricese terminology.
 
-##### 10.2.1. UI-based end-to-end tests
+##### 10.2.1. UI-BASED END-TO-END TESTS
 
 Involves the entire software stack upon which your app depends.  
 Goes at the very top of the testing pyramid because it has the broadest possible scope and generates the most reliable guarantees.  
@@ -1033,7 +1033,7 @@ Both developers and QA engineers can write UI-based e2e tests.
 In leaner teams, which take a more agile approach to software development, software engineers will write these tests themselves.  
 When a QA team is available, they can write UI-based e2e tests.
 
-##### 10.2.2. Pure end-to-end tests
+##### 10.2.2. PURE END-TO-END TESTS
 
 In the testing pyramid, pure e2e tests go a bit below UI-based e2e tests.  
 Pure e2e tests don't test your software as precisely as users would.  
@@ -1052,7 +1052,7 @@ Developers should carefully adopt their test suit to reduce the burden of mainte
 
 Because writing pure e2e tests requires direct access to the code, they must be written by developers, not QA engineers.
 
-##### 10.2.3. Pure UI tests
+##### 10.2.3. PURE UI TESTS
 
 Pure UI tests can validate your UI:
 
@@ -1088,11 +1088,11 @@ More about pure UI tests:
 - Most of the time, pure UI test must be written by developers, not QA engineers.
 - When interactions with other pieces of software are irrelevant to the test, QA engineers can write pure UI tests also.
 
-##### 10.2.4. A note on acceptance testing and this chapter's name
+##### 10.2.4. A NOTE ON ACCEPTANCE TESTING AND THIS CHAPTER'S NAME
 
 No content.
 
-#### 10.3. An overview of end-to-end testing tools
+#### 10.3. AN OVERVIEW OF END-TO-END TESTING TOOLS
 
 The tools described in this section interact with your software through its UI, rather than through your code directly.
 
@@ -1109,7 +1109,7 @@ The problem with using JSDOM is that it may not always accurately reflect what r
 JSDOM is an excellent and successfull attempt to browser APIs as per specification.  
 But JSDOM is still a replica and of browser environment and can replicate not every case exactly: even browsers themselves don't always follow the API's specifications adequately. Therefore, even if JSOM implements those APIs correctly, browser may not.
 
-##### 10.3.1. Selenium
+##### 10.3.1. SELENIUM
 
 Selenium is a browser automation framework frequently used for testing web apps through a real browser.  
 Selenium is the precursor of the browser-based e2e testing tools.
@@ -1117,7 +1117,7 @@ Selenium is the precursor of the browser-based e2e testing tools.
 Besides being the most accurate way to replicate your user's actions, Selenium provides you with the full range of browser's capabiliaties.  
 You can freely navigate between pages, trottle the network speed, record videos and take screenshots.
 
-###### How selenium works
+###### HOW SELENIUM WORKS
 
 Selenium interacts with a browser through programs called _webdrivers_.  
 These webdrivers are responsible for receiving Selenium's commands and performing the necessary actions within a real browser.  
@@ -1125,7 +1125,7 @@ When you tell Selenium to click an element, it will send a "click" command to th
 Because this webdriver is capable of controlling a real browser, it will make the browser to click the selected element.  
 To communicate with the Webdriver, selenium uses a protocol called JSON Wire. This protocol specifies a set of HTTP routes for handling different actions to be performed within a browser.
 
-###### Using a Webdriver's interfaces without Selenium
+###### USING A WEBDRIVER'S INTERFACES WITHOUT SELENIUM
 
 Even though Selenium is mostly used to test web apps, it is actually a browser automation library.  
 Therefore, its an NPM package under the name `selenium-webdriver`, ant it doesn't include a test runner or an assertion library.  
@@ -1137,7 +1137,7 @@ To avoid going through this setup process yourself, use Nightwatch or WebdriverI
 Nightwatch and WebdriverIO, just like Selenium, can interface with multiple Webdrivers, and, therefore, are capable of controlling real browsers.  
 The main difference between these tools and Selenium is that they ship with testing utilities.
 
-###### When to choose Selenium
+###### WHEN TO CHOOSE SELENIUM
 
 Selenium, Nightwatch and WebdriverIO support all the major browsers.  
 I'd avoid Selenium itself if I'm using it _exclusively_ to write tests. In that case I'd choose Nightwatch or WebdriverIO.  
@@ -1148,7 +1148,7 @@ Also, because they control a browser through HTTP requests they are slower than 
 Besides their possible slowness, configuring and debuggin tests can be challenging.  
 Without build-in tools to outline different test cases, run assertions, and monitor your tests' executions, they can take significantly more time to write.
 
-##### 10.3.2. Puppeteer
+##### 10.3.2. PUPPETEER
 
 Like Selenium, Puppeteer is not _exclusevily_ a testing framework.  
 Instead, Puppeteer is a browser automation tool.
@@ -1170,14 +1170,14 @@ By default, tests written using Puppeteer are much more robust.
 Puppeteer's debuggability is much better than Selenium's.  
 With Puppeteer, you can easily use Chrome's devtools to solve bugs and its "slow-motion" mode to replay the test's steps in such a way that you can understand precisely what the browser is doing.
 
-###### When to choose Puppeteer
+###### WHEN TO CHOOSE PUPPETEER
 
 When you want to write cheaper tests: robust, less time to write, easier debugging.  
 If you need to support only Chrome and Chromium, Puppeteer is a much better alternative than Webdriver-based tools due to its simplicity and debuggability.  
 Because Puppeteer is focused on supporting Chromium, it can provide you with access to more features and offer more elaborated browser APIs.  
 If you need to test other browsers, Puppeteer cannot be used in your case.
 
-##### 10.3.3. Cypress
+##### 10.3.3. CYPRESS
 
 Cypress directly interfaces with a browser's remote-control API to find elements and carry out actions.  
 This direct communication to a browser makes tests quicker and simplifies setting up a testing environment because it reduces the amount of software needed to start writing tests.  
@@ -1208,23 +1208,23 @@ You can use the test's action log to see how your app looked at each of these st
 Because you can run Cypress tests within a real browser, you can examine each step in detail using your browser's devtools.  
 When tests detects a bug in your app, you can add break points to your app's code and step through its lines.
 
-##### 10.3.4. When to choose Cypress
+##### 10.3.4. WHEN TO CHOOSE CYPRESS
 
 If you're looking for a tool _exclusively_ to write tests for Chrome and Firefox.
 
-### Section 11. Writing UI-based end-to-end tests
+### Section 11. WRITING UI-BASED END-TO-END TESTS
 
 No content.
 
-#### 11.1. Your first UI-based end-to-end tests
+#### 11.1. YOUR FIRST UI-BASED END-TO-END TESTS
 
 No content.
 
-##### 11.1.1. Setting up a test environment
+##### 11.1.1. SETTING UP A TEST ENVIRONMENT
 
 No content.
 
-##### 11.1.2. Writing your first tests
+##### 11.1.2. WRITING YOUR FIRST TESTS
 
 For your tests to be able to run, start your client and server to make them accessible.  
 To access elements within the page, call `get` method, or `contain` method or their combination.  
@@ -1257,7 +1257,7 @@ It always tests the same functionality and is ways simpler to implement and to d
 
 No content.
 
-##### 11.1.4. Sequencing actions
+##### 11.1.4. SENDING HTTP REQUESTS
 
 None of the Cypress commands you've written Cypress is synchronous.  
 You don't need to use `await` or chain these commands to sequence these commands.  
@@ -1275,7 +1275,7 @@ To run a single test, add a `.only` to it.
 
 No content.
 
-##### 11.2.1. Page objects
+##### 11.2.1. BEST PRACTICES END-TO-END TESTS
 
 The page object pattern: instead of repeating selectors and actions throughout your tests, you'll use a separate object's methods into which those actions are encapsulated.  
 The advantage of encapsulating actions into separate methods is that you'll be quicker to update your tests when your page's structure changes.
@@ -1343,7 +1343,7 @@ class MenuPage {
 
 **By using page objects, you'll write tests in terms of what they do, _not_ in terms of what the page's structure is.**
 
-##### 11.2.2. Applications actions
+##### 11.2.2. APPLICATIONS ACTIONS
 
 Typically, UI-based e2e tests interface only with your app's GUI.  
 App actions allow your tests to interface directly with your app's code.  
@@ -1354,11 +1354,11 @@ The disadvantage of using app actions is that they couple your tests to your app
 
 Personally, I use app actions only in my test's _arrange_ step. To _act_ and _assert_, I use selectors from a page object.
 
-#### 11.3. Dealing with flakiness
+#### 11.3. DEALING WITH FLAKINESS
 
 Flakiness makes you less confident that your tests - your bug-detection mechanisms - can identify mistakes.
 
-##### 11.3.1. Avoiding waiting for fixed amount of time
+##### 11.3.1. AVOIDING WAITING FOR FIXED AMOUNT OF TIME
 
 As a rule of thumb, whenever using Cypress, you should avoid waiting for a fixed amount of time.  
 Using `cy.wait` is almost always a **bad** idea.  
@@ -1369,7 +1369,7 @@ Instead of waiting for a fixed amount of time, you should wait for conditions to
 Example: if you expect your page to contain a new element once the server responds, don't wait for a few seconds before checking the page's elements. Instead, configure the test to proceed when it detects the new element is there.  
 This practice allows your tests to run more quickly because they'll wait for only minimum necessary amount of time.
 
-##### 11.3.2. Stubbing uncontrollable factors
+##### 11.3.2. STUBBING UNCONTROLLABLE FACTORS
 
 To have deterministic tests, you have to stub uncontrollable behaviour when writing tests.  
 When writing UI-based e2e tests, you should use stubs to make tests deterministic, _not_ to isolate different parts of your app.
@@ -1378,18 +1378,18 @@ When writing UI-based e2e tests, you should use stubs to make tests deterministi
 - Stubbing API requests is useful for non-free or temporary-unavailable third-party APIs.
 - Stubbing functions allows when you're using functions which results are non-deterministic: `Math.random`, etc.
 
-##### 11.3.3. Retrying tests
+##### 11.3.3. RETRYING TESTS
 
 Imagine, your test has become non-deterministic and you don't have enough time to make it deterministic right now.  
 You can set up restarting your tests.
 
-#### 11.4. Running tests on multiple browsers
+#### 11.4. RUNNING TESTS ON MULTIPLE BROWSERS
 
-##### 11.4.1. Using a testing framework for running tests within a browser
+##### 11.4.1. USING A TESTING FRAMEWORK FOR RUNNING TESTS WITHIN A BROWSER
 
-##### 11.4.2. Running UI-based tests in multiple browsers
+##### 11.4.2. RUNNING UI-BASED TESTS IN MULTIPLE BROWSERS
 
-##### 11.5. Visual regression tests
+##### 11.5. VISUAL REGRESSION TESTS
 
 To ensure that your app is correctly displayed, visual regresssion tests compare how your app looks to previously approved snapshots.
 
@@ -1405,9 +1405,9 @@ Visual regression tests can see the entire scene and will detect such non-trivia
 My favourite tool is Percy, which has integration with Cypress.  
 Check its docs, `npm install --save-dev @percy/cypress` and write your visual regression tests.
 
-## Part 3: Business impact
+## Part 3: BUSINESS IMPACT
 
-### Section 12. Continious integration and continious delivery
+### SECTION 12. CONTINIOUS INTEGRATION AND CONTINIOUS DELIVERY
 
 When developers write code in their own branch for a long time without integration their work with others' work, the consequences are bad.  
 The main branch, the code upon which they building their branch might have already changed.  
@@ -1415,24 +1415,24 @@ This causes a lot of rework and conflicts, which is constly, risky and frustrati
 Deliver early and deliver frequently.  
 You'll get customer's feedback sooner and learn more about what to build next.
 
-#### 12.1. What are continuous integration and continuous delivery
+#### 12.1. WHAT ARE CONTINUOUS INTEGRATION AND CONTINUOUS DELIVERY
 
-#### 12.1.1. Continuous integration
+#### 12.1.1. CONTINUOUS INTEGRATION
 
-#### 12.1.2. Continuous delivery
+#### 12.1.2. CONTINUOUS DELIVERY
 
-#### 12.2. The role of automated tests in a CI / CD pipeline
+#### 12.2. THE ROLE OF AUTOMATED TESTS IN A CI / CD PIPELINE
 
-#### 12.3. Version-control checks
+#### 12.3. VERSION-CONTROL CHECKS
 
-### Section 13. A culture of quality
+### SECTION 13. A CULTURE OF QUALITY
 
-#### 13.1. Using type systems to make invalid states inpresentable
+#### 13.1. USING TYPE SYSTEMS TO MAKE INVALID STATES INPRESENTABLE
 
-#### 13.2. Reviewing code to catch problems machines can't
+#### 13.2. REVIEWING CODE TO CATCH PROBLEMS MACHINES CAN'T
 
-#### 13.3. Using linters and formatters to produce consistent code
+#### 13.3. USING LINTERS AND FORMATTERS TO PRODUCE CONSISTENT CODE
 
-#### 13.4. Monitoring your systems to understand how they actually behave
+#### 13.4. MONITORING YOUR SYSTEMS TO UNDERSTAND HOW THEY ACTUALLY BEHAVE
 
-#### 13.5. Explaining your software with good documentation
+#### 13.5. EXPLAINING YOUR SOFTWARE WITH GOOD DOCUMENTATION
