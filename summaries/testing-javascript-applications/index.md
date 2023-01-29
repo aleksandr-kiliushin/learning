@@ -1405,7 +1405,7 @@ Visual regression tests can see the entire scene and will detect such non-trivia
 My favourite tool is Percy, which has integration with Cypress.  
 Check its docs, `npm install --save-dev @percy/cypress` and write your visual regression tests.
 
-## Part 3: BUSINESS IMPACT
+## PART 3: BUSINESS IMPACT
 
 ### CHAPTER 12. CONTINIOUS INTEGRATION AND CONTINIOUS DELIVERY
 
@@ -1536,6 +1536,8 @@ Additionally, to test the deployment process itself, you should have a separate 
 Your CI / CD pipeline validations should give you quick and precise feedback so that you can detect mistakes earlier. To make it possible, your CI / CD pipeline must include all kinds of tests.
 
 #### SECTION 12.3. VERSION-CONTROL CHECKS
+
+Use git hooks like `husky`.
 
 ### CHAPTER 13. A CULTURE OF QUALITY
 
