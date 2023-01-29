@@ -1576,4 +1576,21 @@ No content.
 
 #### SECTION 13.4. MONITORING YOUR SYSTEMS TO UNDERSTAND HOW THEY ACTUALLY BEHAVE
 
+Having tests, static code analysis, linter, etc does not give you 100% guarantees your software if bug-free. Monitoring systems tracks bugs and bottlenecks occuring in surprising places while your users use your app.
+
+Imagine, your users complain that your app loads very long. Without measuring, you are shooting in the dark.
+
+> Measure. Do not tune for speed until you have measured.
+
+Set up alerts. If a part of your app is unreachable, someone should wake up.
+
 #### SECTION 13.5. EXPLAINING YOUR SOFTWARE WITH GOOD DOCUMENTATION
+
+When you install some library, you read it's docs, do not you? You should provide the docs for your software as well.
+
+Avoid describing how your code works, instead, focus on desribing its **intent**.
+
+The biggest problem with docs is keeping it up-to-date. The code is updated -> update the docs. Otherwise, two conflicting sources of information will be confusing and harmful.  
+To avoid this situation, keep your docs as keep to your code as possible. For example, you can use JSDOC instead of keeping your docs in separate markdown files. JSDOC also allows you to generate a static website and publish it.
+
+Try to write docs before writing any code. By explainig the code's intent before you write it, you worry less about its implementation details and focus on what is the module's consumer will need.
