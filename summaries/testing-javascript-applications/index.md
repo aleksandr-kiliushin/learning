@@ -1413,6 +1413,21 @@ When developers write code in their own branch for a long time without integrati
 
 #### SECTION 12.1. WHAT ARE CONTINUOUS INTEGRATION AND CONTINUOUS DELIVERY
 
+**Successfull businesses** delight customers by:
+
+- communicating frequently;
+- iterating quickly;
+- delivering early;
+- listening to feedback;
+- acting on the feedback.
+
+These businesses **focus on delivering delightful finished products rather than** constantly working on **mediocre new features**.
+
+There are two prictices at the core of this success:
+
+- CI – frequently integrating your work with others' work;
+- CD – delivering your product to your customers early and often.
+
 ##### 12.1.1. CONTINUOUS INTEGRATION
 
 ##### 12.1.2. CONTINUOUS DELIVERY
