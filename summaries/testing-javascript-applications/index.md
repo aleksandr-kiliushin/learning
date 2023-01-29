@@ -1494,7 +1494,7 @@ Early feedback helps you understand what matters to your customers and, therefor
 
 ~~Writing as much code as possible.~~ Providing as much value as possible.
 
-##### CONTINUOUS DELIVERY VS CONTINUOUS DEPLOYMENT
+###### CONTINUOUS DELIVERY VS CONTINUOUS DEPLOYMENT
 
 With continuous delivery, a human still needs to decide to "push the button".
 
@@ -1521,6 +1521,19 @@ flowchart LR
 As you move from continuous integration to continuous delivery, and then to continuous deployment, the pace of releases becomes quicker, forching you to implement more sophisticated deployment techniques and automations, better monitoring, and more reliable quality guarantees.
 
 #### SECTION 12.2. THE ROLE OF AUTOMATED TESTS IN A CI / CD PIPELINE
+
+Automated testing is the most crucial technique to enable a team to perform CD because it allows you to increase your delivery frequency without significantly increasing your costs.
+
+These tests are integrated into your CI / CD pipeline.
+
+**Setting up CI routine VS implementing a CI / CD pipeline.**  
+When performing CI, your team will validate its software every time someone pushes code to the main. This validation process may include trying to build the app, running tests, and performing static analysis.  
+A CI / CD pipeline, **besides validating** your software, prepares any artifacts necessary for releases so that you can deploy them by "pushing a button".  
+If you are writing a Node.js app, for example, your CI / CD pipeline can validate it, build the necessary containers, and push them to a containers repo.  
+After your pipeline runs, you will be able to quickly deploy your software by pushing a button, because you will not have to build your containers again. Instead, you will simply pull what is already built.  
+Additionally, to test the deployment process itself, you should have a separate production-like environment to which you deploy your software.
+
+Your CI / CD pipeline validations should give you quick and precise feedback so that you can detect mistakes earlier. To make it possible, your CI / CD pipeline must include all kinds of tests.
 
 #### SECTION 12.3. VERSION-CONTROL CHECKS
 
