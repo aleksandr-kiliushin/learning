@@ -1548,7 +1548,11 @@ There are techniques that:
 - make your code easier to understand;
 - catch error that your code are not able to.
 
-#### SECTION 13.1. USING TYPE SYSTEMS TO MAKE INVALID STATES INPRESENTABLE
+#### SECTION 13.1. USING TYPE SYSTEMS TO MAKE INVALID STATES INREPRESENTABLE
+
+Imagine a function that accepts a number as an argument. Instead of testing what happens when a non-number argument is passed, you can restrict non-number arguments on the static analysis level.
+
+Unlike tests, type systems are _not_ based on experimentation. They are based on clear, logical rules with which your programs need to comply to be considered valid.
 
 #### SECTION 13.2. REVIEWING CODE TO CATCH PROBLEMS MACHINES CAN'T
 
