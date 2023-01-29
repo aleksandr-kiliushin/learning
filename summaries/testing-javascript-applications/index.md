@@ -1541,6 +1541,13 @@ Use git hooks like `husky`.
 
 ### CHAPTER 13. A CULTURE OF QUALITY
 
+There are techniques that:
+
+- amplify the effect of your tests;
+- make your tests safer;
+- make your code easier to understand;
+- catch error that your code are not able to.
+
 #### SECTION 13.1. USING TYPE SYSTEMS TO MAKE INVALID STATES INPRESENTABLE
 
 #### SECTION 13.2. REVIEWING CODE TO CATCH PROBLEMS MACHINES CAN'T
