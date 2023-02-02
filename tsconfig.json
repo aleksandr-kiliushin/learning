@@ -1,37 +1,28 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
+    "declaration": true,
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "module": "commonjs",
     "moduleResolution": "node",
-    "noEmit": true,
     "noEmitOnError": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": false, // `false` only for this project.
-    "noUnusedParameters": true,
-    "paths": {
-      "#components/*": ["src/components/*"],
-      "#mocks/*": ["src/mocks/*"],
-      "#models/*": ["src/models/*"],
-      "#src/*": ["src/*"],
-      "#styles/*": ["src/styles/*"],
-      "#types/*": ["src/types/*"],
-      "#utils/*": ["src/utils/*"],
-      "#views": ["src/views"],
-      "#views/*": ["src/views/*"]
-    },
+    "outDir": "dist",
+    "removeComments": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
+    "strictFunctionTypes": true,
     "strictNullChecks": true,
+    "suppressExcessPropertyErrors": false,
     "target": "es6"
   },
   "exclude": ["node_modules"],
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.ts"]
 }

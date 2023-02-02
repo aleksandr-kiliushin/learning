@@ -52,7 +52,7 @@
   ](https://www.youtube.com/watch?v=fXVVpooY0ek&ab_channel=hh_ru)
 - 📦 [Школа программистов: Сергей Подунов, Архитектура, REST, HTTP](https://www.youtube.com/watch?v=Lf1s9DE04Jw&ab_channel=hh_ru)
 - 📦 [Архитектура React - приложения – Егор Блинов](https://www.youtube.com/watch?v=Zy-Oj6qs8vo&ab_channel=%D0%A4%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4)
-- 📦 clean-architecture-2018-en.pdf
+- ✅ clean-architecture-2018-en.pdf
 - 📦 domain-driven-design-reference-2015-en.pdf
 - 📦 implementing-domain-driven-design-2013.pdf
 - 🔍 Hexagonal architecture
@@ -64,8 +64,8 @@
 
 ## 🎨 CSS
 
-- TODO: Fill in, CSS the definitive guide
-- TODO: Fill in, another css book
+- TODO: Fill in, CSS the definitive guide.
+- TODO: Fill in, another CSS book.
 
 ## 🌵 GIT
 

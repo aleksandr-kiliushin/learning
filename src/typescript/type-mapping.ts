@@ -1,5 +1,3 @@
-import camelCase from "lodash/camelCase"
-
 /**
  * Mapped types are created by applying a transofrmation to the properties of an existing type.
  * The best way to understand how mapped types work is to create one that processes a type

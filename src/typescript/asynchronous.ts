@@ -17,3 +17,5 @@ promiseReturningString()
     console.log(name)
     console.log(message)
   })
+
+export {}

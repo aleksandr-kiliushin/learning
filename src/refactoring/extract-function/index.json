@@ -1,0 +1,5 @@
+{
+  "customer": "John Doe",
+  "dueDate": null,
+  "orders": [{ "amount": 100 }, { "amount": 200 }, { "amount": 300 }]
+}
