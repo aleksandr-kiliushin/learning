@@ -10,7 +10,7 @@ import java.util.Arrays;
 class NumberSearcher {
   public static Integer find(int[] elements, int elementToFindIndexOf) {
     int indexToSearchFrom = 0;
-    int indexToSearchTo = elements.length;
+    int indexToSearchTo = elements.length - 1;
     int middleIndex;
     int elementAtMiddleIndex;
 
@@ -33,7 +33,7 @@ class NumberSearcher {
 class BinarySearch {
   public static void main(String[] args) {
     int[] elements = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    Integer elementIndex = NumberSearcher.find(elements, 9);
+    Integer elementIndex = NumberSearcher.find(elements, 10);
     System.out.println(elementIndex);
   }
 }
