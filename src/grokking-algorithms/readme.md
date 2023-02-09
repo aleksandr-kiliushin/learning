@@ -26,3 +26,6 @@ The 5 most common run times (there are others).
 - $O(n!)$. Example: A really slow algorithm, like a travelling salesperson.
 
 ![algorithms-run-times-comparison](./images/algorithms-run-times-comparison.png)
+
+There are more algorighms, for example:  
+$O(1)$. Example: Reading array element, insertion / deletion from list.
