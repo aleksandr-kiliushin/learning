@@ -1,3 +1,5 @@
+// TODO: Figure out how to find the shortest distance for unknown amount of points in array.
+
 /**
  * How to run the example:
  * javac ./src/grokking-algorithms/01-introduction-to-algorithms/TravelingSalesperson.java && java --class-path ./src/grokking-algorithms/01-introduction-to-algorithms TravelingSalesperson
@@ -7,31 +9,56 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 
-class DistanceSearcher {
-  public static Integer find(int[] elements, int elementToFindIndexOf) {
-    int indexToSearchFrom = 0;
-    int indexToSearchTo = elements.length - 1;
+class City {
+  public int x;
+  public int y;
+  public String name;
 
-    while (indexToSearchFrom <= indexToSearchTo) {
-      int middleIndex = (indexToSearchTo + indexToSearchFrom) / 2;
-      int elementAtMiddleIndex = (int) Array.get(elements, middleIndex);
-      if (elementAtMiddleIndex == elementToFindIndexOf) {
-        return middleIndex;
-      } else if (elementAtMiddleIndex < elementToFindIndexOf) {
-        indexToSearchFrom = middleIndex + 1;
-      } else if (elementAtMiddleIndex > elementToFindIndexOf) {
-        indexToSearchTo = middleIndex - 1;
+  City(int x, int y, String name) {
+    this.x = x;
+    this.y = y;
+    this.name = name;
+  }
+}
+
+class DistanceSearcher {
+  public static double find(City[] cities) {
+    double theShortestDistance = 100500;
+
+    for (int i = 0; i < cities.length; i++) {
+      for (int j = 0; j < cities.length; j++) {
+        for (int k = 0; k < cities.length; k++) {
+          if (i != j && i != k && j != k) {
+            double distance =
+              + Math.pow(
+                Math.pow(cities[i].x - cities[j].x, 2) + Math.pow(cities[i].y - cities[j].y, 2),
+                0.5
+              )
+              + Math.pow(
+                Math.pow(cities[i].x - cities[k].x, 2) + Math.pow(cities[i].y - cities[k].y, 2),
+                0.5
+              );
+            if (distance < theShortestDistance) {
+              theShortestDistance = distance;
+            }
+          }
+        }
       }
     }
 
-    return null;
+    return theShortestDistance;
   }
 }
 
 class TravelingSalesperson {
   public static void main(String[] args) {
-    int[] elements = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    Integer elementIndex = DistanceSearcher.find(elements, 10);
+    City[] cities = {
+      new City(1, 1, "Atlanta"),
+      new City(5, 9, "Boston"),
+      new City(2, 6, "Chicago"),
+    };
+
+    double elementIndex = DistanceSearcher.find(cities);
     System.out.println(elementIndex);
   }
 }
