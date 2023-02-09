@@ -31,7 +31,7 @@ There is a number we should guess. It is in range 1..10. After each try, we have
 
 ## Complexity
 
-$O = log{_2}n$
+$O(log{_2}n)$
 
-For a range of 1..10: $O = log{_2}10 = 3.32$.  
+For a range of 1..10: $O(log{_2}10) = 3.32$.  
 So you need at most 4 iterations to find the number.
