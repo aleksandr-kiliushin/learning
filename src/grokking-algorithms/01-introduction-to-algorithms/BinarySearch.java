@@ -11,12 +11,10 @@ class NumberSearcher {
   public static Integer find(int[] elements, int elementToFindIndexOf) {
     int indexToSearchFrom = 0;
     int indexToSearchTo = elements.length - 1;
-    int middleIndex;
-    int elementAtMiddleIndex;
 
     while (indexToSearchFrom <= indexToSearchTo) {
-      middleIndex = indexToSearchFrom + (indexToSearchTo - indexToSearchFrom) / 2;
-      elementAtMiddleIndex = (int) Array.get(elements, middleIndex);
+      int middleIndex = (indexToSearchTo + indexToSearchFrom) / 2;
+      int elementAtMiddleIndex = (int) Array.get(elements, middleIndex);
       if (elementAtMiddleIndex == elementToFindIndexOf) {
         return middleIndex;
       } else if (elementAtMiddleIndex < elementToFindIndexOf) {
