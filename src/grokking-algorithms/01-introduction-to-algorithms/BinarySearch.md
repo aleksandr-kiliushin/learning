@@ -13,7 +13,7 @@
 
 ## Output
 
-- if an element is found, returns an **position** where it is located;
+- if an element is found, returns **position** where it is located;
 - if an element is not found, returns `null`.
 
 ## Example 1. Guess a number
