@@ -32,4 +32,4 @@ $O(1)$. Example: Reading array element, insertion / deletion from list, search i
 
 ### NOTES
 
-Search is not relevant to stack.
+Search is not relevant to stack and queue, because you cannot acces random elements in them (usually it does not make sense). You can only add / delete and enqueue / dequeue elements.
