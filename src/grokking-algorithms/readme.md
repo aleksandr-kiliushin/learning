@@ -29,3 +29,7 @@ The 5 most common run times (there are others).
 
 There are more algorighms, for example:  
 $O(1)$. Example: Reading array element, insertion / deletion from list, search in a hash table.
+
+### NOTES
+
+Search is not relevant to stack.
