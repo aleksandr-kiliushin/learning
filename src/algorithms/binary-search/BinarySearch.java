@@ -1,10 +1,7 @@
-// To run this code:
-// javac ./src/algorithms/binary-search/BinarySearch.java && java -cp ./src/algorithms/binary-search BinarySearch && rm ./src/**/*.class
-
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
-class NumberSearcher {
+class BinarySearch {
   public static Integer find(int[] elements, int elementToFindIndexOf) {
     int indexToSearchFrom = 0;
     int indexToSearchTo = elements.length - 1;
@@ -22,13 +19,5 @@ class NumberSearcher {
     }
 
     return null;
-  }
-}
-
-class BinarySearch {
-  public static void main(String[] args) {
-    int[] elements = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    Integer elementIndex = NumberSearcher.find(elements, 10);
-    System.out.println(elementIndex);
   }
 }
