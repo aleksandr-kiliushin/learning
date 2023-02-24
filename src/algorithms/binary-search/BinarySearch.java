@@ -18,6 +18,6 @@ class BinarySearch {
       }
     }
 
-    return null;
+    return -1;
   }
 }
