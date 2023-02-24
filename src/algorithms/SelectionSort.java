@@ -1,11 +1,8 @@
-/**
- * How to run the example:
- * javac ./src/grokking-algorithms/01-introduction-to-algorithms/SelectionSort.java && java --class-path ./src/grokking-algorithms/01-introduction-to-algorithms SelectionSort
- */
+// How to run the example:
+// javac ./src/algorithms/SelectionSort.java && java --class-path ./src/algorithms SelectionSort && rm ./src/**/*.class
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
-
 
 class Sorter {
   public static int[] sortByAsc(int[] elements) {

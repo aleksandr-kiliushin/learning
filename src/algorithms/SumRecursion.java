@@ -1,7 +1,5 @@
-/**
- * How to run the example:
- * javac ./src/grokking-algorithms/01-introduction-to-algorithms/SumRecursion.java && java --class-path ./src/grokking-algorithms/01-introduction-to-algorithms SumRecursion
- */
+// How to run the example:
+// javac ./src/algorithms/SumRecursion.java && java --class-path ./src/algorithms SumRecursion && rm ./src/**/*.class
 
 import java.util.Arrays;
 

@@ -16,11 +16,11 @@
 
 The salesperson has to go to 5 cities.
 
-<img src="../images/traveling-salesperson-map.png"  width="250" height="250">
+<img src="./images/traveling-salesperson-map.png"  width="250" height="250">
 
 He wants to visit the cities while travelling the minimum distance, so he tries to find the shortest way.
 
-<img src="../images/traveling-salesperson-ways-variants.png"  width="400" height="150">
+<img src="./images/traveling-salesperson-ways-variants.png"  width="400" height="150">
 
 ## Complexity
 

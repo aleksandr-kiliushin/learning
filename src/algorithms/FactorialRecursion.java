@@ -1,8 +1,5 @@
-/**
- * How to run the example:
- * javac ./src/grokking-algorithms/01-introduction-to-algorithms/FactorialRecursion.java && java --class-path ./src/grokking-algorithms/01-introduction-to-algorithms FactorialRecursion
- */
-
+// How to run the example:
+// javac ./src/algorithms/FactorialRecursion.java && java --class-path ./src/algorithms FactorialRecursion && rm ./src/**/*.class
 
 class FactorialFinder {
   public static int find(int value) {

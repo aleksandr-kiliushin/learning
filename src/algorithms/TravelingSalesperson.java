@@ -1,13 +1,10 @@
-// TODO: Figure out how to find the shortest distance for unknown amount of points in array.
+// How to run the example:
+// javac ./src/algorithms/TravelingSalesperson.java && java --class-path ./src/algorithms TravelingSalesperson && rm ./src/**/*.class
 
-/**
- * How to run the example:
- * javac ./src/grokking-algorithms/01-introduction-to-algorithms/TravelingSalesperson.java && java --class-path ./src/grokking-algorithms/01-introduction-to-algorithms TravelingSalesperson
- */
+// TODO: Figure out how to find the shortest distance for unknown amount of points in array (how to figure out the for loops depth).
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
-
 
 class City {
   public int x;

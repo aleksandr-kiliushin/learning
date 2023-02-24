@@ -1,11 +1,8 @@
-/**
- * How to run the example:
- * javac ./src/grokking-algorithms/01-introduction-to-algorithms/BinarySearch.java && java --class-path ./src/grokking-algorithms/01-introduction-to-algorithms BinarySearch
- */
+// How to run the example:
+// javac ./src/algorithms/BinarySearch.java && java --class-path ./src/algorithms BinarySearch && rm ./src/**/*.class
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
-
 
 class NumberSearcher {
   public static Integer find(int[] elements, int elementToFindIndexOf) {
