@@ -14,7 +14,7 @@
 ## Output
 
 - if an element is found, returns **position** where it is located;
-- if an element is not found, returns `null`.
+- if an element is not found, returns -1.
 
 ## Example 1. Guess a number
 
