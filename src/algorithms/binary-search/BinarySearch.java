@@ -1,5 +1,5 @@
-// How to run the example:
-// javac ./src/algorithms/BinarySearch.java && java --class-path ./src/algorithms BinarySearch && rm ./src/**/*.class
+// To run this code:
+// javac ./src/algorithms/binary-search/BinarySearch.java && java -cp ./src/algorithms/binary-search BinarySearch && rm ./src/**/*.class
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
