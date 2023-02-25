@@ -21,9 +21,11 @@ class MyArrayTest {
   }
 
   @Test
-  public void testDoesItReadsElementByIndex() {
+  public void testDoesItReadElementByIndex() {
     MyArray myArray = new MyArray(10);
+    Assertions.assertEquals(myArray.getElementAt(0), null);
     Assertions.assertEquals(myArray.getElementAt(5), null);
+    Assertions.assertEquals(myArray.getElementAt(9), null);
   }
 
   @Test
@@ -31,6 +33,23 @@ class MyArrayTest {
     MyArray myArray = new MyArray(10);
     RuntimeException exception = Assertions.assertThrows(RuntimeException.class, () -> {
       myArray.getElementAt(100500);
+    });
+    Assertions.assertEquals(exception.getMessage(), "Provided index is out of array size.");
+  }
+
+  @Test
+  public void testDoesItSetElementByIndex() {
+    MyArray myArray = new MyArray(10);
+    myArray.setElementAt(0, 42);
+    Assertions.assertEquals(myArray.getElementAt(0), 42);
+    Assertions.assertEquals(myArray.getElementAt(1), null);
+  }
+
+  @Test
+  public void testDoesSettingByInexistingIndexThrowsAnException() {
+    MyArray myArray = new MyArray(10);
+    RuntimeException exception = Assertions.assertThrows(RuntimeException.class, () -> {
+      myArray.setElementAt(100500, 42);
     });
     Assertions.assertEquals(exception.getMessage(), "Provided index is out of array size.");
   }

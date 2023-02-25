@@ -28,6 +28,12 @@ class MyArray {
     this.memory = memory;
   }
 
+  private void validateIndex(int index) {
+    if (index < 0 || this.size -1 < index) {
+      throw new RuntimeException("Provided index is out of array size.");
+    }
+  }
+
   public int getSize() {
     return this.size;
   }
@@ -37,9 +43,13 @@ class MyArray {
   }
 
   public Integer getElementAt(int index) {
-    if (index < 0 || this.size -1 < index) {
-      throw new RuntimeException("Provided index is out of array size.");
-    }
+    this.validateIndex(index);
     return this.memory.get(index);
+  }
+
+  public int setElementAt(int index, int value) {
+    this.validateIndex(index);
+    this.memory.put(index, value);
+    return this.length;
   }
 }
