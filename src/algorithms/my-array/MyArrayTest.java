@@ -8,7 +8,7 @@ class MyArrayTest {
   @Test
   public void testDoesNegativeInitialSizeThrowAnExeption() {
     RuntimeException exception = Assertions.assertThrows(RuntimeException.class, () -> {
-      MyArray myArray = new MyArray(-42);
+      new MyArray(-42);
     });
     Assertions.assertEquals(exception.getMessage(), "Array initial size cannot be negative.");
   }

@@ -4,9 +4,12 @@
  * When array length is about to exceed, allocate two times more memory.
  **/
 
+ import java.util.HashMap;
+
 class MyArray {
   private int size;
   private int length;
+  private HashMap<Integer, Integer> memory;
 
   public MyArray(int initialSize) {
     if (initialSize < 0) {
@@ -14,6 +17,7 @@ class MyArray {
     }
     this.size = initialSize;
     this.length = 0;
+    this.allocateMemory(initialSize);
   }
 
   public int getSize() {
@@ -22,5 +26,13 @@ class MyArray {
 
   public int getLength() {
     return this.length;
+  }
+
+  private void allocateMemory (int size) {
+    HashMap<Integer, Integer> memory = new HashMap<Integer, Integer>();
+    for (int index = 0; index < size; index++) {
+      memory.put(index, null);
+    }
+    this.memory = memory;
   }
 }
