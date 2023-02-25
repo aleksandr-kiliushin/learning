@@ -1,7 +1,6 @@
 // How to run the example:
 // javac ./src/algorithms/SelectionSort.java && java --class-path ./src/algorithms SelectionSort && rm ./src/**/*.class
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 class Sorter {

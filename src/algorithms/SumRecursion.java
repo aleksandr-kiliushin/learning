@@ -1,8 +1,6 @@
 // How to run the example:
 // javac ./src/algorithms/SumRecursion.java && java --class-path ./src/algorithms SumRecursion && rm ./src/**/*.class
 
-import java.util.Arrays;
-
 class SumCalculator {
   public static int sum(int[] inputArray) {
     if (inputArray.length == 1) return inputArray[0];

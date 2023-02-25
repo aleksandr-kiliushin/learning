@@ -3,9 +3,6 @@
 
 // TODO: Figure out how to find the shortest distance for unknown amount of points in array (how to figure out the for loops depth).
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 class City {
   public int x;
   public int y;
