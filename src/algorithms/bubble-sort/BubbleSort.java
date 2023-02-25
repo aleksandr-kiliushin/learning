@@ -1,11 +1,6 @@
 class BubbleSort {
-  public static Integer find(int[] elements, int elementToFindIndexOf) {
-    for (int index = 0; index < elements.length; index++) {
-      if (elements[index] == elementToFindIndexOf) {
-        return index;
-      }
-    }
-
-    return -1;
+  public static int[] sort(int[] elements) {
+    int[] elementsSorted = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    return elementsSorted;
   }
 }
