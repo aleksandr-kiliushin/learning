@@ -1,4 +1,4 @@
-// To run this code:
+// To run this test:
 // javac -cp ./lib/junit-platform-console-standalone-1.7.0-all.jar ./src/algorithms/my-array/MyArray.java ./src/algorithms/my-array/MyArrayTest.java && java -jar ./lib/junit-platform-console-standalone-1.7.0-all.jar -cp ./src/algorithms/my-array --select-class MyArrayTest && rm ./src/**/*.class
 
 import org.junit.jupiter.api.Assertions;

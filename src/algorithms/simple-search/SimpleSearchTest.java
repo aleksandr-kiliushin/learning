@@ -1,4 +1,4 @@
-// To run this code:
+// To run this test:
 // javac -cp ./lib/junit-platform-console-standalone-1.7.0-all.jar ./src/algorithms/simple-search/SimpleSearch.java ./src/algorithms/simple-search/SimpleSearchTest.java && java -jar ./lib/junit-platform-console-standalone-1.7.0-all.jar -cp ./src/algorithms/simple-search --select-class SimpleSearchTest && rm ./src/**/*.class
 
 import org.junit.jupiter.api.Assertions;

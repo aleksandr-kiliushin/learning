@@ -1,4 +1,4 @@
-// To run this code:
+// To run this test:
 // javac -cp ./lib/junit-platform-console-standalone-1.7.0-all.jar ./src/algorithms/binary-search/BinarySearch.java ./src/algorithms/binary-search/BinarySearchTest.java && java -jar ./lib/junit-platform-console-standalone-1.7.0-all.jar -cp ./src/algorithms/binary-search --select-class BinarySearchTest && rm ./src/**/*.class
 
 import org.junit.jupiter.api.Assertions;
