@@ -1,6 +1,34 @@
 class BubbleSort {
   public static int[] sort(int[] elements) {
-    int[] elementsSorted = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    return elementsSorted;
+    int[] elementsCopy = new int[elements.length];
+    for (int index = 0; index < elements.length; index++) {
+      elementsCopy[index] = elements[index];
+    }
+
+    boolean isSwapped = true;
+
+    while (isSwapped) {
+      isSwapped = false;
+      for (int index = 0; index < elementsCopy.length; index++) {
+        int currentIndex = index;
+        int nextIndex = index + 1;
+
+        if (nextIndex == elementsCopy.length) {
+          continue;
+        }
+
+        int elementAtCurrentIndex = elementsCopy[currentIndex];
+        int elementAtNextIndex = elementsCopy[nextIndex];
+
+        if (elementAtCurrentIndex > elementAtNextIndex) {
+          elementsCopy[currentIndex] = elementAtNextIndex;
+          elementsCopy[nextIndex] = elementAtCurrentIndex;
+          isSwapped = true;
+          continue;
+        }
+      }
+    }
+
+    return elementsCopy;
   }
 }
