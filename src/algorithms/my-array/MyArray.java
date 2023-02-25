@@ -20,6 +20,14 @@ class MyArray {
     this.allocateMemory(initialSize);
   }
 
+  private void allocateMemory (int size) {
+    HashMap<Integer, Integer> memory = new HashMap<Integer, Integer>();
+    for (int index = 0; index < size; index++) {
+      memory.put(index, null);
+    }
+    this.memory = memory;
+  }
+
   public int getSize() {
     return this.size;
   }
@@ -28,11 +36,10 @@ class MyArray {
     return this.length;
   }
 
-  private void allocateMemory (int size) {
-    HashMap<Integer, Integer> memory = new HashMap<Integer, Integer>();
-    for (int index = 0; index < size; index++) {
-      memory.put(index, null);
+  public Integer getElementAt(int index) {
+    if (index < 0 || this.size -1 < index) {
+      throw new RuntimeException("Provided index is out of array size.");
     }
-    this.memory = memory;
+    return this.memory.get(index);
   }
 }

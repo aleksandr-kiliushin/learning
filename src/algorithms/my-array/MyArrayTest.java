@@ -19,4 +19,19 @@ class MyArrayTest {
     Assertions.assertEquals(myArray.getSize(), 10);
     Assertions.assertEquals(myArray.getLength(), 0);
   }
+
+  @Test
+  public void testDoesItReadsElementByIndex() {
+    MyArray myArray = new MyArray(10);
+    Assertions.assertEquals(myArray.getElementAt(5), null);
+  }
+
+  @Test
+  public void testDoesGettingByInexistingIndexThrowsAnException() {
+    MyArray myArray = new MyArray(10);
+    RuntimeException exception = Assertions.assertThrows(RuntimeException.class, () -> {
+      myArray.getElementAt(100500);
+    });
+    Assertions.assertEquals(exception.getMessage(), "Provided index is out of array size.");
+  }
 }
