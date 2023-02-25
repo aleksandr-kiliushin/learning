@@ -6,15 +6,21 @@
 
 class MyArray {
   private int size;
+  private int length;
 
   public MyArray(int initialSize) {
     if (initialSize < 0) {
       throw new RuntimeException("Array initial size cannot be negative.");
     }
     this.size = initialSize;
+    this.length = 0;
   }
 
   public int getSize() {
     return this.size;
+  }
+
+  public int getLength() {
+    return this.length;
   }
 }

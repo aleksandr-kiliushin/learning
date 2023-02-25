@@ -14,8 +14,9 @@ class MyArrayTest {
   }
 
   @Test
-  public void testDoesInitialSizeWork() {
+  public void testIsInitialStateCorrect() {
     MyArray myArray = new MyArray(10);
     Assertions.assertEquals(myArray.getSize(), 10);
+    Assertions.assertEquals(myArray.getLength(), 0);
   }
 }
