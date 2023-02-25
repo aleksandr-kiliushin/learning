@@ -8,7 +8,6 @@
 
 class MyArray {
   private int size;
-  private int length;
   private HashMap<Integer, Integer> memory;
 
   public MyArray(int initialSize) {
@@ -16,7 +15,6 @@ class MyArray {
       throw new RuntimeException("Array initial size cannot be negative.");
     }
     this.size = initialSize;
-    this.length = 0;
     this.allocateMemory(initialSize);
   }
 
@@ -39,7 +37,13 @@ class MyArray {
   }
 
   public int getLength() {
-    return this.length;
+    for (int index = this.size - 1; index >= 0; index--) {
+      if (this.memory.get(index) != null) {
+        int length = index + 1;
+        return length;
+      }
+    }
+    return 0;
   }
 
   public Integer getElementAt(int index) {
@@ -50,6 +54,6 @@ class MyArray {
   public int setElementAt(int index, int value) {
     this.validateIndex(index);
     this.memory.put(index, value);
-    return this.length;
+    return this.getLength();
   }
 }

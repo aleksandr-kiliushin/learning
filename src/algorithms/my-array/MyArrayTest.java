@@ -29,7 +29,7 @@ class MyArrayTest {
   }
 
   @Test
-  public void testDoesGettingByInexistingIndexThrowsAnException() {
+  public void testDoesGettingByNonexistingIndexThrowsAnException() {
     MyArray myArray = new MyArray(10);
     RuntimeException exception = Assertions.assertThrows(RuntimeException.class, () -> {
       myArray.getElementAt(100500);
@@ -38,15 +38,31 @@ class MyArrayTest {
   }
 
   @Test
-  public void testDoesItSetElementByIndex() {
+  public void testDoesItSetElementAtIndex0() {
     MyArray myArray = new MyArray(10);
-    myArray.setElementAt(0, 42);
+    Assertions.assertEquals(myArray.setElementAt(0, 42), 1);
     Assertions.assertEquals(myArray.getElementAt(0), 42);
     Assertions.assertEquals(myArray.getElementAt(1), null);
   }
 
   @Test
-  public void testDoesSettingByInexistingIndexThrowsAnException() {
+  public void testDoesItSetElementAtIndex9() {
+    MyArray myArray = new MyArray(10);
+    Assertions.assertEquals(myArray.setElementAt(9, 42), 10);
+    Assertions.assertEquals(myArray.getElementAt(0), null);
+    Assertions.assertEquals(myArray.getElementAt(9), 42);
+  }
+
+  @Test
+  public void testDoesItSetElementAtMultipleIndices() {
+    MyArray myArray = new MyArray(10);
+    Assertions.assertEquals(myArray.setElementAt(0, 42), 1);
+    Assertions.assertEquals(myArray.setElementAt(9, 66), 10);
+    Assertions.assertEquals(myArray.setElementAt(5, 55), 10);
+  }
+
+  @Test
+  public void testDoesSettingAtNonexistingIndexThrowsAnException() {
     MyArray myArray = new MyArray(10);
     RuntimeException exception = Assertions.assertThrows(RuntimeException.class, () -> {
       myArray.setElementAt(100500, 42);
