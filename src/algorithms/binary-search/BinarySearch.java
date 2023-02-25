@@ -1,5 +1,4 @@
 import java.lang.reflect.Array;
-import java.util.Arrays;
 
 class BinarySearch {
   public static Integer find(int[] elements, int elementToFindIndexOf) {
