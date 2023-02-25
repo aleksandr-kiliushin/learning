@@ -15,15 +15,15 @@ class MyArray {
       throw new RuntimeException("Array initial size cannot be negative.");
     }
     this.size = initialSize;
-    this.allocateMemory(initialSize);
+    this.memory = this.allocateMemory(initialSize);
   }
 
-  private void allocateMemory (int size) {
+  private HashMap<Integer, Integer> allocateMemory (int size) {
     HashMap<Integer, Integer> memory = new HashMap<Integer, Integer>();
     for (int index = 0; index < size; index++) {
       memory.put(index, null);
     }
-    this.memory = memory;
+    return memory;
   }
 
   private void validateIndex(int index) {
@@ -54,6 +54,21 @@ class MyArray {
   public int setElementAt(int index, int value) {
     this.validateIndex(index);
     this.memory.put(index, value);
+    return this.getLength();
+  }
+
+  public int addElement(int value) {
+    boolean isMemoryFull = this.getLength() == this.size;
+    if (isMemoryFull) {
+      int newSize = this.size * 2;
+      HashMap<Integer, Integer> newMemory = this.allocateMemory(newSize);
+      for (int index = 0; index < this.size; index++) {
+        newMemory.put(index, this.memory.get(index));
+      }
+      this.size = newSize;
+      this.memory = newMemory;
+    }
+    this.memory.put(this.getLength(), value);
     return this.getLength();
   }
 }

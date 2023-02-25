@@ -69,4 +69,18 @@ class MyArrayTest {
     });
     Assertions.assertEquals(exception.getMessage(), "Provided index is out of array size.");
   }
+
+  @Test
+  public void testDoesItAddElements() {
+    MyArray myArray = new MyArray(5);
+    myArray.addElement(11);
+    myArray.addElement(22);
+    myArray.addElement(33);
+    myArray.addElement(44);
+    myArray.addElement(55);
+    Assertions.assertEquals(myArray.getSize(), 5);
+    myArray.addElement(66);
+    Assertions.assertEquals(myArray.getElementAt(5), 66);
+    Assertions.assertEquals(myArray.getSize(), 10);
+  }
 }
