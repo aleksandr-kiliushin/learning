@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class InsertionSortTest {
   @Test
-  public void doesSortWorks() {
+  public void doesSortWork() {
     int[] elements       = { 7, 5, 10, 9, 2, 8, 1, 6, 4, 3 };
     int[] elementsSorted = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     Assertions.assertTrue(Arrays.equals(InsertionSort.sort(elements), elementsSorted));

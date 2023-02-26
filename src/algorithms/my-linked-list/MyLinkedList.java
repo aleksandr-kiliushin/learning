@@ -1,16 +1,10 @@
-/**
- * MyArray has methods for getting, setting, adding and deleting elements.
- * An attempt to access an index outside of current size throws an exception.
- * When array length is about to exceed, allocate two times more memory.
- **/
-
 import java.util.HashMap;
 
-class MyArray {
+class MyLinkedList {
   private int size;
   private HashMap<Integer, Integer> memory;
 
-  public MyArray(int initialSize) {
+  public MyLinkedList(int initialSize) {
     if (initialSize < 0) {
       throw new RuntimeException("Array initial size cannot be negative.");
     }
