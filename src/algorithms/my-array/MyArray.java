@@ -27,7 +27,7 @@ class MyArray {
   }
 
   private void validateIndex(int index) {
-    if (index < 0 || this.size -1 < index) {
+    if (index < 0 || this.size - 1 < index) {
       throw new RuntimeException("Provided index is out of array size.");
     }
   }
