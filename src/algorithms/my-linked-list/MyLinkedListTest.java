@@ -6,6 +6,10 @@ import org.junit.jupiter.api.Test;
 
 class MyLinkedListTest {
   @Test
-  public void testSample() {
+  public void testIsSizeSetUpCorrectly() {
+    MyLinkedList myLinkedList = new MyLinkedList(4);
+    Assertions.assertEquals(myLinkedList.size, 4);
+    Assertions.assertNull(myLinkedList.headNode);
+    Assertions.assertNull(myLinkedList.tailNode);
   }
 }
