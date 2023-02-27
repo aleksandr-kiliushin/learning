@@ -97,4 +97,39 @@ class MyLinkedListTest {
 
     Assertions.assertEquals(5, myLinkedList.getSize());
   }
+
+  @Test
+  public void testDoesRemovingByIndexWorkCorrectly() {
+    MyLinkedList myLinkedList = new MyLinkedList();
+    myLinkedList.append(1);
+    myLinkedList.append(2);
+    myLinkedList.append(3);
+    myLinkedList.append(4);
+
+    myLinkedList.removeElementByIndex(2);
+    Assertions.assertEquals(3, myLinkedList.getSize());
+    Assertions.assertEquals(1, myLinkedList.getElementAtIndex(0));
+    Assertions.assertEquals(2, myLinkedList.getElementAtIndex(1));
+    Assertions.assertEquals(4, myLinkedList.getElementAtIndex(2));
+
+    myLinkedList.removeElementByIndex(0);
+    Assertions.assertEquals(2, myLinkedList.getSize());
+    Assertions.assertEquals(2, myLinkedList.getElementAtIndex(0));
+    Assertions.assertEquals(4, myLinkedList.getElementAtIndex(1));
+    Assertions.assertEquals(2, myLinkedList.getFirstElement());
+    Assertions.assertEquals(4, myLinkedList.getLastElement());
+
+    myLinkedList.removeElementByIndex(1);
+    Assertions.assertEquals(1, myLinkedList.getSize());
+    Assertions.assertEquals(2, myLinkedList.getElementAtIndex(0));
+    Assertions.assertEquals(2, myLinkedList.getFirstElement());
+    Assertions.assertEquals(2, myLinkedList.getLastElement());
+    
+    myLinkedList.removeElementByIndex(0);
+    Assertions.assertEquals(0, myLinkedList.getSize());
+    RuntimeException exception = Assertions.assertThrows(RuntimeException.class, () -> {
+      myLinkedList.getElementAtIndex(0);
+    });
+    Assertions.assertEquals(exception.getMessage(), "Provided index is out of list size.");
+  }
 }

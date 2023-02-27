@@ -133,4 +133,40 @@ class MyLinkedList {
       if (node == null) return;
     }
   }
+
+  public void removeElementByIndex(int index) {
+    this.validateIndex(index);
+
+    MyLinkedListNode node = this.headNode;
+    if (node == null) return;
+
+    size--;
+
+    for (int i = 0; i < index; i++) {
+      node = node.nextNode;
+    }
+
+    if (node == this.headNode && node == this.tailNode) {
+      this.headNode = null;
+      this.headNode = null;
+      return;
+    }
+
+    if (node == this.headNode) {
+      this.headNode = this.headNode.nextNode;
+      node.nextNode = null;
+      return;
+    }
+    
+    if (node == this.tailNode) {
+      this.tailNode = this.tailNode.previousNode;
+      node.previousNode = null;
+      return;
+    }
+
+    node.previousNode.nextNode = node.nextNode;
+    node.nextNode.previousNode = node.previousNode;
+    node.nextNode = null;
+    node.previousNode = null;
+  }
 }
