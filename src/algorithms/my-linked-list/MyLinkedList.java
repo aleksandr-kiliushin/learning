@@ -177,6 +177,7 @@ class MyLinkedList {
       if (node == null) return;
       if (node.value == value) {
         this.removeElementByIndex(index);
+        return;
       }
       node = node.nextNode;
     }
