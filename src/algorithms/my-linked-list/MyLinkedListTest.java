@@ -132,4 +132,46 @@ class MyLinkedListTest {
     });
     Assertions.assertEquals(exception.getMessage(), "Provided index is out of list size.");
   }
+
+  @Test
+  public void testDoesRemovingByValueWorkCorrectly() {
+    MyLinkedList myLinkedList = new MyLinkedList();
+    myLinkedList.append(1);
+    myLinkedList.append(2);
+    myLinkedList.append(3);
+    myLinkedList.append(4);
+
+    myLinkedList.removeElementByValue(42);
+    Assertions.assertEquals(4, myLinkedList.getSize());
+    Assertions.assertEquals(1, myLinkedList.getElementAtIndex(0));
+    Assertions.assertEquals(2, myLinkedList.getElementAtIndex(1));
+    Assertions.assertEquals(3, myLinkedList.getElementAtIndex(2));
+    Assertions.assertEquals(4, myLinkedList.getElementAtIndex(3));
+
+    myLinkedList.removeElementByValue(3);
+    Assertions.assertEquals(3, myLinkedList.getSize());
+    Assertions.assertEquals(1, myLinkedList.getElementAtIndex(0));
+    Assertions.assertEquals(2, myLinkedList.getElementAtIndex(1));
+    Assertions.assertEquals(4, myLinkedList.getElementAtIndex(2));
+
+    myLinkedList.removeElementByValue(1);
+    Assertions.assertEquals(2, myLinkedList.getSize());
+    Assertions.assertEquals(2, myLinkedList.getElementAtIndex(0));
+    Assertions.assertEquals(4, myLinkedList.getElementAtIndex(1));
+    Assertions.assertEquals(2, myLinkedList.getFirstElement());
+    Assertions.assertEquals(4, myLinkedList.getLastElement());
+
+    myLinkedList.removeElementByValue(4);
+    Assertions.assertEquals(1, myLinkedList.getSize());
+    Assertions.assertEquals(2, myLinkedList.getElementAtIndex(0));
+    Assertions.assertEquals(2, myLinkedList.getFirstElement());
+    Assertions.assertEquals(2, myLinkedList.getLastElement());
+
+    myLinkedList.removeElementByValue(2);
+    Assertions.assertEquals(0, myLinkedList.getSize());
+    RuntimeException exception = Assertions.assertThrows(RuntimeException.class, () -> {
+      myLinkedList.getElementAtIndex(0);
+    });
+    Assertions.assertEquals(exception.getMessage(), "Provided index is out of list size.");
+  }
 }

@@ -169,4 +169,16 @@ class MyLinkedList {
     node.nextNode = null;
     node.previousNode = null;
   }
+
+  public void removeElementByValue(int value) {
+    MyLinkedListNode node = this.headNode;
+    
+    for (int index = 0; index < this.size; index++) {
+      if (node == null) return;
+      if (node.value == value) {
+        this.removeElementByIndex(index);
+      }
+      node = node.nextNode;
+    }
+  }
 }
