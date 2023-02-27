@@ -174,4 +174,20 @@ class MyLinkedListTest {
     });
     Assertions.assertEquals(exception.getMessage(), "Provided index is out of list size.");
   }
+
+  @Test
+  public void testDoesEditingAtIndexWorkCorrectly() {
+    MyLinkedList myLinkedList = new MyLinkedList();
+    myLinkedList.append(1);
+    myLinkedList.append(2);
+    myLinkedList.append(3);
+    myLinkedList.append(4);
+
+    myLinkedList.editElementAtIndex(2, 42);
+    Assertions.assertEquals(4, myLinkedList.getSize());
+    Assertions.assertEquals(1, myLinkedList.getElementAtIndex(0));
+    Assertions.assertEquals(2, myLinkedList.getElementAtIndex(1));
+    Assertions.assertEquals(42, myLinkedList.getElementAtIndex(2));
+    Assertions.assertEquals(4, myLinkedList.getElementAtIndex(3));
+  }
 }

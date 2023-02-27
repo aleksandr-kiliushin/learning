@@ -181,4 +181,16 @@ class MyLinkedList {
       node = node.nextNode;
     }
   }
+
+  public void editElementAtIndex(int index, int value) {
+    this.validateIndex(index);
+
+    MyLinkedListNode node = this.headNode;
+
+    for (int i = 0; i < index; i++) {
+      node = node.nextNode;
+    }
+
+    node.value = value;
+  }
 }
