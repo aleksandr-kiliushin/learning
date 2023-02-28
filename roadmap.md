@@ -21,7 +21,7 @@
 
 ## JavaScript and TypeScript
 
-- 📦 https://javascript.info
+- ✅ https://javascript.info
 - 📦 The handbook and the docs here: www.typescriptlang.org
 - 📦 https://github.com/type-challenges/type-challenges
 - ✅ js-the-definitive-guide-7th-2020-en.pdf
@@ -41,7 +41,7 @@
 
 ## 🧩 Algorithms and data structures
 
-- 📦 grokking-algorithms-2016-en.pdf
+- ✅ grokking-algorithms-2016-en.pdf
 
 ## 🏙 Architecture
 
