@@ -10,40 +10,40 @@ class MyLinkedListNode {
   }
 }
 
-class MyStack {
+class MyQueue {
   private int size;
   private MyLinkedListNode headNode;
   private MyLinkedListNode tailNode;
 
-  public MyStack() {
+  public MyQueue() {
     this.size = 0;
     this.headNode = null;
     this.tailNode = null;
   }
 
   public Integer peek() {
-    if (this.tailNode == null) {
+    if (this.headNode == null) {
       return null;
     }
-    return this.tailNode.value;
+    return this.headNode.value;
   }
 
   public boolean isEmpty() {
     return this.size == 0;
   }
 
-  public int push(int value) {
+  public int enqueue(int value) {
     if (this.size == 0) {
       MyLinkedListNode newNode = new MyLinkedListNode(value, null, null);
       this.headNode = newNode;
       this.tailNode = newNode;
     } else if (this.size == 1) {
       MyLinkedListNode newNode = new MyLinkedListNode(value, this.headNode, null);
-      this.tailNode = newNode;
       this.headNode.nextNode = newNode;
+      this.tailNode = newNode;
     } else {
       MyLinkedListNode newNode = new MyLinkedListNode(value, this.tailNode, null);
-      this.tailNode.previousNode.nextNode = newNode;
+      this.tailNode.nextNode = newNode;
       this.tailNode = newNode;
     }
 
@@ -51,27 +51,25 @@ class MyStack {
     return this.size;
   }
 
-  public int pop() {
+  public int dequeue() {
     if (this.size == 0) {
-      throw new RuntimeException("Cannot pop from an empty stack.");
+      throw new RuntimeException("Cannot dequeue from an empty queue.");
     }
 
     if (this.size == 1) {
-      MyLinkedListNode oldTailNode = this.tailNode;
+      MyLinkedListNode oldHeadNode = this.headNode;
       this.headNode = null;
       this.tailNode = null;
       this.size--;
-      
-      return oldTailNode.value;
+      return oldHeadNode.value;
     }
 
-    MyLinkedListNode oldTailNode = this.tailNode;
-    MyLinkedListNode newTailNode = this.tailNode.previousNode;
-    oldTailNode.previousNode = null;
-    newTailNode.nextNode = null;
-    this.tailNode = newTailNode;
+    MyLinkedListNode oldHeadNode = this.headNode;
+    MyLinkedListNode newHeadNode = this.headNode.nextNode;
+    oldHeadNode.nextNode = null;
+    newHeadNode.previousNode = null;
+    this.headNode = newHeadNode;
     this.size--;
-
-    return oldTailNode.value;
+    return oldHeadNode.value;
   }
 }

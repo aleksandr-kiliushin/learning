@@ -19,21 +19,26 @@ class MyStackTest {
     Assertions.assertEquals(2, myStack.push(2));
     Assertions.assertFalse(myStack.isEmpty());
     Assertions.assertEquals(2, myStack.peek());
-    
+
     Assertions.assertEquals(3, myStack.push(3));
     Assertions.assertFalse(myStack.isEmpty());
     Assertions.assertEquals(3, myStack.peek());
-    
+
     Assertions.assertEquals(3, myStack.pop());
     Assertions.assertFalse(myStack.isEmpty());
     Assertions.assertEquals(2, myStack.peek());
-    
+
     Assertions.assertEquals(2, myStack.pop());
     Assertions.assertFalse(myStack.isEmpty());
     Assertions.assertEquals(1, myStack.peek());
-    
+
     Assertions.assertEquals(1, myStack.pop());
     Assertions.assertTrue(myStack.isEmpty());
     Assertions.assertNull(myStack.peek());
+
+    RuntimeException exception = Assertions.assertThrows(RuntimeException.class, () -> {
+      myStack.pop();
+    });
+    Assertions.assertEquals(exception.getMessage(), "Cannot pop from an empty stack.");
   }
 }
