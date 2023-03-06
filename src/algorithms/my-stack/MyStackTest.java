@@ -12,15 +12,15 @@ class MyStackTest {
     Assertions.assertTrue(myStack.isEmpty());
     Assertions.assertNull(myStack.peek());
 
-    myStack.push(1);
+    Assertions.assertEquals(1, myStack.push(1));
     Assertions.assertFalse(myStack.isEmpty());
     Assertions.assertEquals(1, myStack.peek());
 
-    myStack.push(2);
+    Assertions.assertEquals(2, myStack.push(2));
     Assertions.assertFalse(myStack.isEmpty());
     Assertions.assertEquals(2, myStack.peek());
     
-    myStack.push(3);
+    Assertions.assertEquals(3, myStack.push(3));
     Assertions.assertFalse(myStack.isEmpty());
     Assertions.assertEquals(3, myStack.peek());
     
