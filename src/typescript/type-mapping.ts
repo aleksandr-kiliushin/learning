@@ -84,4 +84,4 @@ const bookWithoutTitleProperty: BookWithoutTitleProperty = {
   isEBook: true,
 }
 
-export default {}
+export {}
