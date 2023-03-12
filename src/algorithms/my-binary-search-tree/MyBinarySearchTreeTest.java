@@ -13,5 +13,8 @@ class MyBinarySearchTreeTest {
     
     myBinarySearchTree.add(10);
     Assertions.assertEquals("10", myBinarySearchTree.visualize());
+
+    myBinarySearchTree.add(5);
+    myBinarySearchTree.add(15);
   }
 }
