@@ -27,5 +27,7 @@ class MyBinarySearchTreeTest {
  / \\
 5   15
 """, myBinarySearchTree.visualize());
+
+    myBinarySearchTree.add(3);
   }
 }

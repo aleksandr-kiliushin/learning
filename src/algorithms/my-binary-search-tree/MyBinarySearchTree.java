@@ -32,13 +32,33 @@ class MyBinarySearchTree {
       return;
     }
 
-    MyBinarySearchTreeNode newNode = new MyBinarySearchTreeNode(value, this.rootNode, null, null);
-
     if (value < this.rootNode.value) {
-      this.rootNode.leftChildNode = newNode;
+      this.rootNode.leftChildNode = new MyBinarySearchTreeNode(value, this.rootNode, null, null);
     }
     if (value > this.rootNode.value) {
-      this.rootNode.rightChildNode = newNode;
+      this.rootNode.rightChildNode = new MyBinarySearchTreeNode(value, this.rootNode, null, null);
+    }
+  }
+
+  public void add(int value, MyBinarySearchTreeNode nodeToInsertBelow) {
+    if (value < nodeToInsertBelow.value && nodeToInsertBelow.leftChildNode == null) {
+      MyBinarySearchTreeNode newNode = new MyBinarySearchTreeNode(value, nodeToInsertBelow, null, null);
+      nodeToInsertBelow.leftChildNode = newNode;
+      return;
+    }
+    if (value > nodeToInsertBelow.value && nodeToInsertBelow.rightChildNode == null) {
+      MyBinarySearchTreeNode newNode = new MyBinarySearchTreeNode(value, nodeToInsertBelow, null, null);
+      nodeToInsertBelow.rightChildNode = newNode;
+      return;
+    }
+
+    if (value < nodeToInsertBelow.value && nodeToInsertBelow.leftChildNode != null) {
+      this.add(value, nodeToInsertBelow.leftChildNode);
+      return;
+    }
+    if (value > nodeToInsertBelow.value && nodeToInsertBelow.rightChildNode != null) {
+      this.add(value, nodeToInsertBelow.rightChildNode);
+      return;
     }
   }
 
