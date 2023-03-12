@@ -10,5 +10,8 @@ class MyBinarySearchTreeTest {
     MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
 
     Assertions.assertEquals("empty", myBinarySearchTree.visualize());
+    
+    myBinarySearchTree.add(10);
+    Assertions.assertEquals("10", myBinarySearchTree.visualize());
   }
 }

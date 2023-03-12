@@ -18,18 +18,22 @@ class MyBinarySearchTreeNode {
 }
 
 class MyBinarySearchTree {
-  private int height;
   private MyBinarySearchTreeNode rootNode;
 
   public MyBinarySearchTree() {
-    this.height = 0;
     this.rootNode = null;
+  }
+
+  public void add(int value) {
+    if (this.rootNode == null) {
+      this.rootNode = new MyBinarySearchTreeNode(value, null, null, null);
+    }
   }
 
   public String visualize() {
     if (this.rootNode == null) {
       return "empty";
     }
-    throw new RuntimeException("Error during visualization.");
+    return String.valueOf(this.rootNode.value);
   }
 }
