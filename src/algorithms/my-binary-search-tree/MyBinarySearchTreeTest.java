@@ -14,7 +14,18 @@ class MyBinarySearchTreeTest {
     myBinarySearchTree.add(10);
     Assertions.assertEquals("10", myBinarySearchTree.visualize());
 
-    myBinarySearchTree.add(5);
     myBinarySearchTree.add(15);
+    Assertions.assertEquals("""
+  10
+   \\
+    15
+""", myBinarySearchTree.visualize());
+
+    myBinarySearchTree.add(5);
+    Assertions.assertEquals("""
+  10
+ / \\
+5   15
+""", myBinarySearchTree.visualize());
   }
 }
