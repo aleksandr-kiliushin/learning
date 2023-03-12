@@ -70,20 +70,17 @@ class MyBinarySearchTree {
       return String.valueOf(this.rootNode.value);
     }
     if (this.rootNode.rightChildNode == null) {
-      String zeroDepthNodesSubstring = MessageFormat.format("  {0}\n", this.rootNode.value);
-      String fromZeroToFirstDepthConnectionSubstring = " /\n";
+      String zeroDepthNodesSubstring = MessageFormat.format("    {0}\n", this.rootNode.value);
       String firstDepthNodesSubstring = MessageFormat.format("{0}\n", this.rootNode.leftChildNode.value);
-      return zeroDepthNodesSubstring + fromZeroToFirstDepthConnectionSubstring + firstDepthNodesSubstring;
+      return zeroDepthNodesSubstring + firstDepthNodesSubstring;
     }
     if (this.rootNode.leftChildNode == null) {
-      String zeroDepthNodesSubstring = MessageFormat.format("  {0}\n", this.rootNode.value);
-      String fromZeroToFirstDepthConnectionSubstring = "   \\\n";
-      String firstDepthNodesSubstring = MessageFormat.format("    {0}\n", this.rootNode.rightChildNode.value);
-      return zeroDepthNodesSubstring + fromZeroToFirstDepthConnectionSubstring + firstDepthNodesSubstring;
+      String zeroDepthNodesSubstring = MessageFormat.format("   {0}\n", this.rootNode.value);
+      String firstDepthNodesSubstring = MessageFormat.format("_     {0}\n", this.rootNode.rightChildNode.value);
+      return zeroDepthNodesSubstring + firstDepthNodesSubstring;
     }
-    String zeroDepthNodesSubstring = MessageFormat.format("  {0}\n", this.rootNode.value);
-    String fromZeroToFirstDepthConnectionSubstring = " / \\\n";
-    String firstDepthNodesSubstring = MessageFormat.format("{0}   {1}\n", this.rootNode.leftChildNode.value, this.rootNode.rightChildNode.value);
-    return zeroDepthNodesSubstring + fromZeroToFirstDepthConnectionSubstring + firstDepthNodesSubstring;
+    String zeroDepthNodesSubstring = MessageFormat.format("   {0}\n", this.rootNode.value);
+    String firstDepthNodesSubstring = MessageFormat.format("{0}     {1}\n", this.rootNode.leftChildNode.value, this.rootNode.rightChildNode.value);
+    return zeroDepthNodesSubstring + firstDepthNodesSubstring;
   }
 }

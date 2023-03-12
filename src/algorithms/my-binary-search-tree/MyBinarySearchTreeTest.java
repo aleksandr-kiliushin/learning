@@ -16,16 +16,14 @@ class MyBinarySearchTreeTest {
 
     myBinarySearchTree.add(15);
     Assertions.assertEquals("""
-  10
-   \\
-    15
+   10
+_     15
 """, myBinarySearchTree.visualize());
 
     myBinarySearchTree.add(5);
     Assertions.assertEquals("""
-  10
- / \\
-5   15
+   10
+5     15
 """, myBinarySearchTree.visualize());
 
     myBinarySearchTree.add(3);
