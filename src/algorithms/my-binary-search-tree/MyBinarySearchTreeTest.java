@@ -10,26 +10,22 @@ class MyBinarySearchTreeTest {
     MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
 
     Assertions.assertEquals("""
-
 _
 """, myBinarySearchTree.visualize());
     
     myBinarySearchTree.add(10);
     Assertions.assertEquals("""
-
 10
 """, myBinarySearchTree.visualize());
 
     myBinarySearchTree.add(15);
     Assertions.assertEquals("""
-
 10
 _|15
 """, myBinarySearchTree.visualize());
 
     myBinarySearchTree.add(5);
     Assertions.assertEquals("""
-
 10
 5|15
 """, myBinarySearchTree.visualize());

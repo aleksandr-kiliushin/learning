@@ -97,7 +97,7 @@ class MyBinarySearchTree {
       depth++;
     }
 
-    String result = "\n";
+    String result = "";
     for (depth = 0; depth < nodesByDepth.size(); depth++) {
       for (int index = 0; index < nodesByDepth.get(depth).length; index++) {
         MyBinarySearchTreeNode node = nodesByDepth.get(depth)[index];
