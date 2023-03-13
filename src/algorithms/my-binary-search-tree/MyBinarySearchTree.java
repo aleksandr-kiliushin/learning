@@ -57,6 +57,18 @@ class MyBinarySearchTree {
     }
   }
 
+  public boolean has(int value) {
+    return this.has(value, this.rootNode);
+  }
+
+  public boolean has(int value, MyBinarySearchTreeNode nodeToSearchAt) {
+    if (nodeToSearchAt       == null ) return false;
+    if (nodeToSearchAt.value == value) return true;
+    if (nodeToSearchAt.value < value ) return this.has(value, nodeToSearchAt.rightChildNode);
+    if (nodeToSearchAt.value > value ) return this.has(value, nodeToSearchAt.leftChildNode);
+    return false;
+  }
+
   public String visualize() {
     HashMap<Integer, MyBinarySearchTreeNode[]> nodesByDepth = new HashMap<Integer, MyBinarySearchTreeNode[]>();
 
