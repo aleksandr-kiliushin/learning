@@ -9,23 +9,29 @@ class MyBinarySearchTreeTest {
   public void doesItWorkCorrectly() {
     MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
 
-    Assertions.assertEquals("empty", myBinarySearchTree.visualize());
+    Assertions.assertEquals("""
+
+_
+""", myBinarySearchTree.visualize());
     
     myBinarySearchTree.add(10);
-    Assertions.assertEquals("10", myBinarySearchTree.visualize());
+    Assertions.assertEquals("""
+
+10
+""", myBinarySearchTree.visualize());
 
     myBinarySearchTree.add(15);
     Assertions.assertEquals("""
-   10
-_     15
+
+10
+_|15
 """, myBinarySearchTree.visualize());
 
     myBinarySearchTree.add(5);
     Assertions.assertEquals("""
-   10
-5     15
-""", myBinarySearchTree.visualize());
 
-    myBinarySearchTree.add(3);
+10
+5|15
+""", myBinarySearchTree.visualize());
   }
 }

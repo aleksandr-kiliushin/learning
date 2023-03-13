@@ -1,4 +1,4 @@
-import java.text.MessageFormat;
+import java.util.HashMap;
 
 class MyBinarySearchTreeNode {
   public int value;
@@ -32,12 +32,7 @@ class MyBinarySearchTree {
       return;
     }
 
-    if (value < this.rootNode.value) {
-      this.rootNode.leftChildNode = new MyBinarySearchTreeNode(value, this.rootNode, null, null);
-    }
-    if (value > this.rootNode.value) {
-      this.rootNode.rightChildNode = new MyBinarySearchTreeNode(value, this.rootNode, null, null);
-    }
+    this.add(value, this.rootNode);
   }
 
   public void add(int value, MyBinarySearchTreeNode nodeToInsertBelow) {
@@ -63,24 +58,61 @@ class MyBinarySearchTree {
   }
 
   public String visualize() {
-    if (this.rootNode == null) {
-      return "empty";
+    HashMap<Integer, MyBinarySearchTreeNode[]> nodesByDepth = new HashMap<Integer, MyBinarySearchTreeNode[]>();
+
+    int depth = 0;
+    while (true) {
+      int nodesAmountAtCurrentDepth = (int)Math.pow(2, depth);
+      MyBinarySearchTreeNode[] nodesAtCurrentDepth = new MyBinarySearchTreeNode[nodesAmountAtCurrentDepth];
+      
+      if (depth == 0) {
+        nodesAtCurrentDepth[0] = this.rootNode;
+        nodesByDepth.put(depth, nodesAtCurrentDepth);
+        if (this.rootNode == null) break;
+        if (this.rootNode.leftChildNode == null && this.rootNode.rightChildNode == null) {
+          break;
+        }
+        depth++;
+        continue;
+      }
+      
+      boolean areAllNodesAtCurrentDepthLeafs = true;
+      MyBinarySearchTreeNode[] nodesAtPreviousDepth = nodesByDepth.get(depth - 1);
+      for (int index = 0; index < nodesAtPreviousDepth.length; index++) {
+        if (nodesAtPreviousDepth[index] == null) {
+          nodesAtCurrentDepth[index * 2] = null;
+          nodesAtCurrentDepth[index * 2 + 1] = null;
+        } else {
+          nodesAtCurrentDepth[index * 2] = nodesAtPreviousDepth[index].leftChildNode;
+          nodesAtCurrentDepth[index * 2 + 1] = nodesAtPreviousDepth[index].rightChildNode;
+          if (nodesAtPreviousDepth[index].leftChildNode != null || nodesAtPreviousDepth[index].rightChildNode != null) {
+            areAllNodesAtCurrentDepthLeafs = false;
+          }
+        }
+      }
+      
+      if (areAllNodesAtCurrentDepthLeafs) break;
+
+      nodesByDepth.put(depth, nodesAtCurrentDepth);
+      depth++;
     }
-    if (this.rootNode.leftChildNode == null && this.rootNode.rightChildNode == null) {
-      return String.valueOf(this.rootNode.value);
+
+    String result = "\n";
+    for (depth = 0; depth < nodesByDepth.size(); depth++) {
+      for (int index = 0; index < nodesByDepth.get(depth).length; index++) {
+        MyBinarySearchTreeNode node = nodesByDepth.get(depth)[index];
+        if (node == null) {
+          result += "_";
+        } else {
+          result += String.valueOf(node.value);
+        }
+        if (index != nodesByDepth.get(depth).length - 1) {
+          result += "|";
+        }
+      }
+      result += "\n";
     }
-    if (this.rootNode.rightChildNode == null) {
-      String zeroDepthNodesSubstring = MessageFormat.format("    {0}\n", this.rootNode.value);
-      String firstDepthNodesSubstring = MessageFormat.format("{0}\n", this.rootNode.leftChildNode.value);
-      return zeroDepthNodesSubstring + firstDepthNodesSubstring;
-    }
-    if (this.rootNode.leftChildNode == null) {
-      String zeroDepthNodesSubstring = MessageFormat.format("   {0}\n", this.rootNode.value);
-      String firstDepthNodesSubstring = MessageFormat.format("_     {0}\n", this.rootNode.rightChildNode.value);
-      return zeroDepthNodesSubstring + firstDepthNodesSubstring;
-    }
-    String zeroDepthNodesSubstring = MessageFormat.format("   {0}\n", this.rootNode.value);
-    String firstDepthNodesSubstring = MessageFormat.format("{0}     {1}\n", this.rootNode.leftChildNode.value, this.rootNode.rightChildNode.value);
-    return zeroDepthNodesSubstring + firstDepthNodesSubstring;
+
+    return result;
   }
 }
