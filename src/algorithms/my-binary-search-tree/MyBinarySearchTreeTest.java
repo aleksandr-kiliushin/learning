@@ -61,5 +61,13 @@ _|12
     Assertions.assertEquals(10,   myBinarySearchTree.find(10).value);
     Assertions.assertEquals(11,   myBinarySearchTree.find(11).value);
     Assertions.assertEquals(null, myBinarySearchTree.find(100500)  );
+
+    myBinarySearchTree.delete(13);
+    Assertions.assertEquals("""
+8
+4|12
+2|6|10|14
+1|3|5|7|9|11|_|15
+""", myBinarySearchTree.visualize());
   }
 }

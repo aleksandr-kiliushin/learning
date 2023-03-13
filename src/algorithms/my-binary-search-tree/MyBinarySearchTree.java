@@ -17,6 +17,14 @@ class MyBinarySearchTreeNode {
     this.leftChildNode = leftChildNode;
     this.rightChildNode = rightChildNode;
   }
+
+  public boolean isLeaf() {
+    return this.leftChildNode == null && this.rightChildNode == null;
+  }
+
+  public boolean isRoot() {
+    return this.parentNode == null;
+  }
 }
 
 class MyBinarySearchTree {
@@ -69,6 +77,26 @@ class MyBinarySearchTree {
     return null;
   }
 
+  public void delete(int value) {
+    MyBinarySearchTreeNode nodeToDelete = this.find(value);
+    if (nodeToDelete == null) return;
+
+    if (nodeToDelete.isLeaf() && nodeToDelete.isRoot()) {
+      this.rootNode = null;
+      return;
+    }
+
+    if (nodeToDelete.isLeaf() && !nodeToDelete.isRoot()) {
+      MyBinarySearchTreeNode parentOfNodeToDelete = nodeToDelete.parentNode;
+      nodeToDelete.parentNode = null;
+      if (nodeToDelete.value < parentOfNodeToDelete.value) {
+        parentOfNodeToDelete.leftChildNode = null;
+      } else {
+        parentOfNodeToDelete.rightChildNode = null;
+      }
+    }
+  }
+
   public String visualize() {
     HashMap<Integer, MyBinarySearchTreeNode[]> nodesByDepth = new HashMap<Integer, MyBinarySearchTreeNode[]>();
 
@@ -80,10 +108,8 @@ class MyBinarySearchTree {
       if (depth == 0) {
         nodesAtCurrentDepth[0] = this.rootNode;
         nodesByDepth.put(depth, nodesAtCurrentDepth);
-        if (this.rootNode == null) break;
-        if (this.rootNode.leftChildNode == null && this.rootNode.rightChildNode == null) {
-          break;
-        }
+        if (this.rootNode == null ) break;
+        if (this.rootNode.isLeaf()) break;
         depth++;
         continue;
       }
