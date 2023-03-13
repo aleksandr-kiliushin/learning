@@ -102,5 +102,47 @@ _|12
 2|5|10|14
 1|_|_|_|9|_|_|15
 """, myBinarySearchTree.visualize());
+
+    myBinarySearchTree.delete(6);
+    Assertions.assertEquals("""
+5
+3|11
+2|_|10|14
+1|_|_|_|9|_|_|15
+""", myBinarySearchTree.visualize());
+
+    myBinarySearchTree.delete(5);
+    Assertions.assertEquals("""
+3
+2|11
+1|_|10|14
+_|_|_|_|9|_|_|15
+""", myBinarySearchTree.visualize());
+
+    myBinarySearchTree.delete(1);
+    myBinarySearchTree.delete(3);
+    Assertions.assertEquals("""
+2
+_|11
+_|_|10|14
+_|_|_|_|9|_|_|15
+""", myBinarySearchTree.visualize());
+
+    myBinarySearchTree.delete(2);
+    myBinarySearchTree.delete(11);
+    Assertions.assertEquals("""
+9
+_|10
+_|_|_|14
+_|_|_|_|_|_|_|15
+""", myBinarySearchTree.visualize());
+
+    myBinarySearchTree.delete(9);
+    myBinarySearchTree.delete(14);
+    myBinarySearchTree.delete(15);
+    myBinarySearchTree.delete(10);
+Assertions.assertEquals("""
+_
+""", myBinarySearchTree.visualize());
   }
 }
