@@ -56,10 +56,10 @@ _|12
 1|3|5|7|9|11|13|15
 """, myBinarySearchTree.visualize());
 
-    Assertions.assertTrue(myBinarySearchTree.has(8));
-    Assertions.assertTrue(myBinarySearchTree.has(4));
-    Assertions.assertTrue(myBinarySearchTree.has(10));
-    Assertions.assertTrue(myBinarySearchTree.has(11));
-    Assertions.assertFalse(myBinarySearchTree.has(100500));
+    Assertions.assertEquals(8,    myBinarySearchTree.find(8 ).value);
+    Assertions.assertEquals(4,    myBinarySearchTree.find(4 ).value);
+    Assertions.assertEquals(10,   myBinarySearchTree.find(10).value);
+    Assertions.assertEquals(11,   myBinarySearchTree.find(11).value);
+    Assertions.assertEquals(null, myBinarySearchTree.find(100500)  );
   }
 }

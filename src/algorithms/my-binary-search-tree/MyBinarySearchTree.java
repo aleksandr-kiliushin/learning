@@ -57,16 +57,16 @@ class MyBinarySearchTree {
     }
   }
 
-  public boolean has(int value) {
-    return this.has(value, this.rootNode);
+  public MyBinarySearchTreeNode find(int value) {
+    return this.find(value, this.rootNode);
   }
 
-  public boolean has(int value, MyBinarySearchTreeNode nodeToSearchAt) {
-    if (nodeToSearchAt       == null ) return false;
-    if (nodeToSearchAt.value == value) return true;
-    if (nodeToSearchAt.value < value ) return this.has(value, nodeToSearchAt.rightChildNode);
-    if (nodeToSearchAt.value > value ) return this.has(value, nodeToSearchAt.leftChildNode);
-    return false;
+  public MyBinarySearchTreeNode find(int value, MyBinarySearchTreeNode nodeToSearchAt) {
+    if (nodeToSearchAt       == null ) return null;
+    if (nodeToSearchAt.value == value) return nodeToSearchAt;
+    if (nodeToSearchAt.value < value ) return this.find(value, nodeToSearchAt.rightChildNode);
+    if (nodeToSearchAt.value > value ) return this.find(value, nodeToSearchAt.leftChildNode);
+    return null;
   }
 
   public String visualize() {
