@@ -94,6 +94,30 @@ class MyBinarySearchTree {
       } else {
         parentOfNodeToDelete.rightChildNode = null;
       }
+      return;
+    }
+
+    MyBinarySearchTreeNode nodeToReplaceWith;
+
+    if (nodeToDelete.leftChildNode != null) {
+      nodeToReplaceWith = nodeToDelete.leftChildNode;
+      while (nodeToReplaceWith.rightChildNode != null) {
+        nodeToReplaceWith = nodeToReplaceWith.rightChildNode;
+      }
+      nodeToDelete.value = nodeToReplaceWith.value;
+      nodeToReplaceWith.parentNode.rightChildNode = null;
+      nodeToReplaceWith.parentNode = null;
+      return;
+    }
+    if (nodeToDelete.rightChildNode != null) {
+      nodeToReplaceWith = nodeToDelete.rightChildNode;
+      while (nodeToReplaceWith.leftChildNode != null) {
+        nodeToReplaceWith = nodeToReplaceWith.leftChildNode;
+      }
+      nodeToDelete.value = nodeToReplaceWith.value;
+      nodeToReplaceWith.parentNode.leftChildNode = null;
+      nodeToReplaceWith.parentNode = null;
+      return;
     }
   }
 

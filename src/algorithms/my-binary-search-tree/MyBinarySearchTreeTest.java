@@ -69,5 +69,30 @@ _|12
 2|6|10|14
 1|3|5|7|9|11|_|15
 """, myBinarySearchTree.visualize());
+
+    myBinarySearchTree.delete(4);
+    Assertions.assertEquals("""
+8
+3|12
+2|6|10|14
+1|_|5|7|9|11|_|15
+""", myBinarySearchTree.visualize());
+
+
+    myBinarySearchTree.delete(12);
+    Assertions.assertEquals("""
+8
+3|11
+2|6|10|14
+1|_|5|7|9|_|_|15
+""", myBinarySearchTree.visualize());
+
+    myBinarySearchTree.delete(8);
+    Assertions.assertEquals("""
+7
+3|11
+2|6|10|14
+1|_|5|_|9|_|_|15
+""", myBinarySearchTree.visualize());
   }
 }
