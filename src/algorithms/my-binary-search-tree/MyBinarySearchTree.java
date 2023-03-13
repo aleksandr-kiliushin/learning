@@ -105,8 +105,12 @@ class MyBinarySearchTree {
         nodeToReplaceWith = nodeToReplaceWith.rightChildNode;
       }
       nodeToDelete.value = nodeToReplaceWith.value;
-      nodeToReplaceWith.parentNode.rightChildNode = null;
-      nodeToReplaceWith.parentNode = null;
+      if (nodeToReplaceWith.isLeaf()) {
+        nodeToReplaceWith.parentNode.rightChildNode = null;
+        nodeToReplaceWith.parentNode = null;
+      } else {
+        throw new RuntimeException("Deletion with nodes shift up is not implemented.");
+      }
       return;
     }
     if (nodeToDelete.rightChildNode != null) {
@@ -115,8 +119,12 @@ class MyBinarySearchTree {
         nodeToReplaceWith = nodeToReplaceWith.leftChildNode;
       }
       nodeToDelete.value = nodeToReplaceWith.value;
-      nodeToReplaceWith.parentNode.leftChildNode = null;
-      nodeToReplaceWith.parentNode = null;
+      if (nodeToReplaceWith.isLeaf()) {
+        nodeToReplaceWith.parentNode.leftChildNode = null;
+        nodeToReplaceWith.parentNode = null;
+      } else {
+        throw new RuntimeException("Deletion with nodes shift up is not implemented.");
+      }
       return;
     }
   }
