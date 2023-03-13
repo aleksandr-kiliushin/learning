@@ -13,21 +13,47 @@ class MyBinarySearchTreeTest {
 _
 """, myBinarySearchTree.visualize());
     
-    myBinarySearchTree.add(10);
+    myBinarySearchTree.add(8);
     Assertions.assertEquals("""
-10
+8
 """, myBinarySearchTree.visualize());
 
-    myBinarySearchTree.add(15);
+    myBinarySearchTree.add(12);
     Assertions.assertEquals("""
-10
-_|15
+8
+_|12
+""", myBinarySearchTree.visualize());
+
+    myBinarySearchTree.add(4);
+    Assertions.assertEquals("""
+8
+4|12
+""", myBinarySearchTree.visualize());
+  
+    myBinarySearchTree.add(14);
+    myBinarySearchTree.add(15);
+    myBinarySearchTree.add(2);
+    myBinarySearchTree.add(1);
+    myBinarySearchTree.add(3);
+    myBinarySearchTree.add(6);
+    Assertions.assertEquals("""
+8
+4|12
+2|6|_|14
+1|3|_|_|_|_|_|15
 """, myBinarySearchTree.visualize());
 
     myBinarySearchTree.add(5);
+    myBinarySearchTree.add(7);
+    myBinarySearchTree.add(10);
+    myBinarySearchTree.add(11);
+    myBinarySearchTree.add(9);
+    myBinarySearchTree.add(13);
     Assertions.assertEquals("""
-10
-5|15
+8
+4|12
+2|6|10|14
+1|3|5|7|9|11|13|15
 """, myBinarySearchTree.visualize());
   }
 }
