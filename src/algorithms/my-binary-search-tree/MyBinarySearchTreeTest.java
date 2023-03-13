@@ -94,5 +94,13 @@ _|12
 2|6|10|14
 1|_|5|_|9|_|_|15
 """, myBinarySearchTree.visualize());
+
+    myBinarySearchTree.delete(7);
+    Assertions.assertEquals("""
+6
+3|11
+2|5|10|14
+1|_|_|_|9|_|_|15
+""", myBinarySearchTree.visualize());
   }
 }

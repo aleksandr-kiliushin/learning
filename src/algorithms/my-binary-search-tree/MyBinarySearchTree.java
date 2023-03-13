@@ -104,13 +104,9 @@ class MyBinarySearchTree {
       while (nodeToReplaceWith.rightChildNode != null) {
         nodeToReplaceWith = nodeToReplaceWith.rightChildNode;
       }
-      nodeToDelete.value = nodeToReplaceWith.value;
-      if (nodeToReplaceWith.isLeaf()) {
-        nodeToReplaceWith.parentNode.rightChildNode = null;
-        nodeToReplaceWith.parentNode = null;
-      } else {
-        throw new RuntimeException("Deletion with nodes shift up is not implemented.");
-      }
+      int valueToPutInDeletedNode = nodeToReplaceWith.value;
+      this.delete(nodeToReplaceWith.value);
+      nodeToDelete.value = valueToPutInDeletedNode;
       return;
     }
     if (nodeToDelete.rightChildNode != null) {
@@ -118,13 +114,9 @@ class MyBinarySearchTree {
       while (nodeToReplaceWith.leftChildNode != null) {
         nodeToReplaceWith = nodeToReplaceWith.leftChildNode;
       }
-      nodeToDelete.value = nodeToReplaceWith.value;
-      if (nodeToReplaceWith.isLeaf()) {
-        nodeToReplaceWith.parentNode.leftChildNode = null;
-        nodeToReplaceWith.parentNode = null;
-      } else {
-        throw new RuntimeException("Deletion with nodes shift up is not implemented.");
-      }
+      int valueToPutInDeletedNode = nodeToReplaceWith.value;
+      this.delete(nodeToReplaceWith.value);
+      nodeToDelete.value = valueToPutInDeletedNode;
       return;
     }
   }
