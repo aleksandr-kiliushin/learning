@@ -35,24 +35,24 @@ class MyBinarySearchTree {
     this.add(value, this.rootNode);
   }
 
-  public void add(int value, MyBinarySearchTreeNode nodeToInsertBelow) {
-    if (value < nodeToInsertBelow.value && nodeToInsertBelow.leftChildNode == null) {
-      MyBinarySearchTreeNode newNode = new MyBinarySearchTreeNode(value, nodeToInsertBelow, null, null);
-      nodeToInsertBelow.leftChildNode = newNode;
+  public void add(int value, MyBinarySearchTreeNode nodeToInsertAt) {
+    if (value < nodeToInsertAt.value && nodeToInsertAt.leftChildNode == null) {
+      MyBinarySearchTreeNode newNode = new MyBinarySearchTreeNode(value, nodeToInsertAt, null, null);
+      nodeToInsertAt.leftChildNode = newNode;
       return;
     }
-    if (value > nodeToInsertBelow.value && nodeToInsertBelow.rightChildNode == null) {
-      MyBinarySearchTreeNode newNode = new MyBinarySearchTreeNode(value, nodeToInsertBelow, null, null);
-      nodeToInsertBelow.rightChildNode = newNode;
+    if (value > nodeToInsertAt.value && nodeToInsertAt.rightChildNode == null) {
+      MyBinarySearchTreeNode newNode = new MyBinarySearchTreeNode(value, nodeToInsertAt, null, null);
+      nodeToInsertAt.rightChildNode = newNode;
       return;
     }
 
-    if (value < nodeToInsertBelow.value && nodeToInsertBelow.leftChildNode != null) {
-      this.add(value, nodeToInsertBelow.leftChildNode);
+    if (value < nodeToInsertAt.value && nodeToInsertAt.leftChildNode != null) {
+      this.add(value, nodeToInsertAt.leftChildNode);
       return;
     }
-    if (value > nodeToInsertBelow.value && nodeToInsertBelow.rightChildNode != null) {
-      this.add(value, nodeToInsertBelow.rightChildNode);
+    if (value > nodeToInsertAt.value && nodeToInsertAt.rightChildNode != null) {
+      this.add(value, nodeToInsertAt.rightChildNode);
       return;
     }
   }
