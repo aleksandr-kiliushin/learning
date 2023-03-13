@@ -61,11 +61,11 @@ class MyBinarySearchTree {
     return this.find(value, this.rootNode);
   }
 
-  public MyBinarySearchTreeNode find(int value, MyBinarySearchTreeNode nodeToSearchAt) {
-    if (nodeToSearchAt       == null ) return null;
-    if (nodeToSearchAt.value == value) return nodeToSearchAt;
-    if (nodeToSearchAt.value < value ) return this.find(value, nodeToSearchAt.rightChildNode);
-    if (nodeToSearchAt.value > value ) return this.find(value, nodeToSearchAt.leftChildNode);
+  public MyBinarySearchTreeNode find(int value, MyBinarySearchTreeNode nodeToFindAt) {
+    if (nodeToFindAt       == null ) return null;
+    if (nodeToFindAt.value == value) return nodeToFindAt;
+    if (nodeToFindAt.value < value ) return this.find(value, nodeToFindAt.rightChildNode);
+    if (nodeToFindAt.value > value ) return this.find(value, nodeToFindAt.leftChildNode);
     return null;
   }
 
