@@ -1,16 +1,16 @@
 import java.util.HashMap;
 
-class MyBinaryHeapNode {
+class MyBinarySearchTreeNode {
   public int value;
-  public MyBinaryHeapNode parentNode;
-  public MyBinaryHeapNode leftChildNode;
-  public MyBinaryHeapNode rightChildNode;
+  public MyBinarySearchTreeNode parentNode;
+  public MyBinarySearchTreeNode leftChildNode;
+  public MyBinarySearchTreeNode rightChildNode;
 
-  public MyBinaryHeapNode(
+  public MyBinarySearchTreeNode(
     int value,
-    MyBinaryHeapNode parentNode,
-    MyBinaryHeapNode leftChildNode,
-    MyBinaryHeapNode rightChildNode
+    MyBinarySearchTreeNode parentNode,
+    MyBinarySearchTreeNode leftChildNode,
+    MyBinarySearchTreeNode rightChildNode
   ) {
     this.value = value;
     this.parentNode = parentNode;
@@ -28,7 +28,7 @@ class MyBinaryHeapNode {
 }
 
 class MyBinarySearchTree {
-  private MyBinaryHeapNode rootNode;
+  private MyBinarySearchTreeNode rootNode;
 
   public MyBinarySearchTree() {
     this.rootNode = null;
@@ -36,21 +36,21 @@ class MyBinarySearchTree {
 
   public void add(int value) {
     if (this.rootNode == null) {
-      this.rootNode = new MyBinaryHeapNode(value, null, null, null);
+      this.rootNode = new MyBinarySearchTreeNode(value, null, null, null);
       return;
     }
 
     this.add(value, this.rootNode);
   }
 
-  public void add(int value, MyBinaryHeapNode nodeToInsertAt) {
+  public void add(int value, MyBinarySearchTreeNode nodeToInsertAt) {
     if (value < nodeToInsertAt.value && nodeToInsertAt.leftChildNode == null) {
-      MyBinaryHeapNode newNode = new MyBinaryHeapNode(value, nodeToInsertAt, null, null);
+      MyBinarySearchTreeNode newNode = new MyBinarySearchTreeNode(value, nodeToInsertAt, null, null);
       nodeToInsertAt.leftChildNode = newNode;
       return;
     }
     if (value > nodeToInsertAt.value && nodeToInsertAt.rightChildNode == null) {
-      MyBinaryHeapNode newNode = new MyBinaryHeapNode(value, nodeToInsertAt, null, null);
+      MyBinarySearchTreeNode newNode = new MyBinarySearchTreeNode(value, nodeToInsertAt, null, null);
       nodeToInsertAt.rightChildNode = newNode;
       return;
     }
@@ -65,11 +65,11 @@ class MyBinarySearchTree {
     }
   }
 
-  public MyBinaryHeapNode find(int value) {
+  public MyBinarySearchTreeNode find(int value) {
     return this.find(value, this.rootNode);
   }
 
-  public MyBinaryHeapNode find(int value, MyBinaryHeapNode nodeToFindAt) {
+  public MyBinarySearchTreeNode find(int value, MyBinarySearchTreeNode nodeToFindAt) {
     if (nodeToFindAt       == null ) return null;
     if (nodeToFindAt.value == value) return nodeToFindAt;
     if (nodeToFindAt.value < value ) return this.find(value, nodeToFindAt.rightChildNode);
@@ -78,7 +78,7 @@ class MyBinarySearchTree {
   }
 
   public void delete(int value) {
-    MyBinaryHeapNode nodeToDelete = this.find(value);
+    MyBinarySearchTreeNode nodeToDelete = this.find(value);
     if (nodeToDelete == null) return;
 
     if (nodeToDelete.isLeaf() && nodeToDelete.isRoot()) {
@@ -87,7 +87,7 @@ class MyBinarySearchTree {
     }
 
     if (nodeToDelete.isLeaf() && !nodeToDelete.isRoot()) {
-      MyBinaryHeapNode parentOfNodeToDelete = nodeToDelete.parentNode;
+      MyBinarySearchTreeNode parentOfNodeToDelete = nodeToDelete.parentNode;
       nodeToDelete.parentNode = null;
       if (nodeToDelete.value < parentOfNodeToDelete.value) {
         parentOfNodeToDelete.leftChildNode = null;
@@ -97,7 +97,7 @@ class MyBinarySearchTree {
       return;
     }
 
-    MyBinaryHeapNode nodeToReplaceWith;
+    MyBinarySearchTreeNode nodeToReplaceWith;
 
     if (nodeToDelete.leftChildNode != null) {
       nodeToReplaceWith = nodeToDelete.leftChildNode;
@@ -122,12 +122,12 @@ class MyBinarySearchTree {
   }
 
   public String visualize() {
-    HashMap<Integer, MyBinaryHeapNode[]> nodesByDepth = new HashMap<Integer, MyBinaryHeapNode[]>();
+    HashMap<Integer, MyBinarySearchTreeNode[]> nodesByDepth = new HashMap<Integer, MyBinarySearchTreeNode[]>();
 
     int depth = 0;
     while (true) {
       int nodesAmountAtCurrentDepth = (int)Math.pow(2, depth);
-      MyBinaryHeapNode[] nodesAtCurrentDepth = new MyBinaryHeapNode[nodesAmountAtCurrentDepth];
+      MyBinarySearchTreeNode[] nodesAtCurrentDepth = new MyBinarySearchTreeNode[nodesAmountAtCurrentDepth];
       
       if (depth == 0) {
         nodesAtCurrentDepth[0] = this.rootNode;
@@ -139,7 +139,7 @@ class MyBinarySearchTree {
       }
       
       boolean areAllNodesAtCurrentDepthLeafs = true;
-      MyBinaryHeapNode[] nodesAtPreviousDepth = nodesByDepth.get(depth - 1);
+      MyBinarySearchTreeNode[] nodesAtPreviousDepth = nodesByDepth.get(depth - 1);
       for (int index = 0; index < nodesAtPreviousDepth.length; index++) {
         if (nodesAtPreviousDepth[index] == null) {
           nodesAtCurrentDepth[index * 2] = null;
@@ -162,7 +162,7 @@ class MyBinarySearchTree {
     String result = "";
     for (depth = 0; depth < nodesByDepth.size(); depth++) {
       for (int index = 0; index < nodesByDepth.get(depth).length; index++) {
-        MyBinaryHeapNode node = nodesByDepth.get(depth)[index];
+        MyBinarySearchTreeNode node = nodesByDepth.get(depth)[index];
         if (node == null) {
           result += "_";
         } else {
