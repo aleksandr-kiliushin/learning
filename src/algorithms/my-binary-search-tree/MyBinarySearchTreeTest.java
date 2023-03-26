@@ -179,7 +179,7 @@ class MyBinarySearchTreeTest {
   }
 
   @Test
-  public void doesBalancingWorkCorrectly() {
+  public void doesBalancingWorkCorrectly1() {
     MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
 
     myBinarySearchTree.add(8);
@@ -202,6 +202,59 @@ class MyBinarySearchTreeTest {
     4
     2|8
     1|3|6|12
+    """, myBinarySearchTree.visualize());
+  }
+
+  @Test
+  public void doesBalancingWorkCorrectly2() {
+    MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
+
+    myBinarySearchTree.add(8);
+    myBinarySearchTree.add(12);
+    myBinarySearchTree.add(4);
+    myBinarySearchTree.add(14);
+    myBinarySearchTree.add(15);
+    myBinarySearchTree.add(2);
+    myBinarySearchTree.add(1);
+    myBinarySearchTree.add(3);
+    myBinarySearchTree.add(6);
+    myBinarySearchTree.add(5);
+    myBinarySearchTree.add(7);
+    myBinarySearchTree.add(10);
+    myBinarySearchTree.add(11);
+    myBinarySearchTree.add(9);
+    myBinarySearchTree.add(13);
+
+    Assertions.assertEquals("""
+    8
+    4|12
+    2|6|10|14
+    1|3|5|7|9|11|13|15
+    """, myBinarySearchTree.visualize());
+
+    myBinarySearchTree.delete(13);
+    myBinarySearchTree.delete(4);
+    myBinarySearchTree.delete(12);
+    myBinarySearchTree.delete(8);
+    myBinarySearchTree.delete(7);
+    myBinarySearchTree.delete(6);
+    myBinarySearchTree.delete(5);
+    myBinarySearchTree.delete(1);
+    myBinarySearchTree.delete(3);
+
+    Assertions.assertEquals("""
+    2
+    _|11
+    _|_|10|14
+    _|_|_|_|9|_|_|15
+    """, myBinarySearchTree.visualize());
+
+    myBinarySearchTree.balance();
+
+    Assertions.assertEquals("""
+    11
+    9|15
+    2|10|14|_
     """, myBinarySearchTree.visualize());
   }
 }
