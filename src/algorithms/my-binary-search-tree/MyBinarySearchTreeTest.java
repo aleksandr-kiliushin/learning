@@ -177,21 +177,31 @@ class MyBinarySearchTreeTest {
       myBinarySearchTree.getValuesSorted()
     );
   }
+
+  @Test
+  public void doesBalancingWorkCorrectly() {
+    MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
+
+    myBinarySearchTree.add(8);
+    myBinarySearchTree.add(12);
+    myBinarySearchTree.add(4);
+    myBinarySearchTree.add(2);
+    myBinarySearchTree.add(1);
+    myBinarySearchTree.add(3);
+    myBinarySearchTree.add(6);
+    Assertions.assertEquals("""
+    8
+    4|12
+    2|6|_|_
+    1|3|_|_|_|_|_|_
+    """, myBinarySearchTree.visualize());
+
+    myBinarySearchTree.balance();
+
+    Assertions.assertEquals("""
+    4
+    2|8
+    1|3|6|12
+    """, myBinarySearchTree.visualize());
+  }
 }
-
-
-// MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
-
-// myBinarySearchTree.add(8);
-// myBinarySearchTree.add(12);
-// myBinarySearchTree.add(4);
-// myBinarySearchTree.add(2);
-// myBinarySearchTree.add(1);
-// myBinarySearchTree.add(3);
-// myBinarySearchTree.add(6);
-// Assertions.assertEquals("""
-// 8
-// 4|12
-// 2|6|_|_
-// 1|3|_|_|_|_|_|_
-// """, myBinarySearchTree.visualize());

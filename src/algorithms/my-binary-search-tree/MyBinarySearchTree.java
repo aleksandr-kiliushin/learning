@@ -143,6 +143,45 @@ class MyBinarySearchTree {
     return values;
   }
 
+  public void balance() {
+    this.rootNode = this.addDescendants(null, this.getValuesSorted());
+  }
+
+  private MyBinarySearchTreeNode addDescendants(MyBinarySearchTreeNode parentNode, List<Integer> values) {
+    if (values.size() == 0) {
+      return null;
+    }
+    if (values.size() == 1) {
+      return new MyBinarySearchTreeNode(values.get(0), parentNode, null, null);
+    }
+    if (values.size() == 2) {
+      MyBinarySearchTreeNode node = new MyBinarySearchTreeNode(values.get(1), parentNode, null, null);
+      node.leftChildNode = new MyBinarySearchTreeNode(values.get(0), node, null, null);
+    }
+    if (values.size() == 3) {
+      MyBinarySearchTreeNode node = new MyBinarySearchTreeNode(values.get(1), parentNode, null, null);
+      node.leftChildNode = new MyBinarySearchTreeNode(values.get(0), node, null, null);
+      node.rightChildNode = new MyBinarySearchTreeNode(values.get(2), node, null, null);
+    }
+    
+    int middleIndex = values.size() / 2;
+    MyBinarySearchTreeNode node = new MyBinarySearchTreeNode(values.get(middleIndex), parentNode, null, null);
+
+    List<Integer> leftSubtreeValues = new ArrayList<Integer>();
+    for (int index = 0; index < middleIndex; index++) {
+      leftSubtreeValues.add(values.get(index));
+    }
+    node.leftChildNode = this.addDescendants(node, leftSubtreeValues);
+
+    List<Integer> rightSubtreeValues = new ArrayList<Integer>();
+    for (int index = middleIndex + 1; index < values.size(); index++) {
+      rightSubtreeValues.add(values.get(index));
+    }
+    node.rightChildNode = this.addDescendants(node, rightSubtreeValues);
+
+    return node;
+  }
+
   public String visualize() {
     HashMap<Integer, MyBinarySearchTreeNode[]> nodesByDepth = new HashMap<Integer, MyBinarySearchTreeNode[]>();
 
