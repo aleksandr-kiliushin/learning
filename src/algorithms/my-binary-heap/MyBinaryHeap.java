@@ -44,82 +44,72 @@ class MyBinaryHeap {
   }
 
   public void add(int value, MyBinaryHeapNode nodeToInsertAt) {
-    if (value < nodeToInsertAt.value && nodeToInsertAt.leftChildNode == null) {
-      MyBinaryHeapNode newNode = new MyBinaryHeapNode(value, nodeToInsertAt, null, null);
-      nodeToInsertAt.leftChildNode = newNode;
-      return;
-    }
-    if (value > nodeToInsertAt.value && nodeToInsertAt.rightChildNode == null) {
-      MyBinaryHeapNode newNode = new MyBinaryHeapNode(value, nodeToInsertAt, null, null);
-      nodeToInsertAt.rightChildNode = newNode;
-      return;
-    }
-
-    if (value < nodeToInsertAt.value && nodeToInsertAt.leftChildNode != null) {
-      this.add(value, nodeToInsertAt.leftChildNode);
-      return;
-    }
-    if (value > nodeToInsertAt.value && nodeToInsertAt.rightChildNode != null) {
-      this.add(value, nodeToInsertAt.rightChildNode);
-      return;
-    }
-  }
-
-  public MyBinaryHeapNode find(int value) {
-    return this.find(value, this.rootNode);
-  }
-
-  public MyBinaryHeapNode find(int value, MyBinaryHeapNode nodeToFindAt) {
-    if (nodeToFindAt       == null ) return null;
-    if (nodeToFindAt.value == value) return nodeToFindAt;
-    if (nodeToFindAt.value < value ) return this.find(value, nodeToFindAt.rightChildNode);
-    if (nodeToFindAt.value > value ) return this.find(value, nodeToFindAt.leftChildNode);
-    return null;
-  }
-
-  public void delete(int value) {
-    MyBinaryHeapNode nodeToDelete = this.find(value);
-    if (nodeToDelete == null) return;
-
-    if (nodeToDelete.isLeaf() && nodeToDelete.isRoot()) {
-      this.rootNode = null;
-      return;
-    }
-
-    if (nodeToDelete.isLeaf() && !nodeToDelete.isRoot()) {
-      MyBinaryHeapNode parentOfNodeToDelete = nodeToDelete.parentNode;
-      nodeToDelete.parentNode = null;
-      if (nodeToDelete.value < parentOfNodeToDelete.value) {
-        parentOfNodeToDelete.leftChildNode = null;
+    if (value < nodeToInsertAt.value) {
+      if (nodeToInsertAt.leftChildNode == null) {
+        nodeToInsertAt.leftChildNode = new MyBinaryHeapNode(value, nodeToInsertAt, null, null);
+      } else if (nodeToInsertAt.rightChildNode == null) {
+        nodeToInsertAt.rightChildNode = new MyBinaryHeapNode(value, nodeToInsertAt, null, null);
       } else {
-        parentOfNodeToDelete.rightChildNode = null;
+        this.add(value, nodeToInsertAt.leftChildNode);
       }
-      return;
-    }
-
-    MyBinaryHeapNode nodeToReplaceWith;
-
-    if (nodeToDelete.leftChildNode != null) {
-      nodeToReplaceWith = nodeToDelete.leftChildNode;
-      while (nodeToReplaceWith.rightChildNode != null) {
-        nodeToReplaceWith = nodeToReplaceWith.rightChildNode;
-      }
-      int valueToPutInDeletedNode = nodeToReplaceWith.value;
-      this.delete(nodeToReplaceWith.value);
-      nodeToDelete.value = valueToPutInDeletedNode;
-      return;
-    }
-    if (nodeToDelete.rightChildNode != null) {
-      nodeToReplaceWith = nodeToDelete.rightChildNode;
-      while (nodeToReplaceWith.leftChildNode != null) {
-        nodeToReplaceWith = nodeToReplaceWith.leftChildNode;
-      }
-      int valueToPutInDeletedNode = nodeToReplaceWith.value;
-      this.delete(nodeToReplaceWith.value);
-      nodeToDelete.value = valueToPutInDeletedNode;
-      return;
     }
   }
+
+  // public MyBinaryHeapNode find(int value) {
+  //   return this.find(value, this.rootNode);
+  // }
+
+  // public MyBinaryHeapNode find(int value, MyBinaryHeapNode nodeToFindAt) {
+  //   if (nodeToFindAt       == null ) return null;
+  //   if (nodeToFindAt.value == value) return nodeToFindAt;
+  //   if (nodeToFindAt.value < value ) return this.find(value, nodeToFindAt.rightChildNode);
+  //   if (nodeToFindAt.value > value ) return this.find(value, nodeToFindAt.leftChildNode);
+  //   return null;
+  // }
+
+  // public void delete(int value) {
+  //   MyBinaryHeapNode nodeToDelete = this.find(value);
+  //   if (nodeToDelete == null) return;
+
+  //   if (nodeToDelete.isLeaf() && nodeToDelete.isRoot()) {
+  //     this.rootNode = null;
+  //     return;
+  //   }
+
+  //   if (nodeToDelete.isLeaf() && !nodeToDelete.isRoot()) {
+  //     MyBinaryHeapNode parentOfNodeToDelete = nodeToDelete.parentNode;
+  //     nodeToDelete.parentNode = null;
+  //     if (nodeToDelete.value < parentOfNodeToDelete.value) {
+  //       parentOfNodeToDelete.leftChildNode = null;
+  //     } else {
+  //       parentOfNodeToDelete.rightChildNode = null;
+  //     }
+  //     return;
+  //   }
+
+  //   MyBinaryHeapNode nodeToReplaceWith;
+
+  //   if (nodeToDelete.leftChildNode != null) {
+  //     nodeToReplaceWith = nodeToDelete.leftChildNode;
+  //     while (nodeToReplaceWith.rightChildNode != null) {
+  //       nodeToReplaceWith = nodeToReplaceWith.rightChildNode;
+  //     }
+  //     int valueToPutInDeletedNode = nodeToReplaceWith.value;
+  //     this.delete(nodeToReplaceWith.value);
+  //     nodeToDelete.value = valueToPutInDeletedNode;
+  //     return;
+  //   }
+  //   if (nodeToDelete.rightChildNode != null) {
+  //     nodeToReplaceWith = nodeToDelete.rightChildNode;
+  //     while (nodeToReplaceWith.leftChildNode != null) {
+  //       nodeToReplaceWith = nodeToReplaceWith.leftChildNode;
+  //     }
+  //     int valueToPutInDeletedNode = nodeToReplaceWith.value;
+  //     this.delete(nodeToReplaceWith.value);
+  //     nodeToDelete.value = valueToPutInDeletedNode;
+  //     return;
+  //   }
+  // }
 
   public String visualize() {
     HashMap<Integer, MyBinaryHeapNode[]> nodesByDepth = new HashMap<Integer, MyBinaryHeapNode[]>();
