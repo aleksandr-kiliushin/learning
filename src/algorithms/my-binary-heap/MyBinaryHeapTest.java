@@ -44,19 +44,19 @@ class MyBinaryHeapTest {
     2|1|_|_
     """, myBinaryHeap.visualize());
 
-    // myBinaryHeap.add(3);
-    // Assertions.assertEquals("""
-    // 15
-    // 13|14
-    // 2|1|3|_
-    // """, myBinaryHeap.visualize());
+    myBinaryHeap.add(3);
+    Assertions.assertEquals("""
+    15
+    13|14
+    2|1|3|_
+    """, myBinaryHeap.visualize());
 
-    // myBinaryHeap.add(6);
-    // Assertions.assertEquals("""
-    // 15
-    // 13|14
-    // 2|1|3|6
-    // """, myBinaryHeap.visualize());
+    myBinaryHeap.add(6);
+    Assertions.assertEquals("""
+    15
+    13|14
+    2|1|3|6
+    """, myBinaryHeap.visualize());
 
     // myBinaryHeap.add(5);
     // Assertions.assertEquals("""
