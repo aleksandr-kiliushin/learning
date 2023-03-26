@@ -40,31 +40,27 @@ class MyBinaryHeap {
       return;
     }
 
-    this.add(value, this.rootNode);
+    MyBinaryHeapNode addedNode = this.add(value, this.rootNode);
+    this.bubbleUp(addedNode);
   }
 
-  private void add(int value, MyBinaryHeapNode node) {
+  private MyBinaryHeapNode add(int value, MyBinaryHeapNode node) {
     if (node.leftChildNode == null) {
       node.leftChildNode = new MyBinaryHeapNode(value, node, null, null);
-      return;
+      return node.leftChildNode;
     }
     if (node.rightChildNode == null) {
       node.rightChildNode = new MyBinaryHeapNode(value, node, null, null);
-      return;
+      return node.rightChildNode;
     }
 
     int leftSubtreeDepth = this.getDistanceToFirstDescendantWithoutChildren(node.leftChildNode);
     int rightSubtreeDepth = this.getDistanceToFirstDescendantWithoutChildren(node.rightChildNode);
 
-    // if (value == 3) {
-    //   System.out.println(leftSubtreeDepth);
-    //   System.out.println(rightSubtreeDepth);
-    // }
-
     if (leftSubtreeDepth == rightSubtreeDepth) {
-      this.add(value, node.leftChildNode);
+      return this.add(value, node.leftChildNode);
     } else {
-      this.add(value, node.rightChildNode);
+      return this.add(value, node.rightChildNode);
     }
   }
 
@@ -75,6 +71,16 @@ class MyBinaryHeap {
       this.getDistanceToFirstDescendantWithoutChildren(node.leftChildNode),
       this.getDistanceToFirstDescendantWithoutChildren(node.rightChildNode)
     );
+  }
+
+  private void bubbleUp(MyBinaryHeapNode node) {
+    if (node.parentNode == null) return;
+    if (node.value <= node.parentNode.value) return;
+
+    int temp = node.value;
+    node.value = node.parentNode.value;
+    node.parentNode.value = temp;
+    this.bubbleUp(node.parentNode);
   }
 
   // public MyBinaryHeapNode find(int value) {

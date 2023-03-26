@@ -58,27 +58,25 @@ class MyBinaryHeapTest {
     2|1|3|6
     """, myBinaryHeap.visualize());
 
-    // myBinaryHeap.add(5);
+    myBinaryHeap.add(5);
+    Assertions.assertEquals("""
+    15
+    13|14
+    5|1|3|6
+    2|_|_|_|_|_|_|_
+    """, myBinaryHeap.visualize());
+
+    // myBinaryHeap.add(7);
+    // myBinaryHeap.add(10);
+    // myBinaryHeap.add(11);
+    // myBinaryHeap.add(9);
+    // myBinaryHeap.add(13);
     // Assertions.assertEquals("""
     // 15
     // 13|14
     // 5|1|3|6
     // 2|_|_|_|_|_|_|_
     // """, myBinaryHeap.visualize());
-
-
-
-//     myBinaryHeap.add(7);
-//     myBinaryHeap.add(10);
-//     myBinaryHeap.add(11);
-//     myBinaryHeap.add(9);
-//     myBinaryHeap.add(13);
-//     Assertions.assertEquals("""
-// 8
-// 4|12
-// 2|6|10|14
-// 1|3|5|7|9|11|13|15
-// """, myBinaryHeap.visualize());
 
 //     Assertions.assertEquals(8,    myBinaryHeap.find(8 ).value);
 //     Assertions.assertEquals(4,    myBinaryHeap.find(4 ).value);
