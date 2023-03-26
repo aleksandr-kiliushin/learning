@@ -13,55 +13,55 @@ class MyBinaryHeapTest {
     _
     """, myBinaryHeap.visualize());
 
-    myBinaryHeap.add(15);
+    myBinaryHeap.add(14);
     Assertions.assertEquals("""
-    15
+    14
     """, myBinaryHeap.visualize());
 
     myBinaryHeap.add(13);
     Assertions.assertEquals("""
-    15
+    14
     13|_
     """, myBinaryHeap.visualize());
 
-    myBinaryHeap.add(14);
+    myBinaryHeap.add(12);
     Assertions.assertEquals("""
-    15
-    13|14
+    14
+    13|12
     """, myBinaryHeap.visualize());
 
     myBinaryHeap.add(2);
     Assertions.assertEquals("""
-    15
-    13|14
+    14
+    13|12
     2|_|_|_
     """, myBinaryHeap.visualize());
 
     myBinaryHeap.add(1);
     Assertions.assertEquals("""
-    15
-    13|14
+    14
+    13|12
     2|1|_|_
     """, myBinaryHeap.visualize());
 
     myBinaryHeap.add(3);
     Assertions.assertEquals("""
-    15
-    13|14
+    14
+    13|12
     2|1|3|_
     """, myBinaryHeap.visualize());
 
     myBinaryHeap.add(6);
     Assertions.assertEquals("""
-    15
-    13|14
+    14
+    13|12
     2|1|3|6
     """, myBinaryHeap.visualize());
 
     myBinaryHeap.add(5);
     Assertions.assertEquals("""
-    15
-    13|14
+    14
+    13|12
     5|1|3|6
     2|_|_|_|_|_|_|_
     """, myBinaryHeap.visualize());
@@ -71,15 +71,15 @@ class MyBinaryHeapTest {
     myBinaryHeap.add(11);
     myBinaryHeap.add(9);
     Assertions.assertEquals("""
-    15
-    13|14
+    14
+    13|12
     7|11|9|6
     2|5|1|10|3|_|_|_
     """, myBinaryHeap.visualize());
 
     myBinaryHeap.add(8);
     myBinaryHeap.add(4);
-    myBinaryHeap.add(12);
+    myBinaryHeap.add(15);
     Assertions.assertEquals("""
     15
     13|14
