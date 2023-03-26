@@ -73,6 +73,22 @@ class MyBinaryHeap {
     );
   }
 
+  private int getDistanceToLastDescendantWithoutChildren(MyBinaryHeapNode node) {
+    // if (node.value == 4) {
+    //   System.out.println("node.value: " + node.value);
+    //   System.out.println("node.leftChildNode: " + node.leftChildNode);
+    //   System.out.println("node.rightChildNode: " + node.rightChildNode);
+    // }
+    if (node == null) return 0;
+    if (node.leftChildNode == null && node.rightChildNode == null) return 0;
+    if (node.leftChildNode == null || node.rightChildNode == null) return 1;
+
+    return 1 + Math.max(
+      this.getDistanceToLastDescendantWithoutChildren(node.leftChildNode),
+      this.getDistanceToLastDescendantWithoutChildren(node.rightChildNode)
+    );
+  }
+
   private void bubbleUp(MyBinaryHeapNode node) {
     if (node.isRoot()) return;
     if (node.value <= node.parentNode.value) return;
@@ -85,6 +101,7 @@ class MyBinaryHeap {
 
   public void delete() {
     MyBinaryHeapNode rightmostNode = this.getRightmostLeaf(this.rootNode);
+    // System.out.println(rightmostNode.value); // TODO: Delete.
     this.rootNode.value = rightmostNode.value;
     if (rightmostNode.parentNode.rightChildNode != null && rightmostNode.parentNode.rightChildNode.value == rightmostNode.value) {
       rightmostNode.parentNode.rightChildNode = null;
@@ -98,13 +115,20 @@ class MyBinaryHeap {
   private MyBinaryHeapNode getRightmostLeaf(MyBinaryHeapNode node) {
     if (node.isLeaf()) return node;
 
-    int leftSubtreeDepth = this.getDistanceToFirstDescendantWithoutChildren(node.leftChildNode);
-    int rightSubtreeDepth = this.getDistanceToFirstDescendantWithoutChildren(node.rightChildNode);
+    int leftSubtreeDepth = this.getDistanceToLastDescendantWithoutChildren(node.leftChildNode);
+    int rightSubtreeDepth = this.getDistanceToLastDescendantWithoutChildren(node.rightChildNode);
 
-    if (leftSubtreeDepth == rightSubtreeDepth) {
-      return this.getRightmostLeaf(node.rightChildNode);
-    } else {
+    // if (node.value == 12 && node.leftChildNode.value == 9) {
+    //   System.out.println("leftChildNode.value: " + node.leftChildNode.value);
+    //   System.out.println("rightChildNode.value: " + node.rightChildNode.value);
+    //   System.out.println("leftSubtreeDepth: " + leftSubtreeDepth);
+    //   System.out.println("rightSubtreeDepth: " + rightSubtreeDepth);
+    // }
+
+    if (leftSubtreeDepth > rightSubtreeDepth || node.rightChildNode == null) {
       return this.getRightmostLeaf(node.leftChildNode);
+    } else {
+      return this.getRightmostLeaf(node.rightChildNode);
     }
   }
 

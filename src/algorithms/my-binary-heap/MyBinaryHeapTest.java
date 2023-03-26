@@ -95,6 +95,33 @@ class MyBinaryHeapTest {
     2|5|1|10|3|8|4|_
     """, myBinaryHeap.visualize());
 
+    myBinaryHeap.delete();
+    Assertions.assertEquals("""
+    13
+    11|12
+    7|10|9|6
+    2|5|1|4|3|8|_|_
+    """, myBinaryHeap.visualize());
+
+    myBinaryHeap.delete();
+    Assertions.assertEquals("""
+    12
+    11|9
+    7|10|8|6
+    2|5|1|4|3|_|_|_
+    """, myBinaryHeap.visualize());
+
+    myBinaryHeap.delete();
+    myBinaryHeap.delete();
+    myBinaryHeap.delete();
+    myBinaryHeap.delete();
+    Assertions.assertEquals("""
+    8
+    7|6
+    5|4|1|3
+    2|_|_|_|_|_|_|_
+    """, myBinaryHeap.visualize());
+
 //     Assertions.assertEquals(8,    myBinaryHeap.find(8 ).value);
 //     Assertions.assertEquals(4,    myBinaryHeap.find(4 ).value);
 //     Assertions.assertEquals(10,   myBinaryHeap.find(10).value);
