@@ -1,6 +1,9 @@
 // To run this test:
 // javac -cp ./lib/junit-platform-console-standalone-1.7.0-all.jar ./src/algorithms/my-binary-search-tree/MyBinarySearchTree.java ./src/algorithms/my-binary-search-tree/MyBinarySearchTreeTest.java && java -jar ./lib/junit-platform-console-standalone-1.7.0-all.jar -cp ./src/algorithms/my-binary-search-tree --select-class MyBinarySearchTreeTest && rm ./src/**/*.class
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -145,4 +148,50 @@ Assertions.assertEquals("""
 _
 """, myBinarySearchTree.visualize());
   }
+
+  @Test
+  public void doesGetValuesWorkCorrectly() {
+    MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
+
+    myBinarySearchTree.add(8);
+    myBinarySearchTree.add(12);
+    myBinarySearchTree.add(4);
+    myBinarySearchTree.add(2);
+    myBinarySearchTree.add(1);
+    myBinarySearchTree.add(3);
+    myBinarySearchTree.add(6);
+    Assertions.assertEquals("""
+8
+4|12
+2|6|_|_
+1|3|_|_|_|_|_|_
+""", myBinarySearchTree.visualize());
+
+    Assertions.assertEquals(
+      new ArrayList<Integer>(Arrays.asList(8, 4, 2, 1, 3, 6, 12)),
+      myBinarySearchTree.getValues()
+    );
+
+    Assertions.assertEquals(
+      new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 6, 8, 12)),
+      myBinarySearchTree.getValuesSorted()
+    );
+  }
 }
+
+
+// MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
+
+// myBinarySearchTree.add(8);
+// myBinarySearchTree.add(12);
+// myBinarySearchTree.add(4);
+// myBinarySearchTree.add(2);
+// myBinarySearchTree.add(1);
+// myBinarySearchTree.add(3);
+// myBinarySearchTree.add(6);
+// Assertions.assertEquals("""
+// 8
+// 4|12
+// 2|6|_|_
+// 1|3|_|_|_|_|_|_
+// """, myBinarySearchTree.visualize());

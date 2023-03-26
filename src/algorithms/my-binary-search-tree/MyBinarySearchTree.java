@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 class MyBinarySearchTreeNode {
   public int value;
@@ -119,6 +122,25 @@ class MyBinarySearchTree {
       nodeToDelete.value = valueToPutInDeletedNode;
       return;
     }
+  }
+
+  private void addNodeDescendantsValues(MyBinarySearchTreeNode node, List<Integer> values) {
+    if (node == null) return;
+    values.add(node.value);
+    this.addNodeDescendantsValues(node.leftChildNode, values);
+    this.addNodeDescendantsValues(node.rightChildNode, values);
+  }
+
+  public List<Integer> getValues() {
+    List<Integer> values = new ArrayList<Integer>();
+    this.addNodeDescendantsValues(this.rootNode, values);
+    return values;
+  }
+
+  public List<Integer> getValuesSorted() {
+    List<Integer> values = this.getValues();
+    Collections.sort(values);
+    return values;
   }
 
   public String visualize() {
