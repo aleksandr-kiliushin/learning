@@ -74,11 +74,6 @@ class MyBinaryHeap {
   }
 
   private int getDistanceToLastDescendantWithoutChildren(MyBinaryHeapNode node) {
-    // if (node.value == 4) {
-    //   System.out.println("node.value: " + node.value);
-    //   System.out.println("node.leftChildNode: " + node.leftChildNode);
-    //   System.out.println("node.rightChildNode: " + node.rightChildNode);
-    // }
     if (node == null) return 0;
     if (node.leftChildNode == null && node.rightChildNode == null) return 0;
     if (node.leftChildNode == null || node.rightChildNode == null) return 1;
@@ -101,7 +96,10 @@ class MyBinaryHeap {
 
   public void delete() {
     MyBinaryHeapNode rightmostNode = this.getRightmostLeaf(this.rootNode);
-    // System.out.println(rightmostNode.value); // TODO: Delete.
+    if (rightmostNode == this.rootNode) {
+      this.rootNode = null;
+      return;
+    }
     this.rootNode.value = rightmostNode.value;
     if (rightmostNode.parentNode.rightChildNode != null && rightmostNode.parentNode.rightChildNode.value == rightmostNode.value) {
       rightmostNode.parentNode.rightChildNode = null;
@@ -117,13 +115,6 @@ class MyBinaryHeap {
 
     int leftSubtreeDepth = this.getDistanceToLastDescendantWithoutChildren(node.leftChildNode);
     int rightSubtreeDepth = this.getDistanceToLastDescendantWithoutChildren(node.rightChildNode);
-
-    // if (node.value == 12 && node.leftChildNode.value == 9) {
-    //   System.out.println("leftChildNode.value: " + node.leftChildNode.value);
-    //   System.out.println("rightChildNode.value: " + node.rightChildNode.value);
-    //   System.out.println("leftSubtreeDepth: " + leftSubtreeDepth);
-    //   System.out.println("rightSubtreeDepth: " + rightSubtreeDepth);
-    // }
 
     if (leftSubtreeDepth > rightSubtreeDepth || node.rightChildNode == null) {
       return this.getRightmostLeaf(node.leftChildNode);
@@ -155,62 +146,6 @@ class MyBinaryHeap {
     childWithHighestValue.value = temp;
     this.pushNodeDown(childWithHighestValue);
   }
-
-  // public MyBinaryHeapNode find(int value) {
-  //   return this.find(value, this.rootNode);
-  // }
-
-  // public MyBinaryHeapNode find(int value, MyBinaryHeapNode nodeToFindAt) {
-  //   if (nodeToFindAt       == null ) return null;
-  //   if (nodeToFindAt.value == value) return nodeToFindAt;
-  //   if (nodeToFindAt.value < value ) return this.find(value, nodeToFindAt.rightChildNode);
-  //   if (nodeToFindAt.value > value ) return this.find(value, nodeToFindAt.leftChildNode);
-  //   return null;
-  // }
-
-  // public void delete(int value) {
-  //   MyBinaryHeapNode nodeToDelete = this.find(value);
-  //   if (nodeToDelete == null) return;
-
-  //   if (nodeToDelete.isLeaf() && nodeToDelete.isRoot()) {
-  //     this.rootNode = null;
-  //     return;
-  //   }
-
-  //   if (nodeToDelete.isLeaf() && !nodeToDelete.isRoot()) {
-  //     MyBinaryHeapNode parentOfNodeToDelete = nodeToDelete.parentNode;
-  //     nodeToDelete.parentNode = null;
-  //     if (nodeToDelete.value < parentOfNodeToDelete.value) {
-  //       parentOfNodeToDelete.leftChildNode = null;
-  //     } else {
-  //       parentOfNodeToDelete.rightChildNode = null;
-  //     }
-  //     return;
-  //   }
-
-  //   MyBinaryHeapNode nodeToReplaceWith;
-
-  //   if (nodeToDelete.leftChildNode != null) {
-  //     nodeToReplaceWith = nodeToDelete.leftChildNode;
-  //     while (nodeToReplaceWith.rightChildNode != null) {
-  //       nodeToReplaceWith = nodeToReplaceWith.rightChildNode;
-  //     }
-  //     int valueToPutInDeletedNode = nodeToReplaceWith.value;
-  //     this.delete(nodeToReplaceWith.value);
-  //     nodeToDelete.value = valueToPutInDeletedNode;
-  //     return;
-  //   }
-  //   if (nodeToDelete.rightChildNode != null) {
-  //     nodeToReplaceWith = nodeToDelete.rightChildNode;
-  //     while (nodeToReplaceWith.leftChildNode != null) {
-  //       nodeToReplaceWith = nodeToReplaceWith.leftChildNode;
-  //     }
-  //     int valueToPutInDeletedNode = nodeToReplaceWith.value;
-  //     this.delete(nodeToReplaceWith.value);
-  //     nodeToDelete.value = valueToPutInDeletedNode;
-  //     return;
-  //   }
-  // }
 
   public String visualize() {
     HashMap<Integer, MyBinaryHeapNode[]> nodesByDepth = new HashMap<Integer, MyBinaryHeapNode[]>();
