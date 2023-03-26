@@ -74,13 +74,62 @@ class MyBinaryHeap {
   }
 
   private void bubbleUp(MyBinaryHeapNode node) {
-    if (node.parentNode == null) return;
+    if (node.isRoot()) return;
     if (node.value <= node.parentNode.value) return;
 
     int temp = node.value;
     node.value = node.parentNode.value;
     node.parentNode.value = temp;
     this.bubbleUp(node.parentNode);
+  }
+
+  public void delete() {
+    MyBinaryHeapNode rightmostNode = this.getRightmostLeaf(this.rootNode);
+    this.rootNode.value = rightmostNode.value;
+    if (rightmostNode.parentNode.rightChildNode != null && rightmostNode.parentNode.rightChildNode.value == rightmostNode.value) {
+      rightmostNode.parentNode.rightChildNode = null;
+    } else {
+      rightmostNode.parentNode.leftChildNode = null;
+    }
+    rightmostNode.parentNode = null;
+    this.pushNodeDown(this.rootNode);
+  }
+
+  private MyBinaryHeapNode getRightmostLeaf(MyBinaryHeapNode node) {
+    if (node.isLeaf()) return node;
+
+    int leftSubtreeDepth = this.getDistanceToFirstDescendantWithoutChildren(node.leftChildNode);
+    int rightSubtreeDepth = this.getDistanceToFirstDescendantWithoutChildren(node.rightChildNode);
+
+    if (leftSubtreeDepth == rightSubtreeDepth) {
+      return this.getRightmostLeaf(node.rightChildNode);
+    } else {
+      return this.getRightmostLeaf(node.leftChildNode);
+    }
+  }
+
+  private void pushNodeDown(MyBinaryHeapNode node) {
+    if (node.leftChildNode == null && node.rightChildNode == null) {
+      return;
+    }
+
+    MyBinaryHeapNode childWithHighestValue;
+    if (node.leftChildNode == null && node.rightChildNode != null) {
+      childWithHighestValue = node.rightChildNode;
+    } else if (node.rightChildNode == null && node.leftChildNode != null) {
+      childWithHighestValue = node.leftChildNode;
+    } else if (node.leftChildNode.value > node.rightChildNode.value) {
+      childWithHighestValue = node.leftChildNode;
+    } else {
+      childWithHighestValue = node.rightChildNode;
+    }
+
+    if (childWithHighestValue.value < node.value) return;
+
+    int temp = node.value;
+    node.value = childWithHighestValue.value;
+    childWithHighestValue.value = temp;
+    this.pushNodeDown(childWithHighestValue);
   }
 
   // public MyBinaryHeapNode find(int value) {

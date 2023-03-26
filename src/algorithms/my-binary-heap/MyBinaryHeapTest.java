@@ -87,6 +87,14 @@ class MyBinaryHeapTest {
     2|5|1|10|3|8|4|6
     """, myBinaryHeap.visualize());
 
+    myBinaryHeap.delete();
+    Assertions.assertEquals("""
+    14
+    13|12
+    7|11|9|6
+    2|5|1|10|3|8|4|_
+    """, myBinaryHeap.visualize());
+
 //     Assertions.assertEquals(8,    myBinaryHeap.find(8 ).value);
 //     Assertions.assertEquals(4,    myBinaryHeap.find(4 ).value);
 //     Assertions.assertEquals(10,   myBinaryHeap.find(10).value);
