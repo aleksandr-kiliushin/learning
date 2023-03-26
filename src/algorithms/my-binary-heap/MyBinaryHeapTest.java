@@ -10,27 +10,26 @@ class MyBinaryHeapTest {
     MyBinaryHeap myBinaryHeap = new MyBinaryHeap();
 
     Assertions.assertEquals("""
-_
-""", myBinaryHeap.visualize());
-    
+    _
+    """, myBinaryHeap.visualize());
 
     myBinaryHeap.add(15);
     Assertions.assertEquals("""
-15
-""", myBinaryHeap.visualize());
+    15
+    """, myBinaryHeap.visualize());
 
     myBinaryHeap.add(13);
     Assertions.assertEquals("""
-15
-13|_
-""", myBinaryHeap.visualize());
+    15
+    13|_
+    """, myBinaryHeap.visualize());
 
     myBinaryHeap.add(14);
     Assertions.assertEquals("""
-15
-13|14
-""", myBinaryHeap.visualize());
-  
+    15
+    13|14
+    """, myBinaryHeap.visualize());
+
 //     myBinaryHeap.add(14);
 //     myBinaryHeap.add(15);
 //     myBinaryHeap.add(2);
