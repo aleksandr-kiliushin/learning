@@ -30,18 +30,33 @@ class MyBinaryHeapTest {
     13|14
     """, myBinaryHeap.visualize());
 
-//     myBinaryHeap.add(14);
-//     myBinaryHeap.add(15);
-//     myBinaryHeap.add(2);
-//     myBinaryHeap.add(1);
-//     myBinaryHeap.add(3);
-//     myBinaryHeap.add(6);
-//     Assertions.assertEquals("""
-// 8
-// 4|12
-// 2|6|_|14
-// 1|3|_|_|_|_|_|15
-// """, myBinaryHeap.visualize());
+    myBinaryHeap.add(2);
+    Assertions.assertEquals("""
+    15
+    13|14
+    2|_|_|_
+    """, myBinaryHeap.visualize());
+
+    myBinaryHeap.add(1);
+    Assertions.assertEquals("""
+    15
+    13|14
+    2|1|_|_
+    """, myBinaryHeap.visualize());
+
+    myBinaryHeap.add(3);
+    Assertions.assertEquals("""
+    15
+    13|14
+    2|1|3|_
+    """, myBinaryHeap.visualize());
+
+    myBinaryHeap.add(6);
+    Assertions.assertEquals("""
+    15
+    13|14
+    2|1|3|6
+    """, myBinaryHeap.visualize());
 
 //     myBinaryHeap.add(5);
 //     myBinaryHeap.add(7);
