@@ -44,14 +44,12 @@ class MyBinaryHeap {
   }
 
   public void add(int value, MyBinaryHeapNode nodeToInsertAt) {
-    if (value < nodeToInsertAt.value) {
-      if (nodeToInsertAt.leftChildNode == null) {
-        nodeToInsertAt.leftChildNode = new MyBinaryHeapNode(value, nodeToInsertAt, null, null);
-      } else if (nodeToInsertAt.rightChildNode == null) {
-        nodeToInsertAt.rightChildNode = new MyBinaryHeapNode(value, nodeToInsertAt, null, null);
-      } else {
-        this.add(value, nodeToInsertAt.leftChildNode);
-      }
+    if (nodeToInsertAt.leftChildNode == null) {
+      nodeToInsertAt.leftChildNode = new MyBinaryHeapNode(value, nodeToInsertAt, null, null);
+    } else if (nodeToInsertAt.rightChildNode == null) {
+      nodeToInsertAt.rightChildNode = new MyBinaryHeapNode(value, nodeToInsertAt, null, null);
+    } else {
+      this.add(value, nodeToInsertAt.leftChildNode);
     }
   }
 
