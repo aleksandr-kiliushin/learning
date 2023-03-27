@@ -1,75 +1,61 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 class MyNonOrientedGraph {
-  private List<String> vertexesNames;
-  private List<List<Integer>> edgesByVertexName;
+  public HashMap<String, HashMap<String, Integer>> matrix;
 
   public MyNonOrientedGraph() {
-    this.vertexesNames = new ArrayList<String>();
-    this.edgesByVertexName = new ArrayList<List<Integer>>();
+    this.matrix = new HashMap<String, HashMap<String, Integer>>();
   }
 
-  public void addVertex(String vertexName) {
-    for (List<Integer> vertexEdges : this.edgesByVertexName) {
-      vertexEdges.add(0);
+  public void addVertex(String newVertexName) {
+    for (Map.Entry<String, HashMap<String, Integer>> vector : this.matrix.entrySet()) {
+      vector.getValue().put(newVertexName, 0);
     }
 
-    this.vertexesNames.add(vertexName);
-
-    List<Integer> newList = new ArrayList<Integer>();
-    for (int vertexIndex = 0; vertexIndex < this.vertexesNames.size(); vertexIndex++) {
-      newList.add(0);
+    HashMap<String, Integer> newVector = new HashMap<String, Integer>();
+    for (Map.Entry<String, HashMap<String, Integer>> vector : this.matrix.entrySet()) {
+      newVector.put(vector.getKey(), 0);
     }
-    
-    this.edgesByVertexName.add(newList);
+    newVector.put(newVertexName, 0);
+
+    this.matrix.put(newVertexName, newVector);
   }
 
   public void connectVertexes(String vertexAName, String vertexBName) {
     if (vertexAName == vertexBName) return;
 
-    for (int vertexAIndex = 0; vertexAIndex < this.vertexesNames.size(); vertexAIndex++) {
-      for (int vertexBIndex = 0; vertexBIndex < this.vertexesNames.size(); vertexBIndex++) {
-        if (this.vertexesNames.get(vertexAIndex) != vertexAName) continue;
-        if (this.vertexesNames.get(vertexBIndex) != vertexBName) continue;
-
-        this.edgesByVertexName.get(vertexAIndex).set(vertexBIndex, 1);
-        this.edgesByVertexName.get(vertexBIndex).set(vertexAIndex, 1);
-      }
-    }
+    this.matrix.get(vertexAName).put(vertexBName, 1);
+    this.matrix.get(vertexBName).put(vertexAName, 1);
   }
 
   public void disconnectVertexes(String vertexAName, String vertexBName) {
     if (vertexAName == vertexBName) return;
 
-    for (int vertexAIndex = 0; vertexAIndex < this.vertexesNames.size(); vertexAIndex++) {
-      for (int vertexBIndex = 0; vertexBIndex < this.vertexesNames.size(); vertexBIndex++) {
-        if (this.vertexesNames.get(vertexAIndex) != vertexAName) continue;
-        if (this.vertexesNames.get(vertexBIndex) != vertexBName) continue;
-
-        this.edgesByVertexName.get(vertexAIndex).set(vertexBIndex, 0);
-        this.edgesByVertexName.get(vertexBIndex).set(vertexAIndex, 0);
-      }
-    }
+    this.matrix.get(vertexAName).put(vertexBName, 0);
+    this.matrix.get(vertexBName).put(vertexAName, 0);
   }
 
   public String visualize() {
     String result = "x";
-    for (String vertexName : this.vertexesNames) {
-      result += vertexName;
+
+    for (Map.Entry<String, HashMap<String, Integer>> vector : this.matrix.entrySet()) {
+      result += vector.getKey();
     }
     result += "\n";
-    for (int vertexIndex = 0; vertexIndex < this.vertexesNames.size(); vertexIndex++) {
-      result += this.vertexesNames.get(vertexIndex);
-      for (int connectedVertexIndex = 0; connectedVertexIndex < this.vertexesNames.size(); connectedVertexIndex++) {
-        if (vertexIndex == connectedVertexIndex) {
+
+    for (Map.Entry<String, HashMap<String, Integer>> vector : this.matrix.entrySet()) {
+      result += vector.getKey();
+      for (Map.Entry<String, Integer> edgeMark : vector.getValue().entrySet()) {
+        if (vector.getKey() == edgeMark.getKey()) {
           result += "x";
         } else {
-          result += this.edgesByVertexName.get(vertexIndex).get(connectedVertexIndex);
+          result += edgeMark.getValue();
         }
       }
       result += "\n";
     }
+
     return result;
   }
 }
