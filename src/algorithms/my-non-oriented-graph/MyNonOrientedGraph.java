@@ -45,7 +45,7 @@ class MyNonOrientedGraph {
         if (vertexIndex == connectedVertexIndex) {
           result += "x";
         } else {
-          result += "0";
+          result += this.edgesByVertexName.get(vertexIndex).get(connectedVertexIndex);
         }
       }
       result += "\n";

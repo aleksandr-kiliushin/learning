@@ -20,10 +20,12 @@ class MyNonOrientedGraphTest {
     """, graph.visualize());
 
     graph.addVertex("B");
+    graph.addVertex("C");
     Assertions.assertEquals("""
-    xAB
-    Ax0
-    B0x
+    xABC
+    Ax00
+    B0x0
+    C00x
     """, graph.visualize());
   }
 }
