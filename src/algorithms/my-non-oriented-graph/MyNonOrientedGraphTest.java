@@ -12,5 +12,18 @@ class MyNonOrientedGraphTest {
     Assertions.assertEquals("""
     x
     """, graph.visualize());
+
+    graph.addVertex("A");
+    Assertions.assertEquals("""
+    xA
+    Ax
+    """, graph.visualize());
+
+    graph.addVertex("B");
+    Assertions.assertEquals("""
+    xAB
+    Ax0
+    B0x
+    """, graph.visualize());
   }
 }
