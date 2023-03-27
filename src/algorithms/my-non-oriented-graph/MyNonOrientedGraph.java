@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.List;
 
 class MyNonOrientedGraphVertex {
   public String name;
@@ -9,10 +10,10 @@ class MyNonOrientedGraphVertex {
 }
 
 class MyNonOrientedGraph {
-  private HashMap<Integer, MyNonOrientedGraphVertex[]> connectionsByVertexName;
+  private HashMap<String, List<MyNonOrientedGraphVertex>> edgesByVertexName;
 
   public MyNonOrientedGraph() {
-    this.connectionsByVertexName = new HashMap<Integer, MyNonOrientedGraphVertex[]>();
+    this.edgesByVertexName = new HashMap<String, List<MyNonOrientedGraphVertex>>();
   }
 
   public String visualize() {
