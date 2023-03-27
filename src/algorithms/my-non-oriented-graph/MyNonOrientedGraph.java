@@ -1,14 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class MyNonOrientedGraphVertex {
-  public String name;
-
-  public MyNonOrientedGraphVertex(String name) {
-    this.name = name;
-  }
-}
-
 class MyNonOrientedGraph {
   private List<String> vertexesNames;
   private List<List<Integer>> edgesByVertexName;
@@ -31,6 +23,34 @@ class MyNonOrientedGraph {
     }
     
     this.edgesByVertexName.add(newList);
+  }
+
+  public void connectVertexes(String vertexAName, String vertexBName) {
+    if (vertexAName == vertexBName) return;
+
+    for (int vertexAIndex = 0; vertexAIndex < this.vertexesNames.size(); vertexAIndex++) {
+      for (int vertexBIndex = 0; vertexBIndex < this.vertexesNames.size(); vertexBIndex++) {
+        if (this.vertexesNames.get(vertexAIndex) != vertexAName) continue;
+        if (this.vertexesNames.get(vertexBIndex) != vertexBName) continue;
+
+        this.edgesByVertexName.get(vertexAIndex).set(vertexBIndex, 1);
+        this.edgesByVertexName.get(vertexBIndex).set(vertexAIndex, 1);
+      }
+    }
+  }
+
+  public void disconnectVertexes(String vertexAName, String vertexBName) {
+    if (vertexAName == vertexBName) return;
+
+    for (int vertexAIndex = 0; vertexAIndex < this.vertexesNames.size(); vertexAIndex++) {
+      for (int vertexBIndex = 0; vertexBIndex < this.vertexesNames.size(); vertexBIndex++) {
+        if (this.vertexesNames.get(vertexAIndex) != vertexAName) continue;
+        if (this.vertexesNames.get(vertexBIndex) != vertexBName) continue;
+
+        this.edgesByVertexName.get(vertexAIndex).set(vertexBIndex, 0);
+        this.edgesByVertexName.get(vertexBIndex).set(vertexAIndex, 0);
+      }
+    }
   }
 
   public String visualize() {

@@ -27,5 +27,22 @@ class MyNonOrientedGraphTest {
     B0x0
     C00x
     """, graph.visualize());
+
+    graph.connectVertexes("A", "C");
+    graph.connectVertexes("C", "B");
+    Assertions.assertEquals("""
+    xABC
+    Ax01
+    B0x1
+    C11x
+    """, graph.visualize());
+
+    graph.disconnectVertexes("A", "C");
+    Assertions.assertEquals("""
+    xABC
+    Ax00
+    B0x1
+    C01x
+    """, graph.visualize());
   }
 }
