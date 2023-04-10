@@ -9,11 +9,11 @@
 
 - 📦 https://ru.hexlet.io/courses/operating_systems (free course)
 
-## Internet
+## 🕸️ Internet
 
 - 📦 https://ru.hexlet.io/courses/internet-fundamentals (free course)
 
-## Security
+## 🔒 Security
 
 - 📦 https://application.security/free/owasp-top-10 (free course)
 
@@ -74,7 +74,7 @@
 - ✅ Feature-sliced design: Video introductions
 - ✅ the-pragmatic-programmer-2020-en.pdf
 
-## Java
+## 𝐉 Java
 
 - 📦 https://ru.hexlet.io/courses/java-basics (free course)
 
@@ -100,7 +100,7 @@
 - 📦 https://medium.com/storyblocks-engineering/web-architecture-101-a3224e126947
 - 📦 https://levelup.gitconnected.com/basics-of-ci-cd-a98340c60b04
 
-## Pet projects
+## 🐶 Pet projects
 
 - ✅ Create DB schema and data visualizer.
 - 📦 Create a mind map app.
