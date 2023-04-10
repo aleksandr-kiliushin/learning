@@ -5,6 +5,18 @@
 ✅ - Done  
 ✅✅ - Done two times
 
+## Operation systems
+
+- 📦 https://ru.hexlet.io/courses/operating_systems (free course)
+
+## Internet
+
+- 📦 https://ru.hexlet.io/courses/internet-fundamentals (free course)
+
+## Security
+
+- 📦 https://application.security/free/owasp-top-10 (free course)
+
 ## 🧪 Testing
 
 - ✅ mastering-react-test-driven-development-2019-eng (335 / 485 done)
@@ -62,6 +74,10 @@
 - ✅ Feature-sliced design: Video introductions
 - ✅ the-pragmatic-programmer-2020-en.pdf
 
+## Java
+
+- 📦 https://ru.hexlet.io/courses/java-basics (free course)
+
 ## 🎨 CSS
 
 - TODO: Fill in, CSS the definitive guide.
@@ -71,6 +87,7 @@
 
 - 📦 https://learngitbranching.js.org/?locale=en_US
 - 📦 https://githowto.com/
+- 📦 https://ru.hexlet.io/courses/intro_to_git (free course)
 
 ## From a business prospective
 
