@@ -15,7 +15,7 @@ const user1 = {
   name: "John",
 }
 
-type UserValue1 = typeof user1[keyof typeof user1] // number | string
+type UserValue1 = (typeof user1)[keyof typeof user1] // number | string
 
 /* Example 3 */
 const user2 = {
@@ -23,16 +23,16 @@ const user2 = {
   name: "John",
 } as const
 
-type UserValue2 = typeof user2[keyof typeof user2] // 25 | "John"
+type UserValue2 = (typeof user2)[keyof typeof user2] // 25 | "John"
 
 /* Example 4 */
 /**
  * The `keyof` keyword can be used to constrain generic type parameters
  * so that they can only be typed to match the properties of another type.
  */
-type LogObjectValueByKey = <T, K extends keyof T>(object: T, key: K) => T[K]
+type GetObjectValueByKey = <T, K extends keyof T>(object: T, key: K) => T[K]
 
-const getObjectValueByKey: LogObjectValueByKey = (object, key) => {
+const getObjectValueByKey: GetObjectValueByKey = (object, key) => {
   return object[key]
 }
 
