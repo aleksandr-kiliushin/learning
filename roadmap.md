@@ -30,6 +30,8 @@
 
 - ✅ https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
 - ✅ learning-react-modern-patterns-developing-2020-en.pdf
+- ⏱ https://web.dev/progressive-web-apps/
+- 📦 https://web.dev/learn/pwa/
 
 ## JavaScript and TypeScript
 
