@@ -59,22 +59,22 @@
 
 ## 🏙 Architecture
 
+- ✅ clean-architecture-2018-en.pdf
+- 📦 domain-driven-design-reference-2015-en.pdf
+- 📦 implementing-domain-driven-design-2013.pdf
+- ✅ the-pragmatic-programmer-2020-en.pdf
+- ✅ https://martinfowler.com/bliki/Yagni.html
+- ✅ Feature-sliced design: Video introductions
+- ✅ [Школа программистов: Сергей Подунов, Архитектура, REST, HTTP](https://www.youtube.com/watch?v=Lf1s9DE04Jw&ab_channel=hh_ru)
 - 📦 [Erick evans - Domain driven desing](https://books.google.ge/books?id=hHBf4YxMnWMC&printsec=copyright&redir_esc=y#v=onepage&q&f=false)
 - 📦 [Backend for frontend by Sam Newman](https://samnewman.io/patterns/architectural/bff/)
 - 📦 https://feature-sliced.design/en/
 - 📦 [Школа программистов. Архитектура фронтенда: основы архитектуры масштабируемых JavaScript приложений.
   ](https://www.youtube.com/watch?v=fXVVpooY0ek&ab_channel=hh_ru)
-- 📦 [Школа программистов: Сергей Подунов, Архитектура, REST, HTTP](https://www.youtube.com/watch?v=Lf1s9DE04Jw&ab_channel=hh_ru)
 - 📦 [Архитектура React - приложения – Егор Блинов](https://www.youtube.com/watch?v=Zy-Oj6qs8vo&ab_channel=%D0%A4%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4)
-- ✅ clean-architecture-2018-en.pdf
-- 📦 domain-driven-design-reference-2015-en.pdf
-- 📦 implementing-domain-driven-design-2013.pdf
 - 🔍 Hexagonal architecture
 - 🔍 Software architecture the hard parts
 - 🔍 Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
-- ✅ https://martinfowler.com/bliki/Yagni.html
-- ✅ Feature-sliced design: Video introductions
-- ✅ the-pragmatic-programmer-2020-en.pdf
 
 ## ♨ Java
 
@@ -97,8 +97,7 @@
 
 ## ⚙️ Infrastructure
 
-- ✅ Setup CI for personal-app-server.
-- ✅ Setup CI for personal-app-frontend.
+- ✅ Setup CI for personal-app-server and personal-app-frontend.
 - 📦 https://medium.com/storyblocks-engineering/web-architecture-101-a3224e126947
 - 📦 https://levelup.gitconnected.com/basics-of-ci-cd-a98340c60b04
 
