@@ -82,8 +82,8 @@
 
 ## 🎨 CSS
 
-- TODO: Fill in, CSS the definitive guide.
-- TODO: Fill in, another CSS book.
+- 📦 css-the-definitive-guide-4th-2017-en.pdf
+- 📦 debugging-css-2020-en.pdf
 
 ## 🌵 GIT
 
