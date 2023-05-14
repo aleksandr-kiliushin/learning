@@ -5,7 +5,7 @@
 ✅ - Done  
 ✅✅ - Done two times
 
-## Operation systems
+## 🖥️ Operating systems
 
 - 📦 https://ru.hexlet.io/courses/operating_systems (free course)
 
@@ -33,7 +33,7 @@
 - ✅ https://web.dev/progressive-web-apps/
 - ✅ https://web.dev/learn/pwa/
 
-## JavaScript and TypeScript
+## 🔫 JS and TS
 
 - ✅ https://javascript.info
 - 📦 The handbook and the docs here: www.typescriptlang.org
@@ -76,7 +76,7 @@
 - ✅ Feature-sliced design: Video introductions
 - ✅ the-pragmatic-programmer-2020-en.pdf
 
-## 𝐉 Java
+## ♨ Java
 
 - 📦 https://ru.hexlet.io/courses/java-basics (free course)
 
@@ -91,11 +91,11 @@
 - 📦 https://githowto.com/
 - 📦 https://ru.hexlet.io/courses/intro_to_git (free course)
 
-## From a business prospective
+## 📈 From a business prospective
 
 - ✅ https://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/
 
-## Infrastructure
+## ⚙️ Infrastructure
 
 - ✅ Setup CI for personal-app-server.
 - ✅ Setup CI for personal-app-frontend.
