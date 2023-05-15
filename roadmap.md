@@ -90,7 +90,7 @@
 - 📦 https://learngitbranching.js.org/?locale=en_US
 - 📦 https://githowto.com/
 - 📦 https://ru.hexlet.io/courses/intro_to_git (free course)
-- https://github.com/apps/github-learning-lab
+- 📦 https://github.com/apps/github-learning-lab
 
 ## 📈 From a business prospective
 
