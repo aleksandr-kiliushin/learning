@@ -28,30 +28,30 @@
 
 ## 🍹 Frontend
 
-- ✅ https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
 - ✅ learning-react-modern-patterns-developing-2020-en.pdf
+- ✅ https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
 - ✅ https://web.dev/progressive-web-apps/
 - ✅ https://web.dev/learn/pwa/
 
 ## 🔫 JS and TS
 
 - ✅ https://javascript.info
+- ✅ js-the-definitive-guide-7th-2020-en.pdf
 - 📦 The handbook and the docs here: www.typescriptlang.org
 - 📦 https://github.com/type-challenges/type-challenges
-- ✅ js-the-definitive-guide-7th-2020-en.pdf
 - ✅ essential-typescript-4-2021-en.pdf
 - ✅ mastering-typescript-enterprise-ready-4th-2021-en.pdf
 - ✅ typescript-4-design-patterns-and-best-practic-2021-en.pdf
 
 ## 💧 Technical dept and refactoring
 
+- ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf
 - ✅ https://www.martinfowler.com/bliki/ParallelChange.html
 - ✅ https://www.martinfowler.com/bliki/BranchByAbstraction.html
 - ✅ https://www.martinfowler.com/bliki/TechnicalDebt.html
 - ✅ https://www.martinfowler.com/bliki/TechnicalDebtQuadrant.html
 - ✅ [Как микросервисы помогают списать технический долг](https://www.youtube.com/watch?v=HRRv82L75wU&ab_channel=%D0%9A%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8FArchDays)
 - ✅ [Блог Александра Бындю - Технический долг](https://blog.byndyu.ru/2008/12/blog-post.html)
-- ✅ refactoring-improving-the-design-of-existing-code-2019-en.pdf
 
 ## 🧩 Algorithms and data structures
 
