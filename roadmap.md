@@ -80,6 +80,10 @@
 
 - 📦 https://ru.hexlet.io/courses/java-basics (free course)
 
+## 💾 Databases
+
+- 📦 https://www.khanacademy.org/computing/computer-programming/sql
+
 ## 🎨 CSS
 
 - 📦 css-the-definitive-guide-4th-2017-en.pdf
