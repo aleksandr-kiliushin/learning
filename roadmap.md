@@ -5,9 +5,10 @@
 ✅ - Done  
 ✅✅ - Done two times
 
-## 🖥️ Operating systems
+## 🖥️ Computers
 
 - 📦 https://ru.hexlet.io/courses/operating_systems (free course)
+- 📦 https://ru.hexlet.io/courses/cli-basics
 
 ## 🕸️ Internet
 
@@ -99,6 +100,11 @@
 ## 📈 From a business prospective
 
 - ✅ https://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/
+
+## Employment
+
+- 📦 https://ru.hexlet.io/courses/employment
+- 📦 https://ru.hexlet.io/courses/employment-for-developers
 
 ## ⚙️ Infrastructure
 
