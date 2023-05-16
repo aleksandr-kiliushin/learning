@@ -105,7 +105,3 @@
 - ✅ Setup CI for personal-app-server and personal-app-frontend.
 - ✅ https://medium.com/storyblocks-engineering/web-architecture-101-a3224e126947
 
-## 🐶 Pet projects
-
-- ✅ Create DB schema and data visualizer.
-- 📦 Create a mind map app.
