@@ -37,7 +37,7 @@
 
 - ✅ https://javascript.info
 - ✅ js-the-definitive-guide-7th-2020-en.pdf
-- 📦 The handbook and the docs here: www.typescriptlang.org
+- 📦 www.typescriptlang.org
 - 📦 https://github.com/type-challenges/type-challenges
 - ✅ essential-typescript-4-2021-en.pdf
 - ✅ mastering-typescript-enterprise-ready-4th-2021-en.pdf
