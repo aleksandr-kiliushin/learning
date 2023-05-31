@@ -39,6 +39,7 @@
 - 📦 [Building and delivering frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
 - 📦 [Advanced React component composition](https://frontendmastery.com/posts/advanced-react-component-composition-guide)
 - 📦 [React debugging guide](https://raygun.com/blog/react-debugging-guide)
+- 📦 [Dan Abramov explores React Server Components (4 hours video)](https://www.youtube.com/watch?v=Fctw7WjmxpU&ab_channel=BenHolmes)
 
 ## 🔫 JS and TS
 
