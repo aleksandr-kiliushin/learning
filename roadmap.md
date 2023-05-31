@@ -40,6 +40,10 @@
 - 📦 [Advanced React component composition](https://frontendmastery.com/posts/advanced-react-component-composition-guide)
 - 📦 [React debugging guide](https://raygun.com/blog/react-debugging-guide)
 - 📦 [Dan Abramov explores React Server Components (4 hours video)](https://www.youtube.com/watch?v=Fctw7WjmxpU&ab_channel=BenHolmes)
+- 📦 https://shopify.engineering/react-redux-toolkit-migration
+- 📦 https://dmitripavlutin.com/react-forwardref/
+- 📦 [Whats new in React 18](https://docs.google.com/presentation/d/1R9lv6D-aYeNMdFBCUitP3caDH36-VH5aw0U8clqVnC4/edit#slide=id.g229d872e532_0_57)
+- [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
 
 ## 🔫 JS and TS
 
