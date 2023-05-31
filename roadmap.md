@@ -33,6 +33,11 @@
 - ✅ https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
 - ✅ https://web.dev/progressive-web-apps/
 - ✅ https://web.dev/learn/pwa/
+- 📦 [Frontend mastery: Rethinking React best practices(SSR, SSG, React and the frameworks, data fetching)](https://frontendmastery.com/posts/rethinking-react-best-practices)
+- 📦 [Frontend mastery: The new wave of React state management](https://frontendmastery.com/posts/the-new-wave-of-react-state-management)
+- 📦 [The web's next transition (MPA and SPA)](https://www.epicweb.dev/the-webs-next-transition)
+- 📦 [Building and delivering frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
+- 📦 [Advanced React component composition](https://frontendmastery.com/posts/advanced-react-component-composition-guide)
 
 ## 🔫 JS and TS
 
