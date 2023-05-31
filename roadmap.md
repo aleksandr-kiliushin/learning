@@ -38,6 +38,7 @@
 - 📦 [The web's next transition (MPA and SPA)](https://www.epicweb.dev/the-webs-next-transition)
 - 📦 [Building and delivering frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
 - 📦 [Advanced React component composition](https://frontendmastery.com/posts/advanced-react-component-composition-guide)
+- 📦 [React debugging guide](https://raygun.com/blog/react-debugging-guide)
 
 ## 🔫 JS and TS
 
