@@ -7,16 +7,16 @@
 
 ## 🖥️ Computers
 
-- 📦 https://ru.hexlet.io/courses/operating_systems (free course)
+- 📦 https://ru.hexlet.io/courses/operating_systems
 - 📦 https://ru.hexlet.io/courses/cli-basics
 
 ## 🕸️ Internet
 
-- 📦 https://ru.hexlet.io/courses/internet-fundamentals (free course)
+- 📦 https://ru.hexlet.io/courses/internet-fundamentals
 
 ## 🔒 Security
 
-- 📦 https://application.security/free/owasp-top-10 (free course)
+- 📦 https://application.security/free/owasp-top-10
 
 ## 🧪 Testing
 
@@ -105,7 +105,7 @@
 
 ## ♨ Java
 
-- 📦 https://ru.hexlet.io/courses/java-basics (free course)
+- 📦 https://ru.hexlet.io/courses/java-basics
 
 ## 💾 Databases
 
@@ -121,7 +121,7 @@
 
 - 📦 https://learngitbranching.js.org/?locale=en_US
 - 📦 https://githowto.com/
-- 📦 https://ru.hexlet.io/courses/intro_to_git (free course)
+- 📦 https://ru.hexlet.io/courses/intro_to_git
 - 📦 https://github.com/apps/github-learning-lab
 
 ## 📈 From a business prospective
