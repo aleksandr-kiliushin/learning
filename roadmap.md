@@ -49,6 +49,16 @@
 - 📦 https://jasonformat.com/application-holotypes/
 - 📦 https://jjenzz.com/progressively-enhance-for-a-more-resilient-web
 - 📦 https://www.computerenhance.com/p/clean-code-horrible-performance
+- 📦 https://web.dev/howbrowserswork/
+- 📦 https://web.dev/fast/
+- 📦 https://bigfrontend.dev/
+- 📦 https://frontendmastery.com/posts/the-evolution-of-react-patterns/
+- 📦 https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks/
+- 📦 https://frontendmastery.com/posts/building-future-facing-frontend-architectures/
+- 📦 https://frontendmastery.com/posts/building-and-serving-frontends-at-scale/
+- 📦 https://frontendmastery.com/posts/frontend-migration-guide/
+- 📦 https://frontendmastery.com/posts/understanding-micro-frontends/
+- 📦 https://frontendmastery.com/posts/frontend-system-design-interview-guide/
 
 ## 🔫 JS and TS
 
@@ -105,6 +115,7 @@
 
 - 📦 css-the-definitive-guide-4th-2017-en.pdf
 - 📦 debugging-css-2020-en.pdf
+- 📦 https://web.dev/learn/css/
 
 ## 🌵 GIT
 
