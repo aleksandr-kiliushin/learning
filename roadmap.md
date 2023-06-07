@@ -119,6 +119,7 @@
 
 ## 🌵 GIT
 
+- ✅ https://www.udemy.com/course/git-github-actions/
 - 📦 https://learngitbranching.js.org/?locale=en_US
 - 📦 https://githowto.com/
 - 📦 https://ru.hexlet.io/courses/intro_to_git
