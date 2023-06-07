@@ -33,7 +33,7 @@
 - ✅ https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
 - ✅ https://web.dev/progressive-web-apps/
 - ✅ https://web.dev/learn/pwa/
-- 📦 [Frontend mastery: Rethinking React best practices(SSR, SSG, React and the frameworks, data fetching)](https://frontendmastery.com/posts/rethinking-react-best-practices)
+- ✅ [Frontend mastery: Rethinking React best practices(SSR, SSG, RSC, React and the frameworks, data fetching)](https://frontendmastery.com/posts/rethinking-react-best-practices)
 - 📦 [Frontend mastery: The new wave of React state management](https://frontendmastery.com/posts/the-new-wave-of-react-state-management)
 - 📦 [The web's next transition (MPA and SPA)](https://www.epicweb.dev/the-webs-next-transition)
 - 📦 [Building and delivering frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
@@ -44,11 +44,11 @@
 - 📦 https://dmitripavlutin.com/react-forwardref/
 - 📦 [Whats new in React 18](https://docs.google.com/presentation/d/1R9lv6D-aYeNMdFBCUitP3caDH36-VH5aw0U8clqVnC4/edit#slide=id.g229d872e532_0_57)
 - 📦 [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
-- https://arkwright.github.io/scaling-react-server-side-rendering.html
-- https://web.dev/rendering-on-the-web/
-- https://jasonformat.com/application-holotypes/
-- https://jjenzz.com/progressively-enhance-for-a-more-resilient-web
-- https://www.computerenhance.com/p/clean-code-horrible-performance
+- 📦 https://arkwright.github.io/scaling-react-server-side-rendering.html
+- 📦 https://web.dev/rendering-on-the-web/
+- 📦 https://jasonformat.com/application-holotypes/
+- 📦 https://jjenzz.com/progressively-enhance-for-a-more-resilient-web
+- 📦 https://www.computerenhance.com/p/clean-code-horrible-performance
 
 ## 🔫 JS and TS
 
