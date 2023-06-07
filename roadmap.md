@@ -47,6 +47,8 @@
 - https://arkwright.github.io/scaling-react-server-side-rendering.html
 - https://web.dev/rendering-on-the-web/
 - https://jasonformat.com/application-holotypes/
+- https://jjenzz.com/progressively-enhance-for-a-more-resilient-web
+- https://www.computerenhance.com/p/clean-code-horrible-performance
 
 ## 🔫 JS and TS
 
