@@ -46,6 +46,7 @@
 - 📦 [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
 - https://arkwright.github.io/scaling-react-server-side-rendering.html
 - https://web.dev/rendering-on-the-web/
+- https://jasonformat.com/application-holotypes/
 
 ## 🔫 JS and TS
 
