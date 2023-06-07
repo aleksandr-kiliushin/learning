@@ -45,6 +45,7 @@
 - 📦 [Whats new in React 18](https://docs.google.com/presentation/d/1R9lv6D-aYeNMdFBCUitP3caDH36-VH5aw0U8clqVnC4/edit#slide=id.g229d872e532_0_57)
 - 📦 [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
 - https://arkwright.github.io/scaling-react-server-side-rendering.html
+- https://web.dev/rendering-on-the-web/
 
 ## 🔫 JS and TS
 
