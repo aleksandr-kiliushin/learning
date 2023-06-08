@@ -2,6 +2,7 @@
 📦 - Waiting on the shelf  
 🔍 - Needs to be found  
 ⏹ - Stopped for an indefinite period  
+🔄 - Read it one more time to make it done
 ✅ - Done  
 ✅✅ - Done two times
 
@@ -36,17 +37,17 @@
 - 📦 [[web.dev] Performance course](https://web.dev/fast)
 - 📦 [[web.dev] How browsers work](https://web.dev/howbrowserswork)
 - 📦 [[web.dev] Rendering on the web](https://web.dev/rendering-on-the-web)
-- ✅ [[Frontend mastery] Rethinking React best practices(SSR, SSG, RSC, React and the frameworks, data fetching)](https://frontendmastery.com/posts/rethinking-react-best-practices)
+- ✅ [[Frontend mastery] Rethinking React best practices: SSR, SSG, RSC, React and the frameworks, data fetching](https://frontendmastery.com/posts/rethinking-react-best-practices)
 - 📦 [[FrontendMastery] The new wave of React state management](https://frontendmastery.com/posts/the-new-wave-of-react-state-management)
 - 📦 [[FrontendMastery] Advanced React component composition guide](https://frontendmastery.com/posts/advanced-react-component-composition-guide)
-- 📦 [[FrontendMastery] The evolution of React patterns](https://frontendmastery.com/posts/the-evolution-of-react-patterns/)
-- 📦 [[FrontendMastery] The new wave of JS web frameworks](https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks/)
-- 📦 [[FrontendMastery] Building future facing frontend architectures](https://frontendmastery.com/posts/building-future-facing-frontend-architectures/)
-- 📦 [[FrontendMastery] Building and serving frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale/)
-- 📦 [[FrontendMastery] Frontend migration guide](https://frontendmastery.com/posts/frontend-migration-guide/)
-- 📦 [[FrontendMastery] Understanding micro frontends](https://frontendmastery.com/posts/understanding-micro-frontends/)
-- 📦 [[FrontendMastery] Frontend system design interview guide](https://frontendmastery.com/posts/frontend-system-design-interview-guide/)
-- 📦 [The web's next transition (MPA and SPA)](https://www.epicweb.dev/the-webs-next-transition)
+- 📦 [[FrontendMastery] The evolution of React patterns](https://frontendmastery.com/posts/the-evolution-of-react-patterns)
+- 📦 [[FrontendMastery] The new wave of JS web frameworks](https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks)
+- 📦 [[FrontendMastery] Building future facing frontend architectures](https://frontendmastery.com/posts/building-future-facing-frontend-architectures)
+- 📦 [[FrontendMastery] Building and serving frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
+- 📦 [[FrontendMastery] Frontend migration guide](https://frontendmastery.com/posts/frontend-migration-guide)
+- 📦 [[FrontendMastery] Understanding micro frontends](https://frontendmastery.com/posts/understanding-micro-frontends)
+- 📦 [[FrontendMastery] Frontend system design interview guide](https://frontendmastery.com/posts/frontend-system-design-interview-guide)
+- 🔄 [The web's next transition: MPA, PEMPA, SPA, PESPA, mental models, comparisons, Remix](https://www.epicweb.dev/the-webs-next-transition)
 - 📦 [React debugging guide](https://raygun.com/blog/react-debugging-guide)
 - 📦 [[Video] Dan Abramov explores React Server Components (4 hours)](https://www.youtube.com/watch?v=Fctw7WjmxpU&ab_channel=BenHolmes)
 - 📦 https://shopify.engineering/react-redux-toolkit-migration
