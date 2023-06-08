@@ -55,7 +55,8 @@
 - 📦 [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
 - 📦 https://arkwright.github.io/scaling-react-server-side-rendering.html
 - 📦 https://jasonformat.com/application-holotypes/
-- 📦 https://jjenzz.com/progressively-enhance-for-a-more-resilient-web
+- 📦 [Progressively enhance for a more resilient web](https://jjenzz.com/progressively-enhance-for-a-more-resilient-web)
+- 📦 [Compound components](https://jjenzz.com/compound-components)
 - 📦 https://www.computerenhance.com/p/clean-code-horrible-performance
 - 📦 https://bigfrontend.dev/
 - 📦 [https://almanac.httparchive.org/en/2022/javascript](Web almanac 2022)
