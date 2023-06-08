@@ -31,6 +31,8 @@
 ## 🍹 Frontend
 
 - ✅ [Book] learning-react-modern-patterns-developing-2020-en.pdf
+- 📦 https://bigfrontend.dev
+- 📦 [Web almanac 2022](https://almanac.httparchive.org/en/2022)
 - ✅ https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
 - ✅ [[web.dev] PWA guide](https://web.dev/progressive-web-apps)
 - ✅ [[web.dev] PWA course](https://web.dev/learn/pwa)
@@ -58,8 +60,6 @@
 - 📦 [Progressively enhance for a more resilient web](https://jjenzz.com/progressively-enhance-for-a-more-resilient-web)
 - 📦 [Compound components](https://jjenzz.com/compound-components)
 - 📦 https://www.computerenhance.com/p/clean-code-horrible-performance
-- 📦 https://bigfrontend.dev/
-- 📦 [https://almanac.httparchive.org/en/2022/javascript](Web almanac 2022)
 
 ## 🔫 JS and TS
 
