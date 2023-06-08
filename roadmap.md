@@ -57,7 +57,7 @@
 - 📦 https://jjenzz.com/progressively-enhance-for-a-more-resilient-web
 - 📦 https://www.computerenhance.com/p/clean-code-horrible-performance
 - 📦 https://bigfrontend.dev/
-- https://almanac.httparchive.org/en/2022/javascript
+- 📦 [https://almanac.httparchive.org/en/2022/javascript](Web almanac 2022)
 
 ## 🔫 JS and TS
 
