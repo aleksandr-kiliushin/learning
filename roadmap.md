@@ -52,7 +52,6 @@
 - 🔄 [The web's next transition: MPA, PEMPA, SPA, PESPA, mental models, comparisons, Remix](https://www.epicweb.dev/the-webs-next-transition)
 - 📦 [React debugging guide](https://raygun.com/blog/react-debugging-guide)
 - 📦 [[Video] Dan Abramov explores React Server Components (4 hours)](https://www.youtube.com/watch?v=Fctw7WjmxpU&ab_channel=BenHolmes)
-- 📦 https://dmitripavlutin.com/react-forwardref/
 - 📦 [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
 - 📦 https://arkwright.github.io/scaling-react-server-side-rendering.html
 - 📦 https://jasonformat.com/application-holotypes/
