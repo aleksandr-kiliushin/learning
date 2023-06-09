@@ -48,7 +48,7 @@
 - 📦 [[FrontendMastery] Building future facing frontend architectures](https://frontendmastery.com/posts/building-future-facing-frontend-architectures)
 - 📦 [[FrontendMastery] Building and serving frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
 - 📦 [[FrontendMastery] Frontend migration guide](https://frontendmastery.com/posts/frontend-migration-guide)
-- 📦 [[FrontendMastery] Understanding micro frontends](https://frontendmastery.com/posts/understanding-micro-frontends)
+- 🔄 [[FrontendMastery] Understanding micro frontends](https://frontendmastery.com/posts/understanding-micro-frontends)
 - 📦 [[FrontendMastery] Frontend system design interview guide](https://frontendmastery.com/posts/frontend-system-design-interview-guide)
 - 🔄 [The web's next transition: MPA, PEMPA, SPA, PESPA, mental models, comparisons, Remix](https://www.epicweb.dev/the-webs-next-transition)
 - 📦 [React debugging guide](https://raygun.com/blog/react-debugging-guide)
