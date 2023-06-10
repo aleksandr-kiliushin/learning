@@ -34,7 +34,8 @@
 - ✅ [Book] learning-react-modern-patterns-developing-2020-en.pdf
 - 📦 https://bigfrontend.dev
 - 📦 [Web almanac 2022](https://almanac.httparchive.org/en/2022)
-- ✅ https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566
+- ✅ [[Medium] Cleaner codes React subcomponents](https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566)
+- 📦 [[Medium] Webpack 5 module federation a game changer to JS architecture](https://medium.com/swlh/webpack-5-module-federation-a-game-changer-to-javascript-architecture-bcdd30e02669)
 - ✅ [[web.dev] PWA guide](https://web.dev/progressive-web-apps)
 - ✅ [[web.dev] PWA course](https://web.dev/learn/pwa)
 - 📦 [[web.dev] Performance course](https://web.dev/fast)
@@ -46,7 +47,7 @@
 - 📦 [[FrontendMastery] The evolution of React patterns](https://frontendmastery.com/posts/the-evolution-of-react-patterns)
 - 📦 [[FrontendMastery] The new wave of JS web frameworks](https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks)
 - 📦 [[FrontendMastery] Building future facing frontend architectures](https://frontendmastery.com/posts/building-future-facing-frontend-architectures)
-- 📦 [[FrontendMastery] Building and serving frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
+- 🔄 [[FrontendMastery] Building and serving frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
 - 📦 [[FrontendMastery] Frontend migration guide](https://frontendmastery.com/posts/frontend-migration-guide)
 - 🔄 [[FrontendMastery] Understanding micro frontends](https://frontendmastery.com/posts/understanding-micro-frontends)
 - 📦 [[FrontendMastery] Frontend system design interview guide](https://frontendmastery.com/posts/frontend-system-design-interview-guide)
@@ -54,11 +55,11 @@
 - 📦 [React debugging guide](https://raygun.com/blog/react-debugging-guide)
 - 📦 [[Video] Dan Abramov explores React Server Components (4 hours)](https://www.youtube.com/watch?v=Fctw7WjmxpU&ab_channel=BenHolmes)
 - 📦 [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
-- 📦 https://arkwright.github.io/scaling-react-server-side-rendering.html
-- 📦 https://jasonformat.com/application-holotypes/
-- 📦 [Progressively enhance for a more resilient web](https://jjenzz.com/progressively-enhance-for-a-more-resilient-web)
+- 📦 [Scaling React SSR](https://arkwright.github.io/scaling-react-server-side-rendering.html)
+- 🔄 [Progressively enhance for a more resilient web](https://jjenzz.com/progressively-enhance-for-a-more-resilient-web)
 - 📦 [Compound components](https://jjenzz.com/compound-components)
-- 📦 https://www.computerenhance.com/p/clean-code-horrible-performance
+- 📦 [Clean code horrible performance](https://www.computerenhance.com/p/clean-code-horrible-performance)
+- 📦 [ES modules – a cartoon deep dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive)
 
 ## 🔫 JS and TS
 
