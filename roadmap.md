@@ -36,6 +36,7 @@
 - 📦 [Web almanac 2022](https://almanac.httparchive.org/en/2022)
 - ✅ [[Medium] Cleaner codes React subcomponents](https://medium.com/@marioserano55/cleaner-codes-react-subcomponents-1c2ebe178566)
 - 📦 [[Medium] Webpack 5 module federation a game changer to JS architecture](https://medium.com/swlh/webpack-5-module-federation-a-game-changer-to-javascript-architecture-bcdd30e02669)
+- 📦 [[Medium] Applying SOLID principles in React](https://medium.com/dailyjs/applying-solid-principles-in-react-14905d9c5377)
 - ✅ [[web.dev] PWA guide](https://web.dev/progressive-web-apps)
 - ✅ [[web.dev] PWA course](https://web.dev/learn/pwa)
 - 📦 [[web.dev] Performance course](https://web.dev/fast)
@@ -46,7 +47,7 @@
 - 📦 [[FrontendMastery] The evolution of React patterns](https://frontendmastery.com/posts/the-evolution-of-react-patterns)
 - 📦 [[FrontendMastery] The new wave of JS web frameworks](https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks)
 - 🔄 [[FrontendMastery] Building future facing frontend architectures](https://frontendmastery.com/posts/building-future-facing-frontend-architectures)
-- 📦 [[FrontendMastery] Advanced React component composition guide](https://frontendmastery.com/posts/advanced-react-component-composition-guide)
+- 🔄 [[FrontendMastery] Advanced React component composition guide](https://frontendmastery.com/posts/advanced-react-component-composition-guide)
 - 🔄 [[FrontendMastery] Building and serving frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
 - 📦 [[FrontendMastery] Frontend migration guide](https://frontendmastery.com/posts/frontend-migration-guide)
 - 🔄 [[FrontendMastery] Understanding micro frontends](https://frontendmastery.com/posts/understanding-micro-frontends)
@@ -62,6 +63,7 @@
 - 📦 [Compound components](https://jjenzz.com/compound-components)
 - 📦 [Clean code horrible performance](https://www.computerenhance.com/p/clean-code-horrible-performance)
 - 📦 [ES modules – a cartoon deep dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive)
+- 📦 [React components composition: how to get it right](https://www.developerway.com/posts/components-composition-how-to-get-it-right)
 
 ## 🔫 JS and TS
 
