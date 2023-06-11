@@ -52,7 +52,7 @@
 - 🔄 [[FrontendMastery] Understanding micro frontends](https://frontendmastery.com/posts/understanding-micro-frontends)
 - 📦 [[FrontendMastery] Frontend system design interview guide](https://frontendmastery.com/posts/frontend-system-design-interview-guide)
 - 📦 [Inversion of control in JS and React](https://kentcdodds.com/blog/inversion-of-control)
-- 📦 [An example how components libraries provide us components composition under the hood](https://github.com/reach/reach-ui/tree/dev/packages/descendants)
+- 📦 [One of the ways that component libraries provide components composition under the hood](https://github.com/reach/reach-ui/tree/dev/packages/descendants)
 - 🔄 [The web's next transition: MPA, PEMPA, SPA, PESPA, mental models, comparisons, Remix](https://www.epicweb.dev/the-webs-next-transition)
 - 📦 [React debugging guide](https://raygun.com/blog/react-debugging-guide)
 - 📦 [[Video] Dan Abramov explores React Server Components (4 hours)](https://www.youtube.com/watch?v=Fctw7WjmxpU&ab_channel=BenHolmes)
