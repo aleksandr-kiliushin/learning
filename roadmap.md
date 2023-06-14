@@ -49,7 +49,7 @@
 - 🔄 [[FrontendMastery] Building future facing frontend architectures](https://frontendmastery.com/posts/building-future-facing-frontend-architectures)
 - 🔄 [[FrontendMastery] Advanced React component composition guide](https://frontendmastery.com/posts/advanced-react-component-composition-guide)
 - 🔄 [[FrontendMastery] Building and serving frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
-- 📦 [[FrontendMastery] Frontend migration guide](https://frontendmastery.com/posts/frontend-migration-guide)
+- 🔄 [[FrontendMastery] Frontend migration guide](https://frontendmastery.com/posts/frontend-migration-guide)
 - 🔄 [[FrontendMastery] Understanding micro frontends](https://frontendmastery.com/posts/understanding-micro-frontends)
 - 📦 [[FrontendMastery] Frontend system design interview guide](https://frontendmastery.com/posts/frontend-system-design-interview-guide)
 - 📦 [Inversion of control in JS and React](https://kentcdodds.com/blog/inversion-of-control)
