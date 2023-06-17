@@ -44,7 +44,7 @@
 - 📦 [[web.dev] Rendering on the web](https://web.dev/rendering-on-the-web)
 - ✅ [[Frontend mastery] Rethinking React best practices: SSR, SSG, RSC, React and the frameworks, data fetching](https://frontendmastery.com/posts/rethinking-react-best-practices)
 - 🔄 [[FrontendMastery] The new wave of React state management](https://frontendmastery.com/posts/the-new-wave-of-react-state-management)
-- 📦 [[FrontendMastery] The evolution of React patterns](https://frontendmastery.com/posts/the-evolution-of-react-patterns)
+- 🔄 [[FrontendMastery] The evolution of React patterns](https://frontendmastery.com/posts/the-evolution-of-react-patterns)
 - 📦 [[FrontendMastery] The new wave of JS web frameworks](https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks)
 - 🔄 [[FrontendMastery] Building future facing frontend architectures](https://frontendmastery.com/posts/building-future-facing-frontend-architectures)
 - 🔄 [[FrontendMastery] Advanced React component composition guide](https://frontendmastery.com/posts/advanced-react-component-composition-guide)
