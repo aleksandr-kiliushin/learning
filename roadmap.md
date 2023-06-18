@@ -58,10 +58,9 @@
 - 📦 [React debugging guide](https://raygun.com/blog/react-debugging-guide)
 - 📦 [[Video] Dan Abramov explores React Server Components (4 hours)](https://www.youtube.com/watch?v=Fctw7WjmxpU&ab_channel=BenHolmes)
 - 📦 [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
-- 📦 [Scaling React SSR](https://arkwright.github.io/scaling-react-server-side-rendering.html)
+- 📦 [Scaling React SSR: servers and load balancing](https://arkwright.github.io/scaling-react-server-side-rendering.html)
 - 🔄 [Progressively enhance for a more resilient web](https://jjenzz.com/progressively-enhance-for-a-more-resilient-web)
-- 📦 [Compound components](https://jjenzz.com/compound-components)
-- 📦 [Clean code horrible performance](https://www.computerenhance.com/p/clean-code-horrible-performance)
+- 🔄 [Compound components](https://jjenzz.com/compound-components)
 - 📦 [ES modules – a cartoon deep dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive)
 - 📦 [React components composition: how to get it right](https://www.developerway.com/posts/components-composition-how-to-get-it-right)
 
