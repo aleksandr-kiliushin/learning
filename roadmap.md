@@ -43,26 +43,27 @@
 - 📦 [[web.dev] How browsers work](https://web.dev/howbrowserswork)
 - 📦 [[web.dev] Rendering on the web](https://web.dev/rendering-on-the-web)
 - ✅ [[Frontend mastery] Rethinking React best practices: SSR, SSG, RSC, React and the frameworks, data fetching](https://frontendmastery.com/posts/rethinking-react-best-practices)
-- 🔄 [[FrontendMastery] The new wave of React state management](https://frontendmastery.com/posts/the-new-wave-of-react-state-management)
-- 🔄 [[FrontendMastery] The evolution of React patterns](https://frontendmastery.com/posts/the-evolution-of-react-patterns)
-- 📦 [[FrontendMastery] The new wave of JS web frameworks](https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks)
-- 🔄 [[FrontendMastery] Building future facing frontend architectures](https://frontendmastery.com/posts/building-future-facing-frontend-architectures)
-- 🔄 [[FrontendMastery] Advanced React component composition guide](https://frontendmastery.com/posts/advanced-react-component-composition-guide)
-- 🔄 [[FrontendMastery] Building and serving frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
-- 🔄 [[FrontendMastery] Frontend migration guide](https://frontendmastery.com/posts/frontend-migration-guide)
-- 🔄 [[FrontendMastery] Understanding micro frontends](https://frontendmastery.com/posts/understanding-micro-frontends)
+- ✅ [[FrontendMastery] The new wave of React state management](https://frontendmastery.com/posts/the-new-wave-of-react-state-management)
+- ✅ [[FrontendMastery] The evolution of React patterns](https://frontendmastery.com/posts/the-evolution-of-react-patterns)
+- ✅ [[FrontendMastery] The new wave of JS web frameworks](https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks)
+- ✅ [[FrontendMastery] Building future facing frontend architectures](https://frontendmastery.com/posts/building-future-facing-frontend-architectures)
+- ✅ [[FrontendMastery] Advanced React component composition guide](https://frontendmastery.com/posts/advanced-react-component-composition-guide)
+- ✅ [[FrontendMastery] Building and serving frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
+- ✅ [[FrontendMastery] Frontend migration guide](https://frontendmastery.com/posts/frontend-migration-guide)
+- ✅ [[FrontendMastery] Understanding micro frontends](https://frontendmastery.com/posts/understanding-micro-frontends)
 - 📦 [[FrontendMastery] Frontend system design interview guide](https://frontendmastery.com/posts/frontend-system-design-interview-guide)
 - 📦 [Inversion of control in JS and React](https://kentcdodds.com/blog/inversion-of-control)
 - 📦 [One of the ways that component libraries provide components composition under the hood](https://github.com/reach/reach-ui/tree/dev/packages/descendants)
-- 🔄 [The web's next transition: MPA, PEMPA, SPA, PESPA, mental models, comparisons, Remix](https://www.epicweb.dev/the-webs-next-transition)
+- ✅ [The web's next transition: MPA, PEMPA, SPA, PESPA, mental models, comparisons, Remix](https://www.epicweb.dev/the-webs-next-transition)
 - 📦 [React debugging guide](https://raygun.com/blog/react-debugging-guide)
-- 📦 [[Video] Dan Abramov explores React Server Components (4 hours)](https://www.youtube.com/watch?v=Fctw7WjmxpU&ab_channel=BenHolmes)
 - 📦 [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
 - 📦 [Scaling React SSR: servers and load balancing](https://arkwright.github.io/scaling-react-server-side-rendering.html)
-- 🔄 [Progressively enhance for a more resilient web](https://jjenzz.com/progressively-enhance-for-a-more-resilient-web)
-- 🔄 [Compound components](https://jjenzz.com/compound-components)
+- ✅ [Progressively enhance for a more resilient web](https://jjenzz.com/progressively-enhance-for-a-more-resilient-web)
+- ✅ [Compound components](https://jjenzz.com/compound-components)
 - 📦 [ES modules – a cartoon deep dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive)
 - 📦 [React components composition: how to get it right](https://www.developerway.com/posts/components-composition-how-to-get-it-right)
+- 📦 [Subscription pattern with Compound components in React](https://www.bekk.christmas/post/2021/20/subscription-pattern-with-compound-components-in-react)
+- 📦 [What are the React team principles?](https://overreacted.io/what-are-the-react-team-principles)
 
 ## 🔫 JS and TS
 
@@ -143,3 +144,5 @@
 - ✅ [Practice] Setup CI for personal-app-server and personal-app-frontend.
 - ✅ https://medium.com/storyblocks-engineering/web-architecture-101-a3224e126947
 
+## Other
+- 📦 [Finish your projects](https://github.com/readme/guides/finish-your-projects)
