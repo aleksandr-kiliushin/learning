@@ -51,7 +51,7 @@
 - ✅ [[FrontendMastery] Building and serving frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale)
 - ✅ [[FrontendMastery] Frontend migration guide](https://frontendmastery.com/posts/frontend-migration-guide)
 - ✅ [[FrontendMastery] Understanding micro frontends](https://frontendmastery.com/posts/understanding-micro-frontends)
-- 📦 [[FrontendMastery] Frontend system design interview guide](https://frontendmastery.com/posts/frontend-system-design-interview-guide)
+- ✅ [[FrontendMastery] Frontend system design interview guide](https://frontendmastery.com/posts/frontend-system-design-interview-guide)
 - 📦 [Inversion of control in JS and React](https://kentcdodds.com/blog/inversion-of-control)
 - 📦 [One of the ways that component libraries provide components composition under the hood](https://github.com/reach/reach-ui/tree/dev/packages/descendants)
 - ✅ [The web's next transition: MPA, PEMPA, SPA, PESPA, mental models, comparisons, Remix](https://www.epicweb.dev/the-webs-next-transition)
