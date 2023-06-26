@@ -2,7 +2,7 @@
 📦 - Waiting on the shelf  
 🔍 - Needs to be found  
 ⏹ - Stopped for an indefinite period  
-🔄 - Read it one more time to make it done
+🔄 - Read it one more time to make it done  
 ✅ - Done  
 ✅✅ - Done two times
 
