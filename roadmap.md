@@ -61,7 +61,7 @@
 - ✅ [Progressively enhance for a more resilient web](https://jjenzz.com/progressively-enhance-for-a-more-resilient-web)
 - ✅ [Compound components](https://jjenzz.com/compound-components)
 - 📦 [ES modules – a cartoon deep dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive)
-- 📦 [React components composition: how to get it right](https://www.developerway.com/posts/components-composition-how-to-get-it-right)
+- ✅ [React components composition: how to get it right](https://www.developerway.com/posts/components-composition-how-to-get-it-right)
 - 📦 [Subscription pattern with Compound components in React](https://www.bekk.christmas/post/2021/20/subscription-pattern-with-compound-components-in-react)
 - ✅ [What are the React team principles?](https://overreacted.io/what-are-the-react-team-principles)
 
