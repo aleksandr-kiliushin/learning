@@ -143,6 +143,7 @@
 
 - ✅ [Practice] Setup CI for personal-app-server and personal-app-frontend.
 - ✅ https://medium.com/storyblocks-engineering/web-architecture-101-a3224e126947
+- 📦 https://www.voorhoede.nl/en/blog/super-fast-npm-install-on-github-actions/
 
 ## Other
 - 📦 [Finish your projects](https://github.com/readme/guides/finish-your-projects)
