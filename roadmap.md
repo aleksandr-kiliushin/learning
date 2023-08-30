@@ -72,6 +72,7 @@
 - ✅ [Book] js-the-definitive-guide-7th-2020-en.pdf
 - 📦 www.typescriptlang.org
 - 📦 https://github.com/type-challenges/type-challenges
+- 📦 https://www.totaltypescript.com
 - ✅ [Book] essential-typescript-4-2021-en.pdf
 - ✅ [Book] mastering-typescript-enterprise-ready-4th-2021-en.pdf
 - ✅ [Book] typescript-4-design-patterns-and-best-practic-2021-en.pdf
@@ -108,6 +109,9 @@
 - 🔍 Hexagonal architecture
 - 🔍 Software architecture the hard parts
 - 🔍 Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
+
+## RxJS
+- 📦 https://www.rxjs-fruits.com
 
 ## ♨ Java
 
