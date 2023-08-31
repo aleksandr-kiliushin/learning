@@ -110,6 +110,9 @@
 - 🔍 Software architecture the hard parts
 - 🔍 Building Evolutionary Architectures, support constant change - Neal Ford, Rebecca Parsons, and Patrick Kua
 
+## Algorithms
+- 📦 https://academy.yandex.ru/handbook/algorithms
+
 ## RxJS
 - 📦 https://www.rxjs-fruits.com
 
