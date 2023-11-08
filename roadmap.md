@@ -66,6 +66,7 @@
 - ✅ [What are the React team principles?](https://overreacted.io/what-are-the-react-team-principles)
 - 📦 [A Look at Compilation in JavaScript Frameworks by Ryan Carniato (SolidJS creator)](https://dev.to/this-is-learning/a-look-at-compilation-in-javascript-frameworks-3caj)
 - 🔍 Frontend architecture for design systems PDF
+- https://martinfowler.com/articles/headless-component.html
 
 
 ## 🔫 JS and TS
