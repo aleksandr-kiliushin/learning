@@ -64,7 +64,7 @@
 - ✅ [React components composition: how to get it right](https://www.developerway.com/posts/components-composition-how-to-get-it-right)
 - 📦 [Subscription pattern with Compound components in React](https://www.bekk.christmas/post/2021/20/subscription-pattern-with-compound-components-in-react)
 - ✅ [What are the React team principles?](https://overreacted.io/what-are-the-react-team-principles)
-- 📦 [A Look at Compilation in JavaScript Frameworks by Ryan Carniato (SolidJS creator)](https://dev.to/this-is-learning/a-look-at-compilation-in-javascript-frameworks-3caj)
+- 📦 1/2 times read , ONE MORE TIME AND DONE [A Look at Compilation in JavaScript Frameworks by Ryan Carniato (SolidJS creator)](https://dev.to/this-is-learning/a-look-at-compilation-in-javascript-frameworks-3caj)
 - 🔍 Frontend architecture for design systems PDF
 - https://martinfowler.com/articles/headless-component.html
 
