@@ -64,9 +64,9 @@
 - ✅ [React components composition: how to get it right](https://www.developerway.com/posts/components-composition-how-to-get-it-right)
 - 📦 [Subscription pattern with Compound components in React](https://www.bekk.christmas/post/2021/20/subscription-pattern-with-compound-components-in-react)
 - ✅ [What are the React team principles?](https://overreacted.io/what-are-the-react-team-principles)
-- 📦 1/2 times read , ONE MORE TIME AND DONE [A Look at Compilation in JavaScript Frameworks by Ryan Carniato (SolidJS creator)](https://dev.to/this-is-learning/a-look-at-compilation-in-javascript-frameworks-3caj)
+- ✅ [A Look at Compilation in JavaScript Frameworks by Ryan Carniato (SolidJS creator)](https://dev.to/this-is-learning/a-look-at-compilation-in-javascript-frameworks-3caj)
+- 📦 [Headless Component: a pattern for composing React UIs](https://martinfowler.com/articles/headless-component.html)
 - 🔍 Frontend architecture for design systems PDF
-- https://martinfowler.com/articles/headless-component.html
 
 
 ## 🔫 JS and TS
@@ -152,7 +152,7 @@
 
 ## ⚙️ Infrastructure
 
-- ✅ [Practice] Setup CI for personal-app-server and personal-app-frontend.
+- ✅ [Practice] Setup CI for budgetello-server and budgetello-frontend.
 - ✅ https://medium.com/storyblocks-engineering/web-architecture-101-a3224e126947
 - 📦 https://www.voorhoede.nl/en/blog/super-fast-npm-install-on-github-actions/
 
