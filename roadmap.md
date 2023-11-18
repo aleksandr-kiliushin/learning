@@ -66,8 +66,8 @@
 - ✅ [What are the React team principles?](https://overreacted.io/what-are-the-react-team-principles)
 - ✅ [A Look at Compilation in JavaScript Frameworks by Ryan Carniato (SolidJS creator)](https://dev.to/this-is-learning/a-look-at-compilation-in-javascript-frameworks-3caj)
 - 📦 [Headless Component: a pattern for composing React UIs](https://martinfowler.com/articles/headless-component.html)
+- 📦 [Basic parameters for latency calculation](https://colin-scott.github.io/personal_website/research/interactive_latency.html)
 - 🔍 Frontend architecture for design systems PDF
-
 
 ## 🔫 JS and TS
 
