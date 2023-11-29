@@ -30,7 +30,6 @@
 
 ## 🍹 Frontend
 
-- 📦 [patterns.dev](https://www.patterns.dev)
 - ✅ [Book] learning-react-modern-patterns-developing-2020-en.pdf
 - 📦 https://bigfrontend.dev
 - 📦 [Web almanac 2022](https://almanac.httparchive.org/en/2022)
@@ -98,6 +97,7 @@
 
 ## 🏙 Architecture
 
+- 📦 [patterns.dev](https://www.patterns.dev)
 - ✅ [Book] clean-architecture-2018-en.pdf
 - 📦 [Book] domain-driven-design-reference-2015-en.pdf
 - 📦 [Book] implementing-domain-driven-design-2013.pdf
