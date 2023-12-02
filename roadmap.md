@@ -75,6 +75,7 @@
 - ✅ [Book] js-the-definitive-guide-7th-2020-en.pdf
 - 📦 www.typescriptlang.org
 - 📦 https://www.totaltypescript.com
+- 📦 [[TotalTypeScript] Event Types in React and TS](https://www.totaltypescript.com/event-types-in-react-and-typescript)
 - ✅ [Book] essential-typescript-4-2021-en.pdf
 - ✅ [Book] mastering-typescript-enterprise-ready-4th-2021-en.pdf
 - ✅ [Book] typescript-4-design-patterns-and-best-practic-2021-en.pdf
