@@ -79,6 +79,7 @@
 - ✅ [Book] essential-typescript-4-2021-en.pdf
 - ✅ [Book] mastering-typescript-enterprise-ready-4th-2021-en.pdf
 - ✅ [Book] typescript-4-design-patterns-and-best-practic-2021-en.pdf
+- 📦 https://github.com/henriqueinonhe/promises-training
 - ⏱ https://github.com/type-challenges/type-challenges
 
 ## 💧 Technical dept and refactoring
