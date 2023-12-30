@@ -140,7 +140,7 @@
 ## 🌵 GIT
 
 - ✅ [[Course] Git, GitHub and GitHub actions](https://www.udemy.com/course/git-github-actions)
-- 📦 [[Course] Learn git branching](https://learngitbranching.js.org/?locale=en_US)
+- ⏱ [[Course] Learn git branching](https://learngitbranching.js.org/?locale=en_US)
 - 📦 [[Course] GitHowTo](https://githowto.com)
 - 📦 [[Course] Intro to git](https://ru.hexlet.io/courses/intro_to_git)
 - 📦 [[Course] GitHub learning lab](https://github.com/apps/github-learning-lab)
