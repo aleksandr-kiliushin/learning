@@ -54,7 +54,6 @@
 - 📦 [Inversion of control in JS and React](https://kentcdodds.com/blog/inversion-of-control)
 - 📦 [One of the ways that component libraries provide components composition under the hood](https://github.com/reach/reach-ui/tree/dev/packages/descendants)
 - ✅ [The web's next transition: MPA, PEMPA, SPA, PESPA, mental models, comparisons, Remix](https://www.epicweb.dev/the-webs-next-transition)
-- 📦 [React debugging guide](https://raygun.com/blog/react-debugging-guide)
 - 📦 [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
 - 📦 [Scaling React SSR: servers and load balancing](https://arkwright.github.io/scaling-react-server-side-rendering.html)
 - ✅ [Progressively enhance for a more resilient web](https://jjenzz.com/progressively-enhance-for-a-more-resilient-web)
@@ -66,7 +65,8 @@
 - ✅ [A Look at Compilation in JavaScript Frameworks by Ryan Carniato (SolidJS creator)](https://dev.to/this-is-learning/a-look-at-compilation-in-javascript-frameworks-3caj)
 - 📦 [Headless Component: a pattern for composing React UIs](https://martinfowler.com/articles/headless-component.html)
 - 📦 [Basic parameters for latency calculation](https://colin-scott.github.io/personal_website/research/interactive_latency.html)
-- 📦 [https://alan.norbauer.com/articles/browser-debugging-tricks](https://alan.norbauer.com/articles/browser-debugging-tricks)
+- 📦 [Browser Debugging Tricks](https://alan.norbauer.com/articles/browser-debugging-tricks)
+- 📦 [React debugging guide](https://raygun.com/blog/react-debugging-guide)
 - 🔍 Frontend architecture for design systems PDF
 
 ## 🔫 JS and TS
